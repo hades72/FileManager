@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace FileManager
 {
-    public partial class frmMain : Form
+    public partial class frmTest : Form
     {
-        public frmMain()
+        public frmTest()
         {
             InitializeComponent();
-        }
-
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            frmTest test = new frmTest();
-            test.Show();
         }
     }
 }
