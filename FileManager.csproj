@@ -46,16 +46,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmFolder\frmMain.cs">
+    <Compile Include="frmFolder\frmAddFile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFolder\frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <Compile Include="frmFolder\frmAddFile.Designer.cs">
+      <DependentUpon>frmAddFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFolder\frmFixFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFolder\frmFixFile.Designer.cs">
+      <DependentUpon>frmFixFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFolder\frmManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFolder\frmManager.Designer.cs">
+      <DependentUpon>frmManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFolder\frmMainGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFolder\frmMainGUI.Designer.cs">
+      <DependentUpon>frmMainGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmFolder\frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="frmFolder\frmAddFile.resx">
+      <DependentUpon>frmAddFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFolder\frmFixFile.resx">
+      <DependentUpon>frmFixFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFolder\frmManager.resx">
+      <DependentUpon>frmManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFolder\frmMainGUI.resx">
+      <DependentUpon>frmMainGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -65,6 +92,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -81,6 +109,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="classFolder\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nền-trắng-500x500.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot %284%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
