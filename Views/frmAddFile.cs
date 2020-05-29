@@ -16,7 +16,7 @@ namespace FileManager.Views
 {
     public partial class frmAddFile : Form
     {
-        OpenFileDialog openFile = new OpenFileDialog();
+        
         SaveFileDialog saveLinkFile = new SaveFileDialog();
         OpenFileDialog openIMG = new OpenFileDialog();
 
@@ -24,18 +24,10 @@ namespace FileManager.Views
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized; // Full màn hình
-            btnUploadFile.Click += btnUploadFile_Click;
-            Load += frmAddFile_Load;
         }
 
         private void frmAddFile_Load(object sender, EventArgs e)
         {
-            this.openFile.RestoreDirectory = true;
-            this.openFile.FileName = string.Empty;
-            this.openFile.Filter = "Pdf Files (.pdf)|*.pdf|All Files (*.*)|*.*";
-            this.openFile.FilterIndex = 1;
-            this.openFile.Multiselect = false;
-
             
         }
 
@@ -46,7 +38,14 @@ namespace FileManager.Views
 
         private void btnUploadFile_Click(object sender, EventArgs e)
         {
-            if(openFile.ShowDialog() == DialogResult.OK)
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.RestoreDirectory = true;
+            openFile.FileName = string.Empty;
+            openFile.Filter = "Pdf Files (.pdf)|*.pdf|All Files (*.*)|*.*";
+            openFile.FilterIndex = 1;
+            openFile.Multiselect = false;
+
+            if (openFile.ShowDialog() == DialogResult.OK)
             {
                 this.txtLinkFolder.Text = openFile.FileName;
                 this.txtCategory.Clear();
@@ -73,6 +72,7 @@ namespace FileManager.Views
         {
             this.saveLinkFile.Filter = "Pdf Files (.pdf)|*.pdf|All Files (*.*)|*.*";
             this.saveLinkFile.Title = "Save a PDF File";
+            this.saveLinkFile.FileName = txtTitle.Text;
             if (this.saveLinkFile.ShowDialog() == DialogResult.OK)
             {
                 this.txtLinkFolder.Text = this.saveLinkFile.FileName;
