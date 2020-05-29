@@ -33,7 +33,8 @@
             this.listKind = new System.Windows.Forms.ListBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataFileM = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.cTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cKind = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cDateUpdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,19 +42,20 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataFileM)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.listKind);
             this.splitContainer1.Panel1.Controls.Add(this.btnSearch);
@@ -61,7 +63,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Panel2.Controls.Add(this.dataFileM);
             this.splitContainer1.Size = new System.Drawing.Size(918, 514);
             this.splitContainer1.SplitterDistance = 146;
             this.splitContainer1.SplitterWidth = 3;
@@ -81,7 +83,7 @@
             // 
             this.listKind.FormattingEnabled = true;
             this.listKind.Location = new System.Drawing.Point(577, 19);
-            this.listKind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listKind.Margin = new System.Windows.Forms.Padding(2);
             this.listKind.Name = "listKind";
             this.listKind.Size = new System.Drawing.Size(239, 121);
             this.listKind.TabIndex = 6;
@@ -89,7 +91,7 @@
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(223, 13);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(82, 23);
             this.btnSearch.TabIndex = 5;
@@ -99,27 +101,37 @@
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(28, 15);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(182, 20);
             this.txtSearch.TabIndex = 4;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // dataGridView1
+            // dataFileM
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataFileM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataFileM.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cTitle,
             this.cKind,
             this.cDateUpdate});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(918, 365);
-            this.dataGridView1.TabIndex = 0;
+            this.dataFileM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataFileM.Location = new System.Drawing.Point(0, 0);
+            this.dataFileM.Margin = new System.Windows.Forms.Padding(2);
+            this.dataFileM.Name = "dataFileM";
+            this.dataFileM.RowHeadersWidth = 51;
+            this.dataFileM.RowTemplate.Height = 24;
+            this.dataFileM.Size = new System.Drawing.Size(918, 365);
+            this.dataFileM.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(321, 80);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cTitle
             // 
@@ -139,7 +151,7 @@
             // 
             // cDateUpdate
             // 
-            this.cDateUpdate.HeaderText = "Ngày cập nhập mới nhất";
+            this.cDateUpdate.HeaderText = "Ngày cập nhật";
             this.cDateUpdate.MinimumWidth = 6;
             this.cDateUpdate.Name = "cDateUpdate";
             this.cDateUpdate.ReadOnly = true;
@@ -151,7 +163,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(918, 514);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmManager";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.frmMain_Load);
@@ -160,7 +172,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataFileM)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -172,7 +184,8 @@
         private System.Windows.Forms.ListBox listKind;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataFileM;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn cKind;
         private System.Windows.Forms.DataGridViewTextBoxColumn cDateUpdate;

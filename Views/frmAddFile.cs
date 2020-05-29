@@ -11,16 +11,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System;
+using FileManager.Models;
+using Path = System.IO.Path;
 
 namespace FileManager.Views
 {
     public partial class frmAddFile : Form
     {
-        
+        OpenFileDialog openFile = new OpenFileDialog();
         SaveFileDialog saveLinkFile = new SaveFileDialog();
         OpenFileDialog openIMG = new OpenFileDialog();
-
+        FileM file = new FileM();
         public frmAddFile()
         {
             InitializeComponent();
@@ -29,29 +30,46 @@ namespace FileManager.Views
 
         private void frmAddFile_Load(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void bSave_Click(object sender, EventArgs e)
         {
+            //file.iID += 1;
+            file.sTitle = this.txtTitle.Text.Trim();
+            file.sCategory = this.txtCategory.Text.Trim();
+            file.sNote = this.rtbNote.Text.Trim();
+            file.dtUpdateDay = DateTime.Now.Date;
+            // Lưu picUpload
+            File.Copy(openIMG.FileName, Path.Combine(@"C:\Users\Giang\Desktop\FileManager\Pictures\", Path.GetFileName(file.sTitle + ".jpg")));
+            // Lưu file
+            File.Copy(openFile.FileName, Path.Combine(@"C:\Users\Giang\Desktop\FileManager\Documents\",Path.GetFileName(file.sTitle + ".pdf")));
 
+            // Sau khi save thì quay về mặc định
+            //this.txtTitle.Clear();
+            //this.txtCategory.Clear();
+            //this.rtbNote.Clear();
+            //this.rtbPreview.Clear();
+            //this.txtLinkFolder.Clear();
+            //this.picUpload.BackColor = Color.White;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void btnUploadFile_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFile = new OpenFileDialog();
-            openFile.RestoreDirectory = true;
-            openFile.FileName = string.Empty;
-            openFile.Filter = "Pdf Files (.pdf)|*.pdf|All Files (*.*)|*.*";
-            openFile.FilterIndex = 1;
-            openFile.Multiselect = false;
+            this.openFile.RestoreDirectory = true;
+            this.openFile.FileName = string.Empty;
+            this.openFile.Filter = "Pdf Files (.pdf)|*.pdf|All Files (*.*)|*.*";
+            this.openFile.FilterIndex = 1;
+            this.openFile.Multiselect = false;
 
             if (openFile.ShowDialog() == DialogResult.OK)
             {
                 this.txtLinkFolder.Text = openFile.FileName;
-                this.txtCategory.Clear();
-                this.rtbPreview.Clear();
-                this.rtbNote.Clear();
 
                 using (PdfReader reader = new PdfReader(openFile.FileName))
                 {
@@ -89,10 +107,11 @@ namespace FileManager.Views
             if (this.openIMG.ShowDialog() == DialogResult.OK)
             {
                 // Xử lí Tải ảnh bìa ở đây
-                picUpload.Image = System.Drawing.Image.FromFile(this.openIMG.FileName);
+                picUpload.Image = new Bitmap(openIMG.FileName);
+                //picUpload.Image = System.Drawing.Image.FromFile(this.openIMG.FileName);
                 picUpload.SizeMode = PictureBoxSizeMode.StretchImage;
-
             }
         }
+        
     }
 }
