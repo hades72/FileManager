@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,42 +49,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmFolder\frmAddFile.cs">
+    <Compile Include="View\frmAddFile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFolder\frmAddFile.Designer.cs">
+    <Compile Include="View\frmAddFile.Designer.cs">
       <DependentUpon>frmAddFile.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFolder\frmFixFile.cs">
+    <Compile Include="View\frmFixFile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFolder\frmFixFile.Designer.cs">
+    <Compile Include="View\frmFixFile.Designer.cs">
       <DependentUpon>frmFixFile.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFolder\frmManager.cs">
+    <Compile Include="View\frmManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFolder\frmManager.Designer.cs">
+    <Compile Include="View\frmManager.Designer.cs">
       <DependentUpon>frmManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFolder\frmMainGUI.cs">
+    <Compile Include="View\frmMainGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFolder\frmMainGUI.Designer.cs">
+    <Compile Include="View\frmMainGUI.Designer.cs">
       <DependentUpon>frmMainGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmFolder\frmAddFile.resx">
+    <EmbeddedResource Include="View\frmAddFile.resx">
       <DependentUpon>frmAddFile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFolder\frmFixFile.resx">
+    <EmbeddedResource Include="View\frmFixFile.resx">
       <DependentUpon>frmFixFile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFolder\frmManager.resx">
+    <EmbeddedResource Include="View\frmManager.resx">
       <DependentUpon>frmManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFolder\frmMainGUI.resx">
+    <EmbeddedResource Include="View\frmMainGUI.resx">
       <DependentUpon>frmMainGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -94,6 +97,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -108,7 +112,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="classFolder\" />
+    <Folder Include="Controller\" />
+    <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\nền-trắng-500x500.jpg" />

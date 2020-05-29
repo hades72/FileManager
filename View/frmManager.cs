@@ -8,18 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FileManager.frmFolder
+namespace FileManager
 {
-    public partial class frmAddFile : Form
+    public partial class frmManager : Form
     {
-        public frmAddFile()
+        public frmManager()
         {
             InitializeComponent();
         }
 
-        private void bSave_Click(object sender, EventArgs e)
+        private void frmMain_Load(object sender, EventArgs e)
         {
+           
+        }
 
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

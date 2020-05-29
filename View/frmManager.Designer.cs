@@ -31,7 +31,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
             this.listKind = new System.Windows.Forms.ListBox();
-            this.bSearch = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +48,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -55,49 +56,54 @@
             // 
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.listKind);
-            this.splitContainer1.Panel1.Controls.Add(this.bSearch);
+            this.splitContainer1.Panel1.Controls.Add(this.btnSearch);
             this.splitContainer1.Panel1.Controls.Add(this.txtSearch);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Size = new System.Drawing.Size(1224, 633);
-            this.splitContainer1.SplitterDistance = 180;
+            this.splitContainer1.Size = new System.Drawing.Size(918, 514);
+            this.splitContainer1.SplitterDistance = 146;
+            this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(699, 23);
+            this.label1.Location = new System.Drawing.Point(524, 19);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 17);
+            this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Thể Loại";
             // 
             // listKind
             // 
             this.listKind.FormattingEnabled = true;
-            this.listKind.ItemHeight = 16;
-            this.listKind.Location = new System.Drawing.Point(769, 23);
+            this.listKind.Location = new System.Drawing.Point(577, 19);
+            this.listKind.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listKind.Name = "listKind";
-            this.listKind.Size = new System.Drawing.Size(317, 148);
+            this.listKind.Size = new System.Drawing.Size(239, 121);
             this.listKind.TabIndex = 6;
             // 
-            // bSearch
+            // btnSearch
             // 
-            this.bSearch.Location = new System.Drawing.Point(337, 18);
-            this.bSearch.Name = "bSearch";
-            this.bSearch.Size = new System.Drawing.Size(75, 23);
-            this.bSearch.TabIndex = 5;
-            this.bSearch.Text = "Tìm Kiếm";
-            this.bSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(223, 13);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(82, 23);
+            this.btnSearch.TabIndex = 5;
+            this.btnSearch.Text = "Tìm Kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(37, 18);
+            this.txtSearch.Location = new System.Drawing.Point(28, 15);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(242, 22);
+            this.txtSearch.Size = new System.Drawing.Size(182, 20);
             this.txtSearch.TabIndex = 4;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // dataGridView1
             // 
@@ -108,10 +114,11 @@
             this.cDateUpdate});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1224, 449);
+            this.dataGridView1.Size = new System.Drawing.Size(918, 365);
             this.dataGridView1.TabIndex = 0;
             // 
             // cTitle
@@ -140,10 +147,11 @@
             // 
             // frmManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1224, 633);
+            this.ClientSize = new System.Drawing.Size(918, 514);
             this.Controls.Add(this.splitContainer1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmManager";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.frmMain_Load);
@@ -162,7 +170,7 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listKind;
-        private System.Windows.Forms.Button bSearch;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTitle;
