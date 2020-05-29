@@ -1,4 +1,4 @@
-﻿namespace FileManager.frmFolder
+﻿namespace FileManager.View
 {
     partial class frmFixFile
     {

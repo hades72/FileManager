@@ -1,4 +1,4 @@
-﻿namespace FileManager
+﻿namespace FileManager.View
 {
     partial class frmManager
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FileManager
+namespace FileManager.View
 {
     public partial class frmManager : Form
     {

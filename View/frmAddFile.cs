@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FileManager.frmFolder
+namespace FileManager.View
 {
     public partial class frmAddFile : Form
     {
