@@ -17,9 +17,13 @@ namespace FileManager.View
     public partial class frmAddFile : Form
     {
         OpenFileDialog openFile = new OpenFileDialog();
+        SaveFileDialog saveLinkFile = new SaveFileDialog();
+        OpenFileDialog openIMG = new OpenFileDialog();
+
         public frmAddFile()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized; // Full màn hình
             btnUploadFile.Click += btnUploadFile_Click;
             Load += frmAddFile_Load;
         }
@@ -31,6 +35,8 @@ namespace FileManager.View
             this.openFile.Filter = "Pdf Files (.pdf)|*.pdf|All Files (*.*)|*.*";
             this.openFile.FilterIndex = 1;
             this.openFile.Multiselect = false;
+
+            
         }
 
         private void bSave_Click(object sender, EventArgs e)
@@ -42,10 +48,10 @@ namespace FileManager.View
         {
             if(openFile.ShowDialog() == DialogResult.OK)
             {
-                txtTitle.Text = openFile.FileName;
-                txtCategory.Clear();
-                rtbSummary.Clear();
-                rtbNote.Clear();
+                this.txtLinkFolder.Text = openFile.FileName;
+                this.txtCategory.Clear();
+                this.rtbSummary.Clear();
+                this.rtbNote.Clear();
 
                 using (PdfReader reader = new PdfReader(openFile.FileName))
                 {
@@ -57,11 +63,32 @@ namespace FileManager.View
                             Encoding.Default,
                             Encoding.UTF8,
                             Encoding.Default.GetBytes(line)));
-                    rtbSummary.Text += line;
+                    this.rtbFileContent.Text += line;
                 }
             }
         }
 
-        
+        private void btnDuongDan_Click(object sender, EventArgs e) 
+            // Chọn đường dẫn để lưu file ở Folder khác, nếu thích
+        {
+            this.saveLinkFile.Filter = "Pdf Files (.pdf)|*.pdf|All Files (*.*)|*.*";
+            this.saveLinkFile.Title = "Save a PDF File";
+            if (this.saveLinkFile.ShowDialog() == DialogResult.OK)
+            {
+                this.txtLinkFolder.Text = this.saveLinkFile.FileName;
+            }
+        }
+
+        private void btnPicUpload_Click(object sender, EventArgs e)
+        {
+            this.openIMG.FileName = string.Empty;
+            this.openIMG.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif";
+            this.openIMG.FilterIndex = 1;
+            this.openIMG.Multiselect = false;
+            if (this.openIMG.ShowDialog() == DialogResult.OK)
+            {
+                // Xử lí Tải ảnh bìa ở đây
+            }
+        }
     }
 }

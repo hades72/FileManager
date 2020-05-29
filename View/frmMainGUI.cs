@@ -17,6 +17,7 @@ namespace FileManager.View
         public frmMainGUI()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
         }
 
         private void tabAddFile_Click(object sender, EventArgs e)
@@ -24,7 +25,7 @@ namespace FileManager.View
             if(this.fAdd is null || this.fAdd.IsDisposed)
             {
                 this.fAdd = new frmAddFile();
-                this.fAdd.MdiParent = this;
+                //this.fAdd.MdiParent = this;
                 this.fAdd.Show();
             }    
             else
