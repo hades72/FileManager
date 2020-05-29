@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System;
 
 namespace FileManager.Views
 {
@@ -88,6 +89,9 @@ namespace FileManager.Views
             if (this.openIMG.ShowDialog() == DialogResult.OK)
             {
                 // Xử lí Tải ảnh bìa ở đây
+                picUpload.Image = System.Drawing.Image.FromFile(this.openIMG.FileName);
+                picUpload.SizeMode = PictureBoxSizeMode.StretchImage;
+
             }
         }
     }
