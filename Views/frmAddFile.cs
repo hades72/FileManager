@@ -50,12 +50,12 @@ namespace FileManager.Views
             {
                 this.txtLinkFolder.Text = openFile.FileName;
                 this.txtCategory.Clear();
-                this.rtbSummary.Clear();
+                this.rtbPreview.Clear();
                 this.rtbNote.Clear();
 
                 using (PdfReader reader = new PdfReader(openFile.FileName))
                 {
-                    // chọn vài dòng đầu trong trang đầu tiên
+                    // hiện các dòng trang đầu tiên để xem trước
                     LocationTextExtractionStrategy strategy = new LocationTextExtractionStrategy();
                     string line = PdfTextExtractor.GetTextFromPage(reader, 1);
                     line = Encoding.UTF8.GetString(
@@ -63,7 +63,7 @@ namespace FileManager.Views
                             Encoding.Default,
                             Encoding.UTF8,
                             Encoding.Default.GetBytes(line)));
-                    this.rtbFileContent.Text += line;
+                    this.rtbPreview.Text += line;
                 }
             }
         }
