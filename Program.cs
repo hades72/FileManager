@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FileManager.View;
-namespace FileManager
+namespace FileManager.Views
 {
     static class Program
     {

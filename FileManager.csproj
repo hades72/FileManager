@@ -49,42 +49,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="View\frmAddFile.cs">
+    <Compile Include="Views\frmAddFile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmAddFile.Designer.cs">
+    <Compile Include="Views\frmAddFile.Designer.cs">
       <DependentUpon>frmAddFile.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmFixFile.cs">
+    <Compile Include="Views\frmFixFile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmFixFile.Designer.cs">
+    <Compile Include="Views\frmFixFile.Designer.cs">
       <DependentUpon>frmFixFile.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmManager.cs">
+    <Compile Include="Views\frmManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmManager.Designer.cs">
+    <Compile Include="Views\frmManager.Designer.cs">
       <DependentUpon>frmManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\frmMainGUI.cs">
+    <Compile Include="Views\frmMainGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\frmMainGUI.Designer.cs">
+    <Compile Include="Views\frmMainGUI.Designer.cs">
       <DependentUpon>frmMainGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="View\frmAddFile.resx">
+    <EmbeddedResource Include="Views\frmAddFile.resx">
       <DependentUpon>frmAddFile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmFixFile.resx">
+    <EmbeddedResource Include="Views\frmFixFile.resx">
       <DependentUpon>frmFixFile.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmManager.resx">
+    <EmbeddedResource Include="Views\frmManager.resx">
       <DependentUpon>frmManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\frmMainGUI.resx">
+    <EmbeddedResource Include="Views\frmMainGUI.resx">
       <DependentUpon>frmMainGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -112,8 +112,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\" />
-    <Folder Include="Model\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\nền-trắng-500x500.jpg" />

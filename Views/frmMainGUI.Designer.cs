@@ -1,4 +1,4 @@
-﻿namespace FileManager.View
+﻿namespace FileManager.Views
 {
     partial class frmMainGUI
     {
