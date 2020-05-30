@@ -22,6 +22,7 @@ namespace FileManager.Views
         SaveFileDialog saveLinkFile = new SaveFileDialog();
         OpenFileDialog openIMG = new OpenFileDialog();
         private List<FileM> listFileM;
+        private int ID;
         bool clickPicUpload;
         string pathOriginalIMG;
         string pathPicture;
@@ -61,7 +62,7 @@ namespace FileManager.Views
             else this.errorProvider1.Clear();
 
             FileM file = new FileM();
-            file.iID += 1;
+            file.iID = this.ID;
             file.sTitle = this.txtTitle.Text.Trim();
             file.sCategory = this.txtCategory.Text.Trim();
             file.sNote = this.rtbNote.Text.Trim();
@@ -82,8 +83,21 @@ namespace FileManager.Views
             // Lưu link file
             File.Copy(openFile.FileName, Path.Combine(pathDocument, Path.GetFileName(file.sTitle + Path.GetExtension(openFile.FileName)))); // copy đổi tên vào folder Documents
             file.sLinkFile = Path.Combine(pathDocument, Path.GetFileName(file.sTitle + Path.GetExtension(openFile.FileName))); // gán vào linkFile trong list FileM
+
+            // Kiểm tra tiêu đề duy nhất
+            if (this.listFileM.Where(x => x.sTitle == file.sTitle).Count() > 0)
+            {
+                MessageBox.Show("Tiêu đề đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            listFileM.Add(file); // Thêm vào list
+
             // Thông báo save thành công (test)
             MessageBox.Show("Đã lưu!", "Thông báo");
+            // nếu muốn nhấn save xong tắt form thì sửa lại
+            //t nghĩ nên để cái addfrm vào cái thanh menu của form Manager rồi showdialog hơn là để ở GUI
+
             // Sau khi save thì quay về mặc định
             this.txtTitle.Clear();
             this.txtCategory.Clear();
@@ -91,7 +105,8 @@ namespace FileManager.Views
             this.rtbPreview.Clear();
             this.txtLinkFolder.Clear();
             this.picUpload.Image = new Bitmap(pathOriginalIMG);
-            clickPicUpload = false;
+            this.clickPicUpload = false;
+            this.ID += 1;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -102,7 +117,7 @@ namespace FileManager.Views
             this.rtbPreview.Clear();
             this.txtLinkFolder.Clear();
             this.picUpload.Image = new Bitmap(pathOriginalIMG);
-            clickPicUpload = false;
+            this.clickPicUpload = false;
         }
 
         private void btnUploadFile_Click(object sender, EventArgs e)
@@ -153,10 +168,10 @@ namespace FileManager.Views
             if (this.openIMG.ShowDialog() == DialogResult.OK)
             {
                 // Xử lí Tải ảnh bìa ở đây
-                picUpload.Image = new Bitmap(openIMG.FileName);
+                this.picUpload.Image = new Bitmap(openIMG.FileName);
                 //picUpload.Image = System.Drawing.Image.FromFile(this.openIMG.FileName);
-                picUpload.SizeMode = PictureBoxSizeMode.StretchImage;
-                clickPicUpload = true;
+                this.picUpload.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.clickPicUpload = true;
             }
         }
 
