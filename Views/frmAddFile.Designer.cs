@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.rtbNote = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnUploadFile = new System.Windows.Forms.Button();
@@ -44,7 +45,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.rtbPreview = new System.Windows.Forms.RichTextBox();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picUpload)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // rtbNote
@@ -98,7 +101,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(342, 25);
+            this.label3.Location = new System.Drawing.Point(338, 24);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
@@ -107,7 +110,7 @@
             // 
             // txtCategory
             // 
-            this.txtCategory.Location = new System.Drawing.Point(395, 21);
+            this.txtCategory.Location = new System.Drawing.Point(391, 20);
             this.txtCategory.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(143, 20);
@@ -129,7 +132,7 @@
             // picUpload
             // 
             this.picUpload.BackColor = System.Drawing.Color.White;
-            this.picUpload.Location = new System.Drawing.Point(550, 21);
+            this.picUpload.Location = new System.Drawing.Point(568, 21);
             this.picUpload.Margin = new System.Windows.Forms.Padding(2);
             this.picUpload.Name = "picUpload";
             this.picUpload.Size = new System.Drawing.Size(217, 284);
@@ -138,7 +141,7 @@
             // 
             // btnPicUpload
             // 
-            this.btnPicUpload.Location = new System.Drawing.Point(608, 319);
+            this.btnPicUpload.Location = new System.Drawing.Point(632, 317);
             this.btnPicUpload.Margin = new System.Windows.Forms.Padding(2);
             this.btnPicUpload.Name = "btnPicUpload";
             this.btnPicUpload.Size = new System.Drawing.Size(97, 26);
@@ -192,6 +195,7 @@
             this.rtbPreview.Location = new System.Drawing.Point(60, 145);
             this.rtbPreview.Margin = new System.Windows.Forms.Padding(2);
             this.rtbPreview.Name = "rtbPreview";
+            this.rtbPreview.ReadOnly = true;
             this.rtbPreview.Size = new System.Drawing.Size(478, 160);
             this.rtbPreview.TabIndex = 17;
             this.rtbPreview.Text = "";
@@ -209,12 +213,16 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmAddFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(778, 466);
+            this.ClientSize = new System.Drawing.Size(796, 466);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.rtbPreview);
             this.Controls.Add(this.label6);
@@ -236,6 +244,7 @@
             this.Text = "Thêm File";
             this.Load += new System.EventHandler(this.frmAddFile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picUpload)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,5 +268,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox rtbPreview;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

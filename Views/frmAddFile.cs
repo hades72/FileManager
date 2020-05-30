@@ -22,7 +22,7 @@ namespace FileManager.Views
         SaveFileDialog saveLinkFile = new SaveFileDialog();
         OpenFileDialog openIMG = new OpenFileDialog();
         bool clickPicUpload;
-        
+        string pathOriginalIMG;
         public frmAddFile()
         {
             InitializeComponent();
@@ -31,12 +31,20 @@ namespace FileManager.Views
 
         private void frmAddFile_Load(object sender, EventArgs e)
         {
-            this.picUpload.Image = new Bitmap(@"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Pictures\OriginalIMG");
+            pathOriginalIMG = @"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Pictures\OriginalIMG.jpg";
+            this.picUpload.Image = new Bitmap(pathOriginalIMG);
             clickPicUpload = false;
+            
         }
 
         private void bSave_Click(object sender, EventArgs e)
         {
+            if (this.txtLinkFolder.Text.Trim().Length <= 0)
+            {
+                MessageBox.Show("Chưa tải file lên", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             FileM file = new FileM();
             file.iID += 1;
             file.sTitle = this.txtTitle.Text.Trim();
@@ -44,18 +52,18 @@ namespace FileManager.Views
             file.sNote = this.rtbNote.Text.Trim();
             file.dtUpdateDay = DateTime.Now.Date;
             // Lưu picUpload
-            if(clickPicUpload = false)
+            if(clickPicUpload == true)
             {
-                // đang sửa còn lở dở
+                File.Copy(openIMG.FileName, Path.Combine(@"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Pictures\", Path.GetFileName(file.sTitle + Path.GetExtension(openIMG.FileName))));
             }
             else
             {
-                File.Copy(openIMG.FileName, Path.Combine(@"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Pictures\", Path.GetFileName(file.sTitle + ".jpg")));
+                File.Copy(pathOriginalIMG, Path.Combine(@"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Pictures\", Path.GetFileName(file.sTitle + Path.GetExtension(pathOriginalIMG))));
             }
             // Lưu file
-            File.Copy(openFile.FileName, Path.Combine(@"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Documents\", Path.GetFileName(file.sTitle + ".pdf")));
-            file.sLinkFile = Path.Combine(@"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Documents\", Path.GetFileName(file.sTitle + ".pdf"));
-            // Thông báo save thành công
+            File.Copy(openFile.FileName, Path.Combine(@"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Documents\", Path.GetFileName(file.sTitle + Path.GetExtension(openFile.FileName))));
+            file.sLinkFile = Path.Combine(@"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Documents\", Path.GetFileName(file.sTitle + Path.GetExtension(openFile.FileName)));
+            // Thông báo save thành công (test)
             MessageBox.Show("Đã lưu!", "Thông báo");
             // Sau khi save thì quay về mặc định
             this.txtTitle.Clear();
@@ -63,7 +71,7 @@ namespace FileManager.Views
             this.rtbNote.Clear();
             this.rtbPreview.Clear();
             this.txtLinkFolder.Clear();
-            this.picUpload.Image = null;
+            this.picUpload.Image = new Bitmap(pathOriginalIMG);
             clickPicUpload = false;
         }
 
@@ -74,7 +82,7 @@ namespace FileManager.Views
             this.rtbNote.Clear();
             this.rtbPreview.Clear();
             this.txtLinkFolder.Clear();
-            this.picUpload.Image = null;
+            this.picUpload.Image = new Bitmap(pathOriginalIMG);
             clickPicUpload = false;
         }
 
@@ -89,7 +97,7 @@ namespace FileManager.Views
             if (openFile.ShowDialog() == DialogResult.OK)
             {
                 this.txtLinkFolder.Text = openFile.FileName;
-
+                this.txtTitle.Text = Path.GetFileNameWithoutExtension(openFile.FileName); // Lấy tên file không có đuôi file
                 using (PdfReader reader = new PdfReader(openFile.FileName))
                 {
                     // hiện các dòng trang đầu tiên để xem trước
@@ -132,6 +140,7 @@ namespace FileManager.Views
                 clickPicUpload = true;
             }
         }
+
         
     }
 }
