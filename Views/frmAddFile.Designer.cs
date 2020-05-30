@@ -44,7 +44,6 @@
             this.btnUpateLink = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.rtbPreview = new System.Windows.Forms.RichTextBox();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.picUpload)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -120,10 +119,10 @@
             // 
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(550, 403);
+            this.btnSave.Location = new System.Drawing.Point(568, 387);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(91, 40);
+            this.btnSave.Size = new System.Drawing.Size(217, 51);
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -155,6 +154,7 @@
             this.txtLinkFolder.Location = new System.Drawing.Point(61, 323);
             this.txtLinkFolder.Margin = new System.Windows.Forms.Padding(2);
             this.txtLinkFolder.Name = "txtLinkFolder";
+            this.txtLinkFolder.ReadOnly = true;
             this.txtLinkFolder.Size = new System.Drawing.Size(260, 20);
             this.txtLinkFolder.TabIndex = 14;
             // 
@@ -200,19 +200,6 @@
             this.rtbPreview.TabIndex = 17;
             this.rtbPreview.Text = "";
             // 
-            // btnCancel
-            // 
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(676, 403);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(91, 40);
-            this.btnCancel.TabIndex = 18;
-            this.btnCancel.Text = "Hủy";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -223,7 +210,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(796, 466);
-            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.rtbPreview);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnUpateLink);
@@ -267,7 +253,6 @@
         private System.Windows.Forms.Button btnUpateLink;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox rtbPreview;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

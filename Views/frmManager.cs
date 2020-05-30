@@ -15,7 +15,7 @@ namespace FileManager.Views
     {
         private int ID;
         
-        public frmManager(ref List<FileM> fileMs)
+        public frmManager(ref List<FileM> fileM)
         {
             InitializeComponent();
         }

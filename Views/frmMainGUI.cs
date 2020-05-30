@@ -27,7 +27,7 @@ namespace FileManager.Views
         {
             if(this.fAdd is null || this.fAdd.IsDisposed)
             {
-                this.fAdd = new frmAddFile();
+                this.fAdd = new frmAddFile(ref listFileM);
                 //this.fAdd.MdiParent = this;
                 this.fAdd.Show();
             }    
