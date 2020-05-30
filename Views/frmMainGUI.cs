@@ -1,4 +1,5 @@
-﻿using FileManager.Views;
+﻿using FileManager.Models;
+using FileManager.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace FileManager.Views
         frmAddFile fAdd;
         frmManager fManager;
         frmFixFile fFix;
+        List<FileM> listFileM;
         public frmMainGUI()
         {
             InitializeComponent();
@@ -39,7 +41,7 @@ namespace FileManager.Views
         {
             if(this.fManager is null || this.fManager.IsDisposed)
             {
-                this.fManager = new frmManager();
+                this.fManager = new frmManager(ref listFileM);
                 this.fManager.MdiParent = this;
                 this.fManager.Show();
             }    

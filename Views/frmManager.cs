@@ -15,7 +15,7 @@ namespace FileManager.Views
     {
         private int ID;
         
-        public frmManager()
+        public frmManager(ref List<FileM> fileMs)
         {
             InitializeComponent();
         }
@@ -29,14 +29,6 @@ namespace FileManager.Views
         {
            
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            frmAddFile addfile = new frmAddFile();
-            if(addfile.ShowDialog() == DialogResult.OK)
-            {
-                this.ID += 1;
-            }
-        }
+        
     }
 }

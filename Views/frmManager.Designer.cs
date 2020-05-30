@@ -34,7 +34,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dataFileM = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.cTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cKind = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cDateUpdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,7 +54,6 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.listKind);
             this.splitContainer1.Panel1.Controls.Add(this.btnSearch);
@@ -123,16 +121,6 @@
             this.dataFileM.Size = new System.Drawing.Size(918, 365);
             this.dataFileM.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(321, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // cTitle
             // 
             this.cTitle.HeaderText = "Tiêu Đề";
@@ -185,7 +173,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dataFileM;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn cKind;
         private System.Windows.Forms.DataGridViewTextBoxColumn cDateUpdate;

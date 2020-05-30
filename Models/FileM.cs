@@ -17,6 +17,9 @@ namespace FileManager.Models
         public string sNote { get; set; }
 
         public DateTime dtUpdateDay { get; set; }
+
+        public string sLinkPic { get; set; }
         
+        public string sLinkFile { get; set; }
     }
 }

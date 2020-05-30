@@ -21,7 +21,8 @@ namespace FileManager.Views
         OpenFileDialog openFile = new OpenFileDialog();
         SaveFileDialog saveLinkFile = new SaveFileDialog();
         OpenFileDialog openIMG = new OpenFileDialog();
-        FileM file = new FileM();
+        bool clickPicUpload;
+        
         public frmAddFile()
         {
             InitializeComponent();
@@ -30,20 +31,30 @@ namespace FileManager.Views
 
         private void frmAddFile_Load(object sender, EventArgs e)
         {
-           
+            this.picUpload.Image = new Bitmap(@"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Pictures\OriginalIMG");
+            clickPicUpload = false;
         }
 
         private void bSave_Click(object sender, EventArgs e)
         {
-            //file.iID += 1;
+            FileM file = new FileM();
+            file.iID += 1;
             file.sTitle = this.txtTitle.Text.Trim();
             file.sCategory = this.txtCategory.Text.Trim();
             file.sNote = this.rtbNote.Text.Trim();
             file.dtUpdateDay = DateTime.Now.Date;
             // Lưu picUpload
-            File.Copy(openIMG.FileName, Path.Combine(@"C:\Users\Giang\Desktop\FileManager\Pictures\", Path.GetFileName(file.sTitle + ".jpg")));
+            if(clickPicUpload = false)
+            {
+                // đang sửa còn lở dở
+            }
+            else
+            {
+                File.Copy(openIMG.FileName, Path.Combine(@"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Pictures\", Path.GetFileName(file.sTitle + ".jpg")));
+            }
             // Lưu file
-            File.Copy(openFile.FileName, Path.Combine(@"C:\Users\Giang\Desktop\FileManager\Documents\",Path.GetFileName(file.sTitle + ".pdf")));
+            File.Copy(openFile.FileName, Path.Combine(@"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Documents\", Path.GetFileName(file.sTitle + ".pdf")));
+            file.sLinkFile = Path.Combine(@"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Documents\", Path.GetFileName(file.sTitle + ".pdf"));
             // Thông báo save thành công
             MessageBox.Show("Đã lưu!", "Thông báo");
             // Sau khi save thì quay về mặc định
@@ -52,7 +63,8 @@ namespace FileManager.Views
             this.rtbNote.Clear();
             this.rtbPreview.Clear();
             this.txtLinkFolder.Clear();
-            this.picUpload.BackColor = Color.White;
+            this.picUpload.Image = null;
+            clickPicUpload = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -62,7 +74,8 @@ namespace FileManager.Views
             this.rtbNote.Clear();
             this.rtbPreview.Clear();
             this.txtLinkFolder.Clear();
-            this.picUpload.BackColor = Color.White;
+            this.picUpload.Image = null;
+            clickPicUpload = false;
         }
 
         private void btnUploadFile_Click(object sender, EventArgs e)
@@ -116,6 +129,7 @@ namespace FileManager.Views
                 picUpload.Image = new Bitmap(openIMG.FileName);
                 //picUpload.Image = System.Drawing.Image.FromFile(this.openIMG.FileName);
                 picUpload.SizeMode = PictureBoxSizeMode.StretchImage;
+                clickPicUpload = true;
             }
         }
         
