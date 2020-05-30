@@ -44,19 +44,25 @@ namespace FileManager.Views
             File.Copy(openIMG.FileName, Path.Combine(@"C:\Users\Giang\Desktop\FileManager\Pictures\", Path.GetFileName(file.sTitle + ".jpg")));
             // Lưu file
             File.Copy(openFile.FileName, Path.Combine(@"C:\Users\Giang\Desktop\FileManager\Documents\",Path.GetFileName(file.sTitle + ".pdf")));
-
+            // Thông báo save thành công
+            MessageBox.Show("Đã lưu!", "Thông báo");
             // Sau khi save thì quay về mặc định
-            //this.txtTitle.Clear();
-            //this.txtCategory.Clear();
-            //this.rtbNote.Clear();
-            //this.rtbPreview.Clear();
-            //this.txtLinkFolder.Clear();
-            //this.picUpload.BackColor = Color.White;
+            this.txtTitle.Clear();
+            this.txtCategory.Clear();
+            this.rtbNote.Clear();
+            this.rtbPreview.Clear();
+            this.txtLinkFolder.Clear();
+            this.picUpload.BackColor = Color.White;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            
+            this.txtTitle.Clear();
+            this.txtCategory.Clear();
+            this.rtbNote.Clear();
+            this.rtbPreview.Clear();
+            this.txtLinkFolder.Clear();
+            this.picUpload.BackColor = Color.White;
         }
 
         private void btnUploadFile_Click(object sender, EventArgs e)
