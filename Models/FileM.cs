@@ -14,12 +14,17 @@ namespace FileManager.Models
 
         public string sCategory { get; set; }
 
-        public string sNote { get; set; }
+        public DateTime dtDateUpdate { get; set; }
 
-        public DateTime dtUpdateDay { get; set; }
+        public string sNote { get; set; }
 
         public string sLinkPic { get; set; }
         
         public string sLinkFile { get; set; }
+
+        public override string ToString()
+        {
+            return this.sTitle;
+        }
     }
 }

@@ -21,17 +21,19 @@ namespace FileManager.Views
         OpenFileDialog openFile = new OpenFileDialog();
         SaveFileDialog saveLinkFile = new SaveFileDialog();
         OpenFileDialog openIMG = new OpenFileDialog();
-        private List<FileM> listFileM;
+        List<FileM> listFileM;
         private int ID;
         bool clickPicUpload;
         string pathOriginalIMG;
         string pathPicture;
         string pathDocument;
+
         public frmAddFile(ref List<FileM> listfilems)
         {
             InitializeComponent();
-            listFileM = listfilems;
+            this.listFileM = listfilems;
             WindowState = FormWindowState.Maximized; // Full màn hình
+            this.ID = listFileM.Count + 1;
         }
 
         private void frmAddFile_Load(object sender, EventArgs e)
@@ -61,12 +63,25 @@ namespace FileManager.Views
             }
             else this.errorProvider1.Clear();
 
+            if (this.rtbNote.Text.Trim().Length <= 0) // Không bắt buộc nhập ghi chú
+            {
+                this.rtbNote.Text = "";
+            }
+
             FileM file = new FileM();
             file.iID = this.ID;
             file.sTitle = this.txtTitle.Text.Trim();
             file.sCategory = this.txtCategory.Text.Trim();
+            file.dtDateUpdate = DateTime.Now.Date;
             file.sNote = this.rtbNote.Text.Trim();
-            file.dtUpdateDay = DateTime.Now.Date;
+
+            // Kiểm tra tên file duy nhất
+            if (this.listFileM.Where(x => x.sTitle == file.sTitle).Count() > 0)
+            {
+                MessageBox.Show("Tiêu đề đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             // Lưu link picUpload
             this.pathPicture = @"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Pictures\";
             this.pathDocument = @"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Documents\";
@@ -83,41 +98,8 @@ namespace FileManager.Views
             // Lưu link file
             File.Copy(openFile.FileName, Path.Combine(pathDocument, Path.GetFileName(file.sTitle + Path.GetExtension(openFile.FileName)))); // copy đổi tên vào folder Documents
             file.sLinkFile = Path.Combine(pathDocument, Path.GetFileName(file.sTitle + Path.GetExtension(openFile.FileName))); // gán vào linkFile trong list FileM
-
-            // Kiểm tra tiêu đề duy nhất
-            if (this.listFileM.Where(x => x.sTitle == file.sTitle).Count() > 0)
-            {
-                MessageBox.Show("Tiêu đề đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            listFileM.Add(file); // Thêm vào list
-
-            // Thông báo save thành công (test)
-            MessageBox.Show("Đã lưu!", "Thông báo");
-            // nếu muốn nhấn save xong tắt form thì sửa lại
-            //t nghĩ nên để cái addfrm vào cái thanh menu của form Manager rồi showdialog hơn là để ở GUI
-
-            // Sau khi save thì quay về mặc định
-            this.txtTitle.Clear();
-            this.txtCategory.Clear();
-            this.rtbNote.Clear();
-            this.rtbPreview.Clear();
-            this.txtLinkFolder.Clear();
-            this.picUpload.Image = new Bitmap(pathOriginalIMG);
-            this.clickPicUpload = false;
-            this.ID += 1;
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.txtTitle.Clear();
-            this.txtCategory.Clear();
-            this.rtbNote.Clear();
-            this.rtbPreview.Clear();
-            this.txtLinkFolder.Clear();
-            this.picUpload.Image = new Bitmap(pathOriginalIMG);
-            this.clickPicUpload = false;
+            
+            listFileM.Add(file); // Thêm vào list           
         }
 
         private void btnUploadFile_Click(object sender, EventArgs e)

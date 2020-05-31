@@ -15,11 +15,12 @@ namespace FileManager.Views
     {
         frmAddFile fAdd;
         frmManager fManager;
-        frmFixFile fFix;
+        //frmFixFile fFix;
         List<FileM> listFileM;
         public frmMainGUI()
         {
             InitializeComponent();
+            listFileM = new List<FileM>();
             WindowState = FormWindowState.Maximized;
         }
 
