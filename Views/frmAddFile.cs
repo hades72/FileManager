@@ -38,7 +38,8 @@ namespace FileManager.Views
 
         private void frmAddFile_Load(object sender, EventArgs e)
         {
-            pathOriginalIMG = @"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Pictures\OriginalIMG.jpg";
+            pathOriginalIMG = "..//..//Pictures//OriginalIMG.jpg";
+            //pathOriginalIMG = ".Pictures\\OriginalIMG.jpg";
             this.picUpload.Image = new Bitmap(pathOriginalIMG);
             clickPicUpload = false;
         }
@@ -83,8 +84,10 @@ namespace FileManager.Views
             }
 
             // Lưu link picUpload
-            this.pathPicture = @"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Pictures\";
-            this.pathDocument = @"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Documents\";
+            this.pathPicture = "..//..//Pictures";
+            this.pathDocument = "..//..//Documents";
+            //this.pathPicture = @"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Pictures\";
+            //this.pathDocument = @"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Documents\";
             if (clickPicUpload == true)
             {
                 File.Copy(openIMG.FileName, Path.Combine(pathPicture, Path.GetFileName(file.sTitle + Path.GetExtension(openIMG.FileName)))); // copy đổi tên vào folder Pictures
@@ -99,7 +102,8 @@ namespace FileManager.Views
             File.Copy(openFile.FileName, Path.Combine(pathDocument, Path.GetFileName(file.sTitle + Path.GetExtension(openFile.FileName)))); // copy đổi tên vào folder Documents
             file.sLinkFile = Path.Combine(pathDocument, Path.GetFileName(file.sTitle + Path.GetExtension(openFile.FileName))); // gán vào linkFile trong list FileM
             
-            listFileM.Add(file); // Thêm vào list           
+            listFileM.Add(file); // Thêm vào list
+
         }
 
         private void btnUploadFile_Click(object sender, EventArgs e)
