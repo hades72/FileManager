@@ -21,6 +21,7 @@ namespace FileManager.Views
             this.listFileM = fileM;
             this.cID.DataPropertyName = nameof(FileM.iID);
             this.cTitle.DataPropertyName = nameof(FileM.sTitle);
+            this.cNotes.DataPropertyName = nameof(FileM.sNote);
             this.cCategory.DataPropertyName = nameof(FileM.sCategory);
             this.cDateUpdate.DataPropertyName = nameof(FileM.dtDateUpdate);
 
@@ -30,7 +31,7 @@ namespace FileManager.Views
             dataFileM.DataSource = source;
             
             // Ẩn cột Ghi chú, Link Pic, Link File
-            this.dataFileM.Columns[4].Visible = false;
+            this.dataFileM.Columns[4].Visible = true;
             this.dataFileM.Columns[5].Visible = false;
             this.dataFileM.Columns[6].Visible = false;
         }

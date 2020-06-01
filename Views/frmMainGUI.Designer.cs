@@ -45,8 +45,8 @@
             this.thêmFileToolStripMenuItem});
             this.mFuntion.Location = new System.Drawing.Point(0, 0);
             this.mFuntion.Name = "mFuntion";
-            this.mFuntion.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.mFuntion.Size = new System.Drawing.Size(632, 24);
+            this.mFuntion.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.mFuntion.Size = new System.Drawing.Size(843, 28);
             this.mFuntion.TabIndex = 1;
             this.mFuntion.Text = "menuStrip1";
             // 
@@ -56,42 +56,43 @@
             this.tabAddFile,
             this.tabReadFile});
             this.thêmFileToolStripMenuItem.Name = "thêmFileToolStripMenuItem";
-            this.thêmFileToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.thêmFileToolStripMenuItem.Size = new System.Drawing.Size(93, 24);
             this.thêmFileToolStripMenuItem.Text = "&Chức năng";
             // 
             // tabAddFile
             // 
             this.tabAddFile.Name = "tabAddFile";
-            this.tabAddFile.Size = new System.Drawing.Size(180, 22);
+            this.tabAddFile.Size = new System.Drawing.Size(224, 26);
             this.tabAddFile.Text = "&Thêm File";
             this.tabAddFile.Click += new System.EventHandler(this.tabAddFile_Click);
             // 
             // tabReadFile
             // 
             this.tabReadFile.Name = "tabReadFile";
-            this.tabReadFile.Size = new System.Drawing.Size(180, 22);
+            this.tabReadFile.Size = new System.Drawing.Size(224, 26);
             this.tabReadFile.Text = "&Danh sách File";
             this.tabReadFile.Click += new System.EventHandler(this.tabReadFile_Click);
             // 
             // tabMain
             // 
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabMain.Location = new System.Drawing.Point(0, 24);
-            this.tabMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabMain.Location = new System.Drawing.Point(0, 28);
+            this.tabMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(632, 32);
+            this.tabMain.Size = new System.Drawing.Size(843, 39);
             this.tabMain.TabIndex = 2;
             // 
             // frmMainGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 453);
+            this.ClientSize = new System.Drawing.Size(843, 558);
             this.Controls.Add(this.tabMain);
             this.Controls.Add(this.mFuntion);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mFuntion;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmMainGUI";
             this.Text = "frmMainGUI";
             this.MdiChildActivate += new System.EventHandler(this.frmMainGUI_MdiChildActivate);

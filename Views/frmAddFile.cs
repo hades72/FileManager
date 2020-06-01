@@ -56,7 +56,6 @@ namespace FileManager.Views
                 this.errorProvider1.SetError(txtTitle, "Không để trống trường này!");
                 return;
             }
-            else this.errorProvider1.Clear();
             if (this.txtCategory.Text.Trim().Length <= 0)
             {
                 this.errorProvider1.SetError(txtCategory, "Không để trống trường này!");
