@@ -53,15 +53,15 @@ namespace FileManager.Views
             }
             if (this.txtTitle.Text.Trim().Length <= 0)
             {
-                this.errorProvider1.SetError(txtTitle, "Không để trống trường này!");
+                MessageBox.Show("Chưa nhập tiêu đề!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (this.txtCategory.Text.Trim().Length <= 0)
             {
-                this.errorProvider1.SetError(txtCategory, "Không để trống trường này!");
+                MessageBox.Show("Chưa nhập thể loại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else this.errorProvider1.Clear();
+            
 
             if (this.rtbNote.Text.Trim().Length <= 0) // Không bắt buộc nhập ghi chú
             {
@@ -102,7 +102,13 @@ namespace FileManager.Views
             file.sLinkFile = Path.Combine(pathDocument, Path.GetFileName(file.sTitle + Path.GetExtension(openFile.FileName))); // gán vào linkFile trong list FileM
             
             listFileM.Add(file); // Thêm vào list
-
+            MessageBox.Show("Lưu thành công!");
+            this.txtTitle.Clear();
+            this.txtLinkFolder.Clear();
+            this.txtCategory.Clear();
+            this.picUpload.Image = new Bitmap(pathOriginalIMG);
+            this.rtbNote.Clear();
+            this.rtbPreview.Clear();
         }
 
         private void btnUploadFile_Click(object sender, EventArgs e)

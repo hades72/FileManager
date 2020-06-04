@@ -73,13 +73,14 @@ namespace FileManager.Views
         {
             frmAddFile frmAdd = new frmAddFile(ref listFileM);
             frmAdd.ShowDialog();
-            if (frmAdd.AcceptButton.DialogResult == DialogResult.OK)
+            if(frmAdd.AcceptButton.DialogResult == DialogResult.OK)
             {
                 // Cập nhật lại Data Grid View
                 BindingSource source = new BindingSource();
                 source.DataSource = listFileM;
                 dataFileM.DataSource = source;
             }
+            
         }
     }
 }
