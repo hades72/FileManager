@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FileManager.Models;
 using Path = System.IO.Path;
+using FileManager.Controllers;
 
 namespace FileManager.Views
 {
@@ -25,21 +26,19 @@ namespace FileManager.Views
         private int ID;
         bool clickPicUpload;
         string pathOriginalIMG;
-        string pathPicture;
-        string pathDocument;
+        //string pathPicture;
+        //string pathDocument;
 
         public frmAddFile(ref List<FileM> listfilems)
         {
             InitializeComponent();
             this.listFileM = listfilems;
             WindowState = FormWindowState.Maximized; // Full màn hình
-            this.ID = listFileM.Count + 1;
         }
 
         private void frmAddFile_Load(object sender, EventArgs e)
         {
             pathOriginalIMG = "..//..//Pictures//OriginalIMG.jpg";
-            //pathOriginalIMG = ".Pictures\\OriginalIMG.jpg";
             this.picUpload.Image = new Bitmap(pathOriginalIMG);
             clickPicUpload = false;
         }
@@ -56,59 +55,63 @@ namespace FileManager.Views
                 MessageBox.Show("Chưa nhập tiêu đề!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (this.txtCategory.Text.Trim().Length <= 0)
+            if (this.cbCategory.Text.Trim().Length <= 0)
             {
-                MessageBox.Show("Chưa nhập thể loại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Chưa chọn thể loại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
-
-            if (this.rtbNote.Text.Trim().Length <= 0) // Không bắt buộc nhập ghi chú
+            if (this.txtFileCode.Text.Trim().Length <= 0)
             {
-                this.rtbNote.Text = "";
+                MessageBox.Show("Chưa nhập mã số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             FileM file = new FileM();
-            file.iID = this.ID;
+            file.sFileCode = this.txtFileCode.Text.Trim();
             file.sTitle = this.txtTitle.Text.Trim();
-            file.sCategory = this.txtCategory.Text.Trim();
+            file.sCategory = this.cbCategory.GetItemText(this.cbCategory.SelectedItem);
             file.dtDateUpdate = DateTime.Now.Date;
-            file.sNote = this.rtbNote.Text.Trim();
 
-            // Kiểm tra tên file duy nhất
-            if (this.listFileM.Where(x => x.sTitle == file.sTitle).Count() > 0)
+            if (FileController.AddFile(file) == false) // thêm file vào csdl
             {
-                MessageBox.Show("Tiêu đề đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi thêm File");
                 return;
             }
 
-            // Lưu link picUpload
-            this.pathPicture = "..//..//Pictures";
-            this.pathDocument = "..//..//Documents";
+            // Kiểm tra mã file (File Code) duy nhất
+            //if (this.listFileM.Where(x => x.sFileCode == file.sFileCode).Count() > 0)
+            //{
+            //    MessageBox.Show("File đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+
+            //// Lưu link picUpload
+            //this.pathPicture = "..//..//Pictures";
+            //this.pathDocument = "..//..//Documents";
             //this.pathPicture = @"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Pictures\";
             //this.pathDocument = @"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Documents\";
             if (clickPicUpload == true)
             {
-                File.Copy(openIMG.FileName, Path.Combine(pathPicture, Path.GetFileName(file.sTitle + Path.GetExtension(openIMG.FileName)))); // copy đổi tên vào folder Pictures
-                file.sLinkPic = Path.Combine(Path.Combine(pathPicture, Path.GetFileName(file.sTitle + Path.GetExtension(openIMG.FileName)))); // gán vào linkPic trong list FileM
+                //File.Copy(openIMG.FileName, Path.Combine(pathPicture, Path.GetFileName(file.sTitle + Path.GetExtension(openIMG.FileName)))); // copy đổi tên vào folder Pictures
+                file.sLinkPic = openIMG.FileName; // gán vào linkPic trong list FileM
             }
             else
             {
-                File.Copy(pathOriginalIMG, Path.Combine(pathPicture, Path.GetFileName(file.sTitle + Path.GetExtension(pathOriginalIMG))));
-                file.sLinkPic = Path.Combine(pathPicture, Path.GetFileName(file.sTitle + Path.GetExtension(pathOriginalIMG)));
+                //File.Copy(pathOriginalIMG, Path.Combine(pathPicture, Path.GetFileName(file.sTitle + Path.GetExtension(pathOriginalIMG))));
+                file.sLinkPic = pathOriginalIMG;
             }
             // Lưu link file
-            File.Copy(openFile.FileName, Path.Combine(pathDocument, Path.GetFileName(file.sTitle + Path.GetExtension(openFile.FileName)))); // copy đổi tên vào folder Documents
-            file.sLinkFile = Path.Combine(pathDocument, Path.GetFileName(file.sTitle + Path.GetExtension(openFile.FileName))); // gán vào linkFile trong list FileM
+            //File.Copy(openFile.FileName, Path.Combine(pathDocument, Path.GetFileName(file.sTitle + Path.GetExtension(openFile.FileName)))); // copy đổi tên vào folder Documents
+            file.sLinkFile = openFile.FileName; // gán vào linkFile trong list FileM
             
-            listFileM.Add(file); // Thêm vào list
+            //listFileM.Add(file); // Thêm vào list
             MessageBox.Show("Lưu thành công!");
-            this.txtTitle.Clear();
-            this.txtLinkFolder.Clear();
-            this.txtCategory.Clear();
-            this.picUpload.Image = new Bitmap(pathOriginalIMG);
-            this.rtbNote.Clear();
-            this.rtbPreview.Clear();
+            //this.txtTitle.Clear();
+            //this.txtLinkFolder.Clear();
+            //this.txtCategory.Clear();
+            //this.picUpload.Image = new Bitmap(pathOriginalIMG);
+            //this.rtbNote.Clear();
+            //this.rtbPreview.Clear();
         }
 
         private void btnUploadFile_Click(object sender, EventArgs e)
@@ -165,7 +168,5 @@ namespace FileManager.Views
                 this.clickPicUpload = true;
             }
         }
-
-        
     }
 }

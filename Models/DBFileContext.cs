@@ -9,9 +9,10 @@ namespace FileManager.Models
 {
     public class DBFileContext : DbContext
     {
-        public DBFileContext() : base()
+        public DBFileContext() : base("name = DBEntityFileManager")
         {
 
         }
+        public DbSet<FileM> tbFileMs { get; set; }
     }
 }
