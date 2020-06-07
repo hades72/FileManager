@@ -15,13 +15,13 @@ namespace FileManager.Views
     {
         frmAddFile fAdd;
         frmManager fManager;
-        //frmFixFile fFix;
         List<FileM> listFileM;
         public frmMainGUI()
         {
             InitializeComponent();
             listFileM = new List<FileM>();
             WindowState = FormWindowState.Maximized;
+
         }
 
         private void tabAddFile_Click(object sender, EventArgs e)

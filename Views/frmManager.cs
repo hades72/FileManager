@@ -37,24 +37,19 @@ namespace FileManager.Views
         private void frmMain_Load(object sender, EventArgs e)
         {
             this.helpProvider1.SetShowHelp(this.txtSearch, true);
-            this.helpProvider1.SetHelpString(this.txtSearch, "Nhap ten file ban muon tim");
+            this.helpProvider1.SetHelpString(this.txtSearch, "Nhap ma so hoac ten file ban muon tim");
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void thêmFileToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AddFileToolStripMenuItem_Click(object sender, EventArgs e) // Thêm file
         {
             frmAddFile frmAdd = new frmAddFile(ref fileM);
             frmAdd.ShowDialog();
-            if(frmAdd.AcceptButton.DialogResult == DialogResult.OK)
+            if (frmAdd.AcceptButton.DialogResult == DialogResult.OK)
             {
                 // Cập nhật lại Data Grid View
                 BindingSource source = new BindingSource();
@@ -63,13 +58,44 @@ namespace FileManager.Views
             }
         }
 
-        private void dataFileM_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataFileM_CellContentClick(object sender, DataGridViewCellEventArgs e) // Xóa file
         {
             if(e.RowIndex == this.dataFileM.CurrentCell.RowIndex)
             {
                 FileM file = FileController.getFileM(this.dataFileM.Rows[e.RowIndex].Cells[1].Value.ToString());
                 FileController.DeleteFile(file);
                 // Cập nhật lại Data Grid View
+                BindingSource source = new BindingSource();
+                source.DataSource = FileController.getListUsers();
+                dataFileM.DataSource = source;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            BindingSource source = new BindingSource();
+            if (this.txtSearch.Text.Length <= 0)
+            {
+                MessageBox.Show("Chưa điền mã số hoặc tên File!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                source.DataSource = FileController.getListUsers();
+            }
+            else
+            {
+                source.DataSource = FileController.SearchFileName(this.txtSearch.Text.Trim());
+                if (source.DataSource == null)
+                {
+                    MessageBox.Show("Không có tên file cần tìm!", "Thông báo", MessageBoxButtons.OK);
+                    source.DataSource = FileController.getListUsers();
+                }
+            }
+            dataFileM.DataSource = source;
+        }
+
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (this.txtSearch.Text.Length <= 0)
+            {
                 BindingSource source = new BindingSource();
                 source.DataSource = FileController.getListUsers();
                 dataFileM.DataSource = source;

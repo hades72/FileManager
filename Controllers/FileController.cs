@@ -1,6 +1,8 @@
 ﻿using FileManager.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -76,7 +78,49 @@ namespace FileManager.Controllers
             }
         }
 
-       
+        public static bool UpdateFile(FileM file)
+        {
+            try
+            {
+                using (var _context = new DBFileContext())
+                {
+                    _context.tbFileMs.AddOrUpdate(file);
+                    _context.SaveChanges();
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+        
+        public static List<FileM> SearchFileName(string search)
+        {
+            using (var _context = new DBFileContext())
+            {
+
+                var file = (from f in _context.tbFileMs.AsEnumerable()
+                             where f.sTitle.StartsWith(search) || f.sFileCode.StartsWith(search)
+                             select f).Select(x => new FileM
+                             {
+                                 sFileCode = x.sFileCode,
+                                 sTitle = x.sTitle,
+                                 sCategory = x.sCategory,
+                                 sNote = x.sNote,
+                                 dtDateUpdate = x.dtDateUpdate,
+                                 sLinkFile = x.sLinkFile,
+                                 sLinkPic = x.sLinkPic
+                             }).ToList();
+                if (file.Count >= 1)
+                {
+                    return file;
+                }
+                else return null;
+            }
+            
+        }
     }
     
 }
