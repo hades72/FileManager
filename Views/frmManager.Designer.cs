@@ -115,7 +115,6 @@
             // 
             // dataFileM
             // 
-            this.dataFileM.AllowUserToAddRows = false;
             this.dataFileM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataFileM.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cFileCode,
@@ -132,6 +131,7 @@
             this.dataFileM.RowTemplate.Height = 24;
             this.dataFileM.Size = new System.Drawing.Size(918, 349);
             this.dataFileM.TabIndex = 0;
+            this.dataFileM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFileM_CellContentClick);
             // 
             // menuStrip1
             // 
@@ -209,6 +209,7 @@
             this.cDelete.ReadOnly = true;
             this.cDelete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.cDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.cDelete.Text = "Xóa";
             // 
             // frmManager
             // 

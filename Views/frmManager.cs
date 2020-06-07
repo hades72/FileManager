@@ -14,12 +14,10 @@ namespace FileManager.Views
 {
     public partial class frmManager : Form
     {
-        //List<FileM> listFileM;
         List<FileM> fileM;
         public frmManager(ref List<FileM> fileM)
         {
             InitializeComponent();
-            //this.listFileM = fileM;
             this.cFileCode.DataPropertyName = nameof(FileM.sFileCode);
             this.cTitle.DataPropertyName = nameof(FileM.sTitle);
             this.cCategory.DataPropertyName = nameof(FileM.sCategory);
@@ -31,9 +29,9 @@ namespace FileManager.Views
             dataFileM.DataSource = source;
             
             // Ẩn cột Ghi chú, Link Pic, Link File
-            this.dataFileM.Columns[4].Visible = false;
             this.dataFileM.Columns[5].Visible = false;
             this.dataFileM.Columns[6].Visible = false;
+            this.dataFileM.Columns[7].Visible = false;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -58,6 +56,19 @@ namespace FileManager.Views
             frmAdd.ShowDialog();
             if(frmAdd.AcceptButton.DialogResult == DialogResult.OK)
             {
+                // Cập nhật lại Data Grid View
+                BindingSource source = new BindingSource();
+                source.DataSource = FileController.getListUsers();
+                dataFileM.DataSource = source;
+            }
+        }
+
+        private void dataFileM_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex == this.dataFileM.CurrentCell.RowIndex)
+            {
+                FileM file = FileController.getFileM(this.dataFileM.Rows[e.RowIndex].Cells[1].Value.ToString());
+                FileController.DeleteFile(file);
                 // Cập nhật lại Data Grid View
                 BindingSource source = new BindingSource();
                 source.DataSource = FileController.getListUsers();

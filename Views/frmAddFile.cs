@@ -23,11 +23,8 @@ namespace FileManager.Views
         SaveFileDialog saveLinkFile = new SaveFileDialog();
         OpenFileDialog openIMG = new OpenFileDialog();
         List<FileM> listFileM;
-        private int ID;
         bool clickPicUpload;
         string pathOriginalIMG;
-        //string pathPicture;
-        //string pathDocument;
 
         public frmAddFile(ref List<FileM> listfilems)
         {
@@ -72,55 +69,31 @@ namespace FileManager.Views
             file.sCategory = this.cbCategory.GetItemText(this.cbCategory.SelectedItem);
             file.dtDateUpdate = DateTime.Now.Date;
 
+            if (clickPicUpload == true)
+            {
+                file.sLinkPic = openIMG.FileName;  // gán vào linkPic trong list FileM
+
+            }
+            else
+            {
+                file.sLinkPic = pathOriginalIMG;
+            }
+            // Lưu link file
+            file.sLinkFile = openFile.FileName; // gán vào linkFile trong list FileM
+
             if (FileController.AddFile(file) == false) // thêm file vào csdl
             {
                 MessageBox.Show("Lỗi thêm File");
                 return;
             }
-
-            // Kiểm tra mã file (File Code) duy nhất
-            //if (this.listFileM.Where(x => x.sFileCode == file.sFileCode).Count() > 0)
-            //{
-            //    MessageBox.Show("File đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-
-            //// Lưu link picUpload
-            //this.pathPicture = "..//..//Pictures";
-            //this.pathDocument = "..//..//Documents";
-            //this.pathPicture = @"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Pictures\";
-            //this.pathDocument = @"E:\TienGiang\Năm 2 - Kỳ 2\Lập trình trên Windows\FileManager\Documents\";
-
-
-            if (clickPicUpload == true)
-            {
-                //File.Copy(openIMG.FileName, Path.Combine(pathPicture, Path.GetFileName(file.sTitle + Path.GetExtension(openIMG.FileName)))); // copy đổi tên vào folder Pictures
-                file.sLinkPic = openIMG.FileName; // gán vào linkPic trong list FileM
-            }
-            else
-            {
-                //File.Copy(pathOriginalIMG, Path.Combine(pathPicture, Path.GetFileName(file.sTitle + Path.GetExtension(pathOriginalIMG))));
-                file.sLinkPic = pathOriginalIMG;
-            }
-            // Lưu link file
-            //File.Copy(openFile.FileName, Path.Combine(pathDocument, Path.GetFileName(file.sTitle + Path.GetExtension(openFile.FileName)))); // copy đổi tên vào folder Documents
-            file.sLinkFile = openFile.FileName; // gán vào linkFile trong list FileM
-            
-            //listFileM.Add(file); // Thêm vào list
             MessageBox.Show("Lưu thành công!");
-            //this.txtTitle.Clear();
-            //this.txtLinkFolder.Clear();
-            //this.txtCategory.Clear();
-            //this.picUpload.Image = new Bitmap(pathOriginalIMG);
-            //this.rtbNote.Clear();
-            //this.rtbPreview.Clear();
         }
 
         private void btnUploadFile_Click(object sender, EventArgs e)
         {
             this.openFile.RestoreDirectory = true;
             this.openFile.FileName = string.Empty;
-            this.openFile.Filter = "PDF Files (.pdf)|*.pdf|All Files (*.*)|*.*";
+            this.openFile.Filter = "PDF Files|*.pdf|All Files|*.*";
             this.openFile.FilterIndex = 1;
             this.openFile.Multiselect = false;
 
@@ -146,7 +119,7 @@ namespace FileManager.Views
         private void btnDuongDan_Click(object sender, EventArgs e) 
             // Chọn đường dẫn để lưu file ở Folder khác, nếu thích
         {
-            this.saveLinkFile.Filter = "PDF Files (.pdf)|*.pdf|All Files (*.*)|*.*";
+            this.saveLinkFile.Filter = "PDF Files|*.pdf|All Files|*.*";
             this.saveLinkFile.Title = "Save a PDF File";
             this.saveLinkFile.FileName = txtTitle.Text;
             if (this.saveLinkFile.ShowDialog() == DialogResult.OK)
@@ -158,14 +131,13 @@ namespace FileManager.Views
         private void btnPicUpload_Click(object sender, EventArgs e)
         {
             this.openIMG.FileName = string.Empty;
-            this.openIMG.Filter = "JPEG Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif";
+            this.openIMG.Filter = "JPEG Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif|All Files|*.*";
             this.openIMG.FilterIndex = 1;
             this.openIMG.Multiselect = false;
             if (this.openIMG.ShowDialog() == DialogResult.OK)
             {
                 // Xử lí Tải ảnh bìa ở đây
                 this.picUpload.Image = new Bitmap(openIMG.FileName);
-                //picUpload.Image = System.Drawing.Image.FromFile(this.openIMG.FileName);
                 this.picUpload.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.clickPicUpload = true;
             }
