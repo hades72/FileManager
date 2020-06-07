@@ -67,7 +67,10 @@ namespace FileManager.Controllers
         {
             using (var _context = new DBFileContext())
             {
-                _context.tbFileMs.Remove(file);
+                var dbfile = (from f in _context.tbFileMs
+                              where f.sFileCode == file.sFileCode
+                              select f).SingleOrDefault();
+                _context.tbFileMs.Remove(dbfile);
                 _context.SaveChanges();
                 return true;
             }
