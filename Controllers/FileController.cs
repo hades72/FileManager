@@ -68,11 +68,7 @@ namespace FileManager.Controllers
         {
             using (var _context = new DBFileContext())
             {
-                // xoa list cong viec
-                var dbfile = (from f in _context.tbFileMs
-                              where f.sFileCode == file.sFileCode
-                              select f).SingleOrDefault();
-                _context.tbFileMs.Remove(dbfile);
+                _context.tbFileMs.Remove(file);
                 _context.SaveChanges();
                 return true;
             }
