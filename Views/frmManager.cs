@@ -81,7 +81,7 @@ namespace FileManager.Views
             }
             else
             {
-                source.DataSource = FileController.SearchFileName(this.txtSearch.Text.Trim());
+                source.DataSource = FileController.SearchFile(this.txtSearch.Text.Trim());
                 if (source.DataSource == null)
                 {
                     MessageBox.Show("Không có tên file cần tìm!", "Thông báo", MessageBoxButtons.OK);

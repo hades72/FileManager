@@ -116,6 +116,8 @@
             // 
             // dataFileM
             // 
+            this.dataFileM.AllowUserToAddRows = false;
+            this.dataFileM.AllowUserToDeleteRows = false;
             this.dataFileM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataFileM.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cFileCode,

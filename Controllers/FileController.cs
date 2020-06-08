@@ -96,7 +96,7 @@ namespace FileManager.Controllers
 
         }
         
-        public static List<FileM> SearchFileName(string search)
+        public static List<FileM> SearchFile(string search)
         {
             using (var _context = new DBFileContext())
             {
