@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace FileManager.Views
 {
-    public partial class frmFixFile : Form
+    public partial class frmReadFile : Form
     {
-        public frmFixFile()
+        public frmReadFile()
         {
             InitializeComponent();
         }
 
-        private void rNote_TextChanged(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }
