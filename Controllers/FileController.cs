@@ -102,7 +102,7 @@ namespace FileManager.Controllers
             {
 
                 var file = (from f in _context.tbFileMs.AsEnumerable()
-                             where f.sTitle.StartsWith(search) || f.sFileCode.StartsWith(search)
+                             where f.sTitle.StartsWith(search) || f.sFileCode.StartsWith(search) || f.sCategory.StartsWith(search)
                              select f).Select(x => new FileM
                              {
                                  sFileCode = x.sFileCode,

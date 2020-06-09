@@ -73,6 +73,16 @@ namespace FileManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap depositphotos_190959552_stock_illustration_set_of_read_more_colorful {
+            get {
+                object obj = ResourceManager.GetObject("depositphotos_190959552-stock-illustration-set-of-read-more-colorful", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap nền_trắng_500x500 {
             get {
                 object obj = ResourceManager.GetObject("nền-trắng-500x500", resourceCulture);
@@ -86,6 +96,16 @@ namespace FileManager.Properties {
         internal static System.Drawing.Bitmap Screenshot__4_ {
             get {
                 object obj = ResourceManager.GetObject("Screenshot (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sed_17_512 {
+            get {
+                object obj = ResourceManager.GetObject("Sed-17-512", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

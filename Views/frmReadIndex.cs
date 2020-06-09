@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace FileManager.Views
 {
-    public partial class frmReadFile : Form
+    public partial class frmReadIndex : Form
     {
-        public frmReadFile()
+        public frmReadIndex()
         {
             InitializeComponent();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
