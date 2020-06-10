@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace FileManager.Views
 {
-    public partial class frmFixFile : Form
+    public partial class frmReadIndex : Form
     {
-        public frmFixFile()
+        public frmReadIndex()
         {
             InitializeComponent();
-        }
-
-        private void rNote_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

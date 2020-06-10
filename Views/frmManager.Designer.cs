@@ -30,86 +30,50 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listCategory = new System.Windows.Forms.ListBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dataFileM = new System.Windows.Forms.DataGridView();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cFileCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cCategory = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cDateUpdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cDelete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnReadFile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataFileM)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 28);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 30);
             this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.pictureBox4);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.listCategory);
+            this.splitContainer1.Panel1.Controls.Add(this.btnReadFile);
             this.splitContainer1.Panel1.Controls.Add(this.btnSearch);
             this.splitContainer1.Panel1.Controls.Add(this.txtSearch);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataFileM);
-            this.splitContainer1.Size = new System.Drawing.Size(1224, 605);
-            this.splitContainer1.SplitterDistance = 170;
+            this.splitContainer1.Size = new System.Drawing.Size(1224, 603);
+            this.splitContainer1.SplitterDistance = 169;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(698, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 17);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Thể Loại";
-            // 
-            // listCategory
-            // 
-            this.listCategory.FormattingEnabled = true;
-            this.listCategory.ItemHeight = 16;
-            this.listCategory.Location = new System.Drawing.Point(813, 39);
-            this.listCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listCategory.Name = "listCategory";
-            this.listCategory.Size = new System.Drawing.Size(276, 68);
-            this.listCategory.TabIndex = 6;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(515, 35);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSearch.Size = new System.Drawing.Size(109, 37);
-            this.btnSearch.TabIndex = 5;
-            this.btnSearch.Text = "Tìm Kiếm";
-            this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtSearch
             // 
@@ -123,7 +87,6 @@
             // dataFileM
             // 
             this.dataFileM.AllowUserToAddRows = false;
-            this.dataFileM.AllowUserToDeleteRows = false;
             this.dataFileM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataFileM.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cFileCode,
@@ -138,9 +101,83 @@
             this.dataFileM.ReadOnly = true;
             this.dataFileM.RowHeadersWidth = 51;
             this.dataFileM.RowTemplate.Height = 24;
-            this.dataFileM.Size = new System.Drawing.Size(1224, 431);
+            this.dataFileM.Size = new System.Drawing.Size(1224, 430);
             this.dataFileM.TabIndex = 0;
             this.dataFileM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFileM_CellContentClick);
+            this.dataFileM.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFileM_RowEnter);
+            this.dataFileM.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFileM_RowLeave);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1224, 30);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Xóa File";
+            this.dataGridViewImageColumn1.Image = global::FileManager.Properties.Resources.Sed_17_512;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn1.Width = 125;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "Đọc File";
+            this.dataGridViewImageColumn2.Image = global::FileManager.Properties.Resources._3;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            this.dataGridViewImageColumn2.Width = 125;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(506, 28);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnSearch.Size = new System.Drawing.Size(109, 51);
+            this.btnSearch.TabIndex = 5;
+            this.btnSearch.Text = "Tìm Kiếm";
+            this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AddFileToolStripMenuItem,
+            this.ExitToolStripMenuItem});
+            this.fileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fileToolStripMenuItem.Image")));
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(66, 26);
+            this.fileToolStripMenuItem.Text = "&File";
+            // 
+            // AddFileToolStripMenuItem
+            // 
+            this.AddFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("AddFileToolStripMenuItem.Image")));
+            this.AddFileToolStripMenuItem.Name = "AddFileToolStripMenuItem";
+            this.AddFileToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
+            this.AddFileToolStripMenuItem.Text = "&Thêm File";
+            this.AddFileToolStripMenuItem.Click += new System.EventHandler(this.AddFileToolStripMenuItem_Click);
+            // 
+            // ExitToolStripMenuItem
+            // 
+            this.ExitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ExitToolStripMenuItem.Image")));
+            this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
+            this.ExitToolStripMenuItem.Text = "&Thoát";
+            this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // cFileCode
             // 
@@ -161,6 +198,11 @@
             // cCategory
             // 
             this.cCategory.HeaderText = "Thể Loại";
+            this.cCategory.Items.AddRange(new object[] {
+            "Lập trình",
+            "Toán học",
+            "Vật lí",
+            "Mạng"});
             this.cCategory.MinimumWidth = 6;
             this.cCategory.Name = "cCategory";
             this.cCategory.ReadOnly = true;
@@ -182,59 +224,20 @@
             this.cDelete.MinimumWidth = 6;
             this.cDelete.Name = "cDelete";
             this.cDelete.ReadOnly = true;
-            this.cDelete.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cDelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.cDelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.cDelete.Text = "Xóa";
             this.cDelete.UseColumnTextForButtonValue = true;
             this.cDelete.Width = 125;
             // 
-            // menuStrip1
+            // btnReadFile
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1224, 28);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddFileToolStripMenuItem,
-            this.ExitToolStripMenuItem});
-            this.fileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fileToolStripMenuItem.Image")));
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
-            this.fileToolStripMenuItem.Text = "&File";
-            // 
-            // AddFileToolStripMenuItem
-            // 
-            this.AddFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("AddFileToolStripMenuItem.Image")));
-            this.AddFileToolStripMenuItem.Name = "AddFileToolStripMenuItem";
-            this.AddFileToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.AddFileToolStripMenuItem.Text = "&Thêm File";
-            this.AddFileToolStripMenuItem.Click += new System.EventHandler(this.AddFileToolStripMenuItem_Click);
-            // 
-            // ExitToolStripMenuItem
-            // 
-            this.ExitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ExitToolStripMenuItem.Image")));
-            this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.ExitToolStripMenuItem.Text = "&Thoát";
-            this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.InitialImage")));
-            this.pictureBox4.Location = new System.Drawing.Point(768, 39);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(39, 40);
-            this.pictureBox4.TabIndex = 13;
-            this.pictureBox4.TabStop = false;
+            this.btnReadFile.Location = new System.Drawing.Point(506, 102);
+            this.btnReadFile.Name = "btnReadFile";
+            this.btnReadFile.Size = new System.Drawing.Size(109, 53);
+            this.btnReadFile.TabIndex = 15;
+            this.btnReadFile.Text = "Đọc file";
+            this.btnReadFile.UseVisualStyleBackColor = true;
+            this.btnReadFile.Click += new System.EventHandler(this.btnReadFile_Click);
             // 
             // frmManager
             // 
@@ -257,7 +260,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataFileM)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,8 +268,6 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listCategory;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dataFileM;
@@ -276,12 +276,14 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AddFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExitToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn cFileCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTitle;
         private System.Windows.Forms.DataGridViewComboBoxColumn cCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn cDateUpdate;
         private System.Windows.Forms.DataGridViewButtonColumn cDelete;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button btnReadFile;
     }
 }
 

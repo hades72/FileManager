@@ -26,7 +26,6 @@ namespace FileManager.Models
         public string sLinkPic { get; set; }
         
         public string sLinkFile { get; set; }
-
         public override string ToString()
         {
             return this.sTitle;

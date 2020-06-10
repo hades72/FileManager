@@ -29,15 +29,16 @@ namespace FileManager.Views
             dataFileM.DataSource = source;
             
             // Ẩn cột Ghi chú, Link Pic, Link File
-            this.dataFileM.Columns[5].Visible = false;
             this.dataFileM.Columns[6].Visible = false;
             this.dataFileM.Columns[7].Visible = false;
+            this.dataFileM.Columns[5].Visible = false;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
             this.helpProvider1.SetShowHelp(this.txtSearch, true);
             this.helpProvider1.SetHelpString(this.txtSearch, "Nhap ma so hoac ten file ban muon tim");
+            this.btnReadFile.Enabled = false;
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -60,15 +61,19 @@ namespace FileManager.Views
 
         private void dataFileM_CellContentClick(object sender, DataGridViewCellEventArgs e) // Xóa file
         {
-            if(e.RowIndex == this.dataFileM.CurrentCell.RowIndex)
+            //if(e.RowIndex == this.dataFileM.CurrentCell.RowIndex)
+            if(this.dataFileM.Columns[e.ColumnIndex].Name == "cDelete")
             {
-                FileM file = FileController.getFileM(this.dataFileM.Rows[e.RowIndex].Cells[1].Value.ToString());
-                FileController.DeleteFile(file);
+                if(MessageBox.Show("Bạn chắc chắn xóa file này?", "Thông báo", MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    FileM file = FileController.getFileM(this.dataFileM.Rows[e.RowIndex].Cells[1].Value.ToString());
+                    FileController.DeleteFile(file);
+                }    
                 // Cập nhật lại Data Grid View
                 BindingSource source = new BindingSource();
                 source.DataSource = FileController.getListUsers();
                 dataFileM.DataSource = source;
-            }
+            }  
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -100,6 +105,22 @@ namespace FileManager.Views
                 source.DataSource = FileController.getListUsers();
                 dataFileM.DataSource = source;
             }
+        }
+
+        private void btnReadFile_Click(object sender, EventArgs e)
+        {
+            frmRead read = new frmRead(ref fileM, this.dataFileM.CurrentRow.Cells[1].Value.ToString());
+            read.Show();
+        }
+
+        private void dataFileM_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            this.btnReadFile.Enabled = true;
+        }
+
+        private void dataFileM_RowLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            this.btnReadFile.Enabled = false;
         }
     }
 }
