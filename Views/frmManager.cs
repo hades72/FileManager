@@ -18,6 +18,7 @@ namespace FileManager.Views
         public frmManager(ref List<FileM> fileM)
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
             this.cFileCode.DataPropertyName = nameof(FileM.sFileCode);
             this.cTitle.DataPropertyName = nameof(FileM.sTitle);
             this.cCategory.DataPropertyName = nameof(FileM.sCategory);
@@ -110,6 +111,7 @@ namespace FileManager.Views
         private void btnReadFile_Click(object sender, EventArgs e)
         {
             frmRead read = new frmRead(ref fileM, this.dataFileM.CurrentRow.Cells[1].Value.ToString());
+            read.Text = this.dataFileM.CurrentRow.Cells[2].Value.ToString();
             read.Show();
         }
 

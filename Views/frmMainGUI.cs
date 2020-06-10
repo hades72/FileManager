@@ -13,7 +13,6 @@ namespace FileManager.Views
 {
     public partial class frmMainGUI : Form
     {
-        frmAddFile fAdd;
         frmManager fManager;
         List<FileM> listFileM;
         public frmMainGUI()
@@ -23,20 +22,7 @@ namespace FileManager.Views
             WindowState = FormWindowState.Maximized;
 
         }
-
-        private void tabAddFile_Click(object sender, EventArgs e)
-        {
-            if(this.fAdd is null || this.fAdd.IsDisposed)
-            {
-                this.fAdd = new frmAddFile(ref listFileM);
-                //this.fAdd.MdiParent = this;
-                this.fAdd.Show();
-            }    
-            else
-            {
-                this.fAdd.Select();
-            }    
-        }
+        
 
         private void tabReadFile_Click(object sender, EventArgs e)
         {
@@ -74,25 +60,6 @@ namespace FileManager.Views
         {
             ((sender as Form).Tag as TabPage).Dispose();
         }
-
-        private void txtNameOfFile_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void frmMainGUI_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
