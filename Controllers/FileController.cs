@@ -10,6 +10,29 @@ namespace FileManager.Controllers
 {
     public class FileController
     {
+        public static int getFileCodeFromDB() 
+        {
+            using (var _context = new DBFileContext())
+            {
+                var filecode = (from f in _context.tbFileMs
+                          select f.iFileCode).ToList();
+
+                if (filecode.Count <= 0)
+                {
+                    return 1;
+                }
+                else
+                {
+                    for (int i = 0; i < filecode.Count(); i++)
+                    {
+                        if (filecode[i] != (i + 1))
+                            return i + 1;
+                    }
+                    return filecode.Max() + 1;
+                }
+            }
+        }
+
         public static bool AddFile(FileM file)
         {
             try
@@ -27,12 +50,12 @@ namespace FileManager.Controllers
             }
         }
 
-        public static FileM getFileM(string filecode)
+        public static FileM getFileM(int filecode)
         {
             using (var _context = new DBFileContext())
             {
                 var file = (from f in _context.tbFileMs
-                            where f.sFileCode == filecode
+                            where f.iFileCode == filecode
                             select f).ToList();
                 if (file.Count == 1)
                 {
@@ -53,7 +76,7 @@ namespace FileManager.Controllers
                             select f)
                             .Select(x => new FileM
                             {
-                                sFileCode = x.sFileCode,
+                                iFileCode = x.iFileCode,
                                 sTitle = x.sTitle,
                                 sCategory = x.sCategory,
                                 sNote = x.sNote,
@@ -70,7 +93,7 @@ namespace FileManager.Controllers
             using (var _context = new DBFileContext())
             {
                 var dbfile = (from f in _context.tbFileMs
-                              where f.sFileCode == file.sFileCode
+                              where f.iFileCode == file.iFileCode
                               select f).SingleOrDefault();
                 _context.tbFileMs.Remove(dbfile);
                 _context.SaveChanges();
@@ -102,10 +125,10 @@ namespace FileManager.Controllers
             {
 
                 var file = (from f in _context.tbFileMs.AsEnumerable()
-                             where f.sTitle.StartsWith(search) || f.sFileCode.StartsWith(search) || f.sCategory.StartsWith(search)
+                             where f.sTitle.StartsWith(search) || f.sCategory.StartsWith(search)
                              select f).Select(x => new FileM
                              {
-                                 sFileCode = x.sFileCode,
+                                 iFileCode = x.iFileCode,
                                  sTitle = x.sTitle,
                                  sCategory = x.sCategory,
                                  sNote = x.sNote,

@@ -30,6 +30,7 @@ namespace FileManager.Views
         {
             InitializeComponent();
             this.listFileM = listfilems;
+            this.txtFileCode.Text = FileController.getFileCodeFromDB().ToString();
             WindowState = FormWindowState.Maximized; // Full màn hình
         }
 
@@ -64,7 +65,7 @@ namespace FileManager.Views
             }
 
             FileM file = new FileM();
-            file.sFileCode = this.txtFileCode.Text.Trim();
+            file.iFileCode = FileController.getFileCodeFromDB();
             file.sTitle = this.txtTitle.Text.Trim();
             file.sCategory = this.cbCategory.GetItemText(this.cbCategory.SelectedItem);
             file.dtDateUpdate = DateTime.Now.Date;
@@ -83,7 +84,7 @@ namespace FileManager.Views
 
             if (FileController.AddFile(file) == false) // thêm file vào csdl
             {
-                MessageBox.Show("Lỗi thêm File");
+                MessageBox.Show("Lỗi thêm file");
                 return;
             }
             MessageBox.Show("Lưu thành công!");

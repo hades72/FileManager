@@ -19,7 +19,7 @@ namespace FileManager.Views
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
-            this.cFileCode.DataPropertyName = nameof(FileM.sFileCode);
+            this.cFileCode.DataPropertyName = nameof(FileM.iFileCode);
             this.cTitle.DataPropertyName = nameof(FileM.sTitle);
             this.cCategory.DataPropertyName = nameof(FileM.sCategory);
             this.cDateUpdate.DataPropertyName = nameof(FileM.dtDateUpdate);
@@ -67,7 +67,7 @@ namespace FileManager.Views
             {
                 if(MessageBox.Show("Bạn chắc chắn xóa file này?", "Thông báo", MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    FileM file = FileController.getFileM(this.dataFileM.Rows[e.RowIndex].Cells[1].Value.ToString());
+                    FileM file = FileController.getFileM(int.Parse(this.dataFileM.Rows[e.RowIndex].Cells[1].Value.ToString()));
                     FileController.DeleteFile(file);
                 }    
                 // Cập nhật lại Data Grid View
@@ -110,7 +110,7 @@ namespace FileManager.Views
 
         private void btnReadFile_Click(object sender, EventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, this.dataFileM.CurrentRow.Cells[1].Value.ToString());
+            frmRead read = new frmRead(ref fileM, int.Parse(this.dataFileM.CurrentRow.Cells[1].Value.ToString()));
             read.Text = this.dataFileM.CurrentRow.Cells[2].Value.ToString();
             read.Show();
         }

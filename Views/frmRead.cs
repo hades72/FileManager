@@ -20,11 +20,11 @@ namespace FileManager.Views
         private DrawNote drawNote;
         Graphics G = null;
         private bool checkDraw = false; // kiểm tra xem có vẽ hay không
-        private string fileCode; // lấy mã số file
+        private int fileCode; // lấy mã số file
         private string linkFile;
         private int currentPage; // trang hiện tại đang xem
         private int numberOfPage; // tổng số trang
-        public frmRead(ref List<FileM> fileM, string filecode)
+        public frmRead(ref List<FileM> fileM, int filecode)
         {
             InitializeComponent();
             FileM file = FileController.getFileM(filecode);

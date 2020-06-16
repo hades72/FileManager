@@ -13,7 +13,8 @@ namespace FileManager.Models
     public class FileM
     {
         [Key] // FileCode là key
-        public string sFileCode { get; set; } // Ma so File
+        [DatabaseGenerated(DatabaseGeneratedOption.None)] // tắt tự động nhận dạng
+        public int iFileCode { get; set; } // Ma so File
 
         public string sTitle { get; set; }
 
@@ -26,6 +27,7 @@ namespace FileManager.Models
         public string sLinkPic { get; set; }
         
         public string sLinkFile { get; set; }
+
         public override string ToString()
         {
             return this.sTitle;
