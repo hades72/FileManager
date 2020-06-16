@@ -82,7 +82,8 @@ namespace FileManager.Controllers
                                 sNote = x.sNote,
                                 dtDateUpdate = x.dtDateUpdate,
                                 sLinkFile = x.sLinkFile,
-                                sLinkPic = x.sLinkPic
+                                sLinkPic = x.sLinkPic,
+                                iRead = x.iRead
                             }).ToList();
                 return file;
             }
@@ -134,7 +135,8 @@ namespace FileManager.Controllers
                                  sNote = x.sNote,
                                  dtDateUpdate = x.dtDateUpdate,
                                  sLinkFile = x.sLinkFile,
-                                 sLinkPic = x.sLinkPic
+                                 sLinkPic = x.sLinkPic,
+                                 iRead = x.iRead
                              }).ToList();
                 if (file.Count >= 1)
                 {

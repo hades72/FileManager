@@ -13,20 +13,22 @@ namespace FileManager.Models
     public class FileM
     {
         [Key] // FileCode là key
-        [DatabaseGenerated(DatabaseGeneratedOption.None)] // tắt tự động nhận dạng
-        public int iFileCode { get; set; } // Ma so File
+        [DatabaseGenerated(DatabaseGeneratedOption.None)] // Tắt tự động nhận dạng
+        public int iFileCode { get; set; } // Mã số tài liệu
 
         public string sTitle { get; set; }
 
         public string sCategory { get; set; }
 
-        public DateTime? dtDateUpdate { get; set; } // dau ? de chi ra truong nay co the null
+        public DateTime dtDateUpdate { get; set; } 
 
         public string sNote { get; set; }
 
         public string sLinkPic { get; set; }
         
         public string sLinkFile { get; set; }
+
+        public int iRead { get; set; } // Kiểm tra đã đọc trang nào trong tài liệu chưa
 
         public override string ToString()
         {

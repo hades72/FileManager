@@ -23,14 +23,23 @@ namespace FileManager.Views
         private int fileCode; // lấy mã số file
         private string linkFile;
         private int currentPage; // trang hiện tại đang xem
+        private int maxPage; // số trang cao nhất đã xem
         private int numberOfPage; // tổng số trang
+
         public frmRead(ref List<FileM> fileM, int filecode)
         {
             InitializeComponent();
             FileM file = FileController.getFileM(filecode);
             fileCode = filecode;
             linkFile = file.sLinkFile;
-            if(file.sNote != null)
+            if(file.iRead == 0)
+            {
+                file.iRead += 1;
+                FileController.UpdateFile(file);
+            }
+            currentPage = file.iRead;
+            maxPage = file.iRead;
+            if (file.sNote != null)
             {
                 rtbNote.Text = file.sNote;
                 btnDeleteNote.Enabled = true; // nếu tồn tại ghi chú thì bật nút xóa
@@ -40,7 +49,6 @@ namespace FileManager.Views
         private void frmRead_Load(object sender, EventArgs e)
         {
             drawNote = new DrawNote();
-            currentPage = 1;
             using (PdfReader reader = new PdfReader(linkFile))
             {
                 numberOfPage = reader.NumberOfPages;
@@ -77,6 +85,10 @@ namespace FileManager.Views
         private void ptbNextPage_Click(object sender, EventArgs e)
         {
             currentPage += 1;
+            if(currentPage > maxPage)
+            {
+                maxPage = currentPage;
+            }
             ReadByPageNumber(currentPage);
         }
 
@@ -86,7 +98,7 @@ namespace FileManager.Views
             ReadByPageNumber(currentPage);
         }
 
-        void ReadByPageNumber(int pagenumber)
+        private void ReadByPageNumber(int pagenumber)
         {
             this.rtbRead.Text = null;
             txtCurrentPage.Text = "Trang " + pagenumber.ToString();
@@ -137,7 +149,9 @@ namespace FileManager.Views
             }
             catch
             {
+
             }
+            checkDraw = false;
             FileController.UpdateFile(file); // cập nhật xuống dtb
             MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK);
         }
@@ -242,6 +256,49 @@ namespace FileManager.Views
             else
             {
                 btnDeleteNote.Enabled = false;
+            }
+        }
+
+        private void frmRead_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FileM file = FileController.getFileM(fileCode);
+            if ((file.sNote != rtbNote.Text.Trim() && rtbNote.Text.Length > 0) || checkDraw == true)
+            {
+                DialogResult dr = MessageBox.Show("Bạn có muốn lưu các thay đổi cho " + file.sTitle + "?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (dr == DialogResult.Yes)
+                {
+                    file.sNote = rtbNote.Text.Trim();
+                    if (G == null)
+                    {
+                        //G = ptbNote.CreateGraphics();
+                        //Bitmap bm = new Bitmap(ptbNote.ClientSize.Width, ptbNote.ClientSize.Height);
+                        //ptbNote.Image = bm;
+                        //G = Graphics.FromImage(bm);
+                        //G.Clear(Color.White);
+                        checkDraw = false; // không vẽ thì thôi
+                    }
+                    try
+                    {
+                        if (checkDraw == true) // vẽ thì lưu
+                        {
+                            using (FileStream fileStream = new FileStream(String.Format("{0}.jpg", fileCode), FileMode.Create))
+                            {
+                                ptbNote.Image.Save(fileStream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            }
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+                    checkDraw = false;
+                    FileController.UpdateFile(file); // cập nhật xuống dtb
+                }
+                else if (dr == DialogResult.Cancel)
+                {
+                    e.Cancel = true; // Không đóng form
+                }
+                    
             }
         }
     }

@@ -51,8 +51,8 @@
             // 
             // btnUploadFile
             // 
-            this.btnUploadFile.Location = new System.Drawing.Point(444, 319);
-            this.btnUploadFile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUploadFile.Location = new System.Drawing.Point(700, 383);
+            this.btnUploadFile.Margin = new System.Windows.Forms.Padding(2);
             this.btnUploadFile.Name = "btnUploadFile";
             this.btnUploadFile.Size = new System.Drawing.Size(94, 26);
             this.btnUploadFile.TabIndex = 3;
@@ -63,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 59);
+            this.label2.Location = new System.Drawing.Point(266, 123);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
@@ -72,8 +72,8 @@
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(60, 57);
-            this.txtTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTitle.Location = new System.Drawing.Point(316, 121);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(474, 20);
             this.txtTitle.TabIndex = 6;
@@ -81,7 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(338, 24);
+            this.label3.Location = new System.Drawing.Point(540, 87);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
@@ -92,8 +92,8 @@
             // 
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(568, 387);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Location = new System.Drawing.Point(824, 451);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(217, 51);
             this.btnSave.TabIndex = 10;
@@ -104,8 +104,8 @@
             // picUpload
             // 
             this.picUpload.BackColor = System.Drawing.Color.White;
-            this.picUpload.Location = new System.Drawing.Point(568, 21);
-            this.picUpload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picUpload.Location = new System.Drawing.Point(824, 85);
+            this.picUpload.Margin = new System.Windows.Forms.Padding(2);
             this.picUpload.Name = "picUpload";
             this.picUpload.Size = new System.Drawing.Size(217, 284);
             this.picUpload.TabIndex = 11;
@@ -113,8 +113,8 @@
             // 
             // btnPicUpload
             // 
-            this.btnPicUpload.Location = new System.Drawing.Point(616, 319);
-            this.btnPicUpload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPicUpload.Location = new System.Drawing.Point(872, 383);
+            this.btnPicUpload.Margin = new System.Windows.Forms.Padding(2);
             this.btnPicUpload.Name = "btnPicUpload";
             this.btnPicUpload.Size = new System.Drawing.Size(97, 26);
             this.btnPicUpload.TabIndex = 4;
@@ -124,8 +124,8 @@
             // 
             // txtLinkFolder
             // 
-            this.txtLinkFolder.Location = new System.Drawing.Point(61, 322);
-            this.txtLinkFolder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLinkFolder.Location = new System.Drawing.Point(317, 386);
+            this.txtLinkFolder.Margin = new System.Windows.Forms.Padding(2);
             this.txtLinkFolder.Name = "txtLinkFolder";
             this.txtLinkFolder.ReadOnly = true;
             this.txtLinkFolder.Size = new System.Drawing.Size(334, 20);
@@ -134,7 +134,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1, 326);
+            this.label5.Location = new System.Drawing.Point(257, 390);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 13);
@@ -144,8 +144,8 @@
             // btnUpateLink
             // 
             this.btnUpateLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpateLink.Location = new System.Drawing.Point(399, 319);
-            this.btnUpateLink.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpateLink.Location = new System.Drawing.Point(655, 383);
+            this.btnUpateLink.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpateLink.Name = "btnUpateLink";
             this.btnUpateLink.Size = new System.Drawing.Size(28, 26);
             this.btnUpateLink.TabIndex = 15;
@@ -156,7 +156,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1, 90);
+            this.label6.Location = new System.Drawing.Point(257, 154);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 13);
@@ -165,8 +165,8 @@
             // 
             // rtbPreview
             // 
-            this.rtbPreview.Location = new System.Drawing.Point(60, 90);
-            this.rtbPreview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtbPreview.Location = new System.Drawing.Point(316, 154);
+            this.rtbPreview.Margin = new System.Windows.Forms.Padding(2);
             this.rtbPreview.Name = "rtbPreview";
             this.rtbPreview.ReadOnly = true;
             this.rtbPreview.Size = new System.Drawing.Size(478, 215);
@@ -179,16 +179,17 @@
             // 
             // txtFileCode
             // 
-            this.txtFileCode.Location = new System.Drawing.Point(61, 20);
-            this.txtFileCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFileCode.Location = new System.Drawing.Point(316, 84);
+            this.txtFileCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtFileCode.Name = "txtFileCode";
-            this.txtFileCode.Size = new System.Drawing.Size(260, 20);
+            this.txtFileCode.ReadOnly = true;
+            this.txtFileCode.Size = new System.Drawing.Size(196, 20);
             this.txtFileCode.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 25);
+            this.label1.Location = new System.Drawing.Point(276, 89);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
@@ -203,9 +204,9 @@
             "Toán học",
             "Vật lí",
             "Mạng"});
-            this.cbCategory.Location = new System.Drawing.Point(392, 20);
+            this.cbCategory.Location = new System.Drawing.Point(594, 83);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(142, 21);
+            this.cbCategory.Size = new System.Drawing.Size(196, 21);
             this.cbCategory.TabIndex = 2;
             // 
             // frmAddFile
@@ -214,7 +215,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(796, 466);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.txtFileCode);
             this.Controls.Add(this.label1);
@@ -230,7 +231,7 @@
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnUploadFile);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAddFile";
             this.Text = "Thêm File";
             this.Load += new System.EventHandler(this.frmAddFile_Load);

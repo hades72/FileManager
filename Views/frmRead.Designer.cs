@@ -297,6 +297,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmRead";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRead_FormClosing);
             this.Load += new System.EventHandler(this.frmRead_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

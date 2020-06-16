@@ -69,6 +69,7 @@ namespace FileManager.Views
             file.sTitle = this.txtTitle.Text.Trim();
             file.sCategory = this.cbCategory.GetItemText(this.cbCategory.SelectedItem);
             file.dtDateUpdate = DateTime.Now.Date;
+            file.iRead = 0; // chưa đọc
 
             if (clickPicUpload == true)
             {
