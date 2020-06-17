@@ -262,29 +262,18 @@ namespace FileManager.Views
         private void frmRead_FormClosing(object sender, FormClosingEventArgs e)
         {
             FileM file = FileController.getFileM(fileCode);
-            if ((file.sNote != rtbNote.Text.Trim() && rtbNote.Text.Length > 0) || checkDraw == true)
+            file.iRead = maxPage;
+            if (file.sNote != rtbNote.Text.Trim() && rtbNote.Text.Length > 0)
             {
                 DialogResult dr = MessageBox.Show("Bạn có muốn lưu các thay đổi cho " + file.sTitle + "?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                 if (dr == DialogResult.Yes)
                 {
                     file.sNote = rtbNote.Text.Trim();
-                    if (G == null)
-                    {
-                        //G = ptbNote.CreateGraphics();
-                        //Bitmap bm = new Bitmap(ptbNote.ClientSize.Width, ptbNote.ClientSize.Height);
-                        //ptbNote.Image = bm;
-                        //G = Graphics.FromImage(bm);
-                        //G.Clear(Color.White);
-                        checkDraw = false; // không vẽ thì thôi
-                    }
                     try
                     {
-                        if (checkDraw == true) // vẽ thì lưu
+                        using (FileStream fileStream = new FileStream(String.Format("{0}.jpg", fileCode), FileMode.Create))
                         {
-                            using (FileStream fileStream = new FileStream(String.Format("{0}.jpg", fileCode), FileMode.Create))
-                            {
-                                ptbNote.Image.Save(fileStream, System.Drawing.Imaging.ImageFormat.Jpeg);
-                            }
+                            ptbNote.Image.Save(fileStream, System.Drawing.Imaging.ImageFormat.Jpeg);
                         }
                     }
                     catch
@@ -292,14 +281,13 @@ namespace FileManager.Views
 
                     }
                     checkDraw = false;
-                    FileController.UpdateFile(file); // cập nhật xuống dtb
                 }
                 else if (dr == DialogResult.Cancel)
                 {
                     e.Cancel = true; // Không đóng form
-                }
-                    
+                }    
             }
+            FileController.UpdateFile(file); // cập nhật xuống dtb
         }
     }
 

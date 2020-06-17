@@ -32,8 +32,8 @@ namespace FileManager.Views
             // Ẩn cột Ghi chú, Link Pic, Link File, Read
             this.dataFileM.Columns[6].Visible = false;
             this.dataFileM.Columns[7].Visible = false;
-            this.dataFileM.Columns[5].Visible = false;
             this.dataFileM.Columns[8].Visible = false;
+            this.dataFileM.Columns[9].Visible = false;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
