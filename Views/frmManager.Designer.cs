@@ -43,10 +43,10 @@
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.cFileCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cCategory = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.cCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cDateUpdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cRecentlyRead = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -59,7 +59,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 28);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -72,17 +72,16 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataFileM);
-            this.splitContainer1.Size = new System.Drawing.Size(918, 486);
-            this.splitContainer1.SplitterDistance = 136;
-            this.splitContainer1.SplitterWidth = 3;
+            this.splitContainer1.Size = new System.Drawing.Size(1224, 605);
+            this.splitContainer1.SplitterDistance = 169;
             this.splitContainer1.TabIndex = 0;
             // 
             // btnReadFile
             // 
-            this.btnReadFile.Location = new System.Drawing.Point(380, 83);
-            this.btnReadFile.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReadFile.Location = new System.Drawing.Point(507, 102);
+            this.btnReadFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReadFile.Name = "btnReadFile";
-            this.btnReadFile.Size = new System.Drawing.Size(82, 43);
+            this.btnReadFile.Size = new System.Drawing.Size(109, 53);
             this.btnReadFile.TabIndex = 15;
             this.btnReadFile.Text = "Đọc file";
             this.btnReadFile.UseVisualStyleBackColor = true;
@@ -91,11 +90,11 @@
             // btnSearch
             // 
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(380, 23);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearch.Location = new System.Drawing.Point(507, 28);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnSearch.Size = new System.Drawing.Size(82, 41);
+            this.btnSearch.Size = new System.Drawing.Size(109, 50);
             this.btnSearch.TabIndex = 5;
             this.btnSearch.Text = "Tìm Kiếm";
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -104,10 +103,10 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(30, 34);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSearch.Location = new System.Drawing.Point(40, 42);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(346, 20);
+            this.txtSearch.Size = new System.Drawing.Size(460, 22);
             this.txtSearch.TabIndex = 4;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -120,16 +119,16 @@
             this.cTitle,
             this.cCategory,
             this.cDateUpdate,
-            this.cDelete,
-            this.cRecentlyRead});
+            this.cRecentlyRead,
+            this.cDelete});
             this.dataFileM.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataFileM.Location = new System.Drawing.Point(0, 0);
-            this.dataFileM.Margin = new System.Windows.Forms.Padding(2);
+            this.dataFileM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataFileM.Name = "dataFileM";
             this.dataFileM.ReadOnly = true;
             this.dataFileM.RowHeadersWidth = 51;
             this.dataFileM.RowTemplate.Height = 24;
-            this.dataFileM.Size = new System.Drawing.Size(918, 347);
+            this.dataFileM.Size = new System.Drawing.Size(1224, 432);
             this.dataFileM.TabIndex = 0;
             this.dataFileM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFileM_CellContentClick);
             this.dataFileM.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFileM_RowEnter);
@@ -142,8 +141,8 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(918, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1224, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -154,14 +153,14 @@
             this.ExitToolStripMenuItem});
             this.fileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("fileToolStripMenuItem.Image")));
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(57, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // AddFileToolStripMenuItem
             // 
             this.AddFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("AddFileToolStripMenuItem.Image")));
             this.AddFileToolStripMenuItem.Name = "AddFileToolStripMenuItem";
-            this.AddFileToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.AddFileToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
             this.AddFileToolStripMenuItem.Text = "&Thêm File";
             this.AddFileToolStripMenuItem.Click += new System.EventHandler(this.AddFileToolStripMenuItem_Click);
             // 
@@ -169,7 +168,7 @@
             // 
             this.ExitToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ExitToolStripMenuItem.Image")));
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
             this.ExitToolStripMenuItem.Text = "&Thoát";
             this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -212,16 +211,9 @@
             // cCategory
             // 
             this.cCategory.HeaderText = "Thể Loại";
-            this.cCategory.Items.AddRange(new object[] {
-            "Lập trình",
-            "Toán học",
-            "Vật lí",
-            "Mạng"});
             this.cCategory.MinimumWidth = 6;
             this.cCategory.Name = "cCategory";
             this.cCategory.ReadOnly = true;
-            this.cCategory.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cCategory.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.cCategory.Width = 125;
             // 
             // cDateUpdate
@@ -231,6 +223,14 @@
             this.cDateUpdate.Name = "cDateUpdate";
             this.cDateUpdate.ReadOnly = true;
             this.cDateUpdate.Width = 125;
+            // 
+            // cRecentlyRead
+            // 
+            this.cRecentlyRead.HeaderText = "Gần đây đã đọc";
+            this.cRecentlyRead.MinimumWidth = 6;
+            this.cRecentlyRead.Name = "cRecentlyRead";
+            this.cRecentlyRead.ReadOnly = true;
+            this.cRecentlyRead.Width = 125;
             // 
             // cDelete
             // 
@@ -243,22 +243,15 @@
             this.cDelete.UseColumnTextForButtonValue = true;
             this.cDelete.Width = 125;
             // 
-            // cRecentlyRead
-            // 
-            this.cRecentlyRead.HeaderText = "Gần đây đã đọc";
-            this.cRecentlyRead.Name = "cRecentlyRead";
-            this.cRecentlyRead.ReadOnly = true;
-            this.cRecentlyRead.Width = 125;
-            // 
             // frmManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 514);
+            this.ClientSize = new System.Drawing.Size(1224, 633);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmManager";
             this.Text = "Manager";
             this.Load += new System.EventHandler(this.frmMain_Load);
@@ -291,10 +284,10 @@
         private System.Windows.Forms.Button btnReadFile;
         private System.Windows.Forms.DataGridViewTextBoxColumn cFileCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTitle;
-        private System.Windows.Forms.DataGridViewComboBoxColumn cCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cCategory;
         private System.Windows.Forms.DataGridViewTextBoxColumn cDateUpdate;
-        private System.Windows.Forms.DataGridViewButtonColumn cDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn cRecentlyRead;
+        private System.Windows.Forms.DataGridViewButtonColumn cDelete;
     }
 }
 

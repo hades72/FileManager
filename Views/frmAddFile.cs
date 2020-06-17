@@ -25,6 +25,7 @@ namespace FileManager.Views
         List<FileM> listFileM;
         bool clickPicUpload;
         string pathOriginalIMG;
+        string category ="";
 
         public frmAddFile(ref List<FileM> listfilems)
         {
@@ -67,7 +68,14 @@ namespace FileManager.Views
             FileM file = new FileM();
             file.iFileCode = FileController.getFileCodeFromDB();
             file.sTitle = this.txtTitle.Text.Trim();
-            file.sCategory = this.cbCategory.GetItemText(this.cbCategory.SelectedItem);
+            if(category == "")
+            {
+                file.sCategory = this.cbCategory.GetItemText(this.cbCategory.SelectedItem);
+            }
+            else
+            {
+                file.sCategory = category;
+            }
             file.dtDateUpdate = DateTime.Now.Date;
             file.iRead = 0; // chưa đọc
             file.dtRecentlyRead = null; // chưa đọc
@@ -89,6 +97,7 @@ namespace FileManager.Views
                 return;
             }
             MessageBox.Show("Lưu thành công!");
+            category = "";
         }
 
         private void btnUploadFile_Click(object sender, EventArgs e)
@@ -142,6 +151,18 @@ namespace FileManager.Views
                 this.picUpload.Image = new Bitmap(openIMG.FileName);
                 this.picUpload.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.clickPicUpload = true;
+            }
+        }
+
+        private void btnAddCategory_Click(object sender, EventArgs e)
+        {
+            if(category == "")
+            {
+                category = this.cbCategory.GetItemText(this.cbCategory.SelectedItem);
+            }
+            else
+            {
+                category = category +", "+ this.cbCategory.GetItemText(this.cbCategory.SelectedItem);
             }
         }
     }
