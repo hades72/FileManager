@@ -83,7 +83,8 @@ namespace FileManager.Controllers
                                 dtDateUpdate = x.dtDateUpdate,
                                 sLinkFile = x.sLinkFile,
                                 sLinkPic = x.sLinkPic,
-                                iRead = x.iRead
+                                iRead = x.iRead,
+                                dtRecentlyRead = x.dtRecentlyRead
                             }).ToList();
                 return file;
             }
@@ -136,7 +137,8 @@ namespace FileManager.Controllers
                                  dtDateUpdate = x.dtDateUpdate,
                                  sLinkFile = x.sLinkFile,
                                  sLinkPic = x.sLinkPic,
-                                 iRead = x.iRead
+                                 iRead = x.iRead,
+                                 dtRecentlyRead = x.dtRecentlyRead
                              }).ToList();
                 if (file.Count >= 1)
                 {

@@ -30,6 +30,8 @@ namespace FileManager.Models
 
         public int iRead { get; set; } // Kiểm tra đã đọc trang nào trong tài liệu chưa
 
+        public DateTime? dtRecentlyRead { get; set; } // Lịch sử mở đọc gần đây
+
         public override string ToString()
         {
             return this.sTitle;

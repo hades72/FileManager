@@ -263,6 +263,7 @@ namespace FileManager.Views
         {
             FileM file = FileController.getFileM(fileCode);
             file.iRead = maxPage;
+            file.dtRecentlyRead = DateTime.Now;
             if (file.sNote != rtbNote.Text.Trim() && rtbNote.Text.Length > 0)
             {
                 DialogResult dr = MessageBox.Show("Bạn có muốn lưu các thay đổi cho " + file.sTitle + "?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
