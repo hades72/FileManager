@@ -68,7 +68,7 @@ namespace FileManager.Controllers
             }
         }
 
-        public static List<FileM> getListUsers()
+        public static List<FileM> getListFile()
         {
             using (var _context = new DBFileContext())
             {

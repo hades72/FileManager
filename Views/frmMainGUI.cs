@@ -14,6 +14,7 @@ namespace FileManager.Views
     public partial class frmMainGUI : Form
     {
         frmManager fManager;
+        frmViewThumb fView;
         List<FileM> listFileM;
         public frmMainGUI()
         {
@@ -29,7 +30,7 @@ namespace FileManager.Views
             if(this.fManager is null || this.fManager.IsDisposed)
             {
                 this.fManager = new frmManager(ref listFileM);
-                this.fManager.MdiParent = this;
+                //this.fManager.MdiParent = this;
                 this.fManager.Show();
             }    
             else
@@ -60,6 +61,17 @@ namespace FileManager.Views
         {
             ((sender as Form).Tag as TabPage).Dispose();
         }
-        
+
+        private void frmMainGUI_Load(object sender, EventArgs e)
+        {
+            this.fView= new frmViewThumb(ref listFileM);
+            this.fView.MdiParent = this;
+            this.fView.Show();
+        }
+
+        private void tabAddFile_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

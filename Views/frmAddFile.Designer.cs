@@ -52,7 +52,7 @@
             // 
             // btnUploadFile
             // 
-            this.btnUploadFile.Location = new System.Drawing.Point(933, 471);
+            this.btnUploadFile.Location = new System.Drawing.Point(956, 813);
             this.btnUploadFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUploadFile.Name = "btnUploadFile";
             this.btnUploadFile.Size = new System.Drawing.Size(125, 32);
@@ -64,7 +64,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(355, 151);
+            this.label2.Location = new System.Drawing.Point(380, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 17);
             this.label2.TabIndex = 3;
@@ -72,7 +72,7 @@
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(421, 149);
+            this.txtTitle.Location = new System.Drawing.Point(446, 105);
             this.txtTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(631, 22);
@@ -81,7 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(721, 106);
+            this.label3.Location = new System.Drawing.Point(746, 62);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 5;
@@ -91,7 +91,7 @@
             // 
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(1099, 555);
+            this.btnSave.Location = new System.Drawing.Point(1189, 490);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(289, 63);
@@ -102,8 +102,8 @@
             // 
             // picUpload
             // 
-            this.picUpload.BackColor = System.Drawing.Color.White;
-            this.picUpload.Location = new System.Drawing.Point(1164, 108);
+            this.picUpload.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.picUpload.Location = new System.Drawing.Point(1189, 64);
             this.picUpload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picUpload.Name = "picUpload";
             this.picUpload.Size = new System.Drawing.Size(289, 350);
@@ -112,7 +112,7 @@
             // 
             // btnPicUpload
             // 
-            this.btnPicUpload.Location = new System.Drawing.Point(1228, 474);
+            this.btnPicUpload.Location = new System.Drawing.Point(1272, 431);
             this.btnPicUpload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPicUpload.Name = "btnPicUpload";
             this.btnPicUpload.Size = new System.Drawing.Size(129, 32);
@@ -123,7 +123,7 @@
             // 
             // txtLinkFolder
             // 
-            this.txtLinkFolder.Location = new System.Drawing.Point(423, 475);
+            this.txtLinkFolder.Location = new System.Drawing.Point(446, 818);
             this.txtLinkFolder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLinkFolder.Name = "txtLinkFolder";
             this.txtLinkFolder.ReadOnly = true;
@@ -133,7 +133,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(343, 480);
+            this.label5.Location = new System.Drawing.Point(366, 823);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 17);
             this.label5.TabIndex = 13;
@@ -142,7 +142,7 @@
             // btnUpateLink
             // 
             this.btnUpateLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpateLink.Location = new System.Drawing.Point(873, 471);
+            this.btnUpateLink.Location = new System.Drawing.Point(896, 813);
             this.btnUpateLink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpateLink.Name = "btnUpateLink";
             this.btnUpateLink.Size = new System.Drawing.Size(37, 32);
@@ -154,7 +154,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(343, 190);
+            this.label6.Location = new System.Drawing.Point(368, 146);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 17);
             this.label6.TabIndex = 16;
@@ -162,11 +162,12 @@
             // 
             // rtbPreview
             // 
-            this.rtbPreview.Location = new System.Drawing.Point(421, 190);
+            this.rtbPreview.BackColor = System.Drawing.Color.White;
+            this.rtbPreview.Location = new System.Drawing.Point(446, 146);
             this.rtbPreview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbPreview.Name = "rtbPreview";
             this.rtbPreview.ReadOnly = true;
-            this.rtbPreview.Size = new System.Drawing.Size(636, 264);
+            this.rtbPreview.Size = new System.Drawing.Size(636, 591);
             this.rtbPreview.TabIndex = 17;
             this.rtbPreview.Text = "";
             // 
@@ -176,7 +177,8 @@
             // 
             // txtFileCode
             // 
-            this.txtFileCode.Location = new System.Drawing.Point(421, 103);
+            this.txtFileCode.BackColor = System.Drawing.Color.White;
+            this.txtFileCode.Location = new System.Drawing.Point(446, 59);
             this.txtFileCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFileCode.Name = "txtFileCode";
             this.txtFileCode.ReadOnly = true;
@@ -186,7 +188,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(368, 110);
+            this.label1.Location = new System.Drawing.Point(393, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 17);
             this.label1.TabIndex = 19;
@@ -200,20 +202,22 @@
             "Toán học",
             "Vật lí",
             "Mạng"});
-            this.cbCategory.Location = new System.Drawing.Point(792, 101);
-            this.cbCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbCategory.Location = new System.Drawing.Point(817, 57);
+            this.cbCategory.Margin = new System.Windows.Forms.Padding(4);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(260, 24);
             this.cbCategory.TabIndex = 2;
             // 
             // btnAddCategory
             // 
-            this.btnAddCategory.Location = new System.Drawing.Point(1072, 101);
+            this.btnAddCategory.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAddCategory.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnAddCategory.Location = new System.Drawing.Point(1097, 57);
             this.btnAddCategory.Name = "btnAddCategory";
             this.btnAddCategory.Size = new System.Drawing.Size(75, 23);
             this.btnAddCategory.TabIndex = 20;
             this.btnAddCategory.Text = "Add";
-            this.btnAddCategory.UseVisualStyleBackColor = true;
+            this.btnAddCategory.UseVisualStyleBackColor = false;
             this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
             // frmAddFile
@@ -222,6 +226,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1827, 922);
             this.Controls.Add(this.btnAddCategory);
             this.Controls.Add(this.cbCategory);
