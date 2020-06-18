@@ -134,7 +134,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\frmRead.en.resx">
+      <DependentUpon>frmRead.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\frmRead.resx">
+      <DependentUpon>frmRead.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmRead.vi-VN.resx">
       <DependentUpon>frmRead.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmReadIndex.resx">

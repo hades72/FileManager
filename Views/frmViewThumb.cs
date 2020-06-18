@@ -44,7 +44,15 @@ namespace FileManager.Views
             }
 
             showThumb();
-            
+
+            if (tabView.SelectedTab == tabDataGV)
+            {
+                btnReadFile.Visible = true;
+            }
+            if (tabView.SelectedTab == tabThumb)
+            {
+                btnReadFile.Visible = false;
+            }
         }
 
         private void showThumb()
@@ -57,11 +65,10 @@ namespace FileManager.Views
             {
                 listViewThumb listView1 = new listViewThumb();
                 FileM file = FileController.getFileM(i);
-                listView1.NameFile = file.sTitle;
-                listView1.TheLoai = file.sCategory;
-                listView1.ID = file.iFileCode.ToString();
-                listView1.DateRead = file.dtRecentlyRead.ToString();
-                listView1.Text = file.iRead.ToString();
+                listView1.Title = file.sTitle;
+                listView1.Category = file.sCategory;
+                listView1.FileCode = file.iFileCode.ToString();
+                listView1.RecentlyRead = file.dtRecentlyRead.ToString();
                 listView1.Note = file.sNote;
                 listView1.LinkFile = file.sLinkFile;
                 using (FileStream stream = new FileStream(String.Format(file.sLinkPic), FileMode.Open, FileAccess.Read))
@@ -77,10 +84,11 @@ namespace FileManager.Views
         {
             this.helpProvider1.SetShowHelp(this.txtSearch, true);
             this.helpProvider1.SetHelpString(this.txtSearch, "Nhap ma so hoac ten file ban muon tim");
-            //if (this.dataFileM.RowCount <= 0)
-            //{
-            //    btnReadFile.Enabled = false;
-            //}
+            
+            if (this.dataFileM.RowCount <= 0)
+            {
+                btnReadFile.Enabled = false;
+            }
         }
 
 
@@ -139,6 +147,8 @@ namespace FileManager.Views
                 //BindingSource source = new BindingSource();
                 source.DataSource = FileController.getListFile();
                 dataFileM.DataSource = source;
+
+                showThumb();
             }
         }
 
@@ -184,5 +194,16 @@ namespace FileManager.Views
             }
         }
 
+        private void tabView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabView.SelectedTab == tabView.TabPages["tabThumb"])
+            {
+                btnReadFile.Visible = false;
+            }
+            if (tabView.SelectedTab == tabView.TabPages["tabDataGV"])
+            {
+                btnReadFile.Visible = true;
+            }
+        }
     }
 }

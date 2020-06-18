@@ -22,39 +22,38 @@ namespace FileManager.Views
 
         #region Properties
 
-        private string _namefile;
-        private string _theloai;
-        private string _id;
-        private string _dateread;
-        private string _text;
+        private string _title;
+        private string _category;
+        private string _filecode;
+        private string _recentlyread;
         private string _note;
         private string _linkfile;
 
         [Category("File Props")]
-        public string NameFile
+        public string Title
         {
-            get { return _namefile; }
-            set { _namefile = value; lbTenFile.Text = value; }
+            get { return _title; }
+            set { _title = value; lbTitle.Text = value; }
         }
 
         [Category("File Props")]
-        public string TheLoai
+        public string Category
         {
-            get { return _theloai; }
-            set { _theloai = value; lbTheLoai.Text = value; }
+            get { return _category; }
+            set { _category = value; lbCategory.Text = value; }
         }
         [Category("File Props")]
-        public string ID
+        public string FileCode
         {
-            get { return _id; }
-            set { _id = value; lbID.Text = value; }
+            get { return _filecode; }
+            set { _filecode = value; lbFileCode.Text = value; }
         }
 
         [Category("File Props")]
-        public string DateRead
+        public string RecentlyRead
         {
-            get { return _dateread; }
-            set { _dateread = value; lbNgayDocGanNhat.Text = value; }
+            get { return _recentlyread; }
+            set { _recentlyread = value; lbRecentlyRead.Text = value; }
         }
 
         [Category("File Props")]
@@ -62,13 +61,6 @@ namespace FileManager.Views
         {
             get { return picFile; }
             set { picFile = value; }
-        }
-
-        [Category("File Props")]
-        public string Text
-        {
-            get { return _text; }
-            set { _text = value; }
         }
 
         [Category("File Props")]
@@ -89,8 +81,8 @@ namespace FileManager.Views
         #endregion
         private void listViewThumb_DoubleClick(object sender, EventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.ID));
-            read.Text = this.Text;
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
             read.Show();
         }
 
@@ -117,8 +109,8 @@ namespace FileManager.Views
 
         private void picFile_DoubleClick(object sender, EventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.ID));
-            read.Text = this.Text;
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
             read.Show();
         }
 
@@ -129,8 +121,8 @@ namespace FileManager.Views
 
         private void label1_DoubleClick(object sender, EventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.ID));
-            read.Text = this.Text;
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
             read.Show();
         }
 
@@ -141,8 +133,8 @@ namespace FileManager.Views
 
         private void label2_DoubleClick(object sender, EventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.ID));
-            read.Text = this.Text;
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
             read.Show();
         }
 
@@ -158,8 +150,8 @@ namespace FileManager.Views
 
         private void label3_DoubleClick(object sender, EventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.ID));
-            read.Text = this.Text;
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
             read.Show();
         }
 
@@ -175,8 +167,8 @@ namespace FileManager.Views
 
         private void label4_DoubleClick(object sender, EventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.ID));
-            read.Text = this.Text;
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
             read.Show();
         }
 
@@ -192,8 +184,8 @@ namespace FileManager.Views
 
         private void lbNgayDocGanNhat_DoubleClick(object sender, EventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.ID));
-            read.Text = this.Text;
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
             read.Show();
         }
 
@@ -209,8 +201,8 @@ namespace FileManager.Views
 
         private void lbID_DoubleClick(object sender, EventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.ID));
-            read.Text = this.Text;
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
             read.Show();
         }
 
@@ -226,8 +218,8 @@ namespace FileManager.Views
 
         private void lbTenFile_DoubleClick(object sender, EventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.ID));
-            read.Text = this.Text;
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
             read.Show();
         }
 
@@ -243,8 +235,8 @@ namespace FileManager.Views
 
         private void lbTheLoai_DoubleClick(object sender, EventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.ID));
-            read.Text = this.Text;
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
             read.Show();
         }
 
