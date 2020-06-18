@@ -98,12 +98,6 @@
     <Compile Include="Views\frmAddFile.Designer.cs">
       <DependentUpon>frmAddFile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\frmManager.Designer.cs">
-      <DependentUpon>frmManager.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\frmMainGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,9 +120,6 @@
     </Compile>
     <EmbeddedResource Include="Views\frmAddFile.resx">
       <DependentUpon>frmAddFile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmManager.resx">
-      <DependentUpon>frmManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmMainGUI.resx">
       <DependentUpon>frmMainGUI.cs</DependentUpon>

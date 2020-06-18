@@ -34,7 +34,6 @@
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
-            this.picUpload = new System.Windows.Forms.PictureBox();
             this.btnPicUpload = new System.Windows.Forms.Button();
             this.txtLinkFolder = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,8 +45,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.btnAddCategory = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.picUpload)).BeginInit();
+            this.picUpload = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUpload)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUploadFile
@@ -99,16 +99,6 @@
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.bSave_Click);
-            // 
-            // picUpload
-            // 
-            this.picUpload.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.picUpload.Location = new System.Drawing.Point(1189, 64);
-            this.picUpload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.picUpload.Name = "picUpload";
-            this.picUpload.Size = new System.Drawing.Size(289, 350);
-            this.picUpload.TabIndex = 11;
-            this.picUpload.TabStop = false;
             // 
             // btnPicUpload
             // 
@@ -220,13 +210,23 @@
             this.btnAddCategory.UseVisualStyleBackColor = false;
             this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
+            // picUpload
+            // 
+            this.picUpload.BackColor = System.Drawing.Color.White;
+            this.picUpload.Location = new System.Drawing.Point(1189, 64);
+            this.picUpload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picUpload.Name = "picUpload";
+            this.picUpload.Size = new System.Drawing.Size(289, 350);
+            this.picUpload.TabIndex = 11;
+            this.picUpload.TabStop = false;
+            // 
             // frmAddFile
             // 
             this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1827, 922);
             this.Controls.Add(this.btnAddCategory);
             this.Controls.Add(this.cbCategory);
@@ -248,8 +248,8 @@
             this.Name = "frmAddFile";
             this.Text = "Thêm File";
             this.Load += new System.EventHandler(this.frmAddFile_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picUpload)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUpload)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

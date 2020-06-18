@@ -50,6 +50,7 @@ namespace FileManager.Views
             this.cDateUpdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cRecentlyRead = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cDelete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabAddFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -107,7 +108,7 @@ namespace FileManager.Views
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
             this.splitContainer3.Size = new System.Drawing.Size(285, 1027);
-            this.splitContainer3.SplitterDistance = 238;
+            this.splitContainer3.SplitterDistance = 205;
             this.splitContainer3.TabIndex = 0;
             // 
             // splitContainer2
@@ -128,7 +129,7 @@ namespace FileManager.Views
             // 
             this.splitContainer2.Panel2.Controls.Add(this.tabView);
             this.splitContainer2.Size = new System.Drawing.Size(1635, 1027);
-            this.splitContainer2.SplitterDistance = 59;
+            this.splitContainer2.SplitterDistance = 58;
             this.splitContainer2.TabIndex = 0;
             // 
             // btnReadFile
@@ -173,7 +174,7 @@ namespace FileManager.Views
             this.tabView.Location = new System.Drawing.Point(0, 0);
             this.tabView.Name = "tabView";
             this.tabView.SelectedIndex = 0;
-            this.tabView.Size = new System.Drawing.Size(1635, 964);
+            this.tabView.Size = new System.Drawing.Size(1635, 965);
             this.tabView.TabIndex = 0;
             // 
             // tabThumb
@@ -181,7 +182,7 @@ namespace FileManager.Views
             this.tabThumb.Controls.Add(this.flpnlThumb);
             this.tabThumb.Location = new System.Drawing.Point(4, 25);
             this.tabThumb.Name = "tabThumb";
-            this.tabThumb.Size = new System.Drawing.Size(1627, 935);
+            this.tabThumb.Size = new System.Drawing.Size(1627, 936);
             this.tabThumb.TabIndex = 0;
             this.tabThumb.Text = "Theo hình";
             this.tabThumb.UseVisualStyleBackColor = true;
@@ -192,7 +193,7 @@ namespace FileManager.Views
             this.flpnlThumb.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpnlThumb.Location = new System.Drawing.Point(0, 0);
             this.flpnlThumb.Name = "flpnlThumb";
-            this.flpnlThumb.Size = new System.Drawing.Size(1627, 935);
+            this.flpnlThumb.Size = new System.Drawing.Size(1627, 936);
             this.flpnlThumb.TabIndex = 0;
             // 
             // listViewThumb1
@@ -200,9 +201,11 @@ namespace FileManager.Views
             this.listViewThumb1.BackColor = System.Drawing.Color.White;
             this.listViewThumb1.DateRead = null;
             this.listViewThumb1.ID = null;
+            this.listViewThumb1.LinkFile = null;
             this.listViewThumb1.Location = new System.Drawing.Point(3, 3);
             this.listViewThumb1.Name = "listViewThumb1";
             this.listViewThumb1.NameFile = null;
+            this.listViewThumb1.Note = null;
             this.listViewThumb1.Size = new System.Drawing.Size(273, 193);
             this.listViewThumb1.TabIndex = 0;
             this.listViewThumb1.TheLoai = null;
@@ -212,7 +215,7 @@ namespace FileManager.Views
             this.tabDataGV.Controls.Add(this.dataFileM);
             this.tabDataGV.Location = new System.Drawing.Point(4, 25);
             this.tabDataGV.Name = "tabDataGV";
-            this.tabDataGV.Size = new System.Drawing.Size(1627, 935);
+            this.tabDataGV.Size = new System.Drawing.Size(1627, 936);
             this.tabDataGV.TabIndex = 1;
             this.tabDataGV.Text = "Theo danh sách";
             this.tabDataGV.UseVisualStyleBackColor = true;
@@ -236,7 +239,7 @@ namespace FileManager.Views
             this.dataFileM.ReadOnly = true;
             this.dataFileM.RowHeadersWidth = 51;
             this.dataFileM.RowTemplate.Height = 24;
-            this.dataFileM.Size = new System.Drawing.Size(1627, 935);
+            this.dataFileM.Size = new System.Drawing.Size(1627, 936);
             this.dataFileM.TabIndex = 1;
             this.dataFileM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFileM_CellContentClick);
             // 
@@ -290,6 +293,17 @@ namespace FileManager.Views
             this.cDelete.Text = "Xóa";
             this.cDelete.UseColumnTextForButtonValue = true;
             this.cDelete.Width = 125;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label1.Location = new System.Drawing.Point(3, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "File đọc gần nhất";
             // 
             // menuStrip1
             // 
@@ -377,5 +391,6 @@ namespace FileManager.Views
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.Label label1;
     }
 }

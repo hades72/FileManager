@@ -61,6 +61,9 @@ namespace FileManager.Views
                 listView1.TheLoai = file.sCategory;
                 listView1.ID = file.iFileCode.ToString();
                 listView1.DateRead = file.dtRecentlyRead.ToString();
+                listView1.Text = file.iRead.ToString();
+                listView1.Note = file.sNote;
+                listView1.LinkFile = file.sLinkFile;
                 using (FileStream stream = new FileStream(String.Format(file.sLinkPic), FileMode.Open, FileAccess.Read))
                 {
                     listView1.PictureFile.Image = Image.FromStream(stream);
@@ -144,6 +147,22 @@ namespace FileManager.Views
             frmRead read = new frmRead(ref fileM, int.Parse(this.dataFileM.CurrentRow.Cells[1].Value.ToString()));
             read.Text = this.dataFileM.CurrentRow.Cells[2].Value.ToString();
             read.Show();
+
+            //lastFile lastfile = new lastFile();
+            //lastfile.Name = file.sTitle;
+            //lastfile.TheLoai = file.sCategory;
+            //lastfile.ID = file.iFileCode.ToString();
+            //lastfile.DateReadLast = file.dtRecentlyRead.ToString();
+            //lastfile.Text = this.dataFileM.CurrentRow.Cells[2].Value.ToString();
+            //lastfile.Note = file.sNote;
+            //lastfile.LinkFile = file.sLinkFile;
+            //using (FileStream stream = new FileStream(String.Format(file.sLinkPic), FileMode.Open, FileAccess.Read))
+            //{
+            //    lastfile.PictureLast.Image = Image.FromStream(stream);
+            //}
+            //G = Graphics.FromImage(lastfile.PictureLast.Image);
+
+
         }
 
 
@@ -164,5 +183,6 @@ namespace FileManager.Views
                 showThumb();
             }
         }
+
     }
 }

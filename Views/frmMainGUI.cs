@@ -13,7 +13,6 @@ namespace FileManager.Views
 {
     public partial class frmMainGUI : Form
     {
-        frmManager fManager;
         frmViewThumb fView;
         List<FileM> listFileM;
         public frmMainGUI()
@@ -22,21 +21,6 @@ namespace FileManager.Views
             listFileM = new List<FileM>();
             WindowState = FormWindowState.Maximized;
 
-        }
-        
-
-        private void tabReadFile_Click(object sender, EventArgs e)
-        {
-            if(this.fManager is null || this.fManager.IsDisposed)
-            {
-                this.fManager = new frmManager(ref listFileM);
-                //this.fManager.MdiParent = this;
-                this.fManager.Show();
-            }    
-            else
-            {
-                this.fManager.Select();
-            }    
         }
 
         private void frmMainGUI_MdiChildActivate(object sender, EventArgs e)
@@ -67,11 +51,6 @@ namespace FileManager.Views
             this.fView= new frmViewThumb(ref listFileM);
             this.fView.MdiParent = this;
             this.fView.Show();
-        }
-
-        private void tabAddFile_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

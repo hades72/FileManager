@@ -32,12 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainGUI));
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tabMain = new System.Windows.Forms.TabControl();
-            this.thêmFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabReadFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabAddFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mFuntion = new System.Windows.Forms.MenuStrip();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.mFuntion.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMain
@@ -50,36 +46,9 @@
             this.tabMain.Size = new System.Drawing.Size(1087, 33);
             this.tabMain.TabIndex = 2;
             // 
-            // thêmFileToolStripMenuItem
-            // 
-            this.thêmFileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tabReadFile,
-            this.tabAddFile});
-            this.thêmFileToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("thêmFileToolStripMenuItem.Image")));
-            this.thêmFileToolStripMenuItem.Name = "thêmFileToolStripMenuItem";
-            this.thêmFileToolStripMenuItem.Size = new System.Drawing.Size(113, 24);
-            this.thêmFileToolStripMenuItem.Text = "&Chức năng";
-            // 
-            // tabReadFile
-            // 
-            this.tabReadFile.Image = ((System.Drawing.Image)(resources.GetObject("tabReadFile.Image")));
-            this.tabReadFile.Name = "tabReadFile";
-            this.tabReadFile.Size = new System.Drawing.Size(224, 26);
-            this.tabReadFile.Text = "&Danh sách File";
-            this.tabReadFile.Click += new System.EventHandler(this.tabReadFile_Click);
-            // 
-            // tabAddFile
-            // 
-            this.tabAddFile.Name = "tabAddFile";
-            this.tabAddFile.Size = new System.Drawing.Size(224, 26);
-            this.tabAddFile.Text = "&Thêm File";
-            this.tabAddFile.Click += new System.EventHandler(this.tabAddFile_Click);
-            // 
             // mFuntion
             // 
             this.mFuntion.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.mFuntion.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thêmFileToolStripMenuItem});
             this.mFuntion.Location = new System.Drawing.Point(0, 0);
             this.mFuntion.Name = "mFuntion";
             this.mFuntion.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -116,8 +85,6 @@
             this.Text = "Quản lý File";
             this.Load += new System.EventHandler(this.frmMainGUI_Load);
             this.MdiChildActivate += new System.EventHandler(this.frmMainGUI_MdiChildActivate);
-            this.mFuntion.ResumeLayout(false);
-            this.mFuntion.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,11 +92,8 @@
         #endregion
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.TabControl tabMain;
-        private System.Windows.Forms.ToolStripMenuItem thêmFileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tabReadFile;
         private System.Windows.Forms.MenuStrip mFuntion;
         private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.ToolStripMenuItem tabAddFile;
     }
 }
 
