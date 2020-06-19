@@ -40,12 +40,14 @@
             this.btnDeleteNote = new System.Windows.Forms.Button();
             this.rtbNote = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnColorPen = new System.Windows.Forms.Button();
             this.btnDeleteDrawNote = new System.Windows.Forms.Button();
             this.ptbNote = new System.Windows.Forms.PictureBox();
             this.lb2 = new System.Windows.Forms.Label();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -70,67 +72,42 @@
             // splitContainer1
             // 
             resources.ApplyResources(this.splitContainer1, "splitContainer1");
-            this.helpProvider1.SetHelpKeyword(this.splitContainer1, resources.GetString("splitContainer1.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.splitContainer1, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("splitContainer1.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.splitContainer1, resources.GetString("splitContainer1.HelpString"));
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
             this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
-            this.helpProvider1.SetHelpKeyword(this.splitContainer1.Panel1, resources.GetString("splitContainer1.Panel1.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.splitContainer1.Panel1, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("splitContainer1.Panel1.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.splitContainer1.Panel1, resources.GetString("splitContainer1.Panel1.HelpString"));
             this.helpProvider1.SetShowHelp(this.splitContainer1.Panel1, ((bool)(resources.GetObject("splitContainer1.Panel1.ShowHelp"))));
             // 
             // splitContainer1.Panel2
             // 
-            resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer3);
-            this.helpProvider1.SetHelpKeyword(this.splitContainer1.Panel2, resources.GetString("splitContainer1.Panel2.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.splitContainer1.Panel2, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("splitContainer1.Panel2.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.splitContainer1.Panel2, resources.GetString("splitContainer1.Panel2.HelpString"));
             this.helpProvider1.SetShowHelp(this.splitContainer1.Panel2, ((bool)(resources.GetObject("splitContainer1.Panel2.ShowHelp"))));
             this.helpProvider1.SetShowHelp(this.splitContainer1, ((bool)(resources.GetObject("splitContainer1.ShowHelp"))));
             // 
             // splitContainer2
             // 
             resources.ApplyResources(this.splitContainer2, "splitContainer2");
-            this.helpProvider1.SetHelpKeyword(this.splitContainer2, resources.GetString("splitContainer2.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.splitContainer2, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("splitContainer2.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.splitContainer2, resources.GetString("splitContainer2.HelpString"));
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
             // 
-            resources.ApplyResources(this.splitContainer2.Panel1, "splitContainer2.Panel1");
             this.splitContainer2.Panel1.Controls.Add(this.rtbRead);
-            this.helpProvider1.SetHelpKeyword(this.splitContainer2.Panel1, resources.GetString("splitContainer2.Panel1.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.splitContainer2.Panel1, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("splitContainer2.Panel1.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.splitContainer2.Panel1, resources.GetString("splitContainer2.Panel1.HelpString"));
             this.helpProvider1.SetShowHelp(this.splitContainer2.Panel1, ((bool)(resources.GetObject("splitContainer2.Panel1.ShowHelp"))));
             // 
             // splitContainer2.Panel2
             // 
-            resources.ApplyResources(this.splitContainer2.Panel2, "splitContainer2.Panel2");
             this.splitContainer2.Panel2.BackColor = System.Drawing.Color.AliceBlue;
             this.splitContainer2.Panel2.Controls.Add(this.ptbBackPage);
             this.splitContainer2.Panel2.Controls.Add(this.ptbNextPage);
             this.splitContainer2.Panel2.Controls.Add(this.txtCurrentPage);
-            this.helpProvider1.SetHelpKeyword(this.splitContainer2.Panel2, resources.GetString("splitContainer2.Panel2.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.splitContainer2.Panel2, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("splitContainer2.Panel2.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.splitContainer2.Panel2, resources.GetString("splitContainer2.Panel2.HelpString"));
             this.helpProvider1.SetShowHelp(this.splitContainer2.Panel2, ((bool)(resources.GetObject("splitContainer2.Panel2.ShowHelp"))));
             this.helpProvider1.SetShowHelp(this.splitContainer2, ((bool)(resources.GetObject("splitContainer2.ShowHelp"))));
             // 
             // rtbRead
             // 
-            resources.ApplyResources(this.rtbRead, "rtbRead");
             this.rtbRead.BackColor = System.Drawing.Color.White;
-            this.helpProvider1.SetHelpKeyword(this.rtbRead, resources.GetString("rtbRead.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.rtbRead, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("rtbRead.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.rtbRead, resources.GetString("rtbRead.HelpString"));
+            resources.ApplyResources(this.rtbRead, "rtbRead");
             this.rtbRead.Name = "rtbRead";
             this.rtbRead.ReadOnly = true;
             this.helpProvider1.SetShowHelp(this.rtbRead, ((bool)(resources.GetObject("rtbRead.ShowHelp"))));
@@ -138,9 +115,6 @@
             // ptbBackPage
             // 
             resources.ApplyResources(this.ptbBackPage, "ptbBackPage");
-            this.helpProvider1.SetHelpKeyword(this.ptbBackPage, resources.GetString("ptbBackPage.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.ptbBackPage, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("ptbBackPage.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.ptbBackPage, resources.GetString("ptbBackPage.HelpString"));
             this.ptbBackPage.Name = "ptbBackPage";
             this.helpProvider1.SetShowHelp(this.ptbBackPage, ((bool)(resources.GetObject("ptbBackPage.ShowHelp"))));
             this.ptbBackPage.TabStop = false;
@@ -149,9 +123,6 @@
             // ptbNextPage
             // 
             resources.ApplyResources(this.ptbNextPage, "ptbNextPage");
-            this.helpProvider1.SetHelpKeyword(this.ptbNextPage, resources.GetString("ptbNextPage.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.ptbNextPage, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("ptbNextPage.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.ptbNextPage, resources.GetString("ptbNextPage.HelpString"));
             this.ptbNextPage.Name = "ptbNextPage";
             this.helpProvider1.SetShowHelp(this.ptbNextPage, ((bool)(resources.GetObject("ptbNextPage.ShowHelp"))));
             this.ptbNextPage.TabStop = false;
@@ -159,11 +130,8 @@
             // 
             // txtCurrentPage
             // 
-            resources.ApplyResources(this.txtCurrentPage, "txtCurrentPage");
             this.txtCurrentPage.BackColor = System.Drawing.Color.White;
-            this.helpProvider1.SetHelpKeyword(this.txtCurrentPage, resources.GetString("txtCurrentPage.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.txtCurrentPage, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("txtCurrentPage.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.txtCurrentPage, resources.GetString("txtCurrentPage.HelpString"));
+            resources.ApplyResources(this.txtCurrentPage, "txtCurrentPage");
             this.txtCurrentPage.Name = "txtCurrentPage";
             this.txtCurrentPage.ReadOnly = true;
             this.helpProvider1.SetShowHelp(this.txtCurrentPage, ((bool)(resources.GetObject("txtCurrentPage.ShowHelp"))));
@@ -171,71 +139,47 @@
             // splitContainer3
             // 
             resources.ApplyResources(this.splitContainer3, "splitContainer3");
-            this.helpProvider1.SetHelpKeyword(this.splitContainer3, resources.GetString("splitContainer3.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.splitContainer3, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("splitContainer3.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.splitContainer3, resources.GetString("splitContainer3.HelpString"));
             this.splitContainer3.Name = "splitContainer3";
             // 
             // splitContainer3.Panel1
             // 
-            resources.ApplyResources(this.splitContainer3.Panel1, "splitContainer3.Panel1");
             this.splitContainer3.Panel1.Controls.Add(this.splitContainer4);
-            this.helpProvider1.SetHelpKeyword(this.splitContainer3.Panel1, resources.GetString("splitContainer3.Panel1.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.splitContainer3.Panel1, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("splitContainer3.Panel1.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.splitContainer3.Panel1, resources.GetString("splitContainer3.Panel1.HelpString"));
             this.helpProvider1.SetShowHelp(this.splitContainer3.Panel1, ((bool)(resources.GetObject("splitContainer3.Panel1.ShowHelp"))));
             // 
             // splitContainer3.Panel2
             // 
-            resources.ApplyResources(this.splitContainer3.Panel2, "splitContainer3.Panel2");
             this.splitContainer3.Panel2.BackColor = System.Drawing.Color.AliceBlue;
             this.splitContainer3.Panel2.Controls.Add(this.btnNew);
             this.splitContainer3.Panel2.Controls.Add(this.btnSave);
-            this.helpProvider1.SetHelpKeyword(this.splitContainer3.Panel2, resources.GetString("splitContainer3.Panel2.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.splitContainer3.Panel2, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("splitContainer3.Panel2.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.splitContainer3.Panel2, resources.GetString("splitContainer3.Panel2.HelpString"));
             this.helpProvider1.SetShowHelp(this.splitContainer3.Panel2, ((bool)(resources.GetObject("splitContainer3.Panel2.ShowHelp"))));
             this.helpProvider1.SetShowHelp(this.splitContainer3, ((bool)(resources.GetObject("splitContainer3.ShowHelp"))));
             // 
             // splitContainer4
             // 
             resources.ApplyResources(this.splitContainer4, "splitContainer4");
-            this.helpProvider1.SetHelpKeyword(this.splitContainer4, resources.GetString("splitContainer4.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.splitContainer4, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("splitContainer4.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.splitContainer4, resources.GetString("splitContainer4.HelpString"));
             this.splitContainer4.Name = "splitContainer4";
             // 
             // splitContainer4.Panel1
             // 
-            resources.ApplyResources(this.splitContainer4.Panel1, "splitContainer4.Panel1");
             this.splitContainer4.Panel1.BackColor = System.Drawing.Color.AliceBlue;
             this.splitContainer4.Panel1.Controls.Add(this.btnDeleteNote);
             this.splitContainer4.Panel1.Controls.Add(this.rtbNote);
             this.splitContainer4.Panel1.Controls.Add(this.label1);
-            this.helpProvider1.SetHelpKeyword(this.splitContainer4.Panel1, resources.GetString("splitContainer4.Panel1.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.splitContainer4.Panel1, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("splitContainer4.Panel1.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.splitContainer4.Panel1, resources.GetString("splitContainer4.Panel1.HelpString"));
             this.helpProvider1.SetShowHelp(this.splitContainer4.Panel1, ((bool)(resources.GetObject("splitContainer4.Panel1.ShowHelp"))));
             // 
             // splitContainer4.Panel2
             // 
-            resources.ApplyResources(this.splitContainer4.Panel2, "splitContainer4.Panel2");
             this.splitContainer4.Panel2.BackColor = System.Drawing.Color.AliceBlue;
+            this.splitContainer4.Panel2.Controls.Add(this.btnColorPen);
             this.splitContainer4.Panel2.Controls.Add(this.btnDeleteDrawNote);
             this.splitContainer4.Panel2.Controls.Add(this.ptbNote);
             this.splitContainer4.Panel2.Controls.Add(this.lb2);
-            this.helpProvider1.SetHelpKeyword(this.splitContainer4.Panel2, resources.GetString("splitContainer4.Panel2.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.splitContainer4.Panel2, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("splitContainer4.Panel2.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.splitContainer4.Panel2, resources.GetString("splitContainer4.Panel2.HelpString"));
             this.helpProvider1.SetShowHelp(this.splitContainer4.Panel2, ((bool)(resources.GetObject("splitContainer4.Panel2.ShowHelp"))));
             this.helpProvider1.SetShowHelp(this.splitContainer4, ((bool)(resources.GetObject("splitContainer4.ShowHelp"))));
             // 
             // btnDeleteNote
             // 
             resources.ApplyResources(this.btnDeleteNote, "btnDeleteNote");
-            this.helpProvider1.SetHelpKeyword(this.btnDeleteNote, resources.GetString("btnDeleteNote.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.btnDeleteNote, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("btnDeleteNote.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.btnDeleteNote, resources.GetString("btnDeleteNote.HelpString"));
             this.btnDeleteNote.Name = "btnDeleteNote";
             this.helpProvider1.SetShowHelp(this.btnDeleteNote, ((bool)(resources.GetObject("btnDeleteNote.ShowHelp"))));
             this.btnDeleteNote.UseVisualStyleBackColor = true;
@@ -244,9 +188,6 @@
             // rtbNote
             // 
             resources.ApplyResources(this.rtbNote, "rtbNote");
-            this.helpProvider1.SetHelpKeyword(this.rtbNote, resources.GetString("rtbNote.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.rtbNote, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("rtbNote.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.rtbNote, resources.GetString("rtbNote.HelpString"));
             this.rtbNote.Name = "rtbNote";
             this.helpProvider1.SetShowHelp(this.rtbNote, ((bool)(resources.GetObject("rtbNote.ShowHelp"))));
             this.rtbNote.TextChanged += new System.EventHandler(this.rtbNote_TextChanged);
@@ -254,18 +195,19 @@
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
-            this.helpProvider1.SetHelpKeyword(this.label1, resources.GetString("label1.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.label1, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("label1.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.label1, resources.GetString("label1.HelpString"));
             this.label1.Name = "label1";
             this.helpProvider1.SetShowHelp(this.label1, ((bool)(resources.GetObject("label1.ShowHelp"))));
+            // 
+            // btnColorPen
+            // 
+            resources.ApplyResources(this.btnColorPen, "btnColorPen");
+            this.btnColorPen.Name = "btnColorPen";
+            this.btnColorPen.UseVisualStyleBackColor = true;
+            this.btnColorPen.Click += new System.EventHandler(this.btnColorPen_Click);
             // 
             // btnDeleteDrawNote
             // 
             resources.ApplyResources(this.btnDeleteDrawNote, "btnDeleteDrawNote");
-            this.helpProvider1.SetHelpKeyword(this.btnDeleteDrawNote, resources.GetString("btnDeleteDrawNote.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.btnDeleteDrawNote, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("btnDeleteDrawNote.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.btnDeleteDrawNote, resources.GetString("btnDeleteDrawNote.HelpString"));
             this.btnDeleteDrawNote.Name = "btnDeleteDrawNote";
             this.helpProvider1.SetShowHelp(this.btnDeleteDrawNote, ((bool)(resources.GetObject("btnDeleteDrawNote.ShowHelp"))));
             this.btnDeleteDrawNote.UseVisualStyleBackColor = true;
@@ -273,11 +215,8 @@
             // 
             // ptbNote
             // 
-            resources.ApplyResources(this.ptbNote, "ptbNote");
             this.ptbNote.BackgroundImage = global::FileManager.Properties.Resources.nền_trắng_500x500;
-            this.helpProvider1.SetHelpKeyword(this.ptbNote, resources.GetString("ptbNote.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.ptbNote, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("ptbNote.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.ptbNote, resources.GetString("ptbNote.HelpString"));
+            resources.ApplyResources(this.ptbNote, "ptbNote");
             this.ptbNote.Name = "ptbNote";
             this.helpProvider1.SetShowHelp(this.ptbNote, ((bool)(resources.GetObject("ptbNote.ShowHelp"))));
             this.ptbNote.TabStop = false;
@@ -289,20 +228,14 @@
             // lb2
             // 
             resources.ApplyResources(this.lb2, "lb2");
-            this.helpProvider1.SetHelpKeyword(this.lb2, resources.GetString("lb2.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.lb2, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("lb2.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.lb2, resources.GetString("lb2.HelpString"));
             this.lb2.Name = "lb2";
             this.helpProvider1.SetShowHelp(this.lb2, ((bool)(resources.GetObject("lb2.ShowHelp"))));
             // 
             // btnNew
             // 
-            resources.ApplyResources(this.btnNew, "btnNew");
             this.btnNew.BackColor = System.Drawing.SystemColors.Control;
-            this.btnNew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.helpProvider1.SetHelpKeyword(this.btnNew, resources.GetString("btnNew.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.btnNew, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("btnNew.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.btnNew, resources.GetString("btnNew.HelpString"));
+            resources.ApplyResources(this.btnNew, "btnNew");
+            this.btnNew.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnNew.Name = "btnNew";
             this.helpProvider1.SetShowHelp(this.btnNew, ((bool)(resources.GetObject("btnNew.ShowHelp"))));
             this.btnNew.UseVisualStyleBackColor = false;
@@ -310,29 +243,19 @@
             // 
             // btnSave
             // 
-            resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.helpProvider1.SetHelpKeyword(this.btnSave, resources.GetString("btnSave.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this.btnSave, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("btnSave.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this.btnSave, resources.GetString("btnSave.HelpString"));
             this.btnSave.Name = "btnSave";
             this.helpProvider1.SetShowHelp(this.btnSave, ((bool)(resources.GetObject("btnSave.ShowHelp"))));
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // helpProvider1
-            // 
-            resources.ApplyResources(this.helpProvider1, "helpProvider1");
             // 
             // frmRead
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
-            this.helpProvider1.SetHelpKeyword(this, resources.GetString("$this.HelpKeyword"));
-            this.helpProvider1.SetHelpNavigator(this, ((System.Windows.Forms.HelpNavigator)(resources.GetObject("$this.HelpNavigator"))));
-            this.helpProvider1.SetHelpString(this, resources.GetString("$this.HelpString"));
             this.Name = "frmRead";
             this.helpProvider1.SetShowHelp(this, ((bool)(resources.GetObject("$this.ShowHelp"))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -383,5 +306,7 @@
         private System.Windows.Forms.PictureBox ptbNote;
         private System.Windows.Forms.Label lb2;
         private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.Button btnColorPen;
+        private System.Windows.Forms.ColorDialog colorDialog;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(listViewThumb));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,7 +38,9 @@
             this.lbCategory = new System.Windows.Forms.Label();
             this.lbRecentlyRead = new System.Windows.Forms.Label();
             this.picFile = new System.Windows.Forms.PictureBox();
+            this.picNewIcon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picFile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNewIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -147,18 +150,30 @@
             this.picFile.Margin = new System.Windows.Forms.Padding(2);
             this.picFile.Name = "picFile";
             this.picFile.Size = new System.Drawing.Size(91, 130);
-            this.picFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFile.TabIndex = 0;
             this.picFile.TabStop = false;
             this.picFile.DoubleClick += new System.EventHandler(this.picFile_DoubleClick);
             this.picFile.MouseEnter += new System.EventHandler(this.picFile_MouseEnter);
             this.picFile.MouseLeave += new System.EventHandler(this.picFile_MouseLeave);
             // 
+            // picNewIcon
+            // 
+            this.picNewIcon.BackColor = System.Drawing.Color.Transparent;
+            this.picNewIcon.Image = ((System.Drawing.Image)(resources.GetObject("picNewIcon.Image")));
+            this.picNewIcon.Location = new System.Drawing.Point(25, 78);
+            this.picNewIcon.Name = "picNewIcon";
+            this.picNewIcon.Size = new System.Drawing.Size(74, 63);
+            this.picNewIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picNewIcon.TabIndex = 9;
+            this.picNewIcon.TabStop = false;
+            // 
             // listViewThumb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.picNewIcon);
             this.Controls.Add(this.lbRecentlyRead);
             this.Controls.Add(this.lbCategory);
             this.Controls.Add(this.lbTitle);
@@ -175,6 +190,7 @@
             this.MouseEnter += new System.EventHandler(this.listViewThumb_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.listViewThumb_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.picFile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNewIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +207,6 @@
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Label lbCategory;
         private System.Windows.Forms.Label lbRecentlyRead;
+        private System.Windows.Forms.PictureBox picNewIcon;
     }
 }

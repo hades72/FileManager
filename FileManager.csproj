@@ -168,7 +168,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Documents\" />
-    <Folder Include="Pictures\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\nền-trắng-500x500.jpg" />
@@ -184,6 +183,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\depositphotos_190959552-stock-illustration-set-of-read-more-colorful.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\new-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

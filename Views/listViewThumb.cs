@@ -15,9 +15,11 @@ namespace FileManager.Views
     public partial class listViewThumb : UserControl
     {
         List<FileM> fileM;
+        
         public listViewThumb()
         {
             InitializeComponent();
+            picNewIcon.Parent = picFile;
         }
 
         #region Properties
@@ -61,6 +63,13 @@ namespace FileManager.Views
         {
             get { return picFile; }
             set { picFile = value; }
+        }
+
+        [Category("File Props")]
+        public PictureBox PictureNewIcon
+        {
+            get { return picNewIcon; }
+            set { picNewIcon = value; }
         }
 
         [Category("File Props")]

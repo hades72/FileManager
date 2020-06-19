@@ -54,6 +54,7 @@ namespace FileManager.Views
                 numberOfPage = reader.NumberOfPages;
             }
             ReadByPageNumber(currentPage); // đọc file theo trang
+            // checkdraw vẫn false vì chưa vẽ gì mới mà chỉ load hình vẽ đã có
             try // load hình vẽ đã lưu lên
             {
                 if (G == null)
@@ -68,13 +69,12 @@ namespace FileManager.Views
                 {
                     ptbNote.Image = Image.FromStream(fileStream);
                     fileStream.Close();
-                    checkDraw = true;
                     btnDeleteDrawNote.Enabled = true;
                 }
             }
             catch // nếu không có hình vẽ thì thôi
             {
-                checkDraw = false;
+                
             }
             this.helpProvider1.SetShowHelp(this.rtbNote, true);
             this.helpProvider1.SetHelpString(this.rtbNote, "Nhap noi dung ban can ghi chu!");
@@ -201,28 +201,29 @@ namespace FileManager.Views
 
         private void btnDeleteDrawNote_Click(object sender, EventArgs e)
         {
-            if(checkDraw == true)
+            //if(checkDraw == true)
+            //{
+
+            //}
+            try // nếu đã tồn tại hình vẽ thì xóa (nghĩa là hình vẽ đã được lưu)
             {
-                try // nếu đã tồn tại hình vẽ thì xóa (nghĩa là hình vẽ đã được lưu)
-                {
-                    var fs = File.OpenRead(String.Format("{0}.jpg", fileCode));
-                    ptbNote.Image = Image.FromStream(fs);
-                    fs.Close();
-                    File.Delete(String.Format("{0}.jpg", fileCode));
-                }
-                catch
-                {
-                    // nếu hình vẽ chưa được lưu thì chỉ khởi tạo lại ptb ban đầu
-                }
-                G = null;
-                G = ptbNote.CreateGraphics();
-                Bitmap bm = new Bitmap(ptbNote.ClientSize.Width, ptbNote.ClientSize.Height);
-                ptbNote.Image = bm;
-                G = Graphics.FromImage(bm);
-                G.Clear(Color.White);
-                btnDeleteDrawNote.Enabled = false; // xóa rồi thì tắt button xóa
-                checkDraw = false; // chuyển về chưa vẽ
+                var fs = File.OpenRead(String.Format("{0}.jpg", fileCode));
+                ptbNote.Image = Image.FromStream(fs);
+                fs.Close();
+                File.Delete(String.Format("{0}.jpg", fileCode));
             }
+            catch
+            {
+                // nếu hình vẽ chưa được lưu thì chỉ khởi tạo lại ptb ban đầu
+            }
+            G = null;
+            G = ptbNote.CreateGraphics();
+            Bitmap bm = new Bitmap(ptbNote.ClientSize.Width, ptbNote.ClientSize.Height);
+            ptbNote.Image = bm;
+            G = Graphics.FromImage(bm);
+            G.Clear(Color.White);
+            btnDeleteDrawNote.Enabled = false; // xóa rồi thì tắt button xóa
+            checkDraw = false; // chuyển về chưa vẽ
         }
 
         private void btnDeleteNote_Click(object sender, EventArgs e)
@@ -233,10 +234,10 @@ namespace FileManager.Views
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            if(btnDeleteNote.Enabled == false && btnDeleteDrawNote.Enabled == false)
-            {
-                MessageBox.Show("Không có gì để xóa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //if(btnDeleteNote.Enabled == false && btnDeleteDrawNote.Enabled == false)
+            //{
+            //    MessageBox.Show("Không có gì để xóa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
             if(btnDeleteNote.Enabled == true)
             {
                 btnDeleteNote_Click(sender, e);
@@ -264,7 +265,7 @@ namespace FileManager.Views
             FileM file = FileController.getFileM(fileCode);
             file.iRead = maxPage;
             file.dtRecentlyRead = DateTime.Now;
-            if (file.sNote != rtbNote.Text.Trim() && rtbNote.Text.Length > 0)
+            if (file.sNote != rtbNote.Text.Trim() && rtbNote.Text.Length > 0 && checkDraw == true)
             {
                 DialogResult dr = MessageBox.Show("Bạn có muốn lưu các thay đổi cho " + file.sTitle + "?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                 if (dr == DialogResult.Yes)
@@ -281,7 +282,6 @@ namespace FileManager.Views
                     {
 
                     }
-                    checkDraw = false;
                 }
                 else if (dr == DialogResult.Cancel)
                 {
@@ -290,20 +290,33 @@ namespace FileManager.Views
             }
             FileController.UpdateFile(file); // cập nhật xuống dtb
         }
+
+        private void btnColorPen_Click(object sender, EventArgs e)
+        {
+            DialogResult dlgresult = colorDialog.ShowDialog();
+            if (dlgresult == DialogResult.OK) //Nếu nhấp vào nút OK trên hộp thoại
+            {
+                drawNote.color = colorDialog.Color; //Trả lại tên của màu đã lựa chọn
+                drawNote.pen = new Pen(drawNote.color, drawNote.width);
+            }
+        }
     }
 
     public class DrawNote
     {
         public int X { set; get; }
         public int Y { set; get; }
-        public Color color { set; get; }
-        public Pen pen { set; get; }
+        public Color color { set; get; } // màu
+        public Pen pen { set; get; } // bút vẽ
         public bool isDraw { set; get; }
+        public float width { get; set; } // chiều rộng của nét bút
         public DrawNote()
         {
             isDraw = false;
+            // màu sắc và chiều rộng của nét bút
             color = Color.Black;
-            pen = new Pen(color, 2);
+            width = 2;
+            pen = new Pen(color, width);
         }
     }
 }
