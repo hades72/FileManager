@@ -1,6 +1,6 @@
 ﻿namespace FileManager.Views
 {
-    partial class listViewThumb
+    partial class usrViewThumb
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(listViewThumb));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usrViewThumb));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -149,7 +149,7 @@
             this.picFile.Location = new System.Drawing.Point(8, 11);
             this.picFile.Margin = new System.Windows.Forms.Padding(2);
             this.picFile.Name = "picFile";
-            this.picFile.Size = new System.Drawing.Size(91, 130);
+            this.picFile.Size = new System.Drawing.Size(95, 134);
             this.picFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFile.TabIndex = 0;
             this.picFile.TabStop = false;
@@ -161,9 +161,9 @@
             // 
             this.picNewIcon.BackColor = System.Drawing.Color.Transparent;
             this.picNewIcon.Image = ((System.Drawing.Image)(resources.GetObject("picNewIcon.Image")));
-            this.picNewIcon.Location = new System.Drawing.Point(25, 78);
+            this.picNewIcon.Location = new System.Drawing.Point(42, 78);
             this.picNewIcon.Name = "picNewIcon";
-            this.picNewIcon.Size = new System.Drawing.Size(74, 63);
+            this.picNewIcon.Size = new System.Drawing.Size(60, 63);
             this.picNewIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picNewIcon.TabIndex = 9;
             this.picNewIcon.TabStop = false;

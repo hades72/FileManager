@@ -13,7 +13,7 @@ namespace FileManager.Views
 {
     public partial class frmMainGUI : Form
     {
-        frmViewThumb fView;
+        frmManager fView;
         List<FileM> listFileM;
         public frmMainGUI()
         {
@@ -48,7 +48,7 @@ namespace FileManager.Views
 
         private void frmMainGUI_Load(object sender, EventArgs e)
         {
-            this.fView= new frmViewThumb(ref listFileM);
+            this.fView= new frmManager(ref listFileM);
             this.fView.MdiParent = this;
             this.fView.Show();
         }

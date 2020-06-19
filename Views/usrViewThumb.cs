@@ -12,11 +12,11 @@ using System.IO;
 
 namespace FileManager.Views
 {
-    public partial class listViewThumb : UserControl
+    public partial class usrViewThumb : UserControl
     {
         List<FileM> fileM;
         
-        public listViewThumb()
+        public usrViewThumb()
         {
             InitializeComponent();
             picNewIcon.Parent = picFile;

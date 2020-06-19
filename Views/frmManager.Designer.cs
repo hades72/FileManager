@@ -2,7 +2,7 @@
 
 namespace FileManager.Views
 {
-    partial class frmViewThumb
+    partial class frmManager
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace FileManager.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmViewThumb));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManager));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pnlDanhMuc = new System.Windows.Forms.Panel();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
@@ -41,7 +41,7 @@ namespace FileManager.Views
             this.tabView = new System.Windows.Forms.TabControl();
             this.tabThumb = new System.Windows.Forms.TabPage();
             this.flpnlThumb = new System.Windows.Forms.FlowLayoutPanel();
-            this.listViewThumb1 = new FileManager.Views.listViewThumb();
+            this.listViewThumb1 = new FileManager.Views.usrViewThumb();
             this.tabDataGV = new System.Windows.Forms.TabPage();
             this.dataFileM = new System.Windows.Forms.DataGridView();
             this.cFileCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -341,11 +341,11 @@ namespace FileManager.Views
             // tabAddFile
             // 
             this.tabAddFile.Name = "tabAddFile";
-            this.tabAddFile.Size = new System.Drawing.Size(126, 22);
-            this.tabAddFile.Text = "&Thêm File";
+            this.tabAddFile.Size = new System.Drawing.Size(180, 22);
+            this.tabAddFile.Text = "&Thêm file";
             this.tabAddFile.Click += new System.EventHandler(this.tabAddFile_Click);
             // 
-            // frmViewThumb
+            // frmManager
             // 
             this.AcceptButton = this.btnSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,8 +355,8 @@ namespace FileManager.Views
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "frmViewThumb";
-            this.Text = "frmViewThumb";
+            this.Name = "frmManager";
+            this.Text = "Thư viện";
             this.Load += new System.EventHandler(this.frmViewThumb_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -398,7 +398,7 @@ namespace FileManager.Views
         private System.Windows.Forms.DataGridViewTextBoxColumn cRecentlyRead;
         private System.Windows.Forms.DataGridViewButtonColumn cDelete;
         private System.Windows.Forms.Panel pnlDanhMuc;
-        private listViewThumb listViewThumb1;
+        private usrViewThumb listViewThumb1;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;

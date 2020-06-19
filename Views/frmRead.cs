@@ -98,7 +98,7 @@ namespace FileManager.Views
             ReadByPageNumber(currentPage);
         }
 
-        private void ReadByPageNumber(int pagenumber)
+        private void ReadByPageNumber(int pagenumber) // đọc file theo trang
         {
             this.rtbRead.Text = null;
             txtCurrentPage.Text = "Trang " + pagenumber.ToString();
