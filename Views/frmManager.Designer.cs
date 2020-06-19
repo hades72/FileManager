@@ -356,7 +356,7 @@ namespace FileManager.Views
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmManager";
-            this.Text = "Thư viện";
+            this.Text = "Danh sách file";
             this.Load += new System.EventHandler(this.frmViewThumb_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
