@@ -30,6 +30,7 @@ namespace FileManager.Views
         private string _recentlyread;
         private string _note;
         private string _linkfile;
+       // private PictureBox picNewIcon;
 
         [Category("File Props")]
         public string Title
@@ -262,8 +263,7 @@ namespace FileManager.Views
         {
             if (e.Button == MouseButtons.Right)
             {
-                usrDetailTable detail = new usrDetailTable();
-                detail.Show();
+                MessageBox.Show("ĐƯỢC RỒI");
             }                
         }
     }
