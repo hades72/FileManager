@@ -19,7 +19,7 @@ namespace FileManager.Views
         public usrViewThumb()
         {
             InitializeComponent();
-            picNewIcon.Parent = picFile;
+            //picNewIcon.Parent = picFile;
         }
 
         #region Properties
@@ -30,7 +30,6 @@ namespace FileManager.Views
         private string _recentlyread;
         private string _note;
         private string _linkfile;
-       // private PictureBox picNewIcon;
 
         [Category("File Props")]
         public string Title
@@ -66,12 +65,12 @@ namespace FileManager.Views
             set { picFile = value; }
         }
 
-        [Category("File Props")]
-        public PictureBox PictureNewIcon
-        {
-            get { return picNewIcon; }
-            set { picNewIcon = value; }
-        }
+        //[Category("File Props")]
+        ////public PictureBox PictureNewIcon
+        ////{
+        ////    get { return picNewIcon; }
+        ////    set { picNewIcon = value; }
+        ////}
 
         [Category("File Props")]
         public string Note
