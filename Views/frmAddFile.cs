@@ -25,7 +25,7 @@ namespace FileManager.Views
         List<FileM> listFileM;
         bool clickPicUpload;
         string pathOriginalIMG;
-        string category ="";
+        string category = "";
 
         public frmAddFile(ref List<FileM> listfilems)
         {

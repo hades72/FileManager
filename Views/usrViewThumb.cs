@@ -12,12 +12,14 @@ using System.IO;
 
 namespace FileManager.Views
 {
-    public partial class listViewThumb : UserControl
+    public partial class usrViewThumb : UserControl
     {
         List<FileM> fileM;
-        public listViewThumb()
+        
+        public usrViewThumb()
         {
             InitializeComponent();
+            picNewIcon.Parent = picFile;
         }
 
         #region Properties
@@ -61,6 +63,13 @@ namespace FileManager.Views
         {
             get { return picFile; }
             set { picFile = value; }
+        }
+
+        [Category("File Props")]
+        public PictureBox PictureNewIcon
+        {
+            get { return picNewIcon; }
+            set { picNewIcon = value; }
         }
 
         [Category("File Props")]

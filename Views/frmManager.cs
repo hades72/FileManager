@@ -14,12 +14,12 @@ using System.Data.SqlClient;
 
 namespace FileManager.Views
 {
-    public partial class frmViewThumb : Form
+    public partial class frmManager : Form
     {
         List<FileM> fileM;
         BindingSource source = new BindingSource();
         Graphics G = null;
-        public frmViewThumb(ref List<FileM> fileM)
+        public frmManager(ref List<FileM> fileM)
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
@@ -64,7 +64,7 @@ namespace FileManager.Views
             }
             for (int i = 1; i <= FileController.getListFile().Count; i++)
             {
-                listViewThumb listView1 = new listViewThumb();
+                usrViewThumb listView1 = new usrViewThumb();
                 FileM file = FileController.getFileM(i);
                 listView1.Title = file.sTitle;
                 listView1.Category = file.sCategory;
@@ -78,6 +78,13 @@ namespace FileManager.Views
                 }
                 G = Graphics.FromImage(listView1.PictureFile.Image);
                 flpnlThumb.Controls.Add(listView1);
+
+                // Mới thêm vào thì hiện icon New
+                if(file.dtDateUpdate.Date == DateTime.Now.Date && file.dtDateUpdate.Month == DateTime.Now.Month && file.dtDateUpdate.Year == DateTime.Now.Year)
+                {
+                    listView1.PictureNewIcon.Visible = true;
+                }
+                else listView1.PictureNewIcon.Visible = false;
             }
         }
 

@@ -112,17 +112,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\frmViewThumb.cs">
+    <Compile Include="Views\frmManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmViewThumb.Designer.cs">
-      <DependentUpon>frmViewThumb.cs</DependentUpon>
+    <Compile Include="Views\frmManager.Designer.cs">
+      <DependentUpon>frmManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\listViewThumb.cs">
+    <Compile Include="Views\usrViewThumb.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\listViewThumb.Designer.cs">
-      <DependentUpon>listViewThumb.cs</DependentUpon>
+    <Compile Include="Views\usrViewThumb.Designer.cs">
+      <DependentUpon>usrViewThumb.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Views\DetailTable.resx">
       <DependentUpon>DetailTable.cs</DependentUpon>
@@ -155,11 +155,11 @@
     <EmbeddedResource Include="Views\frmReadIndex.resx">
       <DependentUpon>frmReadIndex.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmViewThumb.resx">
-      <DependentUpon>frmViewThumb.cs</DependentUpon>
+    <EmbeddedResource Include="Views\frmManager.resx">
+      <DependentUpon>frmManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\listViewThumb.resx">
-      <DependentUpon>listViewThumb.cs</DependentUpon>
+    <EmbeddedResource Include="Views\usrViewThumb.resx">
+      <DependentUpon>usrViewThumb.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -177,7 +177,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Documents\" />
-    <Folder Include="Pictures\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\nền-trắng-500x500.jpg" />
@@ -193,6 +192,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\depositphotos_190959552-stock-illustration-set-of-read-more-colorful.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Pictures\new-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
