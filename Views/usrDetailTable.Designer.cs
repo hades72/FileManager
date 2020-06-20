@@ -1,6 +1,6 @@
 ﻿namespace FileManager.Views
 {
-    partial class DetailTable
+    partial class usrDetailTable
     {
         /// <summary> 
         /// Required designer variable.

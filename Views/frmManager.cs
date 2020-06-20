@@ -98,7 +98,7 @@ namespace FileManager.Views
 
             for (int i = 0; i < dataFileM.RowCount; i++)
             {
-                listViewThumb listView1 = new listViewThumb();
+                usrViewThumb listView1 = new usrViewThumb();
                 FileM file = FileController.getFileM(int.Parse(this.dataFileM.Rows[i].Cells[1].Value.ToString()));
                 listView1.Title = file.sTitle;
                 listView1.Category = file.sCategory;

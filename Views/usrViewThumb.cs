@@ -262,7 +262,7 @@ namespace FileManager.Views
         {
             if (e.Button == MouseButtons.Right)
             {
-                DetailTable detail = new DetailTable();
+                usrDetailTable detail = new usrDetailTable();
                 detail.Show();
             }                
         }

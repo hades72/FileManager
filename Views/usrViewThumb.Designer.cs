@@ -1,6 +1,6 @@
 ﻿namespace FileManager.Views
 {
-    partial class listViewThumb
+    partial class usrViewThumb
     {
         /// <summary> 
         /// Required designer variable.

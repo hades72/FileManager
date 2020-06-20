@@ -11,11 +11,11 @@ using FileManager.Models;
 
 namespace FileManager.Views
 {
-    public partial class DetailTable : UserControl
+    public partial class usrDetailTable : UserControl
     {
         List<FileM> fileM;
  
-        public DetailTable()
+        public usrDetailTable()
         {
             InitializeComponent();
         }

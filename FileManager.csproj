@@ -80,11 +80,11 @@
     <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Models\DBFileContext.cs" />
     <Compile Include="Models\FileM.cs" />
-    <Compile Include="Views\DetailTable.cs">
+    <Compile Include="Views\usrDetailTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\DetailTable.Designer.cs">
-      <DependentUpon>DetailTable.cs</DependentUpon>
+    <Compile Include="Views\usrDetailTable.Designer.cs">
+      <DependentUpon>usrDetailTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\frmRead.cs">
       <SubType>Form</SubType>
@@ -124,8 +124,8 @@
     <Compile Include="Views\usrViewThumb.Designer.cs">
       <DependentUpon>usrViewThumb.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\DetailTable.resx">
-      <DependentUpon>DetailTable.cs</DependentUpon>
+    <EmbeddedResource Include="Views\usrDetailTable.resx">
+      <DependentUpon>usrDetailTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmAddFile.resx">
       <DependentUpon>frmAddFile.cs</DependentUpon>
