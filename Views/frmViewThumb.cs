@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FileManager.Controllers;
 using FileManager.Models;
+using System.Data.SqlClient;
 
 namespace FileManager.Views
 {
@@ -80,6 +81,33 @@ namespace FileManager.Views
             }
         }
 
+        private void SearchItems()
+        {
+
+            if (flpnlThumb.Controls.Count > 0)
+            {
+                flpnlThumb.Controls.Clear();
+            }
+
+            for (int i = 0; i < dataFileM.RowCount; i++)
+            {
+                listViewThumb listView1 = new listViewThumb();
+                FileM file = FileController.getFileM(int.Parse(this.dataFileM.Rows[i].Cells[1].Value.ToString()));
+                listView1.Title = file.sTitle;
+                listView1.Category = file.sCategory;
+                listView1.FileCode = file.iFileCode.ToString();
+                listView1.RecentlyRead = file.dtRecentlyRead.ToString();
+                listView1.Note = file.sNote;
+                listView1.LinkFile = file.sLinkFile;
+                using (FileStream stream = new FileStream(String.Format(file.sLinkPic), FileMode.Open, FileAccess.Read))
+                {
+                    listView1.PictureFile.Image = Image.FromStream(stream);
+                }
+                G = Graphics.FromImage(listView1.PictureFile.Image);
+                flpnlThumb.Controls.Add(listView1);
+            }
+        }
+
         private void frmViewThumb_Load(object sender, EventArgs e)
         {
             this.helpProvider1.SetShowHelp(this.txtSearch, true);
@@ -119,13 +147,19 @@ namespace FileManager.Views
             else
             {
                 source.DataSource = FileController.SearchFile(this.txtSearch.Text.Trim());
+                
                 if (source.DataSource == null)
                 {
                     MessageBox.Show("Không có tên file cần tìm!", "Thông báo", MessageBoxButtons.OK);
                     source.DataSource = FileController.getListFile();
+                    showThumb();
                 }
             }
             dataFileM.DataSource = source;
+            if(source.DataSource != null)
+            {
+                SearchItems();
+            }
         }
 
 
@@ -204,6 +238,21 @@ namespace FileManager.Views
             {
                 btnReadFile.Visible = true;
             }
+        }
+
+        private void pnlLastRead_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            // dataFileM
+            frmRead read = new frmRead(ref fileM, int.Parse(this.dataFileM.CurrentRow.Cells[1].Value.ToString()));
+            read.Text = this.dataFileM.CurrentRow.Cells[2].Value.ToString();
+            read.Show();
+            // thumb
+
+        }
+
+        private void pnlLastRead_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

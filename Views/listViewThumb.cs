@@ -77,7 +77,6 @@ namespace FileManager.Views
             set { _linkfile = value; }
         }
 
-
         #endregion
         private void listViewThumb_DoubleClick(object sender, EventArgs e)
         {
@@ -248,6 +247,15 @@ namespace FileManager.Views
         private void lbTheLoai_MouseLeave(object sender, EventArgs e)
         {
             this.BackColor = Color.White;
+        }
+
+        private void listViewThumb_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                DetailTable detail = new DetailTable();
+                detail.Show();
+            }                
         }
     }
 }

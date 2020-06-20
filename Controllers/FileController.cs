@@ -121,13 +121,13 @@ namespace FileManager.Controllers
 
         }
         
-        public static List<FileM> SearchFile(string search)
+        public static List<FileM> SearchFile(string search) // search theo tên
         {
             using (var _context = new DBFileContext())
             {
 
                 var file = (from f in _context.tbFileMs.AsEnumerable()
-                             where f.sTitle.StartsWith(search) || f.sCategory.StartsWith(search)
+                             where f.sTitle.StartsWith(search)
                              select f).Select(x => new FileM
                              {
                                  iFileCode = x.iFileCode,
