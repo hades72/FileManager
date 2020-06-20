@@ -66,11 +66,11 @@ namespace FileManager.Views
         }
 
         //[Category("File Props")]
-        ////public PictureBox PictureNewIcon
-        ////{
-        ////    get { return picNewIcon; }
-        ////    set { picNewIcon = value; }
-        ////}
+        //public PictureBox PictureNewIcon
+        //{
+        //    get { return picNewIcon; }
+        //    set { picNewIcon = value; }
+        //}
 
         [Category("File Props")]
         public string Note
