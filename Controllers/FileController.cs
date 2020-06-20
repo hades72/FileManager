@@ -125,7 +125,6 @@ namespace FileManager.Controllers
         {
             using (var _context = new DBFileContext())
             {
-
                 var file = (from f in _context.tbFileMs.AsEnumerable()
                              where f.sTitle.StartsWith(search) || f.sCategory.StartsWith(search)
                              select f).Select(x => new FileM
