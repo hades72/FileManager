@@ -26,6 +26,7 @@ namespace FileManager.Views
         bool clickPicUpload;
         string pathOriginalIMG;
         string category = "";
+        List<int> selected = new List<int>();
 
         public frmAddFile(ref List<FileM> listfilems)
         {
@@ -40,6 +41,7 @@ namespace FileManager.Views
             pathOriginalIMG = "..//..//Pictures//OriginalIMG.jpg";
             this.picUpload.Image = new Bitmap(pathOriginalIMG);
             clickPicUpload = false;
+               
         }
 
         private void bSave_Click(object sender, EventArgs e)
@@ -68,7 +70,7 @@ namespace FileManager.Views
             FileM file = new FileM();
             file.iFileCode = FileController.getFileCodeFromDB();
             file.sTitle = this.txtTitle.Text.Trim();
-            if(category == "")
+            if (category == "")
             {
                 file.sCategory = this.cbCategory.GetItemText(this.cbCategory.SelectedItem);
             }
@@ -98,6 +100,7 @@ namespace FileManager.Views
             }
             MessageBox.Show("Lưu thành công!");
             category = "";
+            selected.Clear();
         }
 
         private void btnUploadFile_Click(object sender, EventArgs e)
@@ -127,8 +130,8 @@ namespace FileManager.Views
             }
         }
 
-        private void btnDuongDan_Click(object sender, EventArgs e) 
-            // Chọn đường dẫn để lưu file ở Folder khác, nếu thích
+        private void btnDuongDan_Click(object sender, EventArgs e)
+        // Chọn đường dẫn để lưu file ở Folder khác, nếu thích
         {
             this.saveLinkFile.Filter = "PDF Files|*.pdf|All Files|*.*";
             this.saveLinkFile.Title = "Save a PDF File";
@@ -156,13 +159,58 @@ namespace FileManager.Views
 
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
-            if(category == "")
+            if (selected.Count == 0)
             {
-                category = this.cbCategory.GetItemText(this.cbCategory.SelectedItem);
+                category = this.cbCategory.SelectedItem.ToString();
+                selected.Add(this.cbCategory.SelectedIndex);
+                this.txtCurrentCategory.Text = category;
             }
             else
             {
-                category = category +", "+ this.cbCategory.GetItemText(this.cbCategory.SelectedItem);
+                if (checkSelected(this.cbCategory.SelectedIndex))
+                {
+                    category = category + ", " + this.cbCategory.SelectedItem.ToString();
+                    selected.Add(this.cbCategory.SelectedIndex);
+                    this.txtCurrentCategory.Text = category;
+                }
+                else
+                {
+                    MessageBox.Show("Giang đẹp trai !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private bool checkSelected(int number)
+        {
+
+            for (int i = 0; i < selected.Count; i++)
+            {
+                if (selected[i] == number)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        private int getCurrentSelect()
+        {
+            return 1;
+        }
+
+        private void btnRemoveCategory_Click(object sender, EventArgs e)
+        {
+            this.txtCurrentCategory.Clear();
+            selected.Clear();
+        }
+
+        private void txtCurrentCategory_TextChanged(object sender, EventArgs e)
+        {
+            if(txtCurrentCategory.Text.Length > 0)
+            {
+                this.btnRemoveCategory.Enabled = true;
+            }
+            else
+            {
+                this.btnRemoveCategory.Enabled = false;
             }
         }
     }
