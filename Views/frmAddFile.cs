@@ -23,18 +23,12 @@ namespace FileManager.Views
         SaveFileDialog saveLinkFile = new SaveFileDialog();
         OpenFileDialog openIMG = new OpenFileDialog();
         List<FileM> listFileM;
-<<<<<<< HEAD
         private bool clickPicUpload;
         private string pathOriginalIMG;
         private string category = "";
         public bool save = false;
         private bool error = false;
-=======
-        bool clickPicUpload;
-        string pathOriginalIMG;
-        string category = "";
         List<int> selected = new List<int>();
->>>>>>> 6e95b58a3bad6a57305d233ac6dabe5454c3dff1
 
         public frmAddFile(ref List<FileM> listfilems)
         {
@@ -74,31 +68,7 @@ namespace FileManager.Views
                 MessageBox.Show("Chưa nhập mã số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 error = true;
             }
-<<<<<<< HEAD
             if (error == false)
-=======
-
-            FileM file = new FileM();
-            file.iFileCode = FileController.getFileCodeFromDB();
-            file.sTitle = this.txtTitle.Text.Trim();
-            if (category == "")
-            {
-                file.sCategory = this.cbCategory.GetItemText(this.cbCategory.SelectedItem);
-            }
-            else
-            {
-                file.sCategory = category;
-            }
-            file.dtDateUpdate = DateTime.Now.Date;
-            file.iRead = 0; // chưa đọc
-            file.dtRecentlyRead = null; // chưa đọc
-            if (clickPicUpload == true)
-            {
-                file.sLinkPic = openIMG.FileName;  // gán vào linkPic trong list FileM
-
-            }
-            else
->>>>>>> 6e95b58a3bad6a57305d233ac6dabe5454c3dff1
             {
                 FileM file = new FileM();
                 file.iFileCode = FileController.getFileCodeFromDB();
@@ -117,7 +87,6 @@ namespace FileManager.Views
                 if (clickPicUpload == true)
                 {
                     file.sLinkPic = openIMG.FileName;  // gán vào linkPic trong list FileM
-
                 }
                 else
                 {
@@ -132,13 +101,7 @@ namespace FileManager.Views
                     save = false;
                 }
             }
-<<<<<<< HEAD
             this.Close();
-=======
-            MessageBox.Show("Lưu thành công!");
-            category = "";
-            selected.Clear();
->>>>>>> 6e95b58a3bad6a57305d233ac6dabe5454c3dff1
         }
 
         private void btnUploadFile_Click(object sender, EventArgs e)
@@ -242,10 +205,6 @@ namespace FileManager.Views
                 }
             }
             return true;
-        }
-        private int getCurrentSelect()
-        {
-            return 1;
         }
 
         private void btnRemoveCategory_Click(object sender, EventArgs e)

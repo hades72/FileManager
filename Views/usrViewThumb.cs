@@ -17,13 +17,13 @@ namespace FileManager.Views
     {
         List<FileM> fileM;
         BindingSource source = new BindingSource();
-        DataGridView dataFileM;
-        FlowLayoutPanel flpanel;
+        //DataGridView dataFileM;
+        //FlowLayoutPanel flpanel;
 
         public usrViewThumb()
         {
             InitializeComponent();
-            //picNewIcon.Parent = picFile;
+            picNewIcon.Parent = picFile;
 
 
             // Cập nhật lại Data Grid View
