@@ -36,6 +36,17 @@ namespace FileManager.Views
             this.listFileM = listfilems;
             this.txtFileCode.Text = FileController.getFileCodeFromDB().ToString();
             WindowState = FormWindowState.Maximized; // Full màn hình
+            if (this.cbCategory.SelectedIndex == -1)
+            {
+                this.btnAddCategory.Enabled = false;
+            }
+            List<Category> lctg = new List<Category>();
+            lctg = CategoryController.getListCategory();
+            foreach (var c in lctg)
+            {
+                this.cbCategory.Items.Add(c.sCategoryName);
+            }
+
         }
 
         private void frmAddFile_Load(object sender, EventArgs e)
@@ -178,6 +189,7 @@ namespace FileManager.Views
 
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
+           
             if (selected.Count == 0)
             {
                 category = this.cbCategory.SelectedItem.ToString();
@@ -244,6 +256,16 @@ namespace FileManager.Views
                 MessageBox.Show("Chưa nhập tiêu đề!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 error = true;
             }
+            List<FileM> lF = new List<FileM>();
+            lF = FileController.getListFile();
+            foreach (var f in lF)
+            {
+                if (f.sTitle == txtTitle.Text.Trim())
+                {
+                    MessageBox.Show("Tên file vừa nhập đã tồn tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    error = true;
+                }
+            }
             if (this.txtCurrentCategory.Text.Trim().Length <= 0)
             {
                 MessageBox.Show("Chưa chọn thể loại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -253,6 +275,15 @@ namespace FileManager.Views
             {
                 MessageBox.Show("Chưa nhập mã số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 error = true;
+            }
+        }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.cbCategory.SelectedIndex != -1)
+            {
+                this.btnAddCategory.Enabled = true;
+                return;
             }
         }
     }

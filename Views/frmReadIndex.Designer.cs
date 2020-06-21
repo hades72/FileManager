@@ -28,95 +28,119 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAddReadPreview = new System.Windows.Forms.Button();
+            this.rtbShowFileReadPreview = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSaveReadIndex = new System.Windows.Forms.Button();
+            this.cbReadPreview = new System.Windows.Forms.ComboBox();
+            this.cbCurrentFile = new System.Windows.Forms.ComboBox();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // panel1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            this.panel1.Controls.Add(this.btnAddReadPreview);
+            this.panel1.Controls.Add(this.rtbShowFileReadPreview);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnSaveReadIndex);
+            this.panel1.Controls.Add(this.cbReadPreview);
+            this.panel1.Controls.Add(this.cbCurrentFile);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(441, 321);
+            this.panel1.TabIndex = 0;
             // 
-            // splitContainer1.Panel1
+            // btnAddReadPreview
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.btnAddReadPreview.Location = new System.Drawing.Point(372, 71);
+            this.btnAddReadPreview.Name = "btnAddReadPreview";
+            this.btnAddReadPreview.Size = new System.Drawing.Size(57, 24);
+            this.btnAddReadPreview.TabIndex = 6;
+            this.btnAddReadPreview.Text = "Thêm";
+            this.btnAddReadPreview.UseVisualStyleBackColor = true;
+            this.btnAddReadPreview.Click += new System.EventHandler(this.btnAddReadPreview_Click);
             // 
-            // splitContainer1.Panel2
+            // rtbShowFileReadPreview
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.comboBox3);
-            this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 450);
-            this.splitContainer1.SplitterDistance = 218;
-            this.splitContainer1.TabIndex = 0;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(365, 118);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(173, 118);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(365, 37);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 24);
-            this.comboBox3.TabIndex = 1;
+            this.rtbShowFileReadPreview.Location = new System.Drawing.Point(30, 130);
+            this.rtbShowFileReadPreview.Name = "rtbShowFileReadPreview";
+            this.rtbShowFileReadPreview.Size = new System.Drawing.Size(324, 96);
+            this.rtbShowFileReadPreview.TabIndex = 5;
+            this.rtbShowFileReadPreview.Text = "";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(176, 37);
+            this.label2.Location = new System.Drawing.Point(212, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "File cần đọc trước";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "File hiện tại";
+            // 
+            // btnSaveReadIndex
+            // 
+            this.btnSaveReadIndex.Location = new System.Drawing.Point(30, 256);
+            this.btnSaveReadIndex.Name = "btnSaveReadIndex";
+            this.btnSaveReadIndex.Size = new System.Drawing.Size(107, 32);
+            this.btnSaveReadIndex.TabIndex = 2;
+            this.btnSaveReadIndex.Text = "Lưu";
+            this.btnSaveReadIndex.UseVisualStyleBackColor = true;
+            this.btnSaveReadIndex.Click += new System.EventHandler(this.btnSaveReadIndex_Click);
+            // 
+            // cbReadPreview
+            // 
+            this.cbReadPreview.FormattingEnabled = true;
+            this.cbReadPreview.Location = new System.Drawing.Point(215, 71);
+            this.cbReadPreview.Name = "cbReadPreview";
+            this.cbReadPreview.Size = new System.Drawing.Size(139, 24);
+            this.cbReadPreview.TabIndex = 1;
+            // 
+            // cbCurrentFile
+            // 
+            this.cbCurrentFile.FormattingEnabled = true;
+            this.cbCurrentFile.Location = new System.Drawing.Point(30, 71);
+            this.cbCurrentFile.Name = "cbCurrentFile";
+            this.cbCurrentFile.Size = new System.Drawing.Size(139, 24);
+            this.cbCurrentFile.TabIndex = 0;
+            this.cbCurrentFile.SelectedIndexChanged += new System.EventHandler(this.cbCurrentFile_SelectedIndexChanged);
             // 
             // frmReadIndex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(441, 321);
+            this.Controls.Add(this.panel1);
             this.Name = "frmReadIndex";
             this.Text = "Reading";
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmReadIndex_FormClosing);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox cbReadPreview;
+        private System.Windows.Forms.ComboBox cbCurrentFile;
+        private System.Windows.Forms.Button btnAddReadPreview;
+        private System.Windows.Forms.RichTextBox rtbShowFileReadPreview;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSaveReadIndex;
     }
 }

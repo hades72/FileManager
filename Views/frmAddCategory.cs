@@ -22,7 +22,7 @@ namespace FileManager.Views
             InitializeComponent();
             this.cCategoryCode.DataPropertyName = nameof(Category.iCategoryCode);
             this.cCategoryName.DataPropertyName = nameof(Category.sCategoryName);
-
+            
             source.DataSource = CategoryController.getListCategory();
             dataCategory.AutoGenerateColumns = false;
             dataCategory.DataSource = source;
@@ -91,7 +91,7 @@ namespace FileManager.Views
         {
             List<Category> lctg = new List<Category>();
             lctg = CategoryController.getListCategory();
-            foreach (Category c in lctg)
+            foreach (var c in lctg)
             {
                 if (c.sCategoryName == this.dataCategory.CurrentRow.Cells[e.ColumnIndex].Value.ToString().Trim())
                 {

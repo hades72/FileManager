@@ -30,6 +30,7 @@ namespace FileManager.Views
             this.cCategory.DataPropertyName = nameof(FileM.sCategory);
             this.cDateUpdate.DataPropertyName = nameof(FileM.dtDateUpdate);
             this.cRecentlyRead.DataPropertyName = nameof(FileM.dtRecentlyRead);
+            this.cReadIndex.DataPropertyName = nameof(FileM.sFilePreview);
 
 
             source.DataSource = FileController.getListFile();
@@ -37,7 +38,7 @@ namespace FileManager.Views
             dataFileM.DataSource = source;
             showThumb();
             // Ẩn cột Ghi chú, Link Pic, Link File, Read
-            this.dataFileM.Columns[5].Visible = false;
+            //this.dataFileM.Columns[5].Visible = false;
             //this.dataFileM.Columns[6].Visible = false;
             //this.dataFileM.Columns[7].Visible = false;
             //this.dataFileM.Columns[8].Visible = false;
@@ -135,6 +136,7 @@ namespace FileManager.Views
         private void tabAddFile_Click(object sender, EventArgs e)
         {
             frmAddFile frmAdd = new frmAddFile(ref fileM);
+            
             frmAdd.ShowDialog();
             if (frmAdd.save == true)
             {
@@ -210,7 +212,7 @@ namespace FileManager.Views
             {
                 if (MessageBox.Show("Bạn chắc chắn xóa file này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    FileM file = FileController.getFileM(int.Parse(this.dataFileM.Rows[e.RowIndex].Cells[1].Value.ToString()));
+                    FileM file = FileController.getFileM(int.Parse(this.dataFileM.Rows[e.RowIndex].Cells[0].Value.ToString()));
                     FileController.DeleteFile(file);
                 }
                 // Cập nhật lại Data Grid View và Thumb
@@ -269,14 +271,14 @@ namespace FileManager.Views
 
         private void btnReadFile_Click(object sender, EventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.dataFileM.CurrentRow.Cells[1].Value.ToString()));
+            frmRead read = new frmRead(ref fileM, int.Parse(this.dataFileM.CurrentRow.Cells[0].Value.ToString()));
             read.Text = this.dataFileM.CurrentRow.Cells[2].Value.ToString();
             read.ShowDialog();
             if (read.exit == true)
             {
                 // Cập nhật lại Data Grid View và Thumb
                 loadData();
-                lastRead(this.dataFileM.CurrentRow.Cells[1].Value.ToString());
+                lastRead(this.dataFileM.CurrentRow.Cells[0].Value.ToString());
             }
         }
 
@@ -284,6 +286,16 @@ namespace FileManager.Views
         {
             frmAddCategory catg = new frmAddCategory(ref categories);
             catg.ShowDialog();
+        }
+
+        private void addReadIndex_Click(object sender, EventArgs e)
+        {
+            frmReadIndex ri = new frmReadIndex(ref fileM);
+            ri.ShowDialog();
+            if(ri.save == true)
+            {
+                loadData();
+            }
         }
     }
 }

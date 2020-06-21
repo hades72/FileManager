@@ -54,6 +54,7 @@
             // 
             // dataCategory
             // 
+            this.dataCategory.AllowUserToAddRows = false;
             this.dataCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataCategory.ColumnHeadersHeight = 29;
             this.dataCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
