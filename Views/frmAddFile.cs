@@ -87,7 +87,6 @@ namespace FileManager.Views
                 if (clickPicUpload == true)
                 {
                     file.sLinkPic = openIMG.FileName;  // gán vào linkPic trong list FileM
-
                 }
                 else
                 {
@@ -207,10 +206,6 @@ namespace FileManager.Views
                 }
             }
             return true;
-        }
-        private int getCurrentSelect()
-        {
-            return 1;
         }
 
         private void btnRemoveCategory_Click(object sender, EventArgs e)

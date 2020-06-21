@@ -17,8 +17,8 @@ namespace FileManager.Views
     {
         List<FileM> fileM;
         BindingSource source = new BindingSource();
-        DataGridView dataFileM;
-        FlowLayoutPanel flpanel;
+        //DataGridView dataFileM;
+        //FlowLayoutPanel flpanel;
 
         public usrViewThumb()
         {
