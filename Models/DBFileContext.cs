@@ -14,5 +14,6 @@ namespace FileManager.Models
 
         }
         public DbSet<FileM> tbFileMs { get; set; }
+        public DbSet<Category> tbCategory { get; set; }
     }
 }

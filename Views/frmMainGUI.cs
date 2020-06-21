@@ -15,10 +15,12 @@ namespace FileManager.Views
     {
         frmManager fView;
         List<FileM> listFileM;
+        List<Category> listCategory;
         public frmMainGUI()
         {
             InitializeComponent();
             listFileM = new List<FileM>();
+            listCategory = new List<Category>();
             WindowState = FormWindowState.Maximized;
 
         }
@@ -48,7 +50,7 @@ namespace FileManager.Views
 
         private void frmMainGUI_Load(object sender, EventArgs e)
         {
-            this.fView= new frmManager(ref listFileM);
+            this.fView= new frmManager(ref listFileM,listCategory);
             this.fView.MdiParent = this;
             this.fView.Show();
         }

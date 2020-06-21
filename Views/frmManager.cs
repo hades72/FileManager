@@ -17,10 +17,11 @@ namespace FileManager.Views
     public partial class frmManager : Form
     {
         List<FileM> fileM;
+        List<Category> categories;
         BindingSource source = new BindingSource();
         Graphics G = null;
         private DateTime dtLast = DateTime.MinValue;
-        public frmManager(ref List<FileM> fileM)
+        public frmManager(ref List<FileM> fileM, List<Category> categories)
         {
             InitializeComponent();
             WindowState = FormWindowState.Maximized;
@@ -30,14 +31,20 @@ namespace FileManager.Views
             this.cDateUpdate.DataPropertyName = nameof(FileM.dtDateUpdate);
             this.cRecentlyRead.DataPropertyName = nameof(FileM.dtRecentlyRead);
 
-            loadData();
 
+            source.DataSource = FileController.getListFile();
+            dataFileM.AutoGenerateColumns = false;
+            dataFileM.DataSource = source;
+            showThumb();
             // Ẩn cột Ghi chú, Link Pic, Link File, Read
             this.dataFileM.Columns[5].Visible = false;
-            this.dataFileM.Columns[6].Visible = false;
-            this.dataFileM.Columns[7].Visible = false;
-            this.dataFileM.Columns[8].Visible = false;
+            //this.dataFileM.Columns[6].Visible = false;
+            //this.dataFileM.Columns[7].Visible = false;
+            //this.dataFileM.Columns[8].Visible = false;
+
             
+
+
             if (tabView.SelectedTab == tabDataGV)
             {
                 btnReadFile.Visible = true;
@@ -271,5 +278,10 @@ namespace FileManager.Views
             }
         }
 
+        private void addCategoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddCategory catg = new frmAddCategory(ref categories);
+            catg.ShowDialog();
+        }
     }
 }

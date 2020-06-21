@@ -88,9 +88,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(143, 135);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(136, 17);
+            this.label4.Size = new System.Drawing.Size(119, 17);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Ngày đọc gần nhất: ";
+            this.label4.Text = "Lần đọc gần nhất";
             this.label4.MouseEnter += new System.EventHandler(this.label4_MouseEnter);
             this.label4.MouseLeave += new System.EventHandler(this.label4_MouseLeave);
             // 
@@ -222,7 +222,7 @@
             this.Controls.Add(this.picFile);
             this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "usrViewThumb";
-            this.Size = new System.Drawing.Size(513, 238);
+            this.Size = new System.Drawing.Size(400, 209);
             this.DoubleClick += new System.EventHandler(this.listViewThumb_DoubleClick);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewThumb_MouseClick);
             this.MouseEnter += new System.EventHandler(this.listViewThumb_MouseEnter);

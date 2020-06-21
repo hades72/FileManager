@@ -36,5 +36,6 @@ namespace FileManager.Models
         {
             return this.sTitle;
         }
+        public virtual ICollection<Category> lCategory { get; set; }
     }
 }
