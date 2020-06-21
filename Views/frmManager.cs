@@ -57,7 +57,7 @@ namespace FileManager.Views
             // Khởi tạo LastRead ban đầu
             for(int i = 0; i < dataFileM.RowCount; i++)
             {
-                FileM file = FileController.getFileM(int.Parse(this.dataFileM.Rows[i].Cells[1].Value.ToString()));
+                FileM file = FileController.getFileM(int.Parse(this.dataFileM.Rows[i].Cells[0].Value.ToString()));
                 try
                 {
                     if (DateTime.Compare(file.dtRecentlyRead.Value, dtLast) > 0) // gần nhất
@@ -86,7 +86,9 @@ namespace FileManager.Views
             for (int i = 0; i < dataFileM.RowCount; i++)
             {
                 usrViewThumb listView1 = new usrViewThumb();
-                FileM file = FileController.getFileM(int.Parse(this.dataFileM.Rows[i].Cells[1].Value.ToString()));
+                FileM file = FileController.getFileM(int.Parse(this.dataFileM.Rows[i].Cells[0].Value.ToString()));
+                
+
                 listView1.Title = file.sTitle;
                 listView1.Category = file.sCategory;
                 listView1.FileCode = file.iFileCode.ToString();
