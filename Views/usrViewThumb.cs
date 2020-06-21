@@ -19,7 +19,7 @@ namespace FileManager.Views
         public usrViewThumb()
         {
             InitializeComponent();
-            //picNewIcon.Parent = picFile;
+            picNewIcon.Parent = picFile;
         }
 
         #region Properties
@@ -65,12 +65,12 @@ namespace FileManager.Views
             set { picFile = value; }
         }
 
-        //[Category("File Props")]
-        //public PictureBox PictureNewIcon
-        //{
-        //    get { return picNewIcon; }
-        //    set { picNewIcon = value; }
-        //}
+        [Category("File Props")]
+        public PictureBox PictureNewIcon
+        {
+            get { return picNewIcon; }
+            set { picNewIcon = value; }
+        }
 
         [Category("File Props")]
         public string Note
@@ -91,7 +91,7 @@ namespace FileManager.Views
         {
             frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
             read.Text = this.Title;
-            read.Show();
+            read.ShowDialog();
         }
 
         private void listViewThumb_MouseLeave(object sender, EventArgs e)
@@ -119,7 +119,7 @@ namespace FileManager.Views
         {
             frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
             read.Text = this.Title;
-            read.Show();
+            read.ShowDialog();
         }
 
         private void label1_MouseEnter(object sender, EventArgs e)
@@ -131,7 +131,7 @@ namespace FileManager.Views
         {
             frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
             read.Text = this.Title;
-            read.Show();
+            read.ShowDialog();
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
@@ -143,7 +143,7 @@ namespace FileManager.Views
         {
             frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
             read.Text = this.Title;
-            read.Show();
+            read.ShowDialog();
         }
 
         private void label2_MouseLeave(object sender, EventArgs e)
@@ -160,7 +160,7 @@ namespace FileManager.Views
         {
             frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
             read.Text = this.Title;
-            read.Show();
+            read.ShowDialog();
         }
 
         private void label3_MouseEnter(object sender, EventArgs e)
@@ -177,7 +177,7 @@ namespace FileManager.Views
         {
             frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
             read.Text = this.Title;
-            read.Show();
+            read.ShowDialog();
         }
 
         private void label4_MouseEnter(object sender, EventArgs e)
@@ -194,7 +194,7 @@ namespace FileManager.Views
         {
             frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
             read.Text = this.Title;
-            read.Show();
+            read.ShowDialog();
         }
 
         private void lbNgayDocGanNhat_MouseEnter(object sender, EventArgs e)
@@ -211,7 +211,7 @@ namespace FileManager.Views
         {
             frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
             read.Text = this.Title;
-            read.Show();
+            read.ShowDialog();
         }
 
         private void lbID_MouseEnter(object sender, EventArgs e)
@@ -228,7 +228,7 @@ namespace FileManager.Views
         {
             frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
             read.Text = this.Title;
-            read.Show();
+            read.ShowDialog();
         }
 
         private void lbTenFile_MouseLeave(object sender, EventArgs e)
@@ -245,7 +245,7 @@ namespace FileManager.Views
         {
             frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
             read.Text = this.Title;
-            read.Show();
+            read.ShowDialog();
         }
 
         private void lbTheLoai_MouseEnter(object sender, EventArgs e)
