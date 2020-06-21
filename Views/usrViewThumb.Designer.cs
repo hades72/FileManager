@@ -148,7 +148,7 @@
             this.picFile.Location = new System.Drawing.Point(8, 11);
             this.picFile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picFile.Name = "picFile";
-            this.picFile.Size = new System.Drawing.Size(91, 130);
+            this.picFile.Size = new System.Drawing.Size(91, 134);
             this.picFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFile.TabIndex = 0;
             this.picFile.TabStop = false;
