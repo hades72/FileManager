@@ -93,7 +93,7 @@ namespace FileManager.Views
                 G = Graphics.FromImage(listView1.PictureFile.Image);
                 flpnlThumb.Controls.Add(listView1);
                 //Mới thêm vào thì hiện icon New
-                if (file.dtDateUpdate.Date == DateTime.Now.Date && file.dtDateUpdate.Month == DateTime.Now.Month && file.dtDateUpdate.Year == DateTime.Now.Year)
+                if (file.dtDateUpdate.Date == DateTime.Now.Date && file.dtDateUpdate.Month == DateTime.Now.Month && file.dtDateUpdate.Year == DateTime.Now.Year && file.iRead == 0)
                 {
                     listView1.PictureNewIcon.Visible = true;
                 }

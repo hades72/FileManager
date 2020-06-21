@@ -146,7 +146,7 @@
             // 
             this.picFile.BackColor = System.Drawing.Color.White;
             this.picFile.Location = new System.Drawing.Point(8, 11);
-            this.picFile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picFile.Margin = new System.Windows.Forms.Padding(2);
             this.picFile.Name = "picFile";
             this.picFile.Size = new System.Drawing.Size(95, 134);
             this.picFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -206,7 +206,7 @@
             this.picNewIcon.BackColor = System.Drawing.Color.Transparent;
             this.picNewIcon.Image = global::FileManager.Properties.Resources.long_banner_png_2;
             this.picNewIcon.Location = new System.Drawing.Point(-6, -6);
-            this.picNewIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picNewIcon.Margin = new System.Windows.Forms.Padding(2);
             this.picNewIcon.Name = "picNewIcon";
             this.picNewIcon.Size = new System.Drawing.Size(78, 67);
             this.picNewIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -231,7 +231,7 @@
             this.Controls.Add(this.picFile);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "usrViewThumb";
-            this.Size = new System.Drawing.Size(310, 164);
+            this.Size = new System.Drawing.Size(261, 164);
             this.DoubleClick += new System.EventHandler(this.listViewThumb_DoubleClick);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewThumb_MouseClick);
             this.MouseEnter += new System.EventHandler(this.listViewThumb_MouseEnter);
