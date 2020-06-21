@@ -47,7 +47,6 @@ namespace FileManager.Views
             this.tabView = new System.Windows.Forms.TabControl();
             this.tabThumb = new System.Windows.Forms.TabPage();
             this.flpnlThumb = new System.Windows.Forms.FlowLayoutPanel();
-            this.listViewThumb1 = new FileManager.Views.usrViewThumb();
             this.tabDataGV = new System.Windows.Forms.TabPage();
             this.dataFileM = new System.Windows.Forms.DataGridView();
             this.cFileCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +60,7 @@ namespace FileManager.Views
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabAddFile = new System.Windows.Forms.ToolStripMenuItem();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.listView1 = new FileManager.Views.usrViewThumb();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -276,28 +276,13 @@ namespace FileManager.Views
             // 
             // flpnlThumb
             // 
-            this.flpnlThumb.Controls.Add(this.listViewThumb1);
+            this.flpnlThumb.Controls.Add(this.listView1);
             this.flpnlThumb.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpnlThumb.Location = new System.Drawing.Point(0, 0);
             this.flpnlThumb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpnlThumb.Name = "flpnlThumb";
             this.flpnlThumb.Size = new System.Drawing.Size(1527, 901);
             this.flpnlThumb.TabIndex = 0;
-            // 
-            // listViewThumb1
-            // 
-            this.listViewThumb1.BackColor = System.Drawing.Color.White;
-            this.listViewThumb1.Category = null;
-            this.listViewThumb1.FileCode = null;
-            this.listViewThumb1.LinkFile = null;
-            this.listViewThumb1.Location = new System.Drawing.Point(3, 2);
-            this.listViewThumb1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listViewThumb1.Name = "listViewThumb1";
-            this.listViewThumb1.Note = null;
-            this.listViewThumb1.RecentlyRead = null;
-            this.listViewThumb1.Size = new System.Drawing.Size(273, 193);
-            this.listViewThumb1.TabIndex = 0;
-            this.listViewThumb1.Title = null;
             // 
             // tabDataGV
             // 
@@ -412,15 +397,30 @@ namespace FileManager.Views
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tabAddFile});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 26);
             this.fileToolStripMenuItem.Text = "&File";
             // 
             // tabAddFile
             // 
             this.tabAddFile.Name = "tabAddFile";
-            this.tabAddFile.Size = new System.Drawing.Size(126, 22);
+            this.tabAddFile.Size = new System.Drawing.Size(156, 26);
             this.tabAddFile.Text = "&Thêm File";
             this.tabAddFile.Click += new System.EventHandler(this.tabAddFile_Click);
+            // 
+            // listViewThumb1
+            // 
+            this.listView1.BackColor = System.Drawing.Color.White;
+            this.listView1.Category = null;
+            this.listView1.FileCode = null;
+            this.listView1.LinkFile = null;
+            this.listView1.Location = new System.Drawing.Point(3, 2);
+            this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.listView1.Name = "listViewThumb1";
+            this.listView1.Note = null;
+            this.listView1.RecentlyRead = null;
+            this.listView1.Size = new System.Drawing.Size(273, 193);
+            this.listView1.TabIndex = 0;
+            this.listView1.Title = null;
             // 
             // frmManager
             // 
@@ -432,7 +432,7 @@ namespace FileManager.Views
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "frmViewThumb";
+            this.Name = "frmManager";
             this.Text = "frmViewThumb";
             this.Load += new System.EventHandler(this.frmViewThumb_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -482,7 +482,7 @@ namespace FileManager.Views
         private System.Windows.Forms.DataGridViewTextBoxColumn cRecentlyRead;
         private System.Windows.Forms.DataGridViewButtonColumn cDelete;
         private System.Windows.Forms.Panel pnlDanhMuc;
-        private usrViewThumb listViewThumb1;
+        private usrViewThumb listView1;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;

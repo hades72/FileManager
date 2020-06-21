@@ -9,17 +9,49 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FileManager.Models;
 using System.IO;
+using FileManager.Controllers;
 
 namespace FileManager.Views
 {
     public partial class usrViewThumb : UserControl
     {
         List<FileM> fileM;
-        
+        BindingSource source = new BindingSource();
+        DataGridView dataFileM;
+        FlowLayoutPanel flpanel;
+
         public usrViewThumb()
         {
             InitializeComponent();
             //picNewIcon.Parent = picFile;
+
+
+            // Cập nhật lại Data Grid View
+            //BindingSource source = new BindingSource();
+            //source.DataSource = FileController.getListFile();
+            //dataFileM.DataSource = source;
+
+            //if (flpanel.Controls.Count > 0)
+            //{
+            //    flpanel.Controls.Clear();
+            //}
+            //for (int i = 1; i <= FileController.getListFile().Count; i++)
+            //{
+            //    usrViewThumb listView = new usrViewThumb();
+            //    FileM file1 = FileController.getFileM(i);
+            //    listView.Title = file1.sTitle;
+            //    listView.Category = file1.sCategory;
+            //    listView.FileCode = file1.iFileCode.ToString();
+            //    listView.RecentlyRead = file1.dtRecentlyRead.ToString();
+            //    listView.Note = file1.sNote;
+            //    listView.LinkFile = file1.sLinkFile;
+            //    using (FileStream stream = new FileStream(String.Format(file1.sLinkPic), FileMode.Open, FileAccess.Read))
+            //    {
+            //        listView.PictureFile.Image = Image.FromStream(stream);
+            //    }
+            //    Graphics G = Graphics.FromImage(listView.PictureFile.Image);
+            //    flpanel.Controls.Add(listView);
+            //}
         }
 
         #region Properties
@@ -127,23 +159,9 @@ namespace FileManager.Views
             this.BackColor = Color.AliceBlue;
         }
 
-        private void label1_DoubleClick(object sender, EventArgs e)
-        {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
-            read.Text = this.Title;
-            read.Show();
-        }
-
         private void label1_MouseLeave(object sender, EventArgs e)
         {
             this.BackColor = Color.White;
-        }
-
-        private void label2_DoubleClick(object sender, EventArgs e)
-        {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
-            read.Text = this.Title;
-            read.Show();
         }
 
         private void label2_MouseLeave(object sender, EventArgs e)
@@ -156,13 +174,6 @@ namespace FileManager.Views
             this.BackColor = Color.AliceBlue;
         }
 
-        private void label3_DoubleClick(object sender, EventArgs e)
-        {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
-            read.Text = this.Title;
-            read.Show();
-        }
-
         private void label3_MouseEnter(object sender, EventArgs e)
         {
             this.BackColor = Color.AliceBlue;
@@ -171,13 +182,6 @@ namespace FileManager.Views
         private void label3_MouseLeave(object sender, EventArgs e)
         {
             this.BackColor = Color.White;
-        }
-
-        private void label4_DoubleClick(object sender, EventArgs e)
-        {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
-            read.Text = this.Title;
-            read.Show();
         }
 
         private void label4_MouseEnter(object sender, EventArgs e)
@@ -190,13 +194,6 @@ namespace FileManager.Views
             this.BackColor = Color.White;
         }
 
-        private void lbNgayDocGanNhat_DoubleClick(object sender, EventArgs e)
-        {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
-            read.Text = this.Title;
-            read.Show();
-        }
-
         private void lbNgayDocGanNhat_MouseEnter(object sender, EventArgs e)
         {
             this.BackColor = Color.AliceBlue;
@@ -205,13 +202,6 @@ namespace FileManager.Views
         private void lbNgayDocGanNhat_MouseLeave(object sender, EventArgs e)
         {
             this.BackColor = Color.White;
-        }
-
-        private void lbID_DoubleClick(object sender, EventArgs e)
-        {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
-            read.Text = this.Title;
-            read.Show();
         }
 
         private void lbID_MouseEnter(object sender, EventArgs e)
@@ -224,13 +214,6 @@ namespace FileManager.Views
             this.BackColor = Color.White;
         }
 
-        private void lbTenFile_DoubleClick(object sender, EventArgs e)
-        {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
-            read.Text = this.Title;
-            read.Show();
-        }
-
         private void lbTenFile_MouseLeave(object sender, EventArgs e)
         {
             this.BackColor = Color.White;
@@ -239,13 +222,6 @@ namespace FileManager.Views
         private void lbTenFile_MouseEnter(object sender, EventArgs e)
         {
             this.BackColor = Color.AliceBlue;
-        }
-
-        private void lbTheLoai_DoubleClick(object sender, EventArgs e)
-        {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
-            read.Text = this.Title;
-            read.Show();
         }
 
         private void lbTheLoai_MouseEnter(object sender, EventArgs e)
@@ -262,8 +238,51 @@ namespace FileManager.Views
         {
             if (e.Button == MouseButtons.Right)
             {
-                MessageBox.Show("ĐƯỢC RỒI");
             }                
+        }
+
+        private void toolDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult redelete = MessageBox.Show("Bạn có chắc chắn muốn xóa File này.", "XÓA", MessageBoxButtons.YesNo, MessageBoxIcon.Hand);
+
+            if (redelete == System.Windows.Forms.DialogResult.Yes)
+            {
+                FileM file = FileController.getFileM(int.Parse(this.FileCode));
+                FileController.DeleteFile(file);
+
+                // Cập nhật lại Data Grid View
+                //BindingSource source = new BindingSource();
+                //source.DataSource = FileController.getListFile();
+                //dataFileM.DataSource = source;
+
+                //if (flpanel.Controls.Count > 0)
+                //{
+                //    flpanel.Controls.Clear();
+                //}
+                //for (int i = 1; i <= FileController.getListFile().Count; i++)
+                //{
+                //    usrViewThumb listView = new usrViewThumb();
+                //    FileM file1 = FileController.getFileM(i);
+                //    listView.Title = file1.sTitle;
+                //    listView.Category = file1.sCategory;
+                //    listView.FileCode = file1.iFileCode.ToString();
+                //    listView.RecentlyRead = file1.dtRecentlyRead.ToString();
+                //    listView.Note = file1.sNote;
+                //    listView.LinkFile = file1.sLinkFile;
+                //    using (FileStream stream = new FileStream(String.Format(file1.sLinkPic), FileMode.Open, FileAccess.Read))
+                //    {
+                //        listView.PictureFile.Image = Image.FromStream(stream);
+                //    }
+                //    Graphics G = Graphics.FromImage(listView.PictureFile.Image);
+                //    flpanel.Controls.Add(listView);
+                //}
+            }  
+        }
+
+        private void toolProperties_Click(object sender, EventArgs e)
+        {
+            frmProperties fproperties = new frmProperties();
+            fproperties.Show();
         }
     }
 }

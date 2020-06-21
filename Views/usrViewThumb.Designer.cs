@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,7 +38,14 @@
             this.lbCategory = new System.Windows.Forms.Label();
             this.lbRecentlyRead = new System.Windows.Forms.Label();
             this.picFile = new System.Windows.Forms.PictureBox();
+            this.ctmenuProperties = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolRead = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolReadWithReaderriver = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolReadWithWord = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolProperties = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolDelete = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.picFile)).BeginInit();
+            this.ctmenuProperties.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -48,7 +56,6 @@
             this.label1.Size = new System.Drawing.Size(50, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã số:";
-            this.label1.DoubleClick += new System.EventHandler(this.label1_DoubleClick);
             this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
             this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
             // 
@@ -60,7 +67,6 @@
             this.label2.Size = new System.Drawing.Size(41, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tên: ";
-            this.label2.DoubleClick += new System.EventHandler(this.label2_DoubleClick);
             this.label2.MouseEnter += new System.EventHandler(this.label2_MouseEnter);
             this.label2.MouseLeave += new System.EventHandler(this.label2_MouseLeave);
             // 
@@ -72,7 +78,6 @@
             this.label3.Size = new System.Drawing.Size(67, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Thể loại: ";
-            this.label3.DoubleClick += new System.EventHandler(this.label3_DoubleClick);
             this.label3.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
             this.label3.MouseLeave += new System.EventHandler(this.label3_MouseLeave);
             // 
@@ -84,7 +89,6 @@
             this.label4.Size = new System.Drawing.Size(136, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "Ngày đọc gần nhất: ";
-            this.label4.DoubleClick += new System.EventHandler(this.label4_DoubleClick);
             this.label4.MouseEnter += new System.EventHandler(this.label4_MouseEnter);
             this.label4.MouseLeave += new System.EventHandler(this.label4_MouseLeave);
             // 
@@ -95,7 +99,6 @@
             this.lbFileCode.Name = "lbFileCode";
             this.lbFileCode.Size = new System.Drawing.Size(0, 17);
             this.lbFileCode.TabIndex = 5;
-            this.lbFileCode.DoubleClick += new System.EventHandler(this.lbID_DoubleClick);
             this.lbFileCode.MouseEnter += new System.EventHandler(this.lbID_MouseEnter);
             this.lbFileCode.MouseLeave += new System.EventHandler(this.lbID_MouseLeave);
             // 
@@ -106,7 +109,6 @@
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(0, 17);
             this.lbTitle.TabIndex = 6;
-            this.lbTitle.DoubleClick += new System.EventHandler(this.lbTenFile_DoubleClick);
             this.lbTitle.MouseEnter += new System.EventHandler(this.lbTenFile_MouseEnter);
             this.lbTitle.MouseLeave += new System.EventHandler(this.lbTenFile_MouseLeave);
             // 
@@ -117,7 +119,6 @@
             this.lbCategory.Name = "lbCategory";
             this.lbCategory.Size = new System.Drawing.Size(0, 17);
             this.lbCategory.TabIndex = 7;
-            this.lbCategory.DoubleClick += new System.EventHandler(this.lbTheLoai_DoubleClick);
             this.lbCategory.MouseEnter += new System.EventHandler(this.lbTheLoai_MouseEnter);
             this.lbCategory.MouseLeave += new System.EventHandler(this.lbTheLoai_MouseLeave);
             // 
@@ -128,7 +129,6 @@
             this.lbRecentlyRead.Name = "lbRecentlyRead";
             this.lbRecentlyRead.Size = new System.Drawing.Size(0, 17);
             this.lbRecentlyRead.TabIndex = 8;
-            this.lbRecentlyRead.DoubleClick += new System.EventHandler(this.lbNgayDocGanNhat_DoubleClick);
             this.lbRecentlyRead.MouseEnter += new System.EventHandler(this.lbNgayDocGanNhat_MouseEnter);
             this.lbRecentlyRead.MouseLeave += new System.EventHandler(this.lbNgayDocGanNhat_MouseLeave);
             // 
@@ -146,11 +146,57 @@
             this.picFile.MouseEnter += new System.EventHandler(this.picFile_MouseEnter);
             this.picFile.MouseLeave += new System.EventHandler(this.picFile_MouseLeave);
             // 
-            // listViewThumb
+            // ctmenuProperties
+            // 
+            this.ctmenuProperties.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.ctmenuProperties.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolRead,
+            this.toolProperties,
+            this.toolDelete});
+            this.ctmenuProperties.Name = "ctmenuProperties";
+            this.ctmenuProperties.Size = new System.Drawing.Size(211, 104);
+            // 
+            // toolRead
+            // 
+            this.toolRead.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolReadWithReaderriver,
+            this.toolReadWithWord});
+            this.toolRead.Name = "toolRead";
+            this.toolRead.Size = new System.Drawing.Size(210, 24);
+            this.toolRead.Text = "&Đoc File với";
+            // 
+            // toolReadWithReaderriver
+            // 
+            this.toolReadWithReaderriver.Name = "toolReadWithReaderriver";
+            this.toolReadWithReaderriver.Size = new System.Drawing.Size(172, 26);
+            this.toolReadWithReaderriver.Text = "&ReaderRiver";
+            // 
+            // toolReadWithWord
+            // 
+            this.toolReadWithWord.Name = "toolReadWithWord";
+            this.toolReadWithWord.Size = new System.Drawing.Size(172, 26);
+            this.toolReadWithWord.Text = "&Word";
+            // 
+            // toolProperties
+            // 
+            this.toolProperties.Name = "toolProperties";
+            this.toolProperties.Size = new System.Drawing.Size(210, 24);
+            this.toolProperties.Text = "&Chi tiết File";
+            this.toolProperties.Click += new System.EventHandler(this.toolProperties_Click);
+            // 
+            // toolDelete
+            // 
+            this.toolDelete.Name = "toolDelete";
+            this.toolDelete.Size = new System.Drawing.Size(210, 24);
+            this.toolDelete.Text = "&Xóa File";
+            this.toolDelete.Click += new System.EventHandler(this.toolDelete_Click);
+            // 
+            // usrViewThumb
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.ContextMenuStrip = this.ctmenuProperties;
             this.Controls.Add(this.lbRecentlyRead);
             this.Controls.Add(this.lbCategory);
             this.Controls.Add(this.lbTitle);
@@ -161,13 +207,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picFile);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "listViewThumb";
+            this.Name = "usrViewThumb";
             this.Size = new System.Drawing.Size(385, 193);
             this.DoubleClick += new System.EventHandler(this.listViewThumb_DoubleClick);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewThumb_MouseClick);
             this.MouseEnter += new System.EventHandler(this.listViewThumb_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.listViewThumb_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.picFile)).EndInit();
+            this.ctmenuProperties.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +231,11 @@
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Label lbCategory;
         private System.Windows.Forms.Label lbRecentlyRead;
+        private System.Windows.Forms.ContextMenuStrip ctmenuProperties;
+        private System.Windows.Forms.ToolStripMenuItem toolRead;
+        private System.Windows.Forms.ToolStripMenuItem toolReadWithReaderriver;
+        private System.Windows.Forms.ToolStripMenuItem toolReadWithWord;
+        private System.Windows.Forms.ToolStripMenuItem toolProperties;
+        private System.Windows.Forms.ToolStripMenuItem toolDelete;
     }
 }
