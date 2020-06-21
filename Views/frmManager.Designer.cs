@@ -62,7 +62,7 @@ namespace FileManager.Views
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabAddFile = new System.Windows.Forms.ToolStripMenuItem();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.listView1 = new FileManager.Views.usrViewThumb();
+            this.usrViewThumb = new FileManager.Views.usrViewThumb();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -449,18 +449,18 @@ namespace FileManager.Views
             // 
             // listViewThumb1
             // 
-            this.listView1.BackColor = System.Drawing.Color.White;
-            this.listView1.Category = null;
-            this.listView1.FileCode = null;
-            this.listView1.LinkFile = null;
-            this.listView1.Location = new System.Drawing.Point(3, 2);
-            this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listView1.Name = "listViewThumb1";
-            this.listView1.Note = null;
-            this.listView1.RecentlyRead = null;
-            this.listView1.Size = new System.Drawing.Size(273, 193);
-            this.listView1.TabIndex = 0;
-            this.listView1.Title = null;
+            this.usrViewThumb.BackColor = System.Drawing.Color.White;
+            this.usrViewThumb.Category = null;
+            this.usrViewThumb.FileCode = null;
+            this.usrViewThumb.LinkFile = null;
+            this.usrViewThumb.Location = new System.Drawing.Point(3, 2);
+            this.usrViewThumb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.usrViewThumb.Name = "listViewThumb1";
+            this.usrViewThumb.Note = null;
+            this.usrViewThumb.RecentlyRead = null;
+            this.usrViewThumb.Size = new System.Drawing.Size(273, 193);
+            this.usrViewThumb.TabIndex = 0;
+            this.usrViewThumb.Title = null;
             // 
             // frmManager
             // 

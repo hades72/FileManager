@@ -23,7 +23,7 @@ namespace FileManager.Views
         public usrViewThumb()
         {
             InitializeComponent();
-            //picNewIcon.Parent = picFile;
+            picNewIcon.Parent = picFile;
 
 
             // Cập nhật lại Data Grid View
