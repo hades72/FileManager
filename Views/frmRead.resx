@@ -839,6 +839,42 @@
   <data name="&gt;&gt;splitContainer4.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="cbbWidth.Items" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cbbWidth.Items1" xml:space="preserve">
+    <value>2.5</value>
+  </data>
+  <data name="cbbWidth.Items2" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbbWidth.Items3" xml:space="preserve">
+    <value>3.5</value>
+  </data>
+  <data name="cbbWidth.Items4" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="cbbWidth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 214</value>
+  </data>
+  <data name="cbbWidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 21</value>
+  </data>
+  <data name="cbbWidth.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;cbbWidth.Name" xml:space="preserve">
+    <value>cbbWidth</value>
+  </data>
+  <data name="&gt;&gt;cbbWidth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbbWidth.Parent" xml:space="preserve">
+    <value>splitContainer4.Panel2</value>
+  </data>
+  <data name="&gt;&gt;cbbWidth.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnColorPen.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 241</value>
   </data>
@@ -861,7 +897,7 @@
     <value>splitContainer4.Panel2</value>
   </data>
   <data name="&gt;&gt;btnColorPen.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnDeleteDrawNote.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -891,7 +927,7 @@
     <value>splitContainer4.Panel2</value>
   </data>
   <data name="&gt;&gt;btnDeleteDrawNote.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="ptbNote.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
@@ -918,7 +954,7 @@
     <value>splitContainer4.Panel2</value>
   </data>
   <data name="&gt;&gt;ptbNote.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="lb2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -951,7 +987,7 @@
     <value>splitContainer4.Panel2</value>
   </data>
   <data name="&gt;&gt;lb2.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="splitContainer4.Panel2.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>

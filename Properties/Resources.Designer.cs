@@ -83,6 +83,16 @@ namespace FileManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap long_banner_png_2 {
+            get {
+                object obj = ResourceManager.GetObject("long-banner-png-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap nền_trắng_500x500 {
             get {
                 object obj = ResourceManager.GetObject("nền-trắng-500x500", resourceCulture);

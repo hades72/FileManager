@@ -51,9 +51,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(143, 18);
+            this.label1.Location = new System.Drawing.Point(107, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 17);
+            this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã số:";
             this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
@@ -62,9 +63,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(143, 44);
+            this.label2.Location = new System.Drawing.Point(107, 36);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 17);
+            this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tên: ";
             this.label2.MouseEnter += new System.EventHandler(this.label2_MouseEnter);
@@ -73,9 +75,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(143, 96);
+            this.label3.Location = new System.Drawing.Point(107, 78);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 17);
+            this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Thể loại: ";
             this.label3.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
@@ -84,9 +87,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(143, 135);
+            this.label4.Location = new System.Drawing.Point(107, 110);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(136, 17);
+            this.label4.Size = new System.Drawing.Size(105, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "Ngày đọc gần nhất: ";
             this.label4.MouseEnter += new System.EventHandler(this.label4_MouseEnter);
@@ -95,9 +99,10 @@
             // lbFileCode
             // 
             this.lbFileCode.AutoSize = true;
-            this.lbFileCode.Location = new System.Drawing.Point(191, 18);
+            this.lbFileCode.Location = new System.Drawing.Point(143, 15);
+            this.lbFileCode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFileCode.Name = "lbFileCode";
-            this.lbFileCode.Size = new System.Drawing.Size(0, 17);
+            this.lbFileCode.Size = new System.Drawing.Size(0, 13);
             this.lbFileCode.TabIndex = 5;
             this.lbFileCode.MouseEnter += new System.EventHandler(this.lbID_MouseEnter);
             this.lbFileCode.MouseLeave += new System.EventHandler(this.lbID_MouseLeave);
@@ -105,9 +110,10 @@
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
-            this.lbTitle.Location = new System.Drawing.Point(177, 44);
+            this.lbTitle.Location = new System.Drawing.Point(133, 36);
+            this.lbTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(0, 17);
+            this.lbTitle.Size = new System.Drawing.Size(0, 13);
             this.lbTitle.TabIndex = 6;
             this.lbTitle.MouseEnter += new System.EventHandler(this.lbTenFile_MouseEnter);
             this.lbTitle.MouseLeave += new System.EventHandler(this.lbTenFile_MouseLeave);
@@ -115,9 +121,10 @@
             // lbCategory
             // 
             this.lbCategory.AutoSize = true;
-            this.lbCategory.Location = new System.Drawing.Point(203, 96);
+            this.lbCategory.Location = new System.Drawing.Point(152, 78);
+            this.lbCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCategory.Name = "lbCategory";
-            this.lbCategory.Size = new System.Drawing.Size(0, 17);
+            this.lbCategory.Size = new System.Drawing.Size(0, 13);
             this.lbCategory.TabIndex = 7;
             this.lbCategory.MouseEnter += new System.EventHandler(this.lbTheLoai_MouseEnter);
             this.lbCategory.MouseLeave += new System.EventHandler(this.lbTheLoai_MouseLeave);
@@ -125,9 +132,10 @@
             // lbRecentlyRead
             // 
             this.lbRecentlyRead.AutoSize = true;
-            this.lbRecentlyRead.Location = new System.Drawing.Point(143, 162);
+            this.lbRecentlyRead.Location = new System.Drawing.Point(107, 132);
+            this.lbRecentlyRead.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbRecentlyRead.Name = "lbRecentlyRead";
-            this.lbRecentlyRead.Size = new System.Drawing.Size(0, 17);
+            this.lbRecentlyRead.Size = new System.Drawing.Size(0, 13);
             this.lbRecentlyRead.TabIndex = 8;
             this.lbRecentlyRead.MouseEnter += new System.EventHandler(this.lbNgayDocGanNhat_MouseEnter);
             this.lbRecentlyRead.MouseLeave += new System.EventHandler(this.lbNgayDocGanNhat_MouseLeave);
@@ -135,10 +143,10 @@
             // picFile
             // 
             this.picFile.BackColor = System.Drawing.Color.White;
-            this.picFile.Location = new System.Drawing.Point(11, 14);
-            this.picFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picFile.Location = new System.Drawing.Point(8, 11);
+            this.picFile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picFile.Name = "picFile";
-            this.picFile.Size = new System.Drawing.Size(121, 160);
+            this.picFile.Size = new System.Drawing.Size(91, 130);
             this.picFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFile.TabIndex = 0;
             this.picFile.TabStop = false;
@@ -193,7 +201,7 @@
             // 
             // usrViewThumb
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ContextMenuStrip = this.ctmenuProperties;

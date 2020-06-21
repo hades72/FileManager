@@ -48,6 +48,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.cbbWidth = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -170,6 +171,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.BackColor = System.Drawing.Color.AliceBlue;
+            this.splitContainer4.Panel2.Controls.Add(this.cbbWidth);
             this.splitContainer4.Panel2.Controls.Add(this.btnColorPen);
             this.splitContainer4.Panel2.Controls.Add(this.btnDeleteDrawNote);
             this.splitContainer4.Panel2.Controls.Add(this.ptbNote);
@@ -251,6 +253,21 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // cbbWidth
+            // 
+            this.cbbWidth.BackColor = System.Drawing.SystemColors.Window;
+            this.cbbWidth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbWidth.FormattingEnabled = true;
+            this.cbbWidth.Items.AddRange(new object[] {
+            resources.GetString("cbbWidth.Items"),
+            resources.GetString("cbbWidth.Items1"),
+            resources.GetString("cbbWidth.Items2"),
+            resources.GetString("cbbWidth.Items3"),
+            resources.GetString("cbbWidth.Items4")});
+            resources.ApplyResources(this.cbbWidth, "cbbWidth");
+            this.cbbWidth.Name = "cbbWidth";
+            this.cbbWidth.SelectedIndexChanged += new System.EventHandler(this.cbbWidth_SelectedIndexChanged);
+            // 
             // frmRead
             // 
             resources.ApplyResources(this, "$this");
@@ -308,5 +325,6 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnColorPen;
         private System.Windows.Forms.ColorDialog colorDialog;
+        private System.Windows.Forms.ComboBox cbbWidth;
     }
 }

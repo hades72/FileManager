@@ -97,12 +97,12 @@ namespace FileManager.Views
             set { picFile = value; }
         }
 
-        //[Category("File Props")]
-        //public PictureBox PictureNewIcon
-        //{
-        //    get { return picNewIcon; }
-        //    set { picNewIcon = value; }
-        //}
+        [Category("File Props")]
+        public PictureBox PictureNewIcon
+        {
+            get { return picNewIcon; }
+            set { picNewIcon = value; }
+        }
 
         [Category("File Props")]
         public string Note
@@ -123,7 +123,7 @@ namespace FileManager.Views
         {
             frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
             read.Text = this.Title;
-            read.Show();
+            read.ShowDialog();
         }
 
         private void listViewThumb_MouseLeave(object sender, EventArgs e)
@@ -151,7 +151,7 @@ namespace FileManager.Views
         {
             frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
             read.Text = this.Title;
-            read.Show();
+            read.ShowDialog();
         }
 
         private void label1_MouseEnter(object sender, EventArgs e)
