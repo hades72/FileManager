@@ -56,7 +56,9 @@ namespace FileManager.Views
                 file.sTitle = this.txtTitle.Text.Trim();
                 if (category == "")
                 {
-                    file.sCategory = this.cbCategory.GetItemText(this.cbCategory.SelectedItem);
+                    //file.sCategory = this.cbCategory.GetItemText(this.cbCategory.SelectedItem);
+                    MessageBox.Show("Chưa chọn thể loại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    error = true;
                 }
                 else
                 {
@@ -212,6 +214,7 @@ namespace FileManager.Views
         private void btnRemoveCategory_Click(object sender, EventArgs e)
         {
             this.txtCurrentCategory.Clear();
+            category = "";
             selected.Clear();
         }
 
