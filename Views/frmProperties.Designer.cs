@@ -41,10 +41,10 @@
             this.lbRecentlyRead = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbLinkFile = new System.Windows.Forms.Label();
-            this.picLocation = new System.Windows.Forms.PictureBox();
+            this.picLinkFile = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picFile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLocation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLinkFile)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,6 +54,7 @@
             this.picFile.Location = new System.Drawing.Point(34, 81);
             this.picFile.Name = "picFile";
             this.picFile.Size = new System.Drawing.Size(161, 203);
+            this.picFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picFile.TabIndex = 0;
             this.picFile.TabStop = false;
             // 
@@ -161,24 +162,25 @@
             // lbLinkFile
             // 
             this.lbLinkFile.AutoSize = true;
-            this.lbLinkFile.Font = new System.Drawing.Font("Franklin Gothic Demi", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLinkFile.Font = new System.Drawing.Font("Franklin Gothic Demi", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLinkFile.Location = new System.Drawing.Point(30, 357);
             this.lbLinkFile.Name = "lbLinkFile";
-            this.lbLinkFile.Size = new System.Drawing.Size(61, 24);
+            this.lbLinkFile.Size = new System.Drawing.Size(50, 20);
             this.lbLinkFile.TabIndex = 11;
             this.lbLinkFile.Text = "label6";
             // 
-            // picLocation
+            // picLinkFile
             // 
-            this.picLocation.Image = ((System.Drawing.Image)(resources.GetObject("picLocation.Image")));
-            this.picLocation.Location = new System.Drawing.Point(369, 316);
-            this.picLocation.Name = "picLocation";
-            this.picLocation.Size = new System.Drawing.Size(29, 25);
-            this.picLocation.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLocation.TabIndex = 12;
-            this.picLocation.TabStop = false;
-            this.picLocation.MouseEnter += new System.EventHandler(this.picLocation_MouseEnter);
-            this.picLocation.MouseLeave += new System.EventHandler(this.picLocation_MouseLeave);
+            this.picLinkFile.Image = ((System.Drawing.Image)(resources.GetObject("picLinkFile.Image")));
+            this.picLinkFile.Location = new System.Drawing.Point(369, 316);
+            this.picLinkFile.Name = "picLinkFile";
+            this.picLinkFile.Size = new System.Drawing.Size(29, 25);
+            this.picLinkFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLinkFile.TabIndex = 12;
+            this.picLinkFile.TabStop = false;
+            this.picLinkFile.Click += new System.EventHandler(this.picLinkFile_Click);
+            this.picLinkFile.MouseEnter += new System.EventHandler(this.picLocation_MouseEnter);
+            this.picLinkFile.MouseLeave += new System.EventHandler(this.picLocation_MouseLeave);
             // 
             // pictureBox1
             // 
@@ -195,7 +197,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(494, 411);
-            this.Controls.Add(this.picLocation);
+            this.Controls.Add(this.picLinkFile);
             this.Controls.Add(this.lbLinkFile);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lbRecentlyRead);
@@ -213,7 +215,7 @@
             this.Name = "frmProperties";
             this.Text = "Properties";
             ((System.ComponentModel.ISupportInitialize)(this.picFile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picLocation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLinkFile)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -234,7 +236,7 @@
         private System.Windows.Forms.Label lbRecentlyRead;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbLinkFile;
-        private System.Windows.Forms.PictureBox picLocation;
+        private System.Windows.Forms.PictureBox picLinkFile;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
