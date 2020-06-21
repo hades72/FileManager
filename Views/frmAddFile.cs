@@ -48,26 +48,7 @@ namespace FileManager.Views
 
         private void bSave_Click(object sender, EventArgs e)
         {
-            if (this.txtLinkFolder.Text.Trim().Length <= 0)
-            {
-                MessageBox.Show("Chưa tải file lên", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                error = true;
-            }
-            if (this.txtTitle.Text.Trim().Length <= 0)
-            {
-                MessageBox.Show("Chưa nhập tiêu đề!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                error = true;
-            }
-            if (this.cbCategory.Text.Trim().Length <= 0)
-            {
-                MessageBox.Show("Chưa chọn thể loại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                error = true;
-            }
-            if (this.txtFileCode.Text.Trim().Length <= 0)
-            {
-                MessageBox.Show("Chưa nhập mã số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                error = true;
-            }
+            checkError();
             if (error == false)
             {
                 FileM file = new FileM();
@@ -105,6 +86,26 @@ namespace FileManager.Views
             }
             this.Close();
 
+        }
+
+        private void frmAddFile_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //checkError();
+            // nếu có lỗi thì cancel , save = 
+            if (error == true)
+            {
+                error = false;
+                e.Cancel = true;
+            }
+            else if (error == false && save == true)
+            {
+                MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK);
+            }
+            else if (txtTitle != null || txtCurrentCategory != null || txtLinkFolder != null)
+            {
+                if (MessageBox.Show("Bạn có chắc chắn đóng không?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.No)
+                    e.Cancel = true;
+            }
         }
 
         private void btnUploadFile_Click(object sender, EventArgs e)
@@ -229,17 +230,29 @@ namespace FileManager.Views
             }
         }
 
-        private void frmAddFile_FormClosing(object sender, FormClosingEventArgs e)
+        
+
+        private void checkError()
         {
-            if(error == true)
+            if (this.txtLinkFolder.Text.Trim().Length <= 0)
             {
-                error = false;
-                e.Cancel = true;
+                MessageBox.Show("Chưa tải file lên", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                error = true;
             }
-            else
+            if (this.txtTitle.Text.Trim().Length <= 0)
             {
-                save = true;
-                MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Chưa nhập tiêu đề!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                error = true;
+            }
+            if (this.txtCurrentCategory.Text.Trim().Length <= 0)
+            {
+                MessageBox.Show("Chưa chọn thể loại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                error = true;
+            }
+            if (this.txtFileCode.Text.Trim().Length <= 0)
+            {
+                MessageBox.Show("Chưa nhập mã số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                error = true;
             }
         }
     }
