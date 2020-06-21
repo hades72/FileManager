@@ -23,11 +23,18 @@ namespace FileManager.Views
         SaveFileDialog saveLinkFile = new SaveFileDialog();
         OpenFileDialog openIMG = new OpenFileDialog();
         List<FileM> listFileM;
+<<<<<<< HEAD
         private bool clickPicUpload;
         private string pathOriginalIMG;
         private string category = "";
         public bool save = false;
         private bool error = false;
+=======
+        bool clickPicUpload;
+        string pathOriginalIMG;
+        string category = "";
+        List<int> selected = new List<int>();
+>>>>>>> 6e95b58a3bad6a57305d233ac6dabe5454c3dff1
 
         public frmAddFile(ref List<FileM> listfilems)
         {
@@ -42,6 +49,7 @@ namespace FileManager.Views
             pathOriginalIMG = "..//..//Pictures//OriginalIMG.jpg";
             this.picUpload.Image = new Bitmap(pathOriginalIMG);
             clickPicUpload = false;
+               
         }
 
         private void bSave_Click(object sender, EventArgs e)
@@ -66,7 +74,31 @@ namespace FileManager.Views
                 MessageBox.Show("Chưa nhập mã số!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 error = true;
             }
+<<<<<<< HEAD
             if (error == false)
+=======
+
+            FileM file = new FileM();
+            file.iFileCode = FileController.getFileCodeFromDB();
+            file.sTitle = this.txtTitle.Text.Trim();
+            if (category == "")
+            {
+                file.sCategory = this.cbCategory.GetItemText(this.cbCategory.SelectedItem);
+            }
+            else
+            {
+                file.sCategory = category;
+            }
+            file.dtDateUpdate = DateTime.Now.Date;
+            file.iRead = 0; // chưa đọc
+            file.dtRecentlyRead = null; // chưa đọc
+            if (clickPicUpload == true)
+            {
+                file.sLinkPic = openIMG.FileName;  // gán vào linkPic trong list FileM
+
+            }
+            else
+>>>>>>> 6e95b58a3bad6a57305d233ac6dabe5454c3dff1
             {
                 FileM file = new FileM();
                 file.iFileCode = FileController.getFileCodeFromDB();
@@ -100,7 +132,13 @@ namespace FileManager.Views
                     save = false;
                 }
             }
+<<<<<<< HEAD
             this.Close();
+=======
+            MessageBox.Show("Lưu thành công!");
+            category = "";
+            selected.Clear();
+>>>>>>> 6e95b58a3bad6a57305d233ac6dabe5454c3dff1
         }
 
         private void btnUploadFile_Click(object sender, EventArgs e)
@@ -144,8 +182,8 @@ namespace FileManager.Views
             }
         }
 
-        private void btnDuongDan_Click(object sender, EventArgs e) 
-            // Chọn đường dẫn để lưu file ở Folder khác, nếu thích
+        private void btnDuongDan_Click(object sender, EventArgs e)
+        // Chọn đường dẫn để lưu file ở Folder khác, nếu thích
         {
             this.saveLinkFile.Filter = "PDF Files|*.pdf|All Files|*.*";
             this.saveLinkFile.Title = "Save a PDF File";
@@ -173,13 +211,58 @@ namespace FileManager.Views
 
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
-            if(category == "")
+            if (selected.Count == 0)
             {
-                category = this.cbCategory.GetItemText(this.cbCategory.SelectedItem);
+                category = this.cbCategory.SelectedItem.ToString();
+                selected.Add(this.cbCategory.SelectedIndex);
+                this.txtCurrentCategory.Text = category;
             }
             else
             {
-                category = category +", "+ this.cbCategory.GetItemText(this.cbCategory.SelectedItem);
+                if (checkSelected(this.cbCategory.SelectedIndex))
+                {
+                    category = category + ", " + this.cbCategory.SelectedItem.ToString();
+                    selected.Add(this.cbCategory.SelectedIndex);
+                    this.txtCurrentCategory.Text = category;
+                }
+                else
+                {
+                    MessageBox.Show("Giang đẹp trai !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        private bool checkSelected(int number)
+        {
+
+            for (int i = 0; i < selected.Count; i++)
+            {
+                if (selected[i] == number)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        private int getCurrentSelect()
+        {
+            return 1;
+        }
+
+        private void btnRemoveCategory_Click(object sender, EventArgs e)
+        {
+            this.txtCurrentCategory.Clear();
+            selected.Clear();
+        }
+
+        private void txtCurrentCategory_TextChanged(object sender, EventArgs e)
+        {
+            if(txtCurrentCategory.Text.Length > 0)
+            {
+                this.btnRemoveCategory.Enabled = true;
+            }
+            else
+            {
+                this.btnRemoveCategory.Enabled = false;
             }
         }
 
