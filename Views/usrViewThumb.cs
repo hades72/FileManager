@@ -16,7 +16,7 @@ namespace FileManager.Views
     public partial class usrViewThumb : UserControl
     {
         List<FileM> fileM;
-        BindingSource source = new BindingSource();
+        //BindingSource source = new BindingSource();
         //DataGridView dataFileM;
         //FlowLayoutPanel flpanel;
 
@@ -281,8 +281,8 @@ namespace FileManager.Views
 
         private void toolProperties_Click(object sender, EventArgs e)
         {
-            frmProperties fproperties = new frmProperties();
-            fproperties.Show();
+            frmProperties fproperties = new frmProperties(ref fileM , int.Parse(this.FileCode));
+            fproperties.ShowDialog();
         }
     }
 }
