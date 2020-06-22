@@ -53,6 +53,7 @@ namespace FileManager.Views
         private void btnAddReadPreview_Click(object sender, EventArgs e)
         {
             if (checkError() == true)
+
             {
                 return;
             }
