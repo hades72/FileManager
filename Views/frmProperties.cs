@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -52,7 +53,22 @@ namespace FileManager.Views
 
         private void picLinkFile_Click(object sender, EventArgs e)
         {
+            string target = Path.GetDirectoryName(linkFile); // Lấy đường dẫn thư mục chứa file đ
 
+            if (Directory.Exists(target))
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo
+                {
+                    Arguments = target,
+                    FileName = "explorer.exe"
+                };
+
+                Process.Start(startInfo);
+            }
+            else
+            {
+                MessageBox.Show(string.Format("{0} Thư mục không tồn tại!", target));
+            }
         }
     }
 }
