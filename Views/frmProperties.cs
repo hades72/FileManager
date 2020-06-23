@@ -38,9 +38,7 @@ namespace FileManager.Views
             }
 
         }
-
-
-
+        
         private void picLocation_MouseEnter(object sender, EventArgs e)
         {
             picLinkFile.BackColor = Color.LightSkyBlue;

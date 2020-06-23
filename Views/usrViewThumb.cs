@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using FileManager.Models;
 using System.IO;
 using FileManager.Controllers;
+using System.Diagnostics;
 
 namespace FileManager.Views
 {
@@ -283,6 +284,67 @@ namespace FileManager.Views
         {
             frmProperties fproperties = new frmProperties(ref fileM , int.Parse(this.FileCode));
             fproperties.ShowDialog();
+        }
+
+        private void toolReadWithReaderriver_Click(object sender, EventArgs e)
+        {
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
+            read.ShowDialog();
+        }
+
+        private void toolReadWithPDF_Click(object sender, EventArgs e)
+        {
+            string target = Path.GetDirectoryName(LinkFile); // Lấy đường dẫn thư mục chứa file đ
+
+            if (Directory.Exists(target))
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo
+                {
+                    Arguments = LinkFile,
+                    FileName = "explorer.exe"
+                };
+
+                Process.Start(startInfo);
+            }
+            else
+            {
+                MessageBox.Show(string.Format("{0} Thư mục không tồn tại!", target));
+            }
+        }
+
+        private void toolReadWithNotepad_Click(object sender, EventArgs e)
+        {
+            string target = Path.GetDirectoryName(LinkFile); // Lấy đường dẫn thư mục chứa file đ
+
+            if (Directory.Exists(target))
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo
+                {
+                    Arguments = LinkFile,
+                    FileName = "explorer.exe"
+                };
+
+                Process.Start(startInfo);
+            }
+            else
+            {
+                MessageBox.Show(string.Format("{0} Thư mục không tồn tại!", target));
+            }
+        }
+
+        private void toolRead_MouseHover(object sender, EventArgs e)
+        {
+            if (Path.GetExtension(LinkFile) == ".pdf")
+            {
+                toolReadWithPDF.Visible = true;
+            }
+            else toolReadWithPDF.Visible = false;
+            if (Path.GetExtension(LinkFile) == ".txt")
+            {
+                toolReadWithNotepad.Visible = true;
+            }
+            else toolReadWithNotepad.Visible = false;
         }
     }
 }

@@ -21,6 +21,7 @@ namespace FileManager.Views
         BindingSource source = new BindingSource();
         Graphics G = null;
         private DateTime dtLast = DateTime.MinValue;
+
         public frmManager(ref List<FileM> fileM, List<Category> categories)
         {
             InitializeComponent();
@@ -31,20 +32,20 @@ namespace FileManager.Views
             this.cDateUpdate.DataPropertyName = nameof(FileM.dtDateUpdate);
             this.cRecentlyRead.DataPropertyName = nameof(FileM.dtRecentlyRead);
             this.cReadIndex.DataPropertyName = nameof(FileM.sFilePreview);
-
-
-            source.DataSource = FileController.getListFile();
+            
             dataFileM.AutoGenerateColumns = false;
-            dataFileM.DataSource = source;
-            showThumb();
             // Ẩn cột Ghi chú, Link Pic, Link File, Read
             //this.dataFileM.Columns[5].Visible = false;
             //this.dataFileM.Columns[6].Visible = false;
             //this.dataFileM.Columns[7].Visible = false;
             //this.dataFileM.Columns[8].Visible = false;
 
-            
+        }
 
+        private void frmViewThumb_Load(object sender, EventArgs e)
+        {
+            this.helpProvider1.SetShowHelp(this.txtSearch, true);
+            this.helpProvider1.SetHelpString(this.txtSearch, "Nhap ma so hoac ten file ban muon tim");
 
             if (tabView.SelectedTab == tabDataGV)
             {
@@ -55,8 +56,35 @@ namespace FileManager.Views
                 btnReadFile.Visible = false;
             }
 
-            // Khởi tạo LastRead ban đầu
-            for(int i = 0; i < dataFileM.RowCount; i++)
+            if (this.dataFileM.RowCount <= 0)
+            {
+                btnReadFile.Enabled = false;
+            }
+
+            if (FileController.getListFile().Count <= 1)
+            {
+                addReadIndex.Enabled = false; // nếu không có file hoặc có 1 file thì ẩn
+            }
+
+            loadData();
+        }
+
+        // Cập nhật toàn bộ frmManager
+        public void loadData()
+        {
+            source.DataSource = FileController.getListFile();
+            dataFileM.DataSource = source;
+            if (FileController.getListFile().Count <= 1)
+            {
+                addReadIndex.Enabled = false;
+            }
+            else
+            {
+                addReadIndex.Enabled = true;
+            }
+            // kiểm tra LastRead 
+            dtLast = DateTime.MinValue;
+            for (int i = 0; i < FileController.getListFile().Count; i++)
             {
                 FileM file = FileController.getFileM(int.Parse(this.dataFileM.Rows[i].Cells[0].Value.ToString()));
                 try
@@ -72,11 +100,14 @@ namespace FileManager.Views
 
                 }
             }
-            if(lbFileCode != null)
+            if (lbFileCode != null)
             {
                 lastRead(lbFileCode.Text.ToString().Trim()); // khởi tạo nếu có file đọc gần nhất
             }
+            showThumb();
         }
+        
+        // Hiển thị dạng lưới
         private void showThumb()
         {
             if (flpnlThumb.Controls.Count > 0)
@@ -88,8 +119,6 @@ namespace FileManager.Views
             {
                 usrViewThumb listView1 = new usrViewThumb();
                 FileM file = FileController.getFileM(int.Parse(this.dataFileM.Rows[i].Cells[0].Value.ToString()));
-                
-
                 listView1.Title = file.sTitle;
                 listView1.Category = file.sCategory;
                 listView1.FileCode = file.iFileCode.ToString();
@@ -111,42 +140,100 @@ namespace FileManager.Views
             }
         }
 
-        public void frmViewThumb_Load(object sender, EventArgs e)
+        // Chọn dạng hiển thị lưới thì ẩn btnReadFile
+        private void tabView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.helpProvider1.SetShowHelp(this.txtSearch, true);
-            this.helpProvider1.SetHelpString(this.txtSearch, "Nhap ma so hoac ten file ban muon tim");
-            
-            if (this.dataFileM.RowCount <= 0)
+            if (tabView.SelectedTab == tabView.TabPages["tabThumb"])
             {
-                btnReadFile.Enabled = false;
+                btnReadFile.Visible = false;
             }
-
-            source.DataSource = FileController.getListFile();
-            dataFileM.DataSource = source;
-            showThumb();
+            if (tabView.SelectedTab == tabView.TabPages["tabDataGV"])
+            {
+                btnReadFile.Visible = true;
+            }
         }
 
-        public void loadData()
-        {
-            source.DataSource = FileController.getListFile();
-            dataFileM.DataSource = source;
-            showThumb();
-        }
-
-        private void tabAddFile_Click(object sender, EventArgs e)
+        // File Menu Item: Thêm file
+        private void addFile_Click(object sender, EventArgs e)
         {
             frmAddFile frmAdd = new frmAddFile(ref fileM);
-            
             frmAdd.ShowDialog();
             if (frmAdd.save == true)
             {
-                // Cập nhật lại Data Grid View và Thumb
                 loadData();
             }
+        }
 
+        // File Menu Item: Thêm thể loại
+        private void addCategory_Click(object sender, EventArgs e)
+        {
+            frmAddCategory catg = new frmAddCategory(ref categories);
+            catg.ShowDialog();
+        }
+
+        // File Menu Item: Thêm thứ tự đọc file
+        private void addReadIndex_Click(object sender, EventArgs e)
+        {
+            frmReadIndex ri = new frmReadIndex(ref fileM);
+            ri.ShowDialog();
+            if (ri.save == true)
+            {
+                loadData();
+            }
+        }
+
+        // Hiển thị file đọc gần nhất
+        private void lastRead(string filecode)
+        {
+            lbFileCode.Text = filecode;
+            if (filecode != "")
+            {
+                btnReadLastFile.Enabled = true;
+                FileM file = FileController.getFileM(int.Parse(lbFileCode.Text.ToString()));
+                lbTitle.Text = file.sTitle;
+                using (FileStream stream = new FileStream(String.Format(file.sLinkPic), FileMode.Open, FileAccess.Read))
+                {
+                    picLastFile.Image = Image.FromStream(stream);
+                }
+                G = Graphics.FromImage(picLastFile.Image);
+            }
+            else btnReadLastFile.Enabled = false;
+        }
+
+        // Đọc file gần nhất bằng Double Click
+        private void pnlLastRead_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (lbFileCode.Text != "")
+            {
+                FileM file = FileController.getFileM(int.Parse(lbFileCode.Text.ToString()));
+                frmRead read = new frmRead(ref fileM, file.iFileCode);
+                read.Text = this.dataFileM.CurrentRow.Cells[2].Value.ToString();
+                read.ShowDialog();
+                if (read.exit == true)
+                {
+                    loadData();
+                }
+            }
+        }
+
+        // Đọc file gần nhất bằng btn
+        private void btnReadLastFile_Click(object sender, EventArgs e)
+        {
+            if (lbFileCode.Text != "")
+            {
+                FileM file = FileController.getFileM(int.Parse(lbFileCode.Text.ToString()));
+                frmRead read = new frmRead(ref fileM, file.iFileCode);
+                read.Text = this.dataFileM.CurrentRow.Cells[2].Value.ToString();
+                read.ShowDialog();
+                if (read.exit == true)
+                {
+                    loadData();
+                }
+            }
 
         }
 
+        // Tìm kiếm file
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (this.txtSearch.Text.Length <= 0)
@@ -167,108 +254,50 @@ namespace FileManager.Views
             showThumb();
         }
 
+        // Khi nội dung trong ô tìm kiếm trở về rỗng thì cập nhật lại
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (this.txtSearch.Text.Length <= 0)
+            {
+                loadData();
+            }
+        }
+
+        // Dạng danh sách: Cho phép chọn btnReadFile khi chọn vào hàng
         private void dataFileM_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             this.btnReadFile.Enabled = true;
         }
 
+        // Dạng danh sách: Không cho phép chọn btnReadFile khi chưa chọn hàng
         private void dataFileM_RowLeave(object sender, DataGridViewCellEventArgs e)
         {
             this.btnReadFile.Enabled = false;
-        }
+        }       
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            if (this.txtSearch.Text.Length <= 0)
-            {
-                // Cập nhật lại Data Grid View và Thumb
-                loadData();
-            }
-        }
-
-
-        // Khởi tạo lastRead
-        private void lastRead(string filecode)
-        {
-            lbFileCode.Text = filecode;
-            if (filecode != "")
-            {
-                btnReadLastFile.Enabled = true;
-                FileM file = FileController.getFileM(int.Parse(lbFileCode.Text.ToString()));
-                lbTitle.Text = file.sTitle;
-                using (FileStream stream = new FileStream(String.Format(file.sLinkPic), FileMode.Open, FileAccess.Read))
-                {
-                    picLastFile.Image = Image.FromStream(stream);
-                }
-                G = Graphics.FromImage(picLastFile.Image);
-            }
-            else btnReadLastFile.Enabled = false;
-        }
-        
+        // Dạng danh sách: Xóa File
         private void dataFileM_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if(e.RowIndex == this.dataFileM.CurrentCell.RowIndex)
             if (this.dataFileM.Columns[e.ColumnIndex].Name == "cDelete")
             {
                 if (MessageBox.Show("Bạn chắc chắn xóa file này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     FileM file = FileController.getFileM(int.Parse(this.dataFileM.Rows[e.RowIndex].Cells[0].Value.ToString()));
                     FileController.DeleteFile(file);
+                    try // nếu đã tồn tại hình vẽ thì xóa (nghĩa là hình vẽ đã được lưu)
+                    {
+                        File.Delete(String.Format("{0}.jpg", int.Parse(this.dataFileM.Rows[e.RowIndex].Cells[0].Value.ToString())));
+                    }
+                    catch
+                    {
+                       // không có hình vẽ thì thôi
+                    }
                 }
-                // Cập nhật lại Data Grid View và Thumb
                 loadData();
             }
         }
 
-        private void tabView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (tabView.SelectedTab == tabView.TabPages["tabThumb"])
-            {
-                btnReadFile.Visible = false;
-            }
-            if (tabView.SelectedTab == tabView.TabPages["tabDataGV"])
-            {
-                btnReadFile.Visible = true;
-            }
-        }
-
-        // Nhấp đúp chuột thì mở lên file đọc
-        private void pnlLastRead_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (lbFileCode.Text != "")
-            {
-                FileM file = FileController.getFileM(int.Parse(lbFileCode.Text.ToString()));
-                frmRead read = new frmRead(ref fileM, file.iFileCode);
-                read.Text = this.dataFileM.CurrentRow.Cells[2].Value.ToString();
-                read.ShowDialog();
-                if (read.exit == true)
-                {
-                    // Cập nhật lại Data Grid View và Thumb
-                    loadData();
-                    lastRead(lbFileCode.Text.ToString());
-                }
-            }
-        }
-
-        // Nhấn button để đọc
-        private void btnReadLastFile_Click(object sender, EventArgs e)
-        {
-            if(lbFileCode.Text != "")
-            {
-                FileM file = FileController.getFileM(int.Parse(lbFileCode.Text.ToString()));
-                frmRead read = new frmRead(ref fileM, file.iFileCode);
-                read.Text = this.dataFileM.CurrentRow.Cells[2].Value.ToString();
-                read.ShowDialog();
-                if (read.exit == true)
-                {
-                    // Cập nhật lại Data Grid View và Thumb
-                    loadData();
-                    lastRead(lbFileCode.Text.ToString());
-                }
-            }
-            
-        }
-
+        // Dạng danh sách: Đọc File
         private void btnReadFile_Click(object sender, EventArgs e)
         {
             frmRead read = new frmRead(ref fileM, int.Parse(this.dataFileM.CurrentRow.Cells[0].Value.ToString()));
@@ -276,26 +305,9 @@ namespace FileManager.Views
             read.ShowDialog();
             if (read.exit == true)
             {
-                // Cập nhật lại Data Grid View và Thumb
-                loadData();
-                lastRead(this.dataFileM.CurrentRow.Cells[0].Value.ToString());
-            }
-        }
-
-        private void addCategoryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmAddCategory catg = new frmAddCategory(ref categories);
-            catg.ShowDialog();
-        }
-
-        private void addReadIndex_Click(object sender, EventArgs e)
-        {
-            frmReadIndex ri = new frmReadIndex(ref fileM);
-            ri.ShowDialog();
-            if(ri.save == true)
-            {
                 loadData();
             }
         }
+
     }
 }
