@@ -55,6 +55,7 @@ namespace FileManager.Views
             //}
         }
 
+
         #region Properties
 
         private string _title;
@@ -120,6 +121,9 @@ namespace FileManager.Views
         }
 
         #endregion
+
+        // Đọc file bằng đúp chuột
+        #region DoubleClick_MouseEnter_MouseLeave    
         private void listViewThumb_DoubleClick(object sender, EventArgs e)
         {
             frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
@@ -234,19 +238,12 @@ namespace FileManager.Views
         {
             this.BackColor = Color.White;
         }
+        #endregion 
 
-        private void listViewThumb_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-            }                
-        }
-
+        // Xóa File
         private void toolDelete_Click(object sender, EventArgs e)
         {
-            DialogResult redelete = MessageBox.Show("Bạn có chắc chắn muốn xóa File này.", "XÓA", MessageBoxButtons.YesNo, MessageBoxIcon.Hand);
-
-            if (redelete == System.Windows.Forms.DialogResult.Yes)
+            if (MessageBox.Show("Bạn chắc chắn xóa file này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 FileM file = FileController.getFileM(int.Parse(this.FileCode));
                 FileController.DeleteFile(file);
@@ -280,12 +277,14 @@ namespace FileManager.Views
             }  
         }
 
+        // Mở chi tiết file
         private void toolProperties_Click(object sender, EventArgs e)
         {
             frmProperties fproperties = new frmProperties(ref fileM , int.Parse(this.FileCode));
             fproperties.ShowDialog();
         }
 
+        // Đọc trực tiếp bằng ứng dụng
         private void toolReadWithReaderriver_Click(object sender, EventArgs e)
         {
             frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
@@ -293,9 +292,10 @@ namespace FileManager.Views
             read.ShowDialog();
         }
 
+        // Đọc bằng PDF
         private void toolReadWithPDF_Click(object sender, EventArgs e)
         {
-            string target = Path.GetDirectoryName(LinkFile); // Lấy đường dẫn thư mục chứa file đ
+            string target = Path.GetDirectoryName(LinkFile); // Lấy đường dẫn thư mục chứa file đó
 
             if (Directory.Exists(target))
             {
@@ -304,19 +304,18 @@ namespace FileManager.Views
                     Arguments = LinkFile,
                     FileName = "explorer.exe"
                 };
-
                 Process.Start(startInfo);
             }
             else
             {
-                MessageBox.Show(string.Format("{0} Thư mục không tồn tại!", target));
+                MessageBox.Show(string.Format("Đường dẫn {0} không tồn tại!", target));
             }
         }
 
+        // Đọc bằng Notepad
         private void toolReadWithNotepad_Click(object sender, EventArgs e)
         {
-            string target = Path.GetDirectoryName(LinkFile); // Lấy đường dẫn thư mục chứa file đ
-
+            string target = Path.GetDirectoryName(LinkFile); // Lấy đường dẫn thư mục chứa file đó
             if (Directory.Exists(target))
             {
                 ProcessStartInfo startInfo = new ProcessStartInfo
@@ -324,15 +323,15 @@ namespace FileManager.Views
                     Arguments = LinkFile,
                     FileName = "explorer.exe"
                 };
-
                 Process.Start(startInfo);
             }
             else
             {
-                MessageBox.Show(string.Format("{0} Thư mục không tồn tại!", target));
+                MessageBox.Show(string.Format("Đường dẫn {0} không tồn tại!", target));
             }
         }
 
+        // File pdf thì hiện đọc với pdf, txt thì hiện đọc với notepad
         private void toolRead_MouseHover(object sender, EventArgs e)
         {
             if (Path.GetExtension(LinkFile) == ".pdf")

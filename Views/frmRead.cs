@@ -47,12 +47,16 @@ namespace FileManager.Views
                 rtbNote.Text = file.sNote;
                 btnDeleteNote.Enabled = true; // nếu tồn tại ghi chú thì bật nút xóa
             }
-            cbbWidth.Text = cbbWidth.GetItemText(cbbWidth.Items[0]).ToString(); // mặc định là 2
+            cbbWidth.Text = cbbWidth.GetItemText(cbbWidth.Items[0]).ToString();
         }
 
         private void frmRead_Load(object sender, EventArgs e)
         {
-            if(Path.GetExtension(linkFile) == ".pdf")
+            this.helpProvider1.SetShowHelp(this.rtbNote, true);
+            this.helpProvider1.SetHelpString(this.rtbNote, "Nhap noi dung ban can ghi chu!");
+            this.helpProvider1.SetShowHelp(this.ptbNote, true);
+            this.helpProvider1.SetHelpString(this.ptbNote, "Ve ghi chu vao day!");
+            if (Path.GetExtension(linkFile) == ".pdf")
             {
                 using (PdfReader reader = new PdfReader(linkFile))
                 {
@@ -86,14 +90,10 @@ namespace FileManager.Views
             catch // nếu không có hình vẽ thì thôi
             {
                 G = null;
-              
             }
-            this.helpProvider1.SetShowHelp(this.rtbNote, true);
-            this.helpProvider1.SetHelpString(this.rtbNote, "Nhap noi dung ban can ghi chu!");
-            this.helpProvider1.SetShowHelp(this.ptbNote, true);
-            this.helpProvider1.SetHelpString(this.ptbNote, "Ve ghi chu vao day!");
         }
 
+        // Nhấn xem trang tiếp theo
         private void ptbNextPage_Click(object sender, EventArgs e)
         {
             currentPage += 1;
@@ -104,33 +104,22 @@ namespace FileManager.Views
             ReadByPageNumber(currentPage);
         }
 
+        // Nhấn xem trang trước đó
         private void ptbBackPage_Click(object sender, EventArgs e)
         {
             currentPage -= 1;
             ReadByPageNumber(currentPage);
         }
 
-        private void ReadByPageNumber(int pagenumber) // đọc file theo trang
+        // Đọc theo trang pagenumber
+        private void ReadByPageNumber(int pagenumber) 
         {
             this.rtbRead.Text = null;
             txtCurrentPage.Text = "Trang " + pagenumber.ToString();
-            //using (PdfReader reader = new PdfReader(linkFile))
-            //{
-            //    LocationTextExtractionStrategy strategy = new LocationTextExtractionStrategy();
-            //    string line = PdfTextExtractor.GetTextFromPage(reader, pagenumber, strategy);
-            //    line = Encoding.UTF8.GetString(
-            //            Encoding.Convert(
-            //            Encoding.Default,
-            //            Encoding.UTF8,
-            //            Encoding.Default.GetBytes(line)));
-            //    this.rtbRead.Text += line;
-            //}
-
             if (Path.GetExtension(linkFile) == ".pdf")
             {
                 using (PdfReader reader = new PdfReader(linkFile))
                 {
-                    // hiện các dòng trang đầu tiên để xem trước
                     LocationTextExtractionStrategy strategy = new LocationTextExtractionStrategy();
                     string line = PdfTextExtractor.GetTextFromPage(reader, pagenumber, strategy);
                     //line = Encoding.UTF8.GetString(
@@ -141,7 +130,6 @@ namespace FileManager.Views
                     this.rtbRead.Text += line;
                 }
             }
-
             if (Path.GetExtension(linkFile) == ".txt")
             {
                 using (FileStream fs = new FileStream(linkFile, FileMode.Open))
@@ -159,6 +147,7 @@ namespace FileManager.Views
             else ptbBackPage.Visible = true;
         }
 
+        // Lưu ghi chú
         private void btnSave_Click(object sender, EventArgs e)
         {
             FileM file = FileController.getFileM(fileCode);
@@ -166,8 +155,8 @@ namespace FileManager.Views
             {
                 file.sNote = rtbNote.Text.Trim();
             }
-            try
-            {
+            //try
+            //{
                 if(checkDraw == true) // vẽ thì lưu
                 {
                     using (FileStream fileStream = new FileStream(String.Format("{0}.jpg", fileCode), FileMode.Create))
@@ -175,21 +164,23 @@ namespace FileManager.Views
                         ptbNote.Image.Save(fileStream, System.Drawing.Imaging.ImageFormat.Jpeg);
                     }
                 }
-            }
-            catch
-            {
+            //}
+            //catch
+            //{
 
-            }
+            //}
             checkDraw = false;
             FileController.UpdateFile(file); // cập nhật xuống dtb
             MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK);
         }
 
+        // Chuột không nhấn vào ptbNote
         private void ptbNote_MouseUp(object sender, MouseEventArgs e)
         {
             drawNote.isDraw = false;
         }
 
+        // Chuột nhấn vào ptbNote
         private void ptbNote_MouseDown(object sender, MouseEventArgs e)
         {
             drawNote.isDraw = true;
@@ -198,7 +189,8 @@ namespace FileManager.Views
             drawNote.X = e.X;
             drawNote.Y = e.Y;
         }
-
+        
+        // Chuột có nhấn và di chuyển để vẽ
         private void ptbNote_MouseMove(object sender, MouseEventArgs e)
         {
             if (drawNote.isDraw == true)
@@ -220,6 +212,7 @@ namespace FileManager.Views
             }
         }
 
+        // Thay đổi kích thước ptb
         private void ptbNote_Resize(object sender, EventArgs e)
         {
             if (G is null) return;
@@ -228,12 +221,9 @@ namespace FileManager.Views
             Bitmap bm = new Bitmap(ptbNote.ClientSize.Width, ptbNote.ClientSize.Height, ptbNote.CreateGraphics());
         }
 
+        // Xóa hình vẽ
         private void btnDeleteDrawNote_Click(object sender, EventArgs e)
         {
-            //if(checkDraw == true)
-            //{
-
-            //}
             try // nếu đã tồn tại hình vẽ thì xóa (nghĩa là hình vẽ đã được lưu)
             {
                 var fs = File.OpenRead(String.Format("{0}.jpg", fileCode));
@@ -255,15 +245,16 @@ namespace FileManager.Views
             checkDraw = false; // chuyển về chưa vẽ
         }
 
+        // Xóa ghi chú
         private void btnDeleteNote_Click(object sender, EventArgs e)
         {
             rtbNote = null; // xóa nội dung ghi chú
             btnDeleteNote.Enabled = false; 
         }
 
+        // Tạo mới ghi chú và hình ảnh
         private void btnNew_Click(object sender, EventArgs e)
         {
-
             if(btnDeleteNote.Enabled == true)
             {
                 btnDeleteNote_Click(sender, e);
@@ -274,6 +265,7 @@ namespace FileManager.Views
             }
         }
 
+        // Khi note có nội dung thì bật nút xóa, nếu không có thì ẩn
         private void rtbNote_TextChanged(object sender, EventArgs e)
         {
             if (rtbNote.Text.Length > 0)
@@ -286,6 +278,7 @@ namespace FileManager.Views
             }
         }
 
+        // Lưu những thay đổi trước khi đóng hoặc hủy không đóng nữa
         private void frmRead_FormClosing(object sender, FormClosingEventArgs e)
         {
             FileM file = FileController.getFileM(fileCode);
@@ -297,17 +290,17 @@ namespace FileManager.Views
                 if (dr == DialogResult.Yes)
                 {
                     file.sNote = rtbNote.Text.Trim();
-                    try
-                    {
+                    //try
+                    //{
                         using (FileStream fileStream = new FileStream(String.Format("{0}.jpg", fileCode), FileMode.Create))
                         {
                             ptbNote.Image.Save(fileStream, System.Drawing.Imaging.ImageFormat.Jpeg);
                         }
-                    }
-                    catch
-                    {
+                    //}
+                    //catch
+                    //{
 
-                    }
+                    //}
                 }
                 else if (dr == DialogResult.Cancel)
                 {
@@ -318,6 +311,7 @@ namespace FileManager.Views
             exit = true;
         }
 
+        // Chọn màu bút vẽ
         private void btnColorPen_Click(object sender, EventArgs e)
         {
             DialogResult dlgresult = colorDialog.ShowDialog();
@@ -326,14 +320,16 @@ namespace FileManager.Views
                 drawNote.color = colorDialog.Color; //Trả lại tên của màu đã lựa chọn
                 drawNote.pen = new Pen(drawNote.color, float.Parse(cbbWidth.SelectedItem.ToString()));
             }
-        } // Đổi màu bút vẽ
+        } 
 
+        // Chỉnh độ rộng bút
         private void cbbWidth_SelectedIndexChanged(object sender, EventArgs e)
         {
             drawNote.pen = new Pen(drawNote.color, float.Parse(cbbWidth.SelectedItem.ToString()));
         }
     }
 
+    // Lớp Vẽ ghi chú
     public class DrawNote
     {
         public int X { set; get; }
@@ -342,6 +338,7 @@ namespace FileManager.Views
         public Pen pen { set; get; } // bút vẽ
         public bool isDraw { set; get; }
         public float width { get; set; } // chiều rộng của nét bút
+
         public DrawNote()
         {
             isDraw = false;

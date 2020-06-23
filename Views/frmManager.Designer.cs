@@ -345,6 +345,8 @@ namespace FileManager.Views
             this.dataFileM.Size = new System.Drawing.Size(1051, 554);
             this.dataFileM.TabIndex = 1;
             this.dataFileM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFileM_CellContentClick);
+            this.dataFileM.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFileM_RowEnter);
+            this.dataFileM.RowLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFileM_RowLeave);
             // 
             // cFileCode
             // 

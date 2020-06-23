@@ -207,7 +207,7 @@ namespace FileManager.Views
             {
                 FileM file = FileController.getFileM(int.Parse(lbFileCode.Text.ToString()));
                 frmRead read = new frmRead(ref fileM, file.iFileCode);
-                read.Text = this.dataFileM.CurrentRow.Cells[2].Value.ToString();
+                read.Text = this.dataFileM.CurrentRow.Cells[1].Value.ToString();
                 read.ShowDialog();
                 if (read.exit == true)
                 {
@@ -223,7 +223,7 @@ namespace FileManager.Views
             {
                 FileM file = FileController.getFileM(int.Parse(lbFileCode.Text.ToString()));
                 frmRead read = new frmRead(ref fileM, file.iFileCode);
-                read.Text = this.dataFileM.CurrentRow.Cells[2].Value.ToString();
+                read.Text = this.dataFileM.CurrentRow.Cells[1].Value.ToString();
                 read.ShowDialog();
                 if (read.exit == true)
                 {
@@ -272,8 +272,8 @@ namespace FileManager.Views
         // Dạng danh sách: Không cho phép chọn btnReadFile khi chưa chọn hàng
         private void dataFileM_RowLeave(object sender, DataGridViewCellEventArgs e)
         {
-            this.btnReadFile.Enabled = false;
-        }       
+            //this.btnReadFile.Enabled = false;
+        }
 
         // Dạng danh sách: Xóa File
         private void dataFileM_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -301,7 +301,7 @@ namespace FileManager.Views
         private void btnReadFile_Click(object sender, EventArgs e)
         {
             frmRead read = new frmRead(ref fileM, int.Parse(this.dataFileM.CurrentRow.Cells[0].Value.ToString()));
-            read.Text = this.dataFileM.CurrentRow.Cells[2].Value.ToString();
+            read.Text = this.dataFileM.CurrentRow.Cells[1].Value.ToString();
             read.ShowDialog();
             if (read.exit == true)
             {

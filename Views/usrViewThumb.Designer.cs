@@ -245,7 +245,6 @@
             this.Name = "usrViewThumb";
             this.Size = new System.Drawing.Size(261, 164);
             this.DoubleClick += new System.EventHandler(this.listViewThumb_DoubleClick);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listViewThumb_MouseClick);
             this.MouseEnter += new System.EventHandler(this.listViewThumb_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.listViewThumb_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.picFile)).EndInit();
