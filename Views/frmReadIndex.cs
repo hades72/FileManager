@@ -16,6 +16,8 @@ namespace FileManager.Views
     public partial class frmReadIndex : Form
     {
         public bool save = false;
+        List<int> selected = new List<int>();
+
         public frmReadIndex(ref List<FileM> fileMs)
         {
             InitializeComponent();
@@ -34,30 +36,50 @@ namespace FileManager.Views
             this.cbReadPreview.SelectedIndex = -1;
             this.cbReadPreview.Items.Clear();
             this.cbReadPreview.Enabled = true;
-            
-            
+
+
             List<FileM> lF = new List<FileM>();
             lF = FileController.getListFile();
+            foreach (var c in lF)
+            {
+                this.cbReadPreview.Items.Add(c.sTitle);
+            }
             foreach (var f in lF)
             {
-                if(f.sTitle != currentFile)
-                this.cbReadPreview.Items.Add(f.sTitle);
-                if(currentFile == f.sTitle)
+                
+                if (currentFile == f.sTitle)
                 {
-                    this.rtbShowFileReadPreview.Text = f.sFilePreview;
+                    this.cbReadPreview.Items.Remove(f.sTitle);
+                    if (f.sFilePreview is null)
+                    {
+                        this.rtbShowFileReadPreview.Text = "";
+                    }
+                    else
+                    {
+                        string[] a = f.sFilePreview.Split(',');
+                        foreach (var obj in a)
+                        {
+                            this.cbReadPreview.Items.Remove(obj.Trim());
+                        }
+                        this.rtbShowFileReadPreview.Text = f.sFilePreview;
+                    }
+                }
+                else
+                {
+
                 }
             }
+
             //this.rtbShowFileReadPreview.Clear();
         }
 
         private void btnAddReadPreview_Click(object sender, EventArgs e)
         {
             if (checkError() == true)
-
             {
                 return;
             }
-            if(rtbShowFileReadPreview.Text.Length <= 0)
+            if (rtbShowFileReadPreview.Text.Length <= 0)
             {
                 this.rtbShowFileReadPreview.Text = this.cbReadPreview.SelectedItem.ToString();
             }
@@ -76,7 +98,7 @@ namespace FileManager.Views
                 MessageBox.Show("Chưa chọn File !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
-            if(this.cbCurrentFile.Text.Length <= 0)
+            if (this.cbCurrentFile.Text.Length <= 0)
             {
                 MessageBox.Show("Chưa chọn File !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
@@ -107,7 +129,6 @@ namespace FileManager.Views
                     MessageBox.Show("Success");
                     this.cbCurrentFile.Text = "";
                     this.rtbShowFileReadPreview.Text = "";
-                    
                 }
             }
         }
