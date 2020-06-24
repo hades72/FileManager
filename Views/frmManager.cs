@@ -34,6 +34,8 @@ namespace FileManager.Views
             this.cReadIndex.DataPropertyName = nameof(FileM.sFilePreview);
             
             dataFileM.AutoGenerateColumns = false;
+
+            this.UpdateCategory();
             // Ẩn cột Ghi chú, Link Pic, Link File, Read
             //this.dataFileM.Columns[5].Visible = false;
             //this.dataFileM.Columns[6].Visible = false;
@@ -68,7 +70,22 @@ namespace FileManager.Views
 
             loadData();
         }
-
+        public void UpdateCategory()
+        {
+            List<Category> lctg = new List<Category>();
+            lctg = CategoryController.getListCategory();
+            if (lctg.Count <= 0)
+            {
+                this.cbCategory.Enabled = false;
+            }
+            else
+            {
+                foreach (var i in lctg)
+                {
+                    this.cbCategory.Items.Add(i.sCategoryName);
+                }
+            }
+        }
         // Cập nhật toàn bộ frmManager
         public void loadData()
         {
@@ -105,8 +122,9 @@ namespace FileManager.Views
                 lastRead(lbFileCode.Text.ToString().Trim()); // khởi tạo nếu có file đọc gần nhất
             }
             showThumb();
+            this.UpdateCategory();
         }
-        
+
         // Hiển thị dạng lưới
         private void showThumb()
         {
@@ -328,7 +346,46 @@ namespace FileManager.Views
 
         private void btnRecentlyRead_Click(object sender, EventArgs e)
         {
-            
+            List<FileM> lF = new List<FileM>();
+            List<FileM> lFileRead = new List<FileM>();
+            lF = FileController.getListFile();
+            foreach(var i in lF)
+            {
+                if(i.iRead > 0)
+                {
+                    lFileRead.Add(i);
+                }
+            }
+            dataFileM.DataSource = lFileRead;
+            showThumb();
+        }
+
+        private void cbCategory_SelectedValueChanged(object sender, EventArgs e)
+        {
+            List<FileM> lF = new List<FileM>();
+            lF = FileController.getListFile();
+            List<FileM> lFileCategory = new List<FileM>();
+            foreach (var i in lF)
+            {
+                string[] a = i.sCategory.Split(',');
+                if(a is null)
+                {
+
+                }
+                else
+                {
+                    foreach (var obj in a)
+                    {
+                        if (obj.Trim() == this.cbCategory.Text)
+                        {
+                            lFileCategory.Add(i);
+                        }
+                    }
+
+                }
+            }
+            dataFileM.DataSource = lFileCategory;
+            showThumb();
         }
     }
 }
