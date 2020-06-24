@@ -40,6 +40,7 @@
             this.btnDeleteNote = new System.Windows.Forms.Button();
             this.rtbNote = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbbWidth = new System.Windows.Forms.ComboBox();
             this.btnColorPen = new System.Windows.Forms.Button();
             this.btnDeleteDrawNote = new System.Windows.Forms.Button();
             this.ptbNote = new System.Windows.Forms.PictureBox();
@@ -48,7 +49,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.cbbWidth = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -200,6 +200,21 @@
             this.label1.Name = "label1";
             this.helpProvider1.SetShowHelp(this.label1, ((bool)(resources.GetObject("label1.ShowHelp"))));
             // 
+            // cbbWidth
+            // 
+            this.cbbWidth.BackColor = System.Drawing.SystemColors.Window;
+            this.cbbWidth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbWidth.FormattingEnabled = true;
+            this.cbbWidth.Items.AddRange(new object[] {
+            resources.GetString("cbbWidth.Items"),
+            resources.GetString("cbbWidth.Items1"),
+            resources.GetString("cbbWidth.Items2"),
+            resources.GetString("cbbWidth.Items3"),
+            resources.GetString("cbbWidth.Items4")});
+            resources.ApplyResources(this.cbbWidth, "cbbWidth");
+            this.cbbWidth.Name = "cbbWidth";
+            this.cbbWidth.SelectedIndexChanged += new System.EventHandler(this.cbbWidth_SelectedIndexChanged);
+            // 
             // btnColorPen
             // 
             resources.ApplyResources(this.btnColorPen, "btnColorPen");
@@ -252,21 +267,6 @@
             this.helpProvider1.SetShowHelp(this.btnSave, ((bool)(resources.GetObject("btnSave.ShowHelp"))));
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // cbbWidth
-            // 
-            this.cbbWidth.BackColor = System.Drawing.SystemColors.Window;
-            this.cbbWidth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbbWidth.FormattingEnabled = true;
-            this.cbbWidth.Items.AddRange(new object[] {
-            resources.GetString("cbbWidth.Items"),
-            resources.GetString("cbbWidth.Items1"),
-            resources.GetString("cbbWidth.Items2"),
-            resources.GetString("cbbWidth.Items3"),
-            resources.GetString("cbbWidth.Items4")});
-            resources.ApplyResources(this.cbbWidth, "cbbWidth");
-            this.cbbWidth.Name = "cbbWidth";
-            this.cbbWidth.SelectedIndexChanged += new System.EventHandler(this.cbbWidth_SelectedIndexChanged);
             // 
             // frmRead
             // 

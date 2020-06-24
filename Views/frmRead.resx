@@ -126,13 +126,16 @@
     <value>0, 0</value>
   </data>
   <data name="splitContainer1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="splitContainer2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="splitContainer2.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
+  </data>
+  <data name="splitContainer2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="splitContainer2.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
@@ -144,7 +147,7 @@
     <value>0, 0</value>
   </data>
   <data name="rtbRead.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <metadata name="helpProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -154,7 +157,7 @@
     <value>True</value>
   </data>
   <data name="rtbRead.Size" type="System.Drawing.Size, System.Drawing">
-    <value>562, 588</value>
+    <value>749, 975</value>
   </data>
   <data name="rtbRead.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -365,13 +368,16 @@
     <value />
   </data>
   <data name="ptbBackPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>389, 6</value>
+    <value>519, 7</value>
+  </data>
+  <data name="ptbBackPage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="ptbBackPage.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="ptbBackPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 35</value>
+    <value>53, 43</value>
   </data>
   <data name="ptbBackPage.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -603,13 +609,16 @@
     <value />
   </data>
   <data name="ptbNextPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>517, 6</value>
+    <value>689, 7</value>
+  </data>
+  <data name="ptbNextPage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="ptbNextPage.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="ptbNextPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 35</value>
+    <value>56, 43</value>
   </data>
   <data name="ptbNextPage.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -633,13 +642,16 @@
     <value>True</value>
   </metadata>
   <data name="txtCurrentPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>435, 15</value>
+    <value>580, 18</value>
+  </data>
+  <data name="txtCurrentPage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="txtCurrentPage.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="txtCurrentPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 20</value>
+    <value>100, 22</value>
   </data>
   <data name="txtCurrentPage.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -678,10 +690,13 @@
     <value>True</value>
   </data>
   <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>562, 636</value>
+    <value>749, 1055</value>
   </data>
   <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
-    <value>588</value>
+    <value>975</value>
+  </data>
+  <data name="splitContainer2.SplitterWidth" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="splitContainer2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -719,6 +734,9 @@
   <data name="splitContainer3.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="splitContainer3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
   <data name="splitContainer3.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
@@ -728,6 +746,9 @@
   <data name="splitContainer4.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="splitContainer4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
   <data name="splitContainer4.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
@@ -735,13 +756,16 @@
     <value>False</value>
   </data>
   <data name="btnDeleteNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 242</value>
+    <value>17, 298</value>
+  </data>
+  <data name="btnDeleteNote.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnDeleteNote.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="btnDeleteNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>100, 28</value>
   </data>
   <data name="btnDeleteNote.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -765,13 +789,16 @@
     <value>Right</value>
   </data>
   <data name="rtbNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 0</value>
+    <value>136, 0</value>
+  </data>
+  <data name="rtbNote.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="rtbNote.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="rtbNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>642, 278</value>
+    <value>855, 460</value>
   </data>
   <data name="rtbNote.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -798,13 +825,16 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold, Italic</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 7</value>
+    <value>17, 9</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label1.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 16</value>
+    <value>74, 20</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -855,10 +885,13 @@
     <value>4</value>
   </data>
   <data name="cbbWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 214</value>
+    <value>17, 263</value>
+  </data>
+  <data name="cbbWidth.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="cbbWidth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 21</value>
+    <value>99, 24</value>
   </data>
   <data name="cbbWidth.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -876,10 +909,13 @@
     <value>0</value>
   </data>
   <data name="btnColorPen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 241</value>
+    <value>17, 297</value>
+  </data>
+  <data name="btnColorPen.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnColorPen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>100, 28</value>
   </data>
   <data name="btnColorPen.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -903,13 +939,16 @@
     <value>False</value>
   </data>
   <data name="btnDeleteDrawNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 270</value>
+    <value>17, 332</value>
+  </data>
+  <data name="btnDeleteDrawNote.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnDeleteDrawNote.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="btnDeleteDrawNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>100, 28</value>
   </data>
   <data name="btnDeleteDrawNote.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -933,13 +972,16 @@
     <value>Right</value>
   </data>
   <data name="ptbNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 0</value>
+    <value>135, 0</value>
+  </data>
+  <data name="ptbNote.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="ptbNote.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="ptbNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>642, 305</value>
+    <value>856, 508</value>
   </data>
   <data name="ptbNote.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -963,13 +1005,16 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold, Italic</value>
   </data>
   <data name="lb2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 11</value>
+    <value>4, 14</value>
+  </data>
+  <data name="lb2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="lb2.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lb2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 16</value>
+    <value>98, 20</value>
   </data>
   <data name="lb2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1008,10 +1053,13 @@
     <value>True</value>
   </data>
   <data name="splitContainer4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>743, 587</value>
+    <value>991, 973</value>
   </data>
   <data name="splitContainer4.SplitterDistance" type="System.Int32, mscorlib">
-    <value>278</value>
+    <value>460</value>
+  </data>
+  <data name="splitContainer4.SplitterWidth" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="splitContainer4.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1050,16 +1098,16 @@
     <value>Arial, 10.8pt, style=Bold</value>
   </data>
   <data name="btnNew.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 0</value>
+    <value>471, 0</value>
   </data>
   <data name="btnNew.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="btnNew.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="btnNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 45</value>
+    <value>256, 77</value>
   </data>
   <data name="btnNew.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1086,16 +1134,16 @@
     <value>Arial, 10.8pt, style=Bold</value>
   </data>
   <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>545, 0</value>
+    <value>727, 0</value>
   </data>
   <data name="btnSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="btnSave.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 45</value>
+    <value>264, 77</value>
   </data>
   <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1134,10 +1182,13 @@
     <value>True</value>
   </data>
   <data name="splitContainer3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>743, 636</value>
+    <value>991, 1055</value>
   </data>
   <data name="splitContainer3.SplitterDistance" type="System.Int32, mscorlib">
-    <value>587</value>
+    <value>973</value>
+  </data>
+  <data name="splitContainer3.SplitterWidth" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="splitContainer3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1173,13 +1224,10 @@
     <value>True</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1308, 636</value>
+    <value>1744, 1055</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>562</value>
-  </data>
-  <data name="splitContainer1.SplitterWidth" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>749</value>
   </data>
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1206,16 +1254,114 @@
     <value>81</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1308, 636</value>
+    <value>1744, 1055</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAIAEBAAAAEAIABoBAAAJgAAACAgAAABACAAqBAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAADAE
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACsjallsJu49LCfuvewn7r3sJ+697Cfuvewn7r3sJ+697Cf
+        uvewn7r3sJ+697Cfuvewn7r3sJ+696J3mfChd5q+rY+suLCnw/+4wNr/uMDa/7Cnw/+wp8P/sKfD/7jA
+        2v+4wNr/sKfD/7Cnw/+wp8P/uMDa/7jA2v+ojrDtooKp36yNq7OzqMP/s6jD/7Oow/+zqMP/s6jD/7Oo
+        w/+zqMP/s6jD/7Oow/+zqMP/vMTb/7SqxP+8xNv/poyw7KKCqd+shqOg3u/6/97v+v/e7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/6SHrOeigqnfrIajoN7v+v/e7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v+kh6znooKp36yGo6De7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/pIes56KCqd+shqOg3u/6/8rP
+        +f+2rvj/ys/5/7Or+P/Av/n/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/6SHrOeigqnfrIajoN7v
+        +v/Kz/n/s6v4/7Or+P/Kz/n/ta74/7au+P/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v+kh6znooKp36yG
+        o6De7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/o3ia66F6
+        nsuwjqqr5vL8/+by/P/m8vz/5vL8/+by/P/a3ur/v63E7L2qweS9qsHkvarB5L2qweS9qsHku6i+26Z9
+        nGQAAAAAspCqrO/2/v/w9///8Pf///D3///d1uT/tZiwz7OAmQoAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAKJ0kyGyjqqwtJSuv7SUrr+0lK6/tJKrjICAgAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//AAD//wAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAMAAAH/AACD/wAA//8AAP//AAAoAAAAIAAAAEAAAAABACAAAAAAAIAQAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoW+NTKJzk/SfbI3/n2yN/59s
+        jf+fbI3/n2yN/59sjf+fbI3/n2yN/59sjf+fbI3/n2yN/59sjf+fbI3/n2yN/59sjf+fbI3/n2yN/59s
+        jf+fbI3/n2yN/59sjf+fbI3/n2yN/59sjf+fbI3/n2yN/59sjf+fb5DtoG2PSwAAAACidJP0tr7Y/77Y
+        7/++2O//vtjv/77Y7/++2O//vtjv/77Y7/++2O//vtjv/77Y7/++2O//vtjv/77Y7/++2O//vtjv/77Y
+        7/++2O//vtjv/77Y7/++2O//vtjv/77Y7/++2O//vtjv/77Y7/+jd5j7pJO8/6WUvf+gbpDsAAAAAJ9s
+        jf++2O//pHub/77Y7/+xqsX/sarF/77Y7/+ke5v/vtjv/7Gqxf+xqsX/vtjv/6R7m/++2O//sarF/7Gq
+        xf++2O//pHub/77Y7/+xqsX/sarF/77Y7/+ke5v/vtjv/7Gqxf+xqsX/vtjv/59sjf+noc3/p6HN/59s
+        jf8AAAAAn2yN/77Y7/+jepr/vtjv/7CpxP+wqcT/vtjv/6N6mv++2O//sKnE/7CpxP++2O//o3qa/77Y
+        7/+wqcT/sKnE/77Y7/+jepr/vtjv/7CpxP+wqcT/vtjv/6N6mv++2O//sKnE/7CpxP++2O//n2yN/6eh
+        zf+noc3/n2yN/wAAAACfbI3/vtjv/77Y7/++2O//vtjv/77Y7/++2O//vtjv/77Y7/++2O//vtjv/77Y
+        7/++2O//vtjv/77Y7/++2O//vtjv/77Y7/++2O//vtjv/77Y7/++2O//vtjv/77Y7/++2O//vtjv/77Y
+        7/+fbI3/p6HN/6ehzf+fbI3/AAAAAJ9sjf+fbI3/n2yN/59sjf+fbI3/n2yN/59sjf+fbI3/n2yN/59s
+        jf+fbI3/n2yN/59sjf+fbI3/n2yN/59sjf+fbI3/n2yN/59sjf+fbI3/n2yN/6V8m//N4/T/pXyb/59s
+        jf+lfJv/zeP0/59sjf+noc3/p6HN/59sjf8AAAAAn2yN/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/n2yN/6ehzf+noc3/n2yN/wAAAACfbI3/3u/6/97v+v/e7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v+fbI3/p6HN/6ehzf+fbI3/AAAAAJ9sjf/e7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/59sjf+noc3/p6HN/59sjf8AAAAAn2yN/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/n2yN/6ehzf+noc3/n2yN/wAA
+        AACfbI3/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v+fbI3/p6HN/6eh
+        zf+fbI3/AAAAAJ9sjf/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/59s
+        jf+noc3/p6HN/59sjf8AAAAAn2yN/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v
+        +v/e7/r/n2yN/6ehzf+noc3/n2yN/wAAAACfbI3/3u/6/97v+v/e7/r/kHL3/4Nf9/+Pc/f/3u/6/5By
+        9/+DX/f/g1/3/4Nf9/+9u/n/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v+fbI3/p6HN/6ehzf+fbI3/AAAAAJ9sjf/e7/r/3u/6/97v+v/e7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/59sjf+noc3/p6HN/59sjf8AAAAAn2yN/97v+v/e7/r/3u/6/5By
+        9/+DX/f/g1/3/4Nf9/+DX/f/j3P3/97v+v+Qcvf/g1/3/4Nf9/+Pc/f/3u/6/97v+v/e7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/n2yN/6ehzf+noc3/n2yN/wAAAACfbI3/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v+fbI3/p6HN/6edyP+fbI78AAAAAJ9s
+        jf/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/59sjf+fbI3/oG2O+59w
+        kZIAAAAAn2yN/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v
+        +v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/e7/r/3u/6/97v+v/a5vL/oG2O+wAA
+        AAAAAAAAAAAAAAAAAACfbI3/8Pf///D3///w9///8Pf///D3///w9///8Pf///D3///w9///8Pf//+70
+        /f/CqL//onGS/Z9sjf+fbI3/n2yN/59sjf+fbI3/n2yN/59sjf+fbI3/n2yN/59sjf+fbI3/n2yN/59u
+        j/qfbY6KAAAAAAAAAAAAAAAAAAAAAJ9sjf/w9///8Pf///D3///w9///8Pf///D3///w9///8Pf///D3
+        ///u9P3/uJmy/6qEod+qiqoYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAn22P/evu+P/w9///8Pf///D3///w9///8Pf///D3
+        ///w9///6ez2/7iXsf2leZnKkm2SBwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACib5COoG+Q/J9sjf+fbI3/n2yN/59s
+        jf+fbI3/n2yN/59sjf+jc5P6pniXpp9ggAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/////////////////////AAAABgAAAAIAAAACAAAAAgAAAAIAA
+        AACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAHgAAAB4AD
+        //+AB///gA//////////////////////////////
+</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 2, 2, 2</value>
+    <value>3, 2, 3, 2</value>
   </data>
   <data name="$this.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Reader River</value>
   </data>
   <data name="&gt;&gt;helpProvider1.Name" xml:space="preserve">
     <value>helpProvider1</value>

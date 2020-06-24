@@ -77,6 +77,8 @@ namespace FileManager.Views
                 addReadIndex.Enabled = false; // nếu không có file hoặc có 1 file thì ẩn
             }
             loadData();
+
+            this.lbShowDanhMuc.Text = "TẤT CẢ";
         }
 
         // Cập nhật thể loại
@@ -353,6 +355,7 @@ namespace FileManager.Views
         private void btnAllFile_Click(object sender, EventArgs e)
         {
             loadData();
+            this.lbShowDanhMuc.Text = "TẤT CẢ";
         }
 
         // Hiển thị lịch sử thêm file
@@ -361,6 +364,7 @@ namespace FileManager.Views
             source.DataSource = FileController.showAddRecently();
             dataFileM.DataSource = source;
             showThumb();
+            this.lbShowDanhMuc.Text = "FILE THÊM GẦN ĐÂY ";
         }
 
         // Hiển thị lịch sử đọc
@@ -378,6 +382,7 @@ namespace FileManager.Views
             }
             dataFileM.DataSource = lFileRead;
             showThumb();
+            this.lbShowDanhMuc.Text = "LỊCH SỬ ĐỌC";
         }
 
         // 
@@ -399,7 +404,7 @@ namespace FileManager.Views
                     {
                         if (obj.Trim() == this.cbCategory.Text)
                         {
-                            lFileCategory.Add(i);
+                                lFileCategory.Add(i);
                         }
                     }
                 }

@@ -39,7 +39,7 @@
             // tabMain
             // 
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabMain.Location = new System.Drawing.Point(0, 28);
+            this.tabMain.Location = new System.Drawing.Point(0, 24);
             this.tabMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
@@ -52,16 +52,16 @@
             this.mFuntion.Location = new System.Drawing.Point(0, 0);
             this.mFuntion.Name = "mFuntion";
             this.mFuntion.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.mFuntion.Size = new System.Drawing.Size(1087, 28);
+            this.mFuntion.Size = new System.Drawing.Size(1087, 24);
             this.mFuntion.TabIndex = 1;
             this.mFuntion.Text = "menuStrip1";
             // 
             // splitter1
             // 
-            this.splitter1.Location = new System.Drawing.Point(0, 61);
+            this.splitter1.Location = new System.Drawing.Point(0, 57);
             this.splitter1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 505);
+            this.splitter1.Size = new System.Drawing.Size(3, 509);
             this.splitter1.TabIndex = 4;
             this.splitter1.TabStop = false;
             // 
@@ -82,7 +82,7 @@
             this.MainMenuStrip = this.mFuntion;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMainGUI";
-            this.Text = "Quản lý File";
+            this.Text = "READER RIVER";
             this.Load += new System.EventHandler(this.frmMainGUI_Load);
             this.MdiChildActivate += new System.EventHandler(this.frmMainGUI_MdiChildActivate);
             this.ResumeLayout(false);
