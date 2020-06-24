@@ -12,6 +12,7 @@ namespace FileManager.Controllers
 {
     public class FileController
     {
+        // Sinh mã file tự động
         public static int getFileCodeFromDB() 
         {
             using (var _context = new DBFileContext())
@@ -35,6 +36,7 @@ namespace FileManager.Controllers
             }
         }
 
+        // Thêm File
         public static bool AddFile(FileM file)
         {
             try
@@ -52,6 +54,7 @@ namespace FileManager.Controllers
             }
         }
 
+        // Lấy File cụ thể
         public static FileM getFileM(int filecode)
         {
             using (var _context = new DBFileContext())
@@ -70,6 +73,7 @@ namespace FileManager.Controllers
             }
         }
 
+        // Lấy danh sách File
         public static List<FileM> getListFile()
         {
             using (var _context = new DBFileContext())
@@ -93,6 +97,7 @@ namespace FileManager.Controllers
             }
         }
 
+        // Xóa file
         public static bool DeleteFile(FileM file)
         {
             using (var _context = new DBFileContext())
@@ -106,6 +111,7 @@ namespace FileManager.Controllers
             }
         }
 
+        // Cập nhật file
         public static bool UpdateFile(FileM file)
         {
             try
@@ -124,7 +130,8 @@ namespace FileManager.Controllers
 
         }
         
-        public static List<FileM> SearchFile(string search) // search theo tên
+        // Tìm kiếm theo tên
+        public static List<FileM> SearchFile(string search) 
         {
             using (var _context = new DBFileContext())
             {
@@ -150,7 +157,60 @@ namespace FileManager.Controllers
                 else return null;
             }
         }
-        
+
+        // Hiện file Add gần nhất
+        public static List<FileM> ShowAddRecently() 
+        {
+            using (var _context = new DBFileContext())
+            {
+                var file = (from f in _context.tbFileMs.AsEnumerable()
+                            orderby f.dtDateUpdate descending
+                            select f).Select(x => new FileM
+                            {
+                                iFileCode = x.iFileCode,
+                                sTitle = x.sTitle,
+                                sCategory = x.sCategory,
+                                sNote = x.sNote,
+                                dtDateUpdate = x.dtDateUpdate,
+                                sLinkFile = x.sLinkFile,
+                                sLinkPic = x.sLinkPic,
+                                iRead = x.iRead,
+                                dtRecentlyRead = x.dtRecentlyRead,
+                                sFilePreview = x.sFilePreview
+                            }).ToList();
+                if (file.Count >= 1)
+                {
+                    return file;
+                }
+                else return null;
+            }
+        }
+
+        public static List<FileM> ShowCategory(string ctg)
+        {
+            using (var _context = new DBFileContext())
+            {
+                var file = (from f in _context.tbFileMs.AsEnumerable()
+                            where f.sCategory == ctg
+                            select f).Select(x => new FileM
+                            {
+                                iFileCode = x.iFileCode,
+                                sTitle = x.sTitle,
+                                sCategory = x.sCategory,
+                                sNote = x.sNote,
+                                dtDateUpdate = x.dtDateUpdate,
+                                sLinkFile = x.sLinkFile,
+                                sLinkPic = x.sLinkPic,
+                                iRead = x.iRead,
+                                dtRecentlyRead = x.dtRecentlyRead,
+                                sFilePreview = x.sFilePreview
+                            }).ToList();
+                if (file.Count >= 1)
+                {
+                    return file;
+                }
+                else return null;
+            }
+        }
     }
-    
 }

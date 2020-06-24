@@ -65,7 +65,6 @@ namespace FileManager.Views
             {
                 addReadIndex.Enabled = false; // nếu không có file hoặc có 1 file thì ẩn
             }
-
             loadData();
         }
 
@@ -100,9 +99,14 @@ namespace FileManager.Views
 
                 }
             }
-            if (lbFileCode != null)
+            if (lbFileCode.Text != "")
             {
                 lastRead(lbFileCode.Text.ToString().Trim()); // khởi tạo nếu có file đọc gần nhất
+            }
+            else
+            {
+                picLastFile.Dispose();
+                lbTitle.Text = "";
             }
             showThumb();
         }
@@ -321,9 +325,12 @@ namespace FileManager.Views
             loadData();
         }
 
+        // Hiển thị lịch sử đọc
         private void btnRecentlyAdd_Click(object sender, EventArgs e)
         {
-            
+            source.DataSource = FileController.ShowAddRecently();
+            dataFileM.DataSource = source;
+            showThumb();
         }
 
         private void btnRecentlyRead_Click(object sender, EventArgs e)

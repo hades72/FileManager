@@ -73,6 +73,7 @@ namespace FileManager.Views
             //this.rtbShowFileReadPreview.Clear();
         }
 
+        // Thêm File cần đọc trước
         private void btnAddReadPreview_Click(object sender, EventArgs e)
         {
             if (checkError() == true)
@@ -91,6 +92,8 @@ namespace FileManager.Views
             this.cbReadPreview.Items.RemoveAt(this.cbReadPreview.SelectedIndex);
             this.cbReadPreview.SelectedIndex = -1;
         }
+
+        // Kiểm tra lỗi chưa chọn File
         private bool checkError()
         {
             if (this.cbReadPreview.Text.Length <= 0)
@@ -106,6 +109,7 @@ namespace FileManager.Views
             return false;
         }
 
+        // Lưu thứ tự đọc File
         private void btnSaveReadIndex_Click(object sender, EventArgs e)
         {
             List<FileM> lF = new List<FileM>();
@@ -133,6 +137,7 @@ namespace FileManager.Views
             }
         }
 
+        // Đóng form 
         private void frmReadIndex_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.save = true;
