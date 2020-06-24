@@ -60,6 +60,7 @@
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã số:";
+            this.label1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDoubleClick);
             this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
             this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
             // 
@@ -72,6 +73,7 @@
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tên: ";
+            this.label2.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.label2_MouseDoubleClick);
             this.label2.MouseEnter += new System.EventHandler(this.label2_MouseEnter);
             this.label2.MouseLeave += new System.EventHandler(this.label2_MouseLeave);
             // 
@@ -84,6 +86,7 @@
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Thể loại: ";
+            this.label3.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.label3_MouseDoubleClick);
             this.label3.MouseEnter += new System.EventHandler(this.label3_MouseEnter);
             this.label3.MouseLeave += new System.EventHandler(this.label3_MouseLeave);
             // 
@@ -96,6 +99,7 @@
             this.label4.Size = new System.Drawing.Size(92, 13);
             this.label4.TabIndex = 4;
             this.label4.Text = "Lần đọc gần nhất";
+            this.label4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.label4_MouseDoubleClick);
             this.label4.MouseEnter += new System.EventHandler(this.label4_MouseEnter);
             this.label4.MouseLeave += new System.EventHandler(this.label4_MouseLeave);
             // 
@@ -107,6 +111,7 @@
             this.lbFileCode.Name = "lbFileCode";
             this.lbFileCode.Size = new System.Drawing.Size(0, 13);
             this.lbFileCode.TabIndex = 5;
+            this.lbFileCode.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbFileCode_MouseDoubleClick);
             this.lbFileCode.MouseEnter += new System.EventHandler(this.lbID_MouseEnter);
             this.lbFileCode.MouseLeave += new System.EventHandler(this.lbID_MouseLeave);
             // 
@@ -118,6 +123,7 @@
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(0, 13);
             this.lbTitle.TabIndex = 6;
+            this.lbTitle.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbTitle_MouseDoubleClick);
             this.lbTitle.MouseEnter += new System.EventHandler(this.lbTenFile_MouseEnter);
             this.lbTitle.MouseLeave += new System.EventHandler(this.lbTenFile_MouseLeave);
             // 
@@ -129,6 +135,7 @@
             this.lbCategory.Name = "lbCategory";
             this.lbCategory.Size = new System.Drawing.Size(0, 13);
             this.lbCategory.TabIndex = 7;
+            this.lbCategory.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbCategory_MouseDoubleClick);
             this.lbCategory.MouseEnter += new System.EventHandler(this.lbTheLoai_MouseEnter);
             this.lbCategory.MouseLeave += new System.EventHandler(this.lbTheLoai_MouseLeave);
             // 
@@ -140,6 +147,7 @@
             this.lbRecentlyRead.Name = "lbRecentlyRead";
             this.lbRecentlyRead.Size = new System.Drawing.Size(0, 13);
             this.lbRecentlyRead.TabIndex = 8;
+            this.lbRecentlyRead.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbRecentlyRead_MouseDoubleClick);
             this.lbRecentlyRead.MouseEnter += new System.EventHandler(this.lbNgayDocGanNhat_MouseEnter);
             this.lbRecentlyRead.MouseLeave += new System.EventHandler(this.lbNgayDocGanNhat_MouseLeave);
             // 
@@ -153,7 +161,7 @@
             this.picFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picFile.TabIndex = 0;
             this.picFile.TabStop = false;
-            this.picFile.DoubleClick += new System.EventHandler(this.picFile_DoubleClick);
+            this.picFile.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.picFile_MouseDoubleClick);
             this.picFile.MouseEnter += new System.EventHandler(this.picFile_MouseEnter);
             this.picFile.MouseLeave += new System.EventHandler(this.picFile_MouseLeave);
             // 
@@ -224,6 +232,9 @@
             this.picNewIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picNewIcon.TabIndex = 9;
             this.picNewIcon.TabStop = false;
+            this.picNewIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.picNewIcon_MouseDoubleClick);
+            this.picNewIcon.MouseEnter += new System.EventHandler(this.picNewIcon_MouseEnter);
+            this.picNewIcon.MouseLeave += new System.EventHandler(this.picNewIcon_MouseLeave);
             // 
             // usrViewThumb
             // 
@@ -244,7 +255,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "usrViewThumb";
             this.Size = new System.Drawing.Size(261, 164);
-            this.DoubleClick += new System.EventHandler(this.listViewThumb_DoubleClick);
+            this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.usrViewThumb_MouseDoubleClick);
             this.MouseEnter += new System.EventHandler(this.listViewThumb_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.listViewThumb_MouseLeave);
             ((System.ComponentModel.ISupportInitialize)(this.picFile)).EndInit();

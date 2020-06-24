@@ -142,7 +142,6 @@ namespace FileManager.Controllers
                                  iRead = x.iRead,
                                  dtRecentlyRead = x.dtRecentlyRead,
                                  sFilePreview = x.sFilePreview
-
                              }).ToList();
                 if (file.Count >= 1)
                 {

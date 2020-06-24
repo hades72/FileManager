@@ -132,7 +132,7 @@ namespace FileManager.Views
                 G = Graphics.FromImage(listView1.PictureFile.Image);
                 flpnlThumb.Controls.Add(listView1);
                 //Mới thêm vào thì hiện icon New
-                if (file.dtDateUpdate.Date == DateTime.Now.Date && file.dtDateUpdate.Month == DateTime.Now.Month && file.dtDateUpdate.Year == DateTime.Now.Year && file.iRead == 0)
+                if (file.dtDateUpdate.ToString("dd/MM/yyyy") == DateTime.Now.ToString("dd/MM/yyyy") && file.iRead == 0)
                 {
                     listView1.PictureNewIcon.Visible = true;
                 }
@@ -309,5 +309,26 @@ namespace FileManager.Views
             }
         }
 
+        // Làm mới 
+        private void toolStripRefresh_Click(object sender, EventArgs e)
+        {
+            loadData();
+        }
+
+        // Hiển thị tất cả
+        private void btnAllFile_Click(object sender, EventArgs e)
+        {
+            loadData();
+        }
+
+        private void btnRecentlyAdd_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnRecentlyRead_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

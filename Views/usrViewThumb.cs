@@ -17,44 +17,12 @@ namespace FileManager.Views
     public partial class usrViewThumb : UserControl
     {
         List<FileM> fileM;
-        //BindingSource source = new BindingSource();
-        //DataGridView dataFileM;
-        //FlowLayoutPanel flpanel;
 
         public usrViewThumb()
         {
             InitializeComponent();
             picNewIcon.Parent = picFile;
-
-
-            // Cập nhật lại Data Grid View
-            //BindingSource source = new BindingSource();
-            //source.DataSource = FileController.getListFile();
-            //dataFileM.DataSource = source;
-
-            //if (flpanel.Controls.Count > 0)
-            //{
-            //    flpanel.Controls.Clear();
-            //}
-            //for (int i = 1; i <= FileController.getListFile().Count; i++)
-            //{
-            //    usrViewThumb listView = new usrViewThumb();
-            //    FileM file1 = FileController.getFileM(i);
-            //    listView.Title = file1.sTitle;
-            //    listView.Category = file1.sCategory;
-            //    listView.FileCode = file1.iFileCode.ToString();
-            //    listView.RecentlyRead = file1.dtRecentlyRead.ToString();
-            //    listView.Note = file1.sNote;
-            //    listView.LinkFile = file1.sLinkFile;
-            //    using (FileStream stream = new FileStream(String.Format(file1.sLinkPic), FileMode.Open, FileAccess.Read))
-            //    {
-            //        listView.PictureFile.Image = Image.FromStream(stream);
-            //    }
-            //    Graphics G = Graphics.FromImage(listView.PictureFile.Image);
-            //    flpanel.Controls.Add(listView);
-            //}
         }
-
 
         #region Properties
 
@@ -124,11 +92,135 @@ namespace FileManager.Views
 
         // Đọc file bằng đúp chuột
         #region DoubleClick_MouseEnter_MouseLeave    
-        private void listViewThumb_DoubleClick(object sender, EventArgs e)
+        private void usrViewThumb_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
             read.Text = this.Title;
             read.ShowDialog();
+            if(read.exit == true)
+            {
+                MessageBox.Show("Nhấn Ctrl+R để làm mới chương trình!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+        }
+
+        private void picFile_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
+            read.ShowDialog();
+            if (read.exit == true)
+            {
+                MessageBox.Show("Nhấn Ctrl+R để làm mới chương trình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void picNewIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
+            read.ShowDialog();
+            if (read.exit == true)
+            {
+                MessageBox.Show("Nhấn Ctrl+R để làm mới chương trình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void label1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
+            read.ShowDialog();
+            if (read.exit == true)
+            {
+                MessageBox.Show("Nhấn Ctrl+R để làm mới chương trình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void label2_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
+            read.ShowDialog();
+            if (read.exit == true)
+            {
+                MessageBox.Show("Nhấn Ctrl+R để làm mới chương trình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void label3_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
+            read.ShowDialog();
+            if (read.exit == true)
+            {
+                MessageBox.Show("Nhấn Ctrl+R để làm mới chương trình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void label4_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
+            read.ShowDialog();
+            if (read.exit == true)
+            {
+                MessageBox.Show("Nhấn Ctrl+R để làm mới chương trình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void lbCategory_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
+            read.ShowDialog();
+            if (read.exit == true)
+            {
+                MessageBox.Show("Nhấn Ctrl+R để làm mới chương trình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void lbFileCode_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
+            read.ShowDialog();
+            if (read.exit == true)
+            {
+                MessageBox.Show("Nhấn Ctrl+R để làm mới chương trình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void lbRecentlyRead_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
+            read.ShowDialog();
+            if (read.exit == true)
+            {
+                MessageBox.Show("Nhấn Ctrl+R để làm mới chương trình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void lbTitle_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            read.Text = this.Title;
+            read.ShowDialog();
+            if (read.exit == true)
+            {
+                MessageBox.Show("Nhấn Ctrl+R để làm mới chương trình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void picNewIcon_MouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = Color.AliceBlue;
+        }
+
+        private void picNewIcon_MouseLeave(object sender, EventArgs e)
+        {
+            this.BackColor = Color.White;
         }
 
         private void listViewThumb_MouseLeave(object sender, EventArgs e)
@@ -150,13 +242,6 @@ namespace FileManager.Views
         private void picFile_MouseEnter(object sender, EventArgs e)
         {
             this.BackColor = Color.AliceBlue;
-        }
-
-        private void picFile_DoubleClick(object sender, EventArgs e)
-        {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
-            read.Text = this.Title;
-            read.ShowDialog();
         }
 
         private void label1_MouseEnter(object sender, EventArgs e)
@@ -247,33 +332,7 @@ namespace FileManager.Views
             {
                 FileM file = FileController.getFileM(int.Parse(this.FileCode));
                 FileController.DeleteFile(file);
-
-                // Cập nhật lại Data Grid View
-                //BindingSource source = new BindingSource();
-                //source.DataSource = FileController.getListFile();
-                //dataFileM.DataSource = source;
-
-                //if (flpanel.Controls.Count > 0)
-                //{
-                //    flpanel.Controls.Clear();
-                //}
-                //for (int i = 1; i <= FileController.getListFile().Count; i++)
-                //{
-                //    usrViewThumb listView = new usrViewThumb();
-                //    FileM file1 = FileController.getFileM(i);
-                //    listView.Title = file1.sTitle;
-                //    listView.Category = file1.sCategory;
-                //    listView.FileCode = file1.iFileCode.ToString();
-                //    listView.RecentlyRead = file1.dtRecentlyRead.ToString();
-                //    listView.Note = file1.sNote;
-                //    listView.LinkFile = file1.sLinkFile;
-                //    using (FileStream stream = new FileStream(String.Format(file1.sLinkPic), FileMode.Open, FileAccess.Read))
-                //    {
-                //        listView.PictureFile.Image = Image.FromStream(stream);
-                //    }
-                //    Graphics G = Graphics.FromImage(listView.PictureFile.Image);
-                //    flpanel.Controls.Add(listView);
-                //}
+                MessageBox.Show("Nhấn Ctrl+R để làm mới chương trình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }  
         }
 
@@ -290,6 +349,10 @@ namespace FileManager.Views
             frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
             read.Text = this.Title;
             read.ShowDialog();
+            if(read.exit == true)
+            {
+                MessageBox.Show("Nhấn Ctrl+R để làm mới chương trình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         // Đọc bằng PDF
