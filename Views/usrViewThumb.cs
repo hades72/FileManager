@@ -331,7 +331,7 @@ namespace FileManager.Views
             if (MessageBox.Show("Bạn chắc chắn xóa file này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 FileM file = FileController.getFileM(int.Parse(this.FileCode));
-                FileController.DeleteFile(file);
+                FileController.deleteFile(file);
                 MessageBox.Show("Nhấn Ctrl+R để làm mới chương trình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }  
         }

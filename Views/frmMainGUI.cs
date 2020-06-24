@@ -16,23 +16,23 @@ namespace FileManager.Views
         frmManager fView;
         List<FileM> listFileM;
         List<Category> listCategory;
+
         public frmMainGUI()
         {
             InitializeComponent();
             listFileM = new List<FileM>();
             listCategory = new List<Category>();
             WindowState = FormWindowState.Maximized;
-
         }
 
         private void frmMainGUI_MdiChildActivate(object sender, EventArgs e)
         {
-            if(this.ActiveMdiChild == null)
+            if (this.ActiveMdiChild == null)
             {
                 return;
             }
             this.ActiveMdiChild.WindowState = FormWindowState.Maximized;
-            if(this.ActiveMdiChild.Tag == null)
+            if (this.ActiveMdiChild.Tag == null)
             {
                 TabPage tp = new TabPage(this.ActiveMdiChild.Text);
                 tp.Tag = this.ActiveMdiChild;
@@ -40,7 +40,7 @@ namespace FileManager.Views
                 this.tabMain.SelectedTab = tp;
                 this.ActiveMdiChild.Tag = tp;
                 this.ActiveMdiChild.FormClosed += ActiveMdiChild_FormClosed;
-            }    
+            }
         }
 
         private void ActiveMdiChild_FormClosed(object sender, FormClosedEventArgs e)
@@ -50,7 +50,7 @@ namespace FileManager.Views
 
         private void frmMainGUI_Load(object sender, EventArgs e)
         {
-            this.fView= new frmManager(ref listFileM,listCategory);
+            this.fView = new frmManager(ref listFileM,listCategory);
             this.fView.MdiParent = this;
             this.fView.Show();
         }

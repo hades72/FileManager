@@ -55,7 +55,7 @@
             // btnUploadFile
             // 
             this.btnUploadFile.Location = new System.Drawing.Point(714, 565);
-            this.btnUploadFile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUploadFile.Margin = new System.Windows.Forms.Padding(2);
             this.btnUploadFile.Name = "btnUploadFile";
             this.btnUploadFile.Size = new System.Drawing.Size(94, 26);
             this.btnUploadFile.TabIndex = 3;
@@ -76,7 +76,7 @@
             // txtTitle
             // 
             this.txtTitle.Location = new System.Drawing.Point(332, 71);
-            this.txtTitle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTitle.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(474, 20);
             this.txtTitle.TabIndex = 6;
@@ -96,18 +96,18 @@
             this.btnSave.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Location = new System.Drawing.Point(890, 486);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(217, 51);
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.bSave_Click);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnPicUpload
             // 
             this.btnPicUpload.Location = new System.Drawing.Point(938, 418);
-            this.btnPicUpload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPicUpload.Margin = new System.Windows.Forms.Padding(2);
             this.btnPicUpload.Name = "btnPicUpload";
             this.btnPicUpload.Size = new System.Drawing.Size(97, 26);
             this.btnPicUpload.TabIndex = 4;
@@ -118,7 +118,7 @@
             // txtLinkFolder
             // 
             this.txtLinkFolder.Location = new System.Drawing.Point(332, 569);
-            this.txtLinkFolder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLinkFolder.Margin = new System.Windows.Forms.Padding(2);
             this.txtLinkFolder.Name = "txtLinkFolder";
             this.txtLinkFolder.ReadOnly = true;
             this.txtLinkFolder.Size = new System.Drawing.Size(334, 20);
@@ -138,7 +138,7 @@
             // 
             this.btnUpateLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpateLink.Location = new System.Drawing.Point(669, 565);
-            this.btnUpateLink.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpateLink.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpateLink.Name = "btnUpateLink";
             this.btnUpateLink.Size = new System.Drawing.Size(28, 26);
             this.btnUpateLink.TabIndex = 15;
@@ -160,7 +160,7 @@
             // 
             this.rtbPreview.BackColor = System.Drawing.Color.White;
             this.rtbPreview.Location = new System.Drawing.Point(332, 114);
-            this.rtbPreview.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rtbPreview.Margin = new System.Windows.Forms.Padding(2);
             this.rtbPreview.Name = "rtbPreview";
             this.rtbPreview.ReadOnly = true;
             this.rtbPreview.Size = new System.Drawing.Size(474, 424);
@@ -175,7 +175,7 @@
             // 
             this.txtFileCode.BackColor = System.Drawing.Color.White;
             this.txtFileCode.Location = new System.Drawing.Point(332, 35);
-            this.txtFileCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFileCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtFileCode.Name = "txtFileCode";
             this.txtFileCode.ReadOnly = true;
             this.txtFileCode.Size = new System.Drawing.Size(95, 20);
@@ -205,7 +205,7 @@
             this.btnAddCategory.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddCategory.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnAddCategory.Location = new System.Drawing.Point(1035, 33);
-            this.btnAddCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddCategory.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddCategory.Name = "btnAddCategory";
             this.btnAddCategory.Size = new System.Drawing.Size(56, 23);
             this.btnAddCategory.TabIndex = 20;
@@ -217,7 +217,7 @@
             // 
             this.picUpload.BackColor = System.Drawing.Color.Transparent;
             this.picUpload.Location = new System.Drawing.Point(876, 114);
-            this.picUpload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picUpload.Margin = new System.Windows.Forms.Padding(2);
             this.picUpload.Name = "picUpload";
             this.picUpload.Size = new System.Drawing.Size(217, 290);
             this.picUpload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -227,7 +227,7 @@
             // txtCurrentCategory
             // 
             this.txtCurrentCategory.Location = new System.Drawing.Point(876, 71);
-            this.txtCurrentCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCurrentCategory.Margin = new System.Windows.Forms.Padding(2);
             this.txtCurrentCategory.Name = "txtCurrentCategory";
             this.txtCurrentCategory.ReadOnly = true;
             this.txtCurrentCategory.Size = new System.Drawing.Size(137, 20);
@@ -238,7 +238,7 @@
             // 
             this.btnRemoveCategory.Enabled = false;
             this.btnRemoveCategory.Location = new System.Drawing.Point(1035, 68);
-            this.btnRemoveCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveCategory.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveCategory.Name = "btnRemoveCategory";
             this.btnRemoveCategory.Size = new System.Drawing.Size(56, 24);
             this.btnRemoveCategory.TabIndex = 22;
@@ -272,7 +272,7 @@
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnUploadFile);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAddFile";
             this.Text = "Thêm File";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAddFile_FormClosing);

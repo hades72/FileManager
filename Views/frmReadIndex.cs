@@ -129,8 +129,8 @@ namespace FileManager.Views
                     file.sNote = f.sNote;
                     file.dtDateUpdate = f.dtDateUpdate;
                     file.dtRecentlyRead = f.dtRecentlyRead;
-                    FileController.UpdateFile(file);
-                    MessageBox.Show("Success");
+                    FileController.updateFile(file);
+                    MessageBox.Show("Lưu thành công!");
                     this.cbCurrentFile.Text = "";
                     this.rtbShowFileReadPreview.Text = "";
                 }

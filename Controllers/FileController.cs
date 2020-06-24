@@ -36,24 +36,6 @@ namespace FileManager.Controllers
             }
         }
 
-        // Thêm File
-        public static bool AddFile(FileM file)
-        {
-            try
-            {
-                using (var _context = new DBFileContext())
-                {
-                    _context.tbFileMs.Add(file);
-                    _context.SaveChanges();
-                    return true;
-                }
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
         // Lấy File cụ thể
         public static FileM getFileM(int filecode)
         {
@@ -97,22 +79,26 @@ namespace FileManager.Controllers
             }
         }
 
-        // Xóa file
-        public static bool DeleteFile(FileM file)
+        // Thêm File
+        public static bool addFile(FileM file)
         {
-            using (var _context = new DBFileContext())
+            try
             {
-                var dbfile = (from f in _context.tbFileMs
-                              where f.iFileCode == file.iFileCode
-                              select f).SingleOrDefault();
-                _context.tbFileMs.Remove(dbfile);
-                _context.SaveChanges();
-                return true;
+                using (var _context = new DBFileContext())
+                {
+                    _context.tbFileMs.Add(file);
+                    _context.SaveChanges();
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
             }
         }
 
         // Cập nhật file
-        public static bool UpdateFile(FileM file)
+        public static bool updateFile(FileM file)
         {
             try
             {
@@ -129,9 +115,23 @@ namespace FileManager.Controllers
             }
 
         }
-        
+
+        // Xóa file
+        public static bool deleteFile(FileM file)
+        {
+            using (var _context = new DBFileContext())
+            {
+                var dbfile = (from f in _context.tbFileMs
+                              where f.iFileCode == file.iFileCode
+                              select f).SingleOrDefault();
+                _context.tbFileMs.Remove(dbfile);
+                _context.SaveChanges();
+                return true;
+            }
+        }
+
         // Tìm kiếm theo tên
-        public static List<FileM> SearchFile(string search) 
+        public static List<FileM> searchFile(string search) 
         {
             using (var _context = new DBFileContext())
             {
@@ -159,39 +159,12 @@ namespace FileManager.Controllers
         }
 
         // Hiện file Add gần nhất
-        public static List<FileM> ShowAddRecently() 
+        public static List<FileM> showAddRecently() 
         {
             using (var _context = new DBFileContext())
             {
                 var file = (from f in _context.tbFileMs.AsEnumerable()
                             orderby f.dtDateUpdate descending
-                            select f).Select(x => new FileM
-                            {
-                                iFileCode = x.iFileCode,
-                                sTitle = x.sTitle,
-                                sCategory = x.sCategory,
-                                sNote = x.sNote,
-                                dtDateUpdate = x.dtDateUpdate,
-                                sLinkFile = x.sLinkFile,
-                                sLinkPic = x.sLinkPic,
-                                iRead = x.iRead,
-                                dtRecentlyRead = x.dtRecentlyRead,
-                                sFilePreview = x.sFilePreview
-                            }).ToList();
-                if (file.Count >= 1)
-                {
-                    return file;
-                }
-                else return null;
-            }
-        }
-
-        public static List<FileM> ShowCategory(string ctg)
-        {
-            using (var _context = new DBFileContext())
-            {
-                var file = (from f in _context.tbFileMs.AsEnumerable()
-                            where f.sCategory == ctg
                             select f).Select(x => new FileM
                             {
                                 iFileCode = x.iFileCode,

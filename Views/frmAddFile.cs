@@ -46,18 +46,17 @@ namespace FileManager.Views
             {
                 this.cbCategory.Items.Add(c.sCategoryName);
             }
-
         }
 
         private void frmAddFile_Load(object sender, EventArgs e)
         {
             pathOriginalIMG = "..//..//Pictures//OriginalIMG.jpg";
             this.picUpload.Image = new Bitmap(pathOriginalIMG);
-            clickPicUpload = false;
-               
+            clickPicUpload = false;      
         }
 
-        private void bSave_Click(object sender, EventArgs e)
+        // Lưu file
+        private void btnSave_Click(object sender, EventArgs e)
         {
             checkError();
             if (error == false)
@@ -89,20 +88,18 @@ namespace FileManager.Views
                 // Lưu link file
                 file.sLinkFile = openFile.FileName; // gán vào linkFile trong list FileM
                 save = true;
-                if (FileController.AddFile(file) == false) // thêm file vào csdl
+                if (FileController.addFile(file) == false) // thêm file vào csdl
                 {
                     error = true;
                     save = false;
                 }
             }
             this.Close();
-
         }
 
+        // Cho người dùng lựa chọn có chắc chắn đóng form chưa
         private void frmAddFile_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //checkError();
-            // nếu có lỗi thì cancel , save = 
             if (error == true)
             {
                 error = false;
@@ -119,6 +116,7 @@ namespace FileManager.Views
             }
         }
 
+        // Tải file lên
         private void btnUploadFile_Click(object sender, EventArgs e)
         {
             this.openFile.RestoreDirectory = true;
@@ -126,45 +124,44 @@ namespace FileManager.Views
             this.openFile.Filter = "PDF Files|*.pdf|Text Document|*.txt|All Files|*.*";
             this.openFile.FilterIndex = 1;
             this.openFile.Multiselect = false;
-
             if (openFile.ShowDialog() == DialogResult.OK)
             {
-                this.txtLinkFolder.Text = openFile.FileName;
-                this.txtTitle.Text = Path.GetFileNameWithoutExtension(openFile.FileName); // Lấy tên file không có đuôi file
-
-                if (Path.GetExtension(openFile.FileName) == ".pdf")
+                if(Path.GetExtension(openFile.FileName) == ".pdf" || Path.GetExtension(openFile.FileName) == ".txt")
                 {
-                    using (PdfReader reader = new PdfReader(openFile.FileName))
+                    this.txtLinkFolder.Text = openFile.FileName;
+                    // Lấy tên file không có đuôi file
+                    this.txtTitle.Text = Path.GetFileNameWithoutExtension(openFile.FileName); 
+                    if (Path.GetExtension(openFile.FileName) == ".pdf")
                     {
-                        // hiện các dòng trang đầu tiên để xem trước
-                        LocationTextExtractionStrategy strategy = new LocationTextExtractionStrategy();
-                        string line = PdfTextExtractor.GetTextFromPage(reader, 1, strategy);
-                        //line = Encoding.UTF8.GetString(
-                        //        Encoding.Convert(
-                        //        Encoding.Default,
-                        //        Encoding.UTF8,
-                        //        Encoding.Default.GetBytes(line)));
-                        this.rtbPreview.Text += line;
+                        using (PdfReader reader = new PdfReader(openFile.FileName))
+                        {
+                            // hiện các dòng trang đầu tiên để xem trước
+                            LocationTextExtractionStrategy strategy = new LocationTextExtractionStrategy();
+                            string line = PdfTextExtractor.GetTextFromPage(reader, 1, strategy);
+                            this.rtbPreview.Text += line;
+                        }
+                    }
+                    if (Path.GetExtension(openFile.FileName) == ".txt")
+                    {
+                        using (FileStream fs = new FileStream(openFile.FileName, FileMode.Open))
+                        {
+                            StreamReader rd = new StreamReader(fs, Encoding.Unicode);
+                            this.rtbPreview.Text = rd.ReadToEnd();
+                        }
                     }
                 }
-
-                if (Path.GetExtension(openFile.FileName) == ".txt")
+                else
                 {
-                    using (FileStream fs = new FileStream(openFile.FileName, FileMode.Open))
-                    {
-                        StreamReader rd = new StreamReader(fs, Encoding.Unicode);
-                        this.rtbPreview.Text = rd.ReadToEnd();
-                    }
+                    MessageBox.Show("Sai định dạng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
         }
 
-        private void btnDuongDan_Click(object sender, EventArgs e)
         // Chọn đường dẫn để lưu file ở Folder khác, nếu thích
+        private void btnDuongDan_Click(object sender, EventArgs e)
         {
-            this.saveLinkFile.Filter = "PDF Files|*.pdf|All Files|*.*";
-            this.saveLinkFile.Title = "Save a PDF File";
+            this.saveLinkFile.Filter = "PDF Files|*.pdf|Text Document|*.txt|All Files|*.*";
+            this.saveLinkFile.Title = "Save as";
             this.saveLinkFile.FileName = txtTitle.Text;
             if (this.saveLinkFile.ShowDialog() == DialogResult.OK)
             {
@@ -172,24 +169,23 @@ namespace FileManager.Views
             }
         }
 
+        // Tải ảnh bìa
         private void btnPicUpload_Click(object sender, EventArgs e)
         {
             this.openIMG.FileName = string.Empty;
-            this.openIMG.Filter = "JPEG Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif|All Files|*.*";
+            this.openIMG.Filter = "JPEG Image|*.jpeg|JPG Image|*.jpg|PNG Image|*.png|BMP Image|*.bmp|GIF Image|*.gif|All Files|*.*";
             this.openIMG.FilterIndex = 1;
             this.openIMG.Multiselect = false;
             if (this.openIMG.ShowDialog() == DialogResult.OK)
             {
-                // Xử lí Tải ảnh bìa ở đây
                 this.picUpload.Image = new Bitmap(openIMG.FileName);
-                this.picUpload.SizeMode = PictureBoxSizeMode.StretchImage;
                 this.clickPicUpload = true;
             }
         }
 
+        // Chọn thể loại
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
-           
             if (selected.Count == 0)
             {
                 category = this.cbCategory.SelectedItem.ToString();
@@ -206,13 +202,14 @@ namespace FileManager.Views
                 }
                 else
                 {
-                    MessageBox.Show("Giang đẹp trai !!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Thể loại " + this.cbCategory.SelectedIndex + " đã được thêm!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
+        // Kiếm tra có chọn thể loại vừa nhấn đã chọn hay chưa
         private bool checkSelected(int number)
         {
-
             for (int i = 0; i < selected.Count; i++)
             {
                 if (selected[i] == number)
@@ -223,6 +220,7 @@ namespace FileManager.Views
             return true;
         }
 
+        // Xóa các thể loại đã chọn
         private void btnRemoveCategory_Click(object sender, EventArgs e)
         {
             this.txtCurrentCategory.Clear();
@@ -230,6 +228,7 @@ namespace FileManager.Views
             selected.Clear();
         }
 
+        // Có chọn thể loại thì cho phép nhấn nút xóa, ngược lại thì không cho phép
         private void txtCurrentCategory_TextChanged(object sender, EventArgs e)
         {
             if(txtCurrentCategory.Text.Length > 0)
@@ -242,8 +241,7 @@ namespace FileManager.Views
             }
         }
 
-        
-
+        // Kiểm tra lỗi thêm file
         private void checkError()
         {
             if (this.txtLinkFolder.Text.Trim().Length <= 0)
@@ -278,6 +276,7 @@ namespace FileManager.Views
             }
         }
 
+        // Kiểm tra giá trị trong cb có chọn không thì hiện nút thêm
         private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.cbCategory.SelectedIndex != -1)

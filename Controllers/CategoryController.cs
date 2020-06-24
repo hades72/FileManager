@@ -10,6 +10,7 @@ namespace FileManager.Controllers
 {
     public class CategoryController
     {
+        // Sinh mã thể loại
         public static int getCategoryCodeFromDB()
         {
             using (var _context = new DBFileContext())
@@ -32,22 +33,8 @@ namespace FileManager.Controllers
                 }
             }
         }
-        public static bool AddCategory(Category category)
-        {
-            try
-            {
-                using (var _context = new DBFileContext())
-                {
-                    _context.tbCategory.Add(category);
-                    _context.SaveChanges();
-                    return true;
-                }
-            }
-            catch
-            {
-                return false;
-            }
-        }
+
+        // Lấy một thể loại
         public static Category getCategory(int categorycode)
         {
             using (var _context = new DBFileContext())
@@ -65,6 +52,8 @@ namespace FileManager.Controllers
                 }
             }
         }
+        
+        // Lấy danh sách thể loại
         public static List<Category> getListCategory()
         {
             using (var _context = new DBFileContext())
@@ -80,19 +69,27 @@ namespace FileManager.Controllers
                 return catg;
             }
         }
-        public static bool DeleteCategory(Category catg)
+
+        // Thêm thể loại
+        public static bool addCategory(Category category)
         {
-            using (var _context = new DBFileContext())
+            try
             {
-                var dbcatg = (from f in _context.tbCategory
-                              where f.iCategoryCode == catg.iCategoryCode
-                              select f).SingleOrDefault();
-                _context.tbCategory.Remove(dbcatg);
-                _context.SaveChanges();
-                return true;
+                using (var _context = new DBFileContext())
+                {
+                    _context.tbCategory.Add(category);
+                    _context.SaveChanges();
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
             }
         }
-        public static bool UpdateCategory(Category catg)
+
+        // Cập nhật thể loại
+        public static bool updateCategory(Category catg)
         {
             try
             {
@@ -107,7 +104,21 @@ namespace FileManager.Controllers
             {
                 return false;
             }
-
         }
+
+        // Xóa thể loại
+        public static bool deleteCategory(Category catg)
+        {
+            using (var _context = new DBFileContext())
+            {
+                var dbcatg = (from f in _context.tbCategory
+                              where f.iCategoryCode == catg.iCategoryCode
+                              select f).SingleOrDefault();
+                _context.tbCategory.Remove(dbcatg);
+                _context.SaveChanges();
+                return true;
+            }
+        }
+
     }
 }

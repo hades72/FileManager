@@ -38,7 +38,7 @@ namespace FileManager.Views
             if(file.iRead == 0)
             {
                 file.iRead += 1;
-                FileController.UpdateFile(file);
+                FileController.updateFile(file);
             }
             currentPage = file.iRead;
             maxPage = file.iRead;
@@ -170,7 +170,7 @@ namespace FileManager.Views
 
             //}
             checkDraw = false;
-            FileController.UpdateFile(file); // cập nhật xuống dtb
+            FileController.updateFile(file); // cập nhật xuống dtb
             MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK);
         }
 
@@ -307,7 +307,7 @@ namespace FileManager.Views
                     e.Cancel = true; // Không đóng form
                 }    
             }
-            FileController.UpdateFile(file); // cập nhật xuống dtb
+            FileController.updateFile(file); // cập nhật xuống dtb
             exit = true;
         }
 

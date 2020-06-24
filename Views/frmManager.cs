@@ -32,16 +32,8 @@ namespace FileManager.Views
             this.cDateUpdate.DataPropertyName = nameof(FileM.dtDateUpdate);
             this.cRecentlyRead.DataPropertyName = nameof(FileM.dtRecentlyRead);
             this.cReadIndex.DataPropertyName = nameof(FileM.sFilePreview);
-            
             dataFileM.AutoGenerateColumns = false;
-
             this.UpdateCategory();
-            // Ẩn cột Ghi chú, Link Pic, Link File, Read
-            //this.dataFileM.Columns[5].Visible = false;
-            //this.dataFileM.Columns[6].Visible = false;
-            //this.dataFileM.Columns[7].Visible = false;
-            //this.dataFileM.Columns[8].Visible = false;
-
         }
 
         private void frmViewThumb_Load(object sender, EventArgs e)
@@ -69,6 +61,8 @@ namespace FileManager.Views
             }
             loadData();
         }
+
+        // Cập nhật thể loại
         public void UpdateCategory()
         {
             List<Category> lctg = new List<Category>();
@@ -85,6 +79,7 @@ namespace FileManager.Views
                 }
             }
         }
+
         // Cập nhật toàn bộ frmManager
         public void loadData()
         {
@@ -265,7 +260,7 @@ namespace FileManager.Views
             }
             else
             {
-                source.DataSource = FileController.SearchFile(this.txtSearch.Text.Trim());
+                source.DataSource = FileController.searchFile(this.txtSearch.Text.Trim());
                 if (source.DataSource == null)
                 {
                     MessageBox.Show("Không có tên file cần tìm!", "Thông báo", MessageBoxButtons.OK);
@@ -305,7 +300,7 @@ namespace FileManager.Views
                 if (MessageBox.Show("Bạn chắc chắn xóa file này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     FileM file = FileController.getFileM(int.Parse(this.dataFileM.Rows[e.RowIndex].Cells[0].Value.ToString()));
-                    FileController.DeleteFile(file);
+                    FileController.deleteFile(file);
                     try // nếu đã tồn tại hình vẽ thì xóa (nghĩa là hình vẽ đã được lưu)
                     {
                         File.Delete(String.Format("{0}.jpg", int.Parse(this.dataFileM.Rows[e.RowIndex].Cells[0].Value.ToString())));
@@ -343,14 +338,15 @@ namespace FileManager.Views
             loadData();
         }
 
-        // Hiển thị lịch sử đọc
+        // Hiển thị lịch sử thêm file
         private void btnRecentlyAdd_Click(object sender, EventArgs e)
         {
-            source.DataSource = FileController.ShowAddRecently();
+            source.DataSource = FileController.showAddRecently();
             dataFileM.DataSource = source;
             showThumb();
         }
 
+        // Hiển thị lịch sử đọc
         private void btnRecentlyRead_Click(object sender, EventArgs e)
         {
             List<FileM> lF = new List<FileM>();
@@ -367,6 +363,7 @@ namespace FileManager.Views
             showThumb();
         }
 
+        // 
         private void cbCategory_SelectedValueChanged(object sender, EventArgs e)
         {
             List<FileM> lF = new List<FileM>();

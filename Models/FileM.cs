@@ -33,10 +33,10 @@ namespace FileManager.Models
         public DateTime? dtRecentlyRead { get; set; } // Lịch sử mở đọc gần đây
 
         public string sFilePreview { get; set; }
-        public override string ToString()
-        {
-            return this.sTitle;
-        }
-        public virtual ICollection<Category> lCategory { get; set; }
+
+        //public override string ToString()
+        //{
+        //    return this.sTitle;
+        //}
     }
 }
