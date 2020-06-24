@@ -385,7 +385,6 @@ namespace FileManager.Views
                             lFileCategory.Add(i);
                         }
                     }
-
                 }
             }
             dataFileM.DataSource = lFileCategory;

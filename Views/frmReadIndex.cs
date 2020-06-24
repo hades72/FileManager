@@ -98,12 +98,12 @@ namespace FileManager.Views
         {
             if (this.cbReadPreview.Text.Length <= 0)
             {
-                MessageBox.Show("Chưa chọn File !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Chưa chọn File!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
             if (this.cbCurrentFile.Text.Length <= 0)
             {
-                MessageBox.Show("Chưa chọn File !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Chưa chọn File!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
             return false;

@@ -122,11 +122,6 @@ namespace FileManager.Views
                 {
                     LocationTextExtractionStrategy strategy = new LocationTextExtractionStrategy();
                     string line = PdfTextExtractor.GetTextFromPage(reader, pagenumber, strategy);
-                    //line = Encoding.UTF8.GetString(
-                    //        Encoding.Convert(
-                    //        Encoding.Default,
-                    //        Encoding.UTF8,
-                    //        Encoding.Default.GetBytes(line)));
                     this.rtbRead.Text += line;
                 }
             }
@@ -138,7 +133,6 @@ namespace FileManager.Views
                     this.rtbRead.Text = rd.ReadToEnd();
                 }
             }
-
             if (currentPage + 1 > numberOfPage) // trang sau lớn hơn trang của file thì ẩn
                 ptbNextPage.Visible = false;
             else ptbNextPage.Visible = true;
@@ -155,20 +149,13 @@ namespace FileManager.Views
             {
                 file.sNote = rtbNote.Text.Trim();
             }
-            //try
-            //{
-                if(checkDraw == true) // vẽ thì lưu
+            if (checkDraw == true) // vẽ thì lưu
+            {
+                using (FileStream fileStream = new FileStream(String.Format("{0}.jpg", fileCode), FileMode.Create))
                 {
-                    using (FileStream fileStream = new FileStream(String.Format("{0}.jpg", fileCode), FileMode.Create))
-                    {
-                        ptbNote.Image.Save(fileStream, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    }
+                    ptbNote.Image.Save(fileStream, System.Drawing.Imaging.ImageFormat.Jpeg);
                 }
-            //}
-            //catch
-            //{
-
-            //}
+            }
             checkDraw = false;
             FileController.updateFile(file); // cập nhật xuống dtb
             MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK);
@@ -290,17 +277,13 @@ namespace FileManager.Views
                 if (dr == DialogResult.Yes)
                 {
                     file.sNote = rtbNote.Text.Trim();
-                    //try
-                    //{
+                    if(checkDraw == true)
+                    {
                         using (FileStream fileStream = new FileStream(String.Format("{0}.jpg", fileCode), FileMode.Create))
                         {
                             ptbNote.Image.Save(fileStream, System.Drawing.Imaging.ImageFormat.Jpeg);
                         }
-                    //}
-                    //catch
-                    //{
-
-                    //}
+                    }
                 }
                 else if (dr == DialogResult.Cancel)
                 {

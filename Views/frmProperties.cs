@@ -18,14 +18,13 @@ namespace FileManager.Views
     {
         private int fileCode;
         private string linkFile;
+
         public frmProperties(ref List<FileM> fileM, int filecode)
         {
             InitializeComponent();
-
             FileM file = FileController.getFileM(filecode);
             fileCode = filecode;
             linkFile = file.sLinkFile;
-
             this.lbTitle.Text = file.sTitle;
             this.lbFileCode.Text = file.iFileCode.ToString();
             this.lbCategory.Text = file.sCategory;
@@ -36,19 +35,21 @@ namespace FileManager.Views
             {
                 picFile.Image = Image.FromStream(stream);
             }
-
         }
-        
-        private void picLocation_MouseEnter(object sender, EventArgs e)
+
+        // Nhấn chuột vào mũi tên đường dẫn đổi màu
+        private void picLinkFile_MouseEnter(object sender, EventArgs e)
         {
             picLinkFile.BackColor = Color.LightSkyBlue;
         }
 
-        private void picLocation_MouseLeave(object sender, EventArgs e)
+        // Chuột rời đi thì để lại màu mặc định
+        private void picLinkFile_MouseLeave(object sender, EventArgs e)
         {
             picLinkFile.BackColor = Color.AliceBlue;
         }
 
+        // Nhấn vào mũi tên đường dẫn hiện thư mục chứa đường dẫn file
         private void picLinkFile_Click(object sender, EventArgs e)
         {
             string target = Path.GetDirectoryName(linkFile); // Lấy đường dẫn thư mục chứa file đ
