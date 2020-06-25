@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReadIndex));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDeleteReadIndex = new System.Windows.Forms.Button();
             this.btnAddReadPreview = new System.Windows.Forms.Button();
             this.rtbShowFileReadPreview = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,7 +38,6 @@
             this.btnSaveReadIndex = new System.Windows.Forms.Button();
             this.cbReadPreview = new System.Windows.Forms.ComboBox();
             this.cbCurrentFile = new System.Windows.Forms.ComboBox();
-            this.btnDeleteReadIndex = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +57,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(441, 321);
             this.panel1.TabIndex = 0;
+            // 
+            // btnDeleteReadIndex
+            // 
+            this.btnDeleteReadIndex.Location = new System.Drawing.Point(168, 256);
+            this.btnDeleteReadIndex.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDeleteReadIndex.Name = "btnDeleteReadIndex";
+            this.btnDeleteReadIndex.Size = new System.Drawing.Size(107, 32);
+            this.btnDeleteReadIndex.TabIndex = 7;
+            this.btnDeleteReadIndex.Text = "Xóa";
+            this.btnDeleteReadIndex.UseVisualStyleBackColor = true;
+            this.btnDeleteReadIndex.Click += new System.EventHandler(this.btnDeleteReadIndex_Click);
             // 
             // btnAddReadPreview
             // 
@@ -125,26 +137,17 @@
             this.cbCurrentFile.TabIndex = 0;
             this.cbCurrentFile.SelectedIndexChanged += new System.EventHandler(this.cbCurrentFile_SelectedIndexChanged);
             // 
-            // btnDeleteReadIndex
-            // 
-            this.btnDeleteReadIndex.Location = new System.Drawing.Point(168, 256);
-            this.btnDeleteReadIndex.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnDeleteReadIndex.Name = "btnDeleteReadIndex";
-            this.btnDeleteReadIndex.Size = new System.Drawing.Size(107, 32);
-            this.btnDeleteReadIndex.TabIndex = 7;
-            this.btnDeleteReadIndex.Text = "Xóa";
-            this.btnDeleteReadIndex.UseVisualStyleBackColor = true;
-            this.btnDeleteReadIndex.Click += new System.EventHandler(this.btnDeleteReadIndex_Click);
-            // 
             // frmReadIndex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(441, 321);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmReadIndex";
-            this.Text = "Reading";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Thứ tự đọc";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmReadIndex_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

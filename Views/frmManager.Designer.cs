@@ -56,7 +56,6 @@ namespace FileManager.Views
             this.flpnlThumb = new System.Windows.Forms.FlowLayoutPanel();
             this.ctmenuRefresh = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripRefresh = new System.Windows.Forms.ToolStripMenuItem();
-            this.usrViewThumb = new FileManager.Views.usrViewThumb();
             this.tabDataGV = new System.Windows.Forms.TabPage();
             this.dataFileM = new System.Windows.Forms.DataGridView();
             this.cFileCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +72,7 @@ namespace FileManager.Views
             this.addCategory = new System.Windows.Forms.ToolStripMenuItem();
             this.addReadIndex = new System.Windows.Forms.ToolStripMenuItem();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.usrViewThumb = new FileManager.Views.usrViewThumb();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -100,7 +100,7 @@ namespace FileManager.Views
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 30);
+            this.splitContainer1.Location = new System.Drawing.Point(0, 28);
             this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -112,7 +112,7 @@ namespace FileManager.Views
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1924, 1025);
+            this.splitContainer1.Size = new System.Drawing.Size(1924, 1027);
             this.splitContainer1.SplitterDistance = 321;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
@@ -124,7 +124,7 @@ namespace FileManager.Views
             this.pnlDanhMuc.Location = new System.Drawing.Point(0, 0);
             this.pnlDanhMuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlDanhMuc.Name = "pnlDanhMuc";
-            this.pnlDanhMuc.Size = new System.Drawing.Size(321, 1025);
+            this.pnlDanhMuc.Size = new System.Drawing.Size(321, 1027);
             this.pnlDanhMuc.TabIndex = 0;
             // 
             // splitContainer3
@@ -147,7 +147,7 @@ namespace FileManager.Views
             this.splitContainer3.Panel2.Controls.Add(this.btnRecentlyAdd);
             this.splitContainer3.Panel2.Controls.Add(this.btnAllFile);
             this.splitContainer3.Panel2.Controls.Add(this.label3);
-            this.splitContainer3.Size = new System.Drawing.Size(321, 1025);
+            this.splitContainer3.Size = new System.Drawing.Size(321, 1027);
             this.splitContainer3.SplitterDistance = 325;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -201,7 +201,7 @@ namespace FileManager.Views
             // 
             // lbTitle
             // 
-            this.lbTitle.Location = new System.Drawing.Point(13, 203);
+            this.lbTitle.Location = new System.Drawing.Point(38, 212);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(232, 32);
             this.lbTitle.TabIndex = 2;
@@ -222,6 +222,7 @@ namespace FileManager.Views
             // cbCategory
             // 
             this.cbCategory.BackColor = System.Drawing.Color.White;
+            this.cbCategory.Dock = System.Windows.Forms.DockStyle.Top;
             this.cbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(0, 170);
@@ -305,7 +306,7 @@ namespace FileManager.Views
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.tabView);
-            this.splitContainer2.Size = new System.Drawing.Size(1598, 1025);
+            this.splitContainer2.Size = new System.Drawing.Size(1598, 1027);
             this.splitContainer2.SplitterDistance = 82;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -362,7 +363,7 @@ namespace FileManager.Views
             this.tabView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabView.Name = "tabView";
             this.tabView.SelectedIndex = 0;
-            this.tabView.Size = new System.Drawing.Size(1598, 939);
+            this.tabView.Size = new System.Drawing.Size(1598, 941);
             this.tabView.TabIndex = 0;
             this.tabView.SelectedIndexChanged += new System.EventHandler(this.tabView_SelectedIndexChanged);
             // 
@@ -372,7 +373,7 @@ namespace FileManager.Views
             this.tabThumb.Location = new System.Drawing.Point(4, 25);
             this.tabThumb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabThumb.Name = "tabThumb";
-            this.tabThumb.Size = new System.Drawing.Size(1590, 910);
+            this.tabThumb.Size = new System.Drawing.Size(1590, 912);
             this.tabThumb.TabIndex = 0;
             this.tabThumb.Text = "Dạng lưới";
             this.tabThumb.UseVisualStyleBackColor = true;
@@ -386,7 +387,7 @@ namespace FileManager.Views
             this.flpnlThumb.Location = new System.Drawing.Point(0, 0);
             this.flpnlThumb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpnlThumb.Name = "flpnlThumb";
-            this.flpnlThumb.Size = new System.Drawing.Size(1590, 910);
+            this.flpnlThumb.Size = new System.Drawing.Size(1590, 912);
             this.flpnlThumb.TabIndex = 0;
             // 
             // ctmenuRefresh
@@ -406,30 +407,13 @@ namespace FileManager.Views
             this.toolStripRefresh.Text = "Làm mới";
             this.toolStripRefresh.Click += new System.EventHandler(this.toolStripRefresh_Click);
             // 
-            // usrViewThumb
-            // 
-            this.usrViewThumb.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.usrViewThumb.BackColor = System.Drawing.Color.White;
-            this.usrViewThumb.Category = null;
-            this.usrViewThumb.FileCode = null;
-            this.usrViewThumb.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.usrViewThumb.LinkFile = null;
-            this.usrViewThumb.Location = new System.Drawing.Point(4, 2);
-            this.usrViewThumb.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.usrViewThumb.Name = "usrViewThumb";
-            this.usrViewThumb.Note = null;
-            this.usrViewThumb.RecentlyRead = null;
-            this.usrViewThumb.Size = new System.Drawing.Size(273, 193);
-            this.usrViewThumb.TabIndex = 0;
-            this.usrViewThumb.Title = null;
-            // 
             // tabDataGV
             // 
             this.tabDataGV.Controls.Add(this.dataFileM);
             this.tabDataGV.Location = new System.Drawing.Point(4, 25);
             this.tabDataGV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabDataGV.Name = "tabDataGV";
-            this.tabDataGV.Size = new System.Drawing.Size(1590, 910);
+            this.tabDataGV.Size = new System.Drawing.Size(1590, 912);
             this.tabDataGV.TabIndex = 1;
             this.tabDataGV.Text = "Dạng danh sách";
             this.tabDataGV.UseVisualStyleBackColor = true;
@@ -455,7 +439,7 @@ namespace FileManager.Views
             this.dataFileM.ReadOnly = true;
             this.dataFileM.RowHeadersWidth = 51;
             this.dataFileM.RowTemplate.Height = 24;
-            this.dataFileM.Size = new System.Drawing.Size(1590, 910);
+            this.dataFileM.Size = new System.Drawing.Size(1590, 912);
             this.dataFileM.TabIndex = 1;
             this.dataFileM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFileM_CellContentClick);
             this.dataFileM.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFileM_RowEnter);
@@ -532,7 +516,7 @@ namespace FileManager.Views
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1924, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1924, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -571,6 +555,23 @@ namespace FileManager.Views
             this.addReadIndex.Text = "Thêm Thứ Tự Đọc";
             this.addReadIndex.Click += new System.EventHandler(this.addReadIndex_Click);
             // 
+            // usrViewThumb
+            // 
+            this.usrViewThumb.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.usrViewThumb.BackColor = System.Drawing.Color.White;
+            this.usrViewThumb.Category = null;
+            this.usrViewThumb.FileCode = null;
+            this.usrViewThumb.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.usrViewThumb.LinkFile = null;
+            this.usrViewThumb.Location = new System.Drawing.Point(4, 2);
+            this.usrViewThumb.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.usrViewThumb.Name = "usrViewThumb";
+            this.usrViewThumb.Note = null;
+            this.usrViewThumb.RecentlyRead = null;
+            this.usrViewThumb.Size = new System.Drawing.Size(273, 193);
+            this.usrViewThumb.TabIndex = 0;
+            this.usrViewThumb.Title = null;
+            // 
             // frmManager
             // 
             this.AcceptButton = this.btnSearch;
@@ -582,8 +583,6 @@ namespace FileManager.Views
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frmManager";
             this.Text = "Reader River";
             this.Load += new System.EventHandler(this.frmViewThumb_Load);

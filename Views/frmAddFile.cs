@@ -64,16 +64,7 @@ namespace FileManager.Views
                 FileM file = new FileM();
                 file.iFileCode = FileController.getFileCodeFromDB();
                 file.sTitle = this.txtTitle.Text.Trim();
-                if (category == "")
-                {
-                    //file.sCategory = this.cbCategory.GetItemText(this.cbCategory.SelectedItem);
-                    MessageBox.Show("Chưa chọn thể loại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    error = true;
-                }
-                else
-                {
-                    file.sCategory = category;
-                }
+                file.sCategory = category;
                 file.dtDateUpdate = DateTime.Now.Date;
                 file.iRead = 0; // chưa đọc
                 file.dtRecentlyRead = null; // chưa đọc

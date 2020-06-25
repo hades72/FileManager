@@ -35,7 +35,7 @@ namespace FileManager.Views
             FileM file = FileController.getFileM(filecode);
             fileCode = filecode;
             linkFile = file.sLinkFile;
-            if(file.iRead == 0)
+            if (file.iRead == 0)
             {
                 file.iRead += 1;
                 FileController.updateFile(file);
@@ -97,7 +97,7 @@ namespace FileManager.Views
         private void ptbNextPage_Click(object sender, EventArgs e)
         {
             currentPage += 1;
-            if(currentPage > maxPage)
+            if (currentPage > maxPage)
             {
                 maxPage = currentPage;
             }
@@ -112,7 +112,7 @@ namespace FileManager.Views
         }
 
         // Đọc theo trang pagenumber
-        private void ReadByPageNumber(int pagenumber) 
+        private void ReadByPageNumber(int pagenumber)
         {
             this.rtbRead.Text = null;
             txtCurrentPage.Text = "Trang " + pagenumber.ToString();
@@ -176,7 +176,7 @@ namespace FileManager.Views
             drawNote.X = e.X;
             drawNote.Y = e.Y;
         }
-        
+
         // Chuột có nhấn và di chuyển để vẽ
         private void ptbNote_MouseMove(object sender, MouseEventArgs e)
         {
@@ -236,17 +236,17 @@ namespace FileManager.Views
         private void btnDeleteNote_Click(object sender, EventArgs e)
         {
             rtbNote = null; // xóa nội dung ghi chú
-            btnDeleteNote.Enabled = false; 
+            btnDeleteNote.Enabled = false;
         }
 
         // Tạo mới ghi chú và hình ảnh
         private void btnNew_Click(object sender, EventArgs e)
         {
-            if(btnDeleteNote.Enabled == true)
+            if (btnDeleteNote.Enabled == true)
             {
                 btnDeleteNote_Click(sender, e);
             }
-            if(btnDeleteDrawNote.Enabled == true)
+            if (btnDeleteDrawNote.Enabled == true)
             {
                 btnDeleteDrawNote_Click(sender, e);
             }
@@ -277,7 +277,7 @@ namespace FileManager.Views
                 if (dr == DialogResult.Yes)
                 {
                     file.sNote = rtbNote.Text.Trim();
-                    if(checkDraw == true)
+                    if (checkDraw == true)
                     {
                         using (FileStream fileStream = new FileStream(String.Format("{0}.jpg", fileCode), FileMode.Create))
                         {
@@ -288,7 +288,7 @@ namespace FileManager.Views
                 else if (dr == DialogResult.Cancel)
                 {
                     e.Cancel = true; // Không đóng form
-                }    
+                }
             }
             FileController.updateFile(file); // cập nhật xuống dtb
             exit = true;
@@ -303,32 +303,31 @@ namespace FileManager.Views
                 drawNote.color = colorDialog.Color; //Trả lại tên của màu đã lựa chọn
                 drawNote.pen = new Pen(drawNote.color, float.Parse(cbbWidth.SelectedItem.ToString()));
             }
-        } 
+        }
 
         // Chỉnh độ rộng bút
         private void cbbWidth_SelectedIndexChanged(object sender, EventArgs e)
         {
             drawNote.pen = new Pen(drawNote.color, float.Parse(cbbWidth.SelectedItem.ToString()));
         }
-    }
-
-    // Lớp Vẽ ghi chú
-    public class DrawNote
-    {
-        public int X { set; get; }
-        public int Y { set; get; }
-        public Color color { set; get; } // màu
-        public Pen pen { set; get; } // bút vẽ
-        public bool isDraw { set; get; }
-        public float width { get; set; } // chiều rộng của nét bút
-
-        public DrawNote()
+        // Lớp Vẽ ghi chú
+        public class DrawNote
         {
-            isDraw = false;
-            // màu sắc và chiều rộng của nét bút
-            color = Color.Black;
-            width = 2;
-            pen = new Pen(color, width);
+            public int X { set; get; }
+            public int Y { set; get; }
+            public Color color { set; get; } // màu
+            public Pen pen { set; get; } // bút vẽ
+            public bool isDraw { set; get; }
+            public float width { get; set; } // chiều rộng của nét bút
+
+            public DrawNote()
+            {
+                isDraw = false;
+                // màu sắc và chiều rộng của nét bút
+                color = Color.Black;
+                width = 2;
+                pen = new Pen(color, width);
+            }
         }
     }
 }
