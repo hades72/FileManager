@@ -20,6 +20,7 @@ namespace FileManager.Views
         List<Category> categories;
         BindingSource source = new BindingSource();
         Graphics G = null;
+
         private DateTime dtLast = DateTime.MinValue;
 
         public frmManager(ref List<FileM> fileM, List<Category> categories)
@@ -92,6 +93,7 @@ namespace FileManager.Views
             }
             else
             {
+                this.cbCategory.Items.Clear();
                 foreach (var i in lctg)
                 {
                     this.cbCategory.Items.Add(i.sCategoryName);

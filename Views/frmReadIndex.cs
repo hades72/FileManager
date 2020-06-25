@@ -142,5 +142,10 @@ namespace FileManager.Views
         {
             this.save = true;
         }
+
+        private void btnDeleteReadIndex_Click(object sender, EventArgs e)
+        {
+            this.rtbShowFileReadPreview.Text = "";
+        }
     }
 }

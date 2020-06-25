@@ -47,6 +47,7 @@ namespace FileManager.Views
                 ctg.sCategoryName = this.txtCategoryName.Text.Trim();
                 CategoryController.addCategory(ctg);
                 loadDataCategory();
+                MessageBox.Show("Thêm thể loại thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtCategoryName.Text = null;
             }
             error = false;
@@ -85,6 +86,7 @@ namespace FileManager.Views
                 {
                     Category ctg = CategoryController.getCategory(int.Parse(this.dataCategory.Rows[e.RowIndex].Cells[0].Value.ToString()));
                     CategoryController.deleteCategory(ctg);
+                    MessageBox.Show("Xóa thành công !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 loadDataCategory();
             }
@@ -110,6 +112,8 @@ namespace FileManager.Views
                     ctg.iCategoryCode = c.iCategoryCode;
                     ctg.sCategoryName = this.dataCategory.CurrentRow.Cells[e.ColumnIndex].Value.ToString().Trim();
                     CategoryController.updateCategory(ctg);
+                    MessageBox.Show("Sửa thể thành công !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
             }
         }

@@ -47,6 +47,7 @@ namespace FileManager.Views
             this.btnAllFile = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.lbShowDanhMuc = new System.Windows.Forms.Label();
             this.btnReadFile = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -55,6 +56,7 @@ namespace FileManager.Views
             this.flpnlThumb = new System.Windows.Forms.FlowLayoutPanel();
             this.ctmenuRefresh = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripRefresh = new System.Windows.Forms.ToolStripMenuItem();
+            this.usrViewThumb = new FileManager.Views.usrViewThumb();
             this.tabDataGV = new System.Windows.Forms.TabPage();
             this.dataFileM = new System.Windows.Forms.DataGridView();
             this.cFileCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,8 +73,6 @@ namespace FileManager.Views
             this.addCategory = new System.Windows.Forms.ToolStripMenuItem();
             this.addReadIndex = new System.Windows.Forms.ToolStripMenuItem();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.lbShowDanhMuc = new System.Windows.Forms.Label();
-            this.usrViewThumb = new FileManager.Views.usrViewThumb();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -238,7 +238,7 @@ namespace FileManager.Views
             this.btnRecentlyRead.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRecentlyRead.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecentlyRead.Location = new System.Drawing.Point(0, 128);
-            this.btnRecentlyRead.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRecentlyRead.Margin = new System.Windows.Forms.Padding(4);
             this.btnRecentlyRead.Name = "btnRecentlyRead";
             this.btnRecentlyRead.Size = new System.Drawing.Size(319, 42);
             this.btnRecentlyRead.TabIndex = 6;
@@ -252,7 +252,7 @@ namespace FileManager.Views
             this.btnRecentlyAdd.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnRecentlyAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRecentlyAdd.Location = new System.Drawing.Point(0, 86);
-            this.btnRecentlyAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRecentlyAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnRecentlyAdd.Name = "btnRecentlyAdd";
             this.btnRecentlyAdd.Size = new System.Drawing.Size(319, 42);
             this.btnRecentlyAdd.TabIndex = 5;
@@ -266,7 +266,7 @@ namespace FileManager.Views
             this.btnAllFile.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAllFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAllFile.Location = new System.Drawing.Point(0, 44);
-            this.btnAllFile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAllFile.Margin = new System.Windows.Forms.Padding(4);
             this.btnAllFile.Name = "btnAllFile";
             this.btnAllFile.Size = new System.Drawing.Size(319, 42);
             this.btnAllFile.TabIndex = 4;
@@ -308,6 +308,16 @@ namespace FileManager.Views
             this.splitContainer2.Size = new System.Drawing.Size(1598, 1025);
             this.splitContainer2.SplitterDistance = 82;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // lbShowDanhMuc
+            // 
+            this.lbShowDanhMuc.AutoSize = true;
+            this.lbShowDanhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShowDanhMuc.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.lbShowDanhMuc.Location = new System.Drawing.Point(29, 23);
+            this.lbShowDanhMuc.Name = "lbShowDanhMuc";
+            this.lbShowDanhMuc.Size = new System.Drawing.Size(0, 33);
+            this.lbShowDanhMuc.TabIndex = 19;
             // 
             // btnReadFile
             // 
@@ -395,6 +405,23 @@ namespace FileManager.Views
             this.toolStripRefresh.Size = new System.Drawing.Size(187, 24);
             this.toolStripRefresh.Text = "Làm mới";
             this.toolStripRefresh.Click += new System.EventHandler(this.toolStripRefresh_Click);
+            // 
+            // usrViewThumb
+            // 
+            this.usrViewThumb.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.usrViewThumb.BackColor = System.Drawing.Color.White;
+            this.usrViewThumb.Category = null;
+            this.usrViewThumb.FileCode = null;
+            this.usrViewThumb.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.usrViewThumb.LinkFile = null;
+            this.usrViewThumb.Location = new System.Drawing.Point(4, 2);
+            this.usrViewThumb.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.usrViewThumb.Name = "usrViewThumb";
+            this.usrViewThumb.Note = null;
+            this.usrViewThumb.RecentlyRead = null;
+            this.usrViewThumb.Size = new System.Drawing.Size(273, 193);
+            this.usrViewThumb.TabIndex = 0;
+            this.usrViewThumb.Title = null;
             // 
             // tabDataGV
             // 
@@ -543,33 +570,6 @@ namespace FileManager.Views
             this.addReadIndex.Size = new System.Drawing.Size(280, 26);
             this.addReadIndex.Text = "Thêm Thứ Tự Đọc";
             this.addReadIndex.Click += new System.EventHandler(this.addReadIndex_Click);
-            // 
-            // lbShowDanhMuc
-            // 
-            this.lbShowDanhMuc.AutoSize = true;
-            this.lbShowDanhMuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbShowDanhMuc.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.lbShowDanhMuc.Location = new System.Drawing.Point(29, 23);
-            this.lbShowDanhMuc.Name = "lbShowDanhMuc";
-            this.lbShowDanhMuc.Size = new System.Drawing.Size(0, 33);
-            this.lbShowDanhMuc.TabIndex = 19;
-            // 
-            // usrViewThumb
-            // 
-            this.usrViewThumb.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.usrViewThumb.BackColor = System.Drawing.Color.White;
-            this.usrViewThumb.Category = null;
-            this.usrViewThumb.FileCode = null;
-            this.usrViewThumb.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.usrViewThumb.LinkFile = null;
-            this.usrViewThumb.Location = new System.Drawing.Point(4, 2);
-            this.usrViewThumb.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.usrViewThumb.Name = "usrViewThumb";
-            this.usrViewThumb.Note = null;
-            this.usrViewThumb.RecentlyRead = null;
-            this.usrViewThumb.Size = new System.Drawing.Size(273, 193);
-            this.usrViewThumb.TabIndex = 0;
-            this.usrViewThumb.Title = null;
             // 
             // frmManager
             // 
