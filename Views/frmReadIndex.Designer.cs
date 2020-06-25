@@ -43,6 +43,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.AliceBlue;
             this.panel1.Controls.Add(this.btnDeleteReadIndex);
             this.panel1.Controls.Add(this.btnAddReadPreview);
             this.panel1.Controls.Add(this.rtbShowFileReadPreview);

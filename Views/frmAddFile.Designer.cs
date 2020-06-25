@@ -199,7 +199,7 @@
             // 
             // btnAddCategory
             // 
-            this.btnAddCategory.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAddCategory.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnAddCategory.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnAddCategory.Location = new System.Drawing.Point(1048, 21);
             this.btnAddCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -273,6 +273,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAddFile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm File";

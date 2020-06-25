@@ -69,8 +69,6 @@ namespace FileManager.Views
 
                 }
             }
-
-            //this.rtbShowFileReadPreview.Clear();
         }
 
         // Thêm File cần đọc trước

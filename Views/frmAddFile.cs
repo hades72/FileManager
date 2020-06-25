@@ -35,7 +35,6 @@ namespace FileManager.Views
             InitializeComponent();
             this.listFileM = listfilems;
             this.txtFileCode.Text = FileController.getFileCodeFromDB().ToString();
-            WindowState = FormWindowState.Maximized; // Full màn hình
             if (this.cbCategory.SelectedIndex == -1)
             {
                 this.btnAddCategory.Enabled = false;
@@ -193,7 +192,7 @@ namespace FileManager.Views
                 }
                 else
                 {
-                    MessageBox.Show("Thể loại " + this.cbCategory.SelectedIndex + " đã được thêm!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Thể loại " + this.cbCategory.Text + " đã được thêm!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

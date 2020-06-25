@@ -1,7 +1,15 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FileManager.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="titleBar" Type="System.Windows.Forms.FormBorderStyle" Scope="Application">
+      <Value Profile="(Default)">None</Value>
+    </Setting>
+    <Setting Name="sizableTitle" Type="System.Windows.Forms.FormBorderStyle" Scope="Application">
+      <Value Profile="(Default)">Sizable</Value>
+    </Setting>
+    <Setting Name="fixSingleTitle" Type="System.Windows.Forms.FormBorderStyle" Scope="Application">
+      <Value Profile="(Default)">FixedSingle</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

@@ -90,12 +90,16 @@ namespace FileManager.Views
             if (lctg.Count <= 0)
             {
                 this.cbCategory.Enabled = false;
+                this.addFile.Enabled = false;
             }
             else
             {
+                this.addFile.Enabled = true;
+                this.cbCategory.Enabled = true;
                 this.cbCategory.Items.Clear();
                 foreach (var i in lctg)
                 {
+
                     this.cbCategory.Items.Add(i.sCategoryName);
                 }
             }
@@ -228,6 +232,11 @@ namespace FileManager.Views
             {
                 btnReadLastFile.Enabled = true;
                 FileM file = FileController.getFileM(int.Parse(lbFileCode.Text.ToString()));
+                if(file is null) {
+                    this.lbTitle.Text = "";
+                    picLastFile.Image.Dispose();
+                    return; 
+                }
                 lbTitle.Text = file.sTitle;
                 using (FileStream stream = new FileStream(String.Format(file.sLinkPic), FileMode.Open, FileAccess.Read))
                 {
@@ -260,8 +269,9 @@ namespace FileManager.Views
             if (lbFileCode.Text != "")
             {
                 FileM file = FileController.getFileM(int.Parse(lbFileCode.Text.ToString()));
+                if(file is null) { return; }
                 frmRead read = new frmRead(ref fileM, file.iFileCode);
-                read.Text = this.dataFileM.CurrentRow.Cells[1].Value.ToString();
+                read.Text = file.sTitle;
                 read.ShowDialog();
                 if (read.exit == true)
                 {
@@ -306,13 +316,7 @@ namespace FileManager.Views
         {
             this.btnReadFile.Enabled = true;
         }
-
-        // Dạng danh sách: Không cho phép chọn btnReadFile khi chưa chọn hàng
-        private void dataFileM_RowLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            //this.btnReadFile.Enabled = false;
-        }
-
+       
         // Dạng danh sách: Xóa File
         private void dataFileM_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -387,7 +391,6 @@ namespace FileManager.Views
             this.lbShowDanhMuc.Text = "LỊCH SỬ ĐỌC";
         }
 
-        // 
         private void cbCategory_SelectedValueChanged(object sender, EventArgs e)
         {
             List<FileM> lF = new List<FileM>();
@@ -413,6 +416,31 @@ namespace FileManager.Views
             }
             dataFileM.DataSource = lFileCategory;
             showThumb();
+        }
+
+        private void exitApplication_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnSearch_MouseEnter(object sender, EventArgs e)
+        {
+            btnSearch.BackColor = Color.SkyBlue;
+        }
+
+        private void btnSearch_MouseLeave(object sender, EventArgs e)
+        {
+            btnSearch.BackColor = Color.Gainsboro;
+        }
+
+        private void btnReadFile_MouseEnter(object sender, EventArgs e)
+        {
+            btnReadFile.BackColor = Color.SkyBlue;
+        }
+
+        private void btnReadFile_MouseLeave(object sender, EventArgs e)
+        {
+            btnReadFile.BackColor = Color.Gainsboro;
         }
     }
 }

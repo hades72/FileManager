@@ -43,6 +43,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.AliceBlue;
             this.panel1.Controls.Add(this.dataCategory);
             this.panel1.Controls.Add(this.btnAddCategory);
             this.panel1.Controls.Add(this.lblCategory);
@@ -58,6 +59,7 @@
             // 
             this.dataCategory.AllowUserToAddRows = false;
             this.dataCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataCategory.BackgroundColor = System.Drawing.Color.White;
             this.dataCategory.ColumnHeadersHeight = 29;
             this.dataCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

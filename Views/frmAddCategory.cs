@@ -85,6 +85,26 @@ namespace FileManager.Views
                 if (MessageBox.Show("Bạn chắc chắn xóa mục này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Category ctg = CategoryController.getCategory(int.Parse(this.dataCategory.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                    List<FileM> lF = new List<FileM>();
+                    lF = FileController.getListFile();
+                    foreach(var f in lF)
+                    {
+                        string[] a = f.sCategory.Split(',');
+                        if (a is null)
+                        {
+
+                        }
+                        else
+                        {
+                            foreach (var obj in a)
+                            {
+                                if (obj.Trim() == ctg.sCategoryName)
+                                {
+                                    FileController.deleteFile(f);
+                                }
+                            }
+                        }
+                    }
                     CategoryController.deleteCategory(ctg);
                     MessageBox.Show("Xóa thành công !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
