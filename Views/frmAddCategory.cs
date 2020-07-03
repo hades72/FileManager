@@ -18,8 +18,9 @@ namespace FileManager.Views
         BindingSource source = new BindingSource();
         private bool error = false;
         public bool exit = false;
+        private bool DarkMode;
 
-        public frmAddCategory(ref List<Category> categories)
+        public frmAddCategory(ref List<Category> categories , bool darkmode)
         {
             InitializeComponent();
             this.cCategoryCode.DataPropertyName = nameof(Category.iCategoryCode);
@@ -27,12 +28,48 @@ namespace FileManager.Views
             source.DataSource = CategoryController.getListCategory();
             dataCategory.AutoGenerateColumns = false;
             dataCategory.DataSource = source;
+
+            // Xử lý chế độ sáng tối
+            if (darkmode == true)
+            {
+                DarkMode = darkmode;
+                darkMode();
+            }
+            else
+            {
+                DarkMode = darkmode;
+                lightMode();
+            }
         }
 
         private void frmAddCategory_Load(object sender, EventArgs e)
         {
             this.helpProvider1.SetShowHelp(this.txtCategoryName, true);
             this.helpProvider1.SetHelpString(this.txtCategoryName, "Nhap ten the loai ban muon");
+        }
+
+        private void darkMode()
+        {
+            panel1.BackColor = Color.Black;
+            panel1.ForeColor = Color.White;
+            btnAddCategory.BackColor = Color.Black;
+            txtCategoryName.BackColor = Color.Black;
+            txtCategoryName.ForeColor = Color.White;
+            dataCategory.BackgroundColor = Color.Black;
+            dataCategory.DefaultCellStyle.BackColor = Color.Black;
+            dataCategory.DefaultCellStyle.ForeColor = Color.White;
+        }
+
+        private void lightMode()
+        {
+            panel1.BackColor = Color.AliceBlue;
+            panel1.ForeColor = Color.Black;
+            btnAddCategory.BackColor = Color.AliceBlue;
+            txtCategoryName.BackColor = Color.White;
+            txtCategoryName.ForeColor = Color.Black;
+            dataCategory.BackgroundColor = Color.White;
+            dataCategory.DefaultCellStyle.BackColor = Color.White;
+            dataCategory.DefaultCellStyle.ForeColor = Color.Black;
         }
 
         // Cập nhật lại dataCategory
@@ -147,6 +184,21 @@ namespace FileManager.Views
         {
             exit = true;
         }
-        
+
+        private void btnAddCategory_MouseEnter(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+                btnAddCategory.BackColor = Color.DimGray;
+            else
+                btnAddCategory.BackColor = Color.Transparent;
+        }
+
+        private void btnAddCategory_MouseLeave(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+                btnAddCategory.BackColor = Color.Black;
+            else
+                btnAddCategory.BackColor = Color.AliceBlue;
+        }
     }
 }

@@ -27,8 +27,9 @@ namespace FileManager.Views
         private int maxPage; // số trang cao nhất đã xem
         private int numberOfPage; // tổng số trang
         public bool exit = false; // kiểm tra đã thoát đọc chưa
+        private bool DarkMode;
 
-        public frmRead(ref List<FileM> fileM, int filecode)
+        public frmRead(ref List<FileM> fileM, int filecode, bool darkmode)
         {
             InitializeComponent();
             drawNote = new DrawNote();
@@ -48,6 +49,18 @@ namespace FileManager.Views
                 btnDeleteNote.Enabled = true; // nếu tồn tại ghi chú thì bật nút xóa
             }
             cbbWidth.Text = cbbWidth.GetItemText(cbbWidth.Items[0]).ToString();
+
+            // Xử lý chế độ sáng tối
+            if (darkmode == true)
+            {
+                DarkMode = darkmode;
+                darkMode();
+            }
+            else
+            {
+                DarkMode = darkmode;
+                lightMode();
+            }
         }
 
         private void frmRead_Load(object sender, EventArgs e)
@@ -91,6 +104,61 @@ namespace FileManager.Views
             {
                 G = null;
             }
+        }
+
+        private void darkMode()
+        {
+            rtbRead.BackColor = Color.Black;
+            rtbRead.ForeColor = Color.White;
+            label1.ForeColor = Color.White;
+            lb2.ForeColor = Color.White;
+            btnDeleteNote.BackColor = Color.Black;
+            btnDeleteNote.ForeColor = Color.White;
+            rtbNote.BackColor = Color.Black;
+            rtbNote.ForeColor = Color.White;
+            splitContainer4.Panel1.BackColor = Color.Black;
+            splitContainer4.Panel2.BackColor = Color.Black;
+            splitContainer4.Panel2.ForeColor = Color.White;
+            btnColorPen.BackColor = Color.Black;
+            btnDeleteDrawNote.BackColor = Color.Black;
+            btnNew.BackColor = Color.Black;
+            btnNew.ForeColor = Color.White;
+            btnSave.BackColor = Color.Black;
+            btnSave.ForeColor = Color.White;
+            splitContainer3.Panel2.BackColor = Color.Black;
+            splitContainer3.Panel2.ForeColor = Color.White;
+            splitContainer2.Panel2.BackColor = Color.Black;
+            ptbBackPage.BackColor = Color.White;
+            ptbNextPage.BackColor = Color.White;
+            cbbWidth.BackColor = Color.LightGray;
+
+        }
+
+        private void lightMode()
+        {
+            rtbRead.BackColor = Color.AliceBlue;
+            rtbRead.ForeColor = Color.Black;
+            label1.ForeColor = Color.Black;
+            lb2.ForeColor = Color.Black;
+            btnDeleteNote.BackColor = Color.AliceBlue;
+            btnDeleteNote.ForeColor = Color.Black;
+            rtbNote.BackColor = Color.White;
+            rtbNote.ForeColor = Color.Black;
+            splitContainer4.Panel1.BackColor = Color.AliceBlue;
+            splitContainer4.Panel2.BackColor = Color.AliceBlue;
+            splitContainer4.Panel2.ForeColor = Color.Black;
+            btnColorPen.BackColor = Color.AliceBlue;
+            btnDeleteDrawNote.BackColor = Color.AliceBlue;
+            btnNew.BackColor = Color.AliceBlue;
+            btnNew.ForeColor = Color.Black;
+            btnSave.BackColor = Color.AliceBlue;
+            btnSave.ForeColor = Color.Black;
+            splitContainer3.Panel2.BackColor = Color.AliceBlue;
+            splitContainer3.Panel2.ForeColor = Color.Black;
+            splitContainer2.Panel2.BackColor = Color.AliceBlue;
+            ptbBackPage.BackColor = Color.AliceBlue;
+            ptbNextPage.BackColor = Color.AliceBlue;
+            cbbWidth.BackColor = Color.LightGray;
         }
 
         // Nhấn xem trang tiếp theo
@@ -328,6 +396,106 @@ namespace FileManager.Views
                 width = 2;
                 pen = new Pen(color, width);
             }
+        }
+
+        private void btnDeleteNote_MouseEnter(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnDeleteNote.BackColor = Color.DimGray;
+            }
+            else
+                btnDeleteNote.BackColor = Color.LightGray;
+        }
+
+        private void btnDeleteNote_MouseLeave(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnDeleteNote.BackColor = Color.Black;
+            }
+            else
+                btnDeleteNote.BackColor = Color.AliceBlue;
+        }
+
+        private void btnColorPen_MouseEnter(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnColorPen.BackColor = Color.DimGray;
+            }
+            else
+                btnColorPen.BackColor = Color.LightGray;
+        }
+
+        private void btnColorPen_MouseLeave(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnColorPen.BackColor = Color.Black;
+            }
+            else
+                btnColorPen.BackColor = Color.AliceBlue;
+        }
+
+        private void btnDeleteDrawNote_MouseEnter(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnDeleteDrawNote.BackColor = Color.DimGray;
+            }
+            else
+                btnDeleteDrawNote.BackColor = Color.LightGray;
+        }
+
+        private void btnDeleteDrawNote_MouseLeave(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnDeleteDrawNote.BackColor = Color.Black;
+            }
+            else
+                btnDeleteDrawNote.BackColor = Color.AliceBlue;
+        }
+
+        private void btnNew_MouseEnter(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnNew.BackColor = Color.DimGray;
+            }
+            else
+                btnNew.BackColor = Color.LightGray;
+        }
+
+        private void btnNew_MouseLeave(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnNew.BackColor = Color.Black;
+            }
+            else
+                btnNew.BackColor = Color.AliceBlue;
+        }
+
+        private void btnSave_MouseEnter(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnSave.BackColor = Color.DimGray;
+            }
+            else
+                btnSave.BackColor = Color.LightGray;
+        }
+
+        private void btnSave_MouseLeave(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnSave.BackColor = Color.Black;
+            }
+            else
+                btnSave.BackColor = Color.AliceBlue;
         }
     }
 }

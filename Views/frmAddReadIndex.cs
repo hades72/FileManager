@@ -17,8 +17,9 @@ namespace FileManager.Views
     {
         public bool save = false;
         List<int> selected = new List<int>();
+        private bool DarkMode;
 
-        public frmAddReadIndex(ref List<FileM> fileMs)
+        public frmAddReadIndex(ref List<FileM> fileMs, bool darkmode)
         {
             InitializeComponent();
             List<FileM> lF = new List<FileM>();
@@ -28,6 +29,18 @@ namespace FileManager.Views
                 this.cbCurrentFile.Items.Add(f.sTitle);
             }
             this.cbReadPreview.Enabled = false;
+
+            // Xử lý chế độ sáng tối
+            if (darkmode == true)
+            {
+                DarkMode = darkmode;
+                darkMode();
+            }
+            else
+            {
+                DarkMode = darkmode;
+                lightMode();
+            }
         }
 
         private void frmAddReadIndex_Load(object sender, EventArgs e)
@@ -38,6 +51,42 @@ namespace FileManager.Views
             this.helpProvider1.SetHelpString(this.cbReadPreview, "Chon file can doc truoc cho file hien tai");
             this.helpProvider1.SetShowHelp(this.rtbShowFileReadPreview, true);
             this.helpProvider1.SetHelpString(this.rtbShowFileReadPreview, "Noi hien thi file can doc truoc cho file hien tai");
+        }
+
+        private void darkMode()
+        {
+            panel1.BackColor = Color.Black;
+            panel1.ForeColor = Color.White;
+            cbCurrentFile.BackColor = Color.Black;
+            cbCurrentFile.ForeColor = Color.White;
+            cbReadPreview.BackColor = Color.Black;
+            cbReadPreview.ForeColor = Color.White;
+            rtbShowFileReadPreview.BackColor = Color.Black;
+            rtbShowFileReadPreview.ForeColor = Color.White;
+            btnAddReadPreview.BackColor = Color.Black;
+            btnAddReadPreview.ForeColor = Color.White;
+            btnDeleteReadIndex.BackColor = Color.Black;
+            btnDeleteReadIndex.ForeColor = Color.White;
+            btnSaveReadIndex.BackColor = Color.Black;
+            btnSaveReadIndex.ForeColor = Color.White;
+        }
+
+        private void lightMode()
+        {
+            panel1.BackColor = Color.AliceBlue;
+            panel1.ForeColor = Color.Black;
+            cbCurrentFile.BackColor = Color.White;
+            cbCurrentFile.ForeColor = Color.Black;
+            cbReadPreview.BackColor = Color.White;
+            cbReadPreview.ForeColor = Color.Black;
+            rtbShowFileReadPreview.BackColor = Color.White;
+            rtbShowFileReadPreview.ForeColor = Color.Black;
+            btnAddReadPreview.BackColor = Color.AliceBlue;
+            btnAddReadPreview.ForeColor = Color.Black;
+            btnDeleteReadIndex.BackColor = Color.AliceBlue;
+            btnDeleteReadIndex.ForeColor = Color.Black;
+            btnSaveReadIndex.BackColor = Color.AliceBlue;
+            btnSaveReadIndex.ForeColor = Color.Black;
         }
 
         private void cbCurrentFile_SelectedIndexChanged(object sender, EventArgs e)
@@ -157,6 +206,52 @@ namespace FileManager.Views
             this.rtbShowFileReadPreview.Text = "";
         }
 
-        
+        private void btnAddReadPreview_MouseEnter(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+                btnAddReadPreview.BackColor = Color.DimGray;
+            else
+                btnAddReadPreview.BackColor = Color.Transparent;
+        }
+
+        private void btnAddReadPreview_MouseLeave(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+                btnAddReadPreview.BackColor = Color.Black;
+            else
+                btnAddReadPreview.BackColor = Color.AliceBlue;
+        }
+
+        private void btnDeleteReadIndex_MouseEnter(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+                btnDeleteReadIndex.BackColor = Color.DimGray;
+            else
+                btnDeleteReadIndex.BackColor = Color.Transparent;
+        }
+
+        private void btnDeleteReadIndex_MouseLeave(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+                btnDeleteReadIndex.BackColor = Color.Black;
+            else
+                btnDeleteReadIndex.BackColor = Color.AliceBlue;
+        }
+
+        private void btnSaveReadIndex_MouseEnter(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+                btnSaveReadIndex.BackColor = Color.DimGray;
+            else
+                btnSaveReadIndex.BackColor = Color.Transparent;
+        }
+
+        private void btnSaveReadIndex_MouseLeave(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+                btnSaveReadIndex.BackColor = Color.Black;
+            else
+                btnSaveReadIndex.BackColor = Color.AliceBlue;
+        }
     }
 }

@@ -18,8 +18,9 @@ namespace FileManager.Views
     {
         private int fileCode;
         private string linkFile;
+        private bool DarkMode;
 
-        public frmProperties(ref List<FileM> fileM, int filecode)
+        public frmProperties(ref List<FileM> fileM, int filecode, bool darkmode)
         {
             InitializeComponent();
             FileM file = FileController.getFileM(filecode);
@@ -35,6 +36,32 @@ namespace FileManager.Views
             {
                 picFile.Image = Image.FromStream(stream);
             }
+
+            // Xử lý chế độ sáng tối
+            if (darkmode == true)
+            {
+                DarkMode = darkmode;
+                darkMode();
+            }
+            else
+            {
+                DarkMode = darkmode;
+                lightMode();
+            }
+        }
+
+        private void darkMode()
+        {
+            this.BackColor = Color.Black;
+            label5.ForeColor = Color.White;
+            lbLinkFile.ForeColor = Color.White;
+        }
+
+        private void lightMode()
+        {
+            this.BackColor = Color.AliceBlue;
+            this.ForeColor = Color.Black;
+
         }
 
         // Nhấn chuột vào mũi tên đường dẫn đổi màu
@@ -46,7 +73,10 @@ namespace FileManager.Views
         // Chuột rời đi thì để lại màu mặc định
         private void picLinkFile_MouseLeave(object sender, EventArgs e)
         {
-            picLinkFile.BackColor = Color.AliceBlue;
+            if (DarkMode == true)
+                picLinkFile.BackColor = Color.Black;
+            else
+                picLinkFile.BackColor = Color.AliceBlue;
         }
 
         // Nhấn vào mũi tên đường dẫn hiện thư mục chứa đường dẫn file

@@ -29,6 +29,7 @@ namespace FileManager.Views
         private string category = "";
         public bool save = false;
         private bool error = false;
+        private bool DarkMode;
 
         public frmAddFile(ref List<FileM> listfilems, bool darkmode)
         {
@@ -45,13 +46,15 @@ namespace FileManager.Views
             {
                 this.cbCategory.Items.Add(c.sCategoryName);
             }
-            // Xử lý chế độ sáng tối ở đây
+            // Xử lý chế độ sáng tối
             if(darkmode == true)
             {
+                DarkMode = darkmode;
                 darkMode();
             }
             else
             {
+                DarkMode = darkmode;
                 lightMode();
             }
         }
@@ -77,12 +80,64 @@ namespace FileManager.Views
 
         private void darkMode()
         {
-            // Viết đổi màu tối ở đây
+            this.BackColor = Color.Black;
+            this.ForeColor = Color.White;
+            txtFileCode.BackColor = Color.Black;
+            txtFileCode.ForeColor = Color.White;
+            txtTitle.BackColor = Color.Black;
+            txtTitle.ForeColor = Color.White;
+            rtbPreview.BackColor = Color.Black;
+            rtbPreview.ForeColor = Color.White;
+            txtLinkFolder.BackColor = Color.Black;
+            txtLinkFolder.ForeColor = Color.White;
+            btnUpateLink.BackColor = Color.Black;
+            btnUpateLink.ForeColor = Color.White;
+            btnUploadFile.BackColor = Color.Black;
+            btnUploadFile.ForeColor = Color.White;
+            cbCategory.BackColor = Color.Black;
+            cbCategory.ForeColor = Color.White;
+            btnAddCategory.BackColor = Color.Black;
+            btnAddCategory.ForeColor = Color.White;
+            txtCurrentCategory.BackColor = Color.Black;
+            txtCurrentCategory.ForeColor = Color.White;
+            btnRemoveCategory.BackColor = Color.Black;
+            btnRemoveCategory.ForeColor = Color.White;
+            picUpload.BackColor = Color.Black;
+            btnPicUpload.BackColor = Color.Black;
+            btnPicUpload.ForeColor = Color.White;
+            btnSave.BackColor = Color.Black;
+            btnSave.ForeColor = Color.White;
         }
 
         private void lightMode()
         {
-            // Viết đổi màu sáng ở đây
+            this.BackColor = Color.AliceBlue;
+            this.ForeColor = Color.Black;
+            txtFileCode.BackColor = Color.White;
+            txtFileCode.ForeColor = Color.Black;
+            txtTitle.BackColor = Color.White;
+            txtTitle.ForeColor = Color.Black;
+            rtbPreview.BackColor = Color.White;
+            rtbPreview.ForeColor = Color.Black;
+            txtLinkFolder.BackColor = Color.White;
+            txtLinkFolder.ForeColor = Color.Black;
+            btnUpateLink.BackColor = Color.AliceBlue;
+            btnUpateLink.ForeColor = Color.Black;
+            btnUploadFile.BackColor = Color.AliceBlue;
+            btnUploadFile.ForeColor = Color.Black;
+            cbCategory.BackColor = Color.White;
+            cbCategory.ForeColor = Color.Black;
+            btnAddCategory.BackColor = Color.AliceBlue;
+            btnAddCategory.ForeColor = Color.Black;
+            txtCurrentCategory.BackColor = Color.White;
+            txtCurrentCategory.ForeColor = Color.Black;
+            btnRemoveCategory.BackColor = Color.AliceBlue;
+            btnRemoveCategory.ForeColor = Color.Black;
+            picUpload.BackColor = Color.AliceBlue;
+            btnPicUpload.BackColor = Color.AliceBlue;
+            btnPicUpload.ForeColor = Color.Black;
+            btnSave.BackColor = Color.AliceBlue;
+            btnSave.ForeColor = Color.Black;
         }
 
         // Lưu file
@@ -311,6 +366,126 @@ namespace FileManager.Views
                 this.btnAddCategory.Enabled = true;
                 return;
             }
+        }
+
+        private void btnUploadFile_MouseEnter(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnUploadFile.BackColor = Color.DimGray;
+            }
+            else
+                btnUploadFile.BackColor = Color.LightGray;
+        }
+
+        private void btnUploadFile_MouseLeave(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnUploadFile.BackColor = Color.Black;
+            }
+            else
+                btnUploadFile.BackColor = Color.AliceBlue;
+        }
+
+        private void btnAddCategory_MouseEnter(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnAddCategory.BackColor = Color.DimGray;
+            }
+            else
+                btnAddCategory.BackColor = Color.LightGray;
+        }
+
+        private void btnAddCategory_MouseLeave(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnAddCategory.BackColor = Color.Black;
+            }
+            else
+                btnAddCategory.BackColor = Color.AliceBlue;
+        }
+
+        private void btnRemoveCategory_MouseEnter(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnRemoveCategory.BackColor = Color.DimGray;
+            }
+            else
+                btnRemoveCategory.BackColor = Color.LightGray;
+        }
+
+        private void btnRemoveCategory_MouseLeave(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnRemoveCategory.BackColor = Color.Black;
+            }
+            else
+                btnRemoveCategory.BackColor = Color.AliceBlue;
+        }
+
+        private void btnPicUpload_MouseEnter(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnPicUpload.BackColor = Color.DimGray;
+            }
+            else
+                btnPicUpload.BackColor = Color.LightGray;
+        }
+
+        private void btnPicUpload_MouseLeave(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnPicUpload.BackColor = Color.Black;
+            }
+            else
+                btnPicUpload.BackColor = Color.AliceBlue;
+        }
+
+        private void btnSave_MouseEnter(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnSave.BackColor = Color.DimGray;
+            }
+            else
+                btnSave.BackColor = Color.LightGray;
+        }
+
+        private void btnSave_MouseLeave(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnSave.BackColor = Color.Black;
+            }
+            else
+                btnSave.BackColor = Color.AliceBlue;
+        }
+
+        private void btnUpateLink_MouseEnter(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnUpateLink.BackColor = Color.DimGray;
+            }
+            else
+                btnUpateLink.BackColor = Color.LightGray;
+        }
+
+        private void btnUpateLink_MouseLeave(object sender, EventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                btnUpateLink.BackColor = Color.Black;
+            }
+            else
+                btnUpateLink.BackColor = Color.AliceBlue;
         }
     }
 }

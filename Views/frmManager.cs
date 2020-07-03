@@ -16,6 +16,7 @@ namespace FileManager.Views
 {
     public partial class frmManager : Form
     {
+        ColorDialog dlg = new ColorDialog();
         List<FileM> fileM;
         List<Category> categories;
         BindingSource source = new BindingSource();
@@ -147,7 +148,7 @@ namespace FileManager.Views
             }
             for (int i = 0; i < dataFileM.RowCount; i++)
             {
-                usrViewThumb listView1 = new usrViewThumb();
+                usrViewThumb listView1 = new usrViewThumb(darkmode);
                 FileM file = FileController.getFileM(int.Parse(this.dataFileM.Rows[i].Cells[0].Value.ToString()));
                 listView1.Title = file.sTitle;
                 listView1.Category = file.sCategory;
@@ -155,6 +156,7 @@ namespace FileManager.Views
                 listView1.RecentlyRead = file.dtRecentlyRead.ToString();
                 listView1.Note = file.sNote;
                 listView1.LinkFile = file.sLinkFile;
+                listView1.DarkMode = darkmode;
                 try
                 {
                     using (FileStream stream = new FileStream(String.Format(file.sLinkPic), FileMode.Open, FileAccess.Read))
@@ -168,6 +170,7 @@ namespace FileManager.Views
                     listView1.PictureFile.Image = Image.FromFile("..//..//Pictures//ErrorIMG.jpeg");
                 }
                 G = Graphics.FromImage(listView1.PictureFile.Image);
+
                 flpnlThumb.Controls.Add(listView1);
                 //Mới thêm vào + chưa đọc thì hiện icon New
                 if (file.dtDateUpdate.ToString("dd/MM/yyyy") == DateTime.Now.ToString("dd/MM/yyyy") && file.iRead == 0)
@@ -205,7 +208,7 @@ namespace FileManager.Views
         // File Menu Item: Thêm thể loại
         private void addCategory_Click(object sender, EventArgs e)
         {
-            frmAddCategory catg = new frmAddCategory(ref categories);
+            frmAddCategory catg = new frmAddCategory(ref categories , darkmode);
             catg.ShowDialog();
             if(catg.exit == true)
             {
@@ -216,7 +219,7 @@ namespace FileManager.Views
         // File Menu Item: Thêm thứ tự đọc file
         private void addReadIndex_Click(object sender, EventArgs e)
         {
-            frmAddReadIndex ri = new frmAddReadIndex(ref fileM);
+            frmAddReadIndex ri = new frmAddReadIndex(ref fileM , darkmode);
             ri.ShowDialog();
             if (ri.save == true)
             {
@@ -253,7 +256,7 @@ namespace FileManager.Views
             if (lbFileCode.Text != "")
             {
                 FileM file = FileController.getFileM(int.Parse(lbFileCode.Text.ToString()));
-                frmRead read = new frmRead(ref fileM, file.iFileCode);
+                frmRead read = new frmRead(ref fileM, file.iFileCode,darkmode);
                 read.Text = this.dataFileM.CurrentRow.Cells[1].Value.ToString();
                 read.ShowDialog();
                 if (read.exit == true)
@@ -270,7 +273,7 @@ namespace FileManager.Views
             {
                 FileM file = FileController.getFileM(int.Parse(lbFileCode.Text.ToString()));
                 if(file is null) { return; }
-                frmRead read = new frmRead(ref fileM, file.iFileCode);
+                frmRead read = new frmRead(ref fileM, file.iFileCode, darkmode);
                 read.Text = file.sTitle;
                 read.ShowDialog();
                 if (read.exit == true)
@@ -341,7 +344,7 @@ namespace FileManager.Views
         // Dạng danh sách: Đọc File
         private void btnReadFile_Click(object sender, EventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.dataFileM.CurrentRow.Cells[0].Value.ToString()));
+            frmRead read = new frmRead(ref fileM, int.Parse(this.dataFileM.CurrentRow.Cells[0].Value.ToString()), darkmode);
             read.Text = this.dataFileM.CurrentRow.Cells[1].Value.ToString();
             read.ShowDialog();
             if (read.exit == true)
@@ -431,22 +434,42 @@ namespace FileManager.Views
         #region MouseEnter_MouseLeave
         private void btnSearch_MouseEnter(object sender, EventArgs e)
         {
-            btnSearch.BackColor = Color.SkyBlue;
+            if (darkmode == true)
+            {
+                btnSearch.BackColor = Color.DimGray;
+            }
+            else
+                btnSearch.BackColor = Color.Transparent ;
         }
 
         private void btnSearch_MouseLeave(object sender, EventArgs e)
         {
-            btnSearch.BackColor = Color.Gainsboro;
+            if (darkmode == true)
+            {
+                btnSearch.BackColor = Color.Black;
+            }
+            else
+                btnSearch.BackColor = Color.AliceBlue;
         }
 
         private void btnReadFile_MouseEnter(object sender, EventArgs e)
         {
-            btnReadFile.BackColor = Color.SkyBlue;
+            if (darkmode == true)
+            {
+                btnReadFile.BackColor = Color.DimGray;
+            }
+            else
+                btnReadFile.BackColor = Color.Transparent;
         }
 
         private void btnReadFile_MouseLeave(object sender, EventArgs e)
         {
-            btnReadFile.BackColor = Color.Gainsboro;
+            if (darkmode == true)
+            {
+                btnReadFile.BackColor = Color.Black;
+            }
+            else
+                btnReadFile.BackColor = Color.AliceBlue;
         }
         #endregion
 
@@ -454,13 +477,364 @@ namespace FileManager.Views
         private void darkMode_Click(object sender, EventArgs e)
         {
             darkmode = true;
-            // Viết code chỉnh tối ở đây
+
+            //panel last read
+            pnlLastRead.BackColor = Color.Black;
+            label2.ForeColor = Color.White;
+            btnReadLastFile.BackColor = Color.Black;
+            btnReadLastFile.ForeColor = Color.White;
+            lbTitle.ForeColor = Color.White;
+
+            //panel danh mục
+            splitContainer3.Panel2.BackColor = Color.Black;
+            label3.ForeColor = Color.White;
+            btnAllFile.BackColor = Color.Black;
+            btnAllFile.ForeColor = Color.White;
+            btnRecentlyAdd.BackColor = Color.Black;
+            btnRecentlyAdd.ForeColor = Color.White;
+            btnRecentlyRead.BackColor = Color.Black;
+            btnRecentlyRead.ForeColor = Color.White;
+            cbCategory.BackColor = Color.Black;
+            cbCategory.ForeColor = Color.White;
+
+            //panel tìm kiếm
+            splitContainer2.Panel1.BackColor = Color.Black;
+            txtSearch.BackColor = Color.Black;
+            txtSearch.ForeColor = Color.White;
+            btnSearch.BackColor = Color.Black;
+            btnSearch.ForeColor = Color.White;
+            btnSearch.FlatAppearance.BorderColor = Color.White;
+            btnReadFile.BackColor = Color.Black;
+            btnReadFile.ForeColor = Color.White;
+
+            //flowlayoutpanel
+            flpnlThumb.BackColor = Color.Black;
+            showThumb();
+
+            //data grid view
+            dataFileM.BackgroundColor = Color.Black;
+            dataFileM.DefaultCellStyle.BackColor = Color.Black;
+            dataFileM.DefaultCellStyle.ForeColor = Color.White;
+
+            //menu strip
+            addCategory.BackColor = Color.Black;
+            addCategory.ForeColor = Color.White;
+            addFile.BackColor = Color.Black;
+            addFile.ForeColor = Color.White;
+            addReadIndex.BackColor = Color.Black;
+            addReadIndex.ForeColor = Color.White;
+            exitApplication.BackColor = Color.Black;
+            exitApplication.ForeColor = Color.White;
+            darkMode.BackColor = Color.Black;
+            darkMode.ForeColor = Color.White;
+            lightMode.BackColor = Color.Black;
+            lightMode.ForeColor = Color.White;
+
+            // contextmenu
+            ctmenuRefresh.BackColor = Color.Black;
+            ctmenuRefresh.ForeColor = Color.White;
+            toolStripRefresh.BackColor = Color.Black;
+            toolStripRefresh.ForeColor = Color.White;
         }
 
         private void lightMode_Click(object sender, EventArgs e)
         {
             darkmode = false;
-            // Viết code chỉnh sáng
+
+            //panel last read
+            pnlLastRead.BackColor = Color.AliceBlue;
+            label2.ForeColor = Color.DimGray;
+            btnReadLastFile.BackColor = Color.AliceBlue;
+            btnReadLastFile.ForeColor = Color.Black;
+            lbTitle.ForeColor = Color.Black;
+
+            //panel danh mục
+            splitContainer3.Panel2.BackColor = Color.AliceBlue;
+            label3.ForeColor = Color.DimGray;
+            btnAllFile.BackColor = Color.AliceBlue;
+            btnAllFile.ForeColor = Color.Black;
+            btnRecentlyAdd.BackColor = Color.AliceBlue;
+            btnRecentlyAdd.ForeColor = Color.Black;
+            btnRecentlyRead.BackColor = Color.AliceBlue;
+            btnRecentlyRead.ForeColor = Color.Black;
+            cbCategory.BackColor = Color.AliceBlue;
+            cbCategory.ForeColor = Color.Black;
+
+            //panel tìm kiếm
+            splitContainer2.Panel1.BackColor = Color.AliceBlue;
+            txtSearch.BackColor = Color.AliceBlue;
+            txtSearch.ForeColor = Color.Black;
+            btnSearch.BackColor = Color.AliceBlue;
+            btnSearch.ForeColor = Color.Black;
+            btnSearch.FlatAppearance.BorderColor = Color.Black;
+            btnReadFile.BackColor = Color.AliceBlue;
+            btnReadFile.ForeColor = Color.Black;
+
+            //flowlayoutpanel
+            flpnlThumb.BackColor = Color.White;
+            showThumb();
+
+            //data grid view
+            dataFileM.BackgroundColor = Color.White;
+            dataFileM.DefaultCellStyle.BackColor = Color.White;
+            dataFileM.DefaultCellStyle.ForeColor = Color.Black;
+
+            //menu strip
+            addCategory.BackColor = Color.White;
+            addCategory.ForeColor = Color.Black;
+            addFile.BackColor = Color.White;
+            addFile.ForeColor = Color.Black;
+            addReadIndex.BackColor = Color.White;
+            addReadIndex.ForeColor = Color.Black;
+            exitApplication.BackColor = Color.White;
+            exitApplication.ForeColor = Color.Black;
+            darkMode.BackColor = Color.White;
+            darkMode.ForeColor = Color.Black;
+            lightMode.BackColor = Color.White;
+            lightMode.ForeColor = Color.Black;
+
+            // contextmenu
+            ctmenuRefresh.BackColor = Color.Transparent;
+            ctmenuRefresh.ForeColor = Color.Black;
+            toolStripRefresh.BackColor = Color.Transparent;
+            toolStripRefresh.ForeColor = Color.Black;
+        }
+
+        private void btnReadLastFile_MouseEnter(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                btnReadLastFile.BackColor = Color.DimGray;
+            }
+            else
+                btnReadLastFile.BackColor = Color.Transparent;
+        }
+
+        private void btnReadLastFile_MouseLeave(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                btnReadLastFile.BackColor = Color.Black;
+            }
+            else
+                btnReadLastFile.BackColor = Color.AliceBlue;
+        }
+
+        private void btnAllFile_MouseEnter(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                btnAllFile.BackColor = Color.DimGray;
+            }
+            else
+                btnAllFile.BackColor = Color.Transparent;
+        }
+
+        private void btnAllFile_MouseLeave(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                btnAllFile.BackColor = Color.Black;
+            }
+            else
+                btnAllFile.BackColor = Color.AliceBlue;
+        }
+
+        private void btnRecentlyRead_MouseEnter(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                btnRecentlyRead.BackColor = Color.DimGray;
+            }
+            else
+                btnRecentlyRead.BackColor = Color.Transparent;
+        }
+
+        private void btnRecentlyRead_MouseLeave(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                btnRecentlyRead.BackColor = Color.Black;
+            }
+            else
+                btnRecentlyRead.BackColor = Color.AliceBlue;
+        }
+
+        private void cbCategory_MouseEnter(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                cbCategory.BackColor = Color.DimGray;
+            }
+            else
+                cbCategory.BackColor = Color.LightGray;
+        }
+
+        private void cbCategory_MouseLeave(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                cbCategory.BackColor = Color.Black;
+            }
+            else
+                cbCategory.BackColor = Color.AliceBlue;
+        }
+
+        private void btnRecentlyAdd_MouseEnter(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                btnRecentlyAdd.BackColor = Color.DimGray;
+            }
+            else
+                btnRecentlyAdd.BackColor = Color.Transparent;
+        }
+
+        private void btnRecentlyAdd_MouseLeave(object sender, EventArgs e)
+        {
+
+            if (darkmode == true)
+            {
+                btnRecentlyAdd.BackColor = Color.Black;
+            }
+            else
+                btnRecentlyAdd.BackColor = Color.AliceBlue;
+        }
+
+        private void addFile_MouseEnter(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                addFile.BackColor = Color.DimGray;
+            }
+            else
+                addFile.BackColor = Color.AliceBlue;
+        }
+
+        private void addFile_MouseLeave(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                addFile.BackColor = Color.Black;
+            }
+            else
+                addFile.BackColor = Color.White;
+        }
+
+        private void addCategory_MouseEnter(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                addCategory.BackColor = Color.DimGray;
+            }
+            else
+                addCategory.BackColor = Color.AliceBlue;
+        }
+
+        private void addCategory_MouseLeave(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                addCategory.BackColor = Color.Black;
+            }
+            else
+                addCategory.BackColor = Color.White;
+        }
+
+        private void addReadIndex_MouseEnter(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                addReadIndex.BackColor = Color.DimGray;
+            }
+            else
+                addReadIndex.BackColor = Color.AliceBlue;
+        }
+
+        private void addReadIndex_MouseLeave(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                addReadIndex.BackColor = Color.Black;
+            }
+            else
+                addReadIndex.BackColor = Color.White;
+        }
+
+        private void exitApplication_MouseEnter(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                exitApplication.BackColor = Color.DimGray;
+            }
+            else
+                exitApplication.BackColor = Color.AliceBlue;
+        }
+
+        private void exitApplication_MouseLeave(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                exitApplication.BackColor = Color.Black;
+            }
+            else
+                exitApplication.BackColor = Color.White;
+        }
+
+        private void lightMode_MouseEnter(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                lightMode.BackColor = Color.DimGray;
+            }
+            else
+                lightMode.BackColor = Color.AliceBlue;
+        }
+
+        private void lightMode_MouseLeave(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                lightMode.BackColor = Color.Black;
+            }
+            else
+                lightMode.BackColor = Color.White;
+        }
+
+        private void darkMode_MouseEnter(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                darkMode.BackColor = Color.DimGray;
+            }
+            else
+                darkMode.BackColor = Color.AliceBlue;
+        }
+
+        private void darkMode_MouseLeave(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                darkMode.BackColor = Color.Black;
+            }
+            else
+                darkMode.BackColor = Color.White;
+        }
+
+        private void toolStripRefresh_MouseEnter(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+                toolStripRefresh.BackColor = Color.DimGray;
+            else
+                toolStripRefresh.BackColor = Color.AliceBlue;
+        }
+
+        private void toolStripRefresh_MouseLeave(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+                toolStripRefresh.BackColor = Color.Black;
+            else
+                toolStripRefresh.BackColor = Color.Transparent;
         }
     }
 }

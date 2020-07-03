@@ -18,10 +18,28 @@ namespace FileManager.Views
     {
         List<FileM> fileM;
 
-        public usrViewThumb()
+        public usrViewThumb(bool darkmode)
         {
             InitializeComponent();
             picNewIcon.Parent = picFile;
+
+            // mode đọc
+            if (darkmode == true)
+                darkMode();
+            else
+                brightMode();
+        }
+
+        private void darkMode()
+        {
+            this.BackColor = Color.Black;
+            this.ForeColor = Color.White;
+        }
+
+        private void brightMode()
+        {
+            this.BackColor = Color.White;
+            this.ForeColor = Color.Black;
         }
 
         #region Properties
@@ -32,6 +50,14 @@ namespace FileManager.Views
         private string _recentlyread;
         private string _note;
         private string _linkfile;
+        private bool _darkmode;
+
+        [Category("File Props")]
+        public bool DarkMode
+        {
+            get { return _darkmode; }
+            set { _darkmode = value; }
+        }
 
         [Category("File Props")]
         public string Title
@@ -94,7 +120,7 @@ namespace FileManager.Views
         #region DoubleClick_MouseEnter_MouseLeave    
         private void usrViewThumb_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode), DarkMode);
             read.Text = this.Title;
             read.ShowDialog();
             if(read.exit == true)
@@ -105,7 +131,7 @@ namespace FileManager.Views
 
         private void picFile_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode), DarkMode);
             read.Text = this.Title;
             read.ShowDialog();
             if (read.exit == true)
@@ -116,7 +142,7 @@ namespace FileManager.Views
 
         private void picNewIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode), DarkMode);
             read.Text = this.Title;
             read.ShowDialog();
             if (read.exit == true)
@@ -127,7 +153,7 @@ namespace FileManager.Views
 
         private void label1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode), DarkMode);
             read.Text = this.Title;
             read.ShowDialog();
             if (read.exit == true)
@@ -138,7 +164,7 @@ namespace FileManager.Views
 
         private void label2_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode), DarkMode);
             read.Text = this.Title;
             read.ShowDialog();
             if (read.exit == true)
@@ -149,7 +175,7 @@ namespace FileManager.Views
 
         private void label3_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode), DarkMode);
             read.Text = this.Title;
             read.ShowDialog();
             if (read.exit == true)
@@ -160,7 +186,7 @@ namespace FileManager.Views
 
         private void label4_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode), DarkMode);
             read.Text = this.Title;
             read.ShowDialog();
             if (read.exit == true)
@@ -171,7 +197,7 @@ namespace FileManager.Views
 
         private void lbCategory_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode), DarkMode);
             read.Text = this.Title;
             read.ShowDialog();
             if (read.exit == true)
@@ -182,7 +208,7 @@ namespace FileManager.Views
 
         private void lbFileCode_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode), DarkMode);
             read.Text = this.Title;
             read.ShowDialog();
             if (read.exit == true)
@@ -193,7 +219,7 @@ namespace FileManager.Views
 
         private void lbRecentlyRead_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode), DarkMode);
             read.Text = this.Title;
             read.ShowDialog();
             if (read.exit == true)
@@ -204,7 +230,7 @@ namespace FileManager.Views
 
         private void lbTitle_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode), DarkMode);
             read.Text = this.Title;
             read.ShowDialog();
             if (read.exit == true)
@@ -215,112 +241,178 @@ namespace FileManager.Views
 
         private void picNewIcon_MouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = Color.AliceBlue;
+            if (this.BackColor == Color.Black)
+                this.BackColor = Color.DimGray;
+            else
+                this.BackColor = Color.AliceBlue;
         }
 
         private void picNewIcon_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = Color.White;
+            if (this.BackColor == Color.DimGray)
+                this.BackColor = Color.Black;
+            else
+                this.BackColor = Color.White;
         }
 
         private void listViewThumb_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = Color.White;
+            if (this.BackColor == Color.DimGray)
+                this.BackColor = Color.Black;
+            else
+                this.BackColor = Color.White;
         }
 
         private void listViewThumb_MouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = Color.AliceBlue;
+            if (this.BackColor == Color.Black)
+                this.BackColor = Color.DimGray;
+            else
+                this.BackColor = Color.AliceBlue;
         }
 
         private void picFile_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = Color.White;
+            if (this.BackColor == Color.DimGray)
+                this.BackColor = Color.Black;
+            else
+                this.BackColor = Color.White;
         }
 
         private void picFile_MouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = Color.AliceBlue;
+            if (this.BackColor == Color.Black)
+                this.BackColor = Color.DimGray;
+            else
+                this.BackColor = Color.AliceBlue;
         }
 
         private void label1_MouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = Color.AliceBlue;
+            if (this.BackColor == Color.Black)
+                this.BackColor = Color.DimGray;
+            else
+                this.BackColor = Color.AliceBlue;
         }
 
         private void label1_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = Color.White;
+            if (this.BackColor == Color.DimGray)
+                this.BackColor = Color.Black;
+            else
+                this.BackColor = Color.White;
         }
 
         private void label2_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = Color.White;
+            if (this.BackColor == Color.DimGray)
+                this.BackColor = Color.Black;
+            else
+                this.BackColor = Color.White;
         }
 
         private void label2_MouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = Color.AliceBlue;
+            if (this.BackColor == Color.Black)
+                this.BackColor = Color.DimGray;
+            else
+                this.BackColor = Color.AliceBlue;
         }
 
         private void label3_MouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = Color.AliceBlue;
+            if (this.BackColor == Color.Black)
+                this.BackColor = Color.DimGray;
+            else
+                this.BackColor = Color.AliceBlue;
         }
 
         private void label3_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = Color.White;
+            if (this.BackColor == Color.DimGray)
+                this.BackColor = Color.Black;
+            else
+                this.BackColor = Color.White;
         }
 
         private void label4_MouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = Color.AliceBlue;
+            if (this.BackColor == Color.Black)
+                this.BackColor = Color.DimGray;
+            else
+                this.BackColor = Color.AliceBlue;
         }
 
         private void label4_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = Color.White;
+            if (this.BackColor == Color.DimGray)
+                this.BackColor = Color.Black;
+            else
+                this.BackColor = Color.White;
         }
 
         private void lbNgayDocGanNhat_MouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = Color.AliceBlue;
+            if (this.BackColor == Color.Black)
+                this.BackColor = Color.DimGray;
+            else
+                this.BackColor = Color.AliceBlue;
         }
 
         private void lbNgayDocGanNhat_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = Color.White;
+            if (this.BackColor == Color.DimGray)
+                this.BackColor = Color.Black;
+            else
+                this.BackColor = Color.White;
         }
 
         private void lbID_MouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = Color.AliceBlue;
+            if (this.BackColor == Color.Black)
+                this.BackColor = Color.DimGray;
+            else
+                this.BackColor = Color.AliceBlue;
         }
 
         private void lbID_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = Color.White;
+            if (this.BackColor == Color.DimGray)
+                this.BackColor = Color.Black;
+            else
+                this.BackColor = Color.White; ;
         }
 
         private void lbTenFile_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = Color.White;
+            if (this.BackColor == Color.DimGray)
+                this.BackColor = Color.Black;
+            else
+                this.BackColor = Color.White;
         }
 
         private void lbTenFile_MouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = Color.AliceBlue;
+            if (this.BackColor == Color.Black)
+                this.BackColor = Color.DimGray;
+            else
+                this.BackColor = Color.AliceBlue;
         }
 
         private void lbTheLoai_MouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = Color.AliceBlue;
+            if (this.BackColor == Color.Black)
+                this.BackColor = Color.DimGray;
+            else
+                this.BackColor = Color.AliceBlue;
         }
 
         private void lbTheLoai_MouseLeave(object sender, EventArgs e)
         {
-            this.BackColor = Color.White;
+            if (this.BackColor == Color.DimGray)
+                this.BackColor = Color.Black;
+            else
+                this.BackColor = Color.White;
         }
         #endregion 
 
@@ -346,14 +438,14 @@ namespace FileManager.Views
         // Mở chi tiết file
         private void toolProperties_Click(object sender, EventArgs e)
         {
-            frmProperties fproperties = new frmProperties(ref fileM , int.Parse(this.FileCode));
+            frmProperties fproperties = new frmProperties(ref fileM , int.Parse(this.FileCode), DarkMode);
             fproperties.ShowDialog();
         }
 
         // Đọc trực tiếp bằng ứng dụng
         private void toolReadWithReaderriver_Click(object sender, EventArgs e)
         {
-            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode));
+            frmRead read = new frmRead(ref fileM, int.Parse(this.FileCode), DarkMode);
             read.Text = this.Title;
             read.ShowDialog();
             if(read.exit == true)
@@ -414,6 +506,102 @@ namespace FileManager.Views
                 toolReadWithNotepad.Visible = true;
             }
             else toolReadWithNotepad.Visible = false;
+        }
+
+        private void toolRead_MouseEnter(object sender, EventArgs e)
+        {
+            if (this.BackColor == Color.Black)
+                toolRead.BackColor = Color.DimGray;
+            else
+                toolRead.BackColor = Color.AliceBlue;
+        }
+
+        private void toolRead_MouseLeave(object sender, EventArgs e)
+        {
+            if (this.BackColor == Color.DimGray)
+                toolRead.BackColor = Color.Black;
+            else
+                toolRead.BackColor = Color.Transparent;
+        }
+
+        private void toolReadWithReaderriver_MouseEnter(object sender, EventArgs e)
+        {
+            if (this.BackColor == Color.Black)
+                toolReadWithReaderriver.BackColor = Color.DimGray;
+            else
+                toolReadWithReaderriver.BackColor = Color.AliceBlue;
+        }
+
+        private void toolReadWithReaderriver_MouseLeave(object sender, EventArgs e)
+        {
+            if (this.BackColor == Color.DimGray)
+                toolReadWithReaderriver.BackColor = Color.Black;
+            else
+                toolReadWithReaderriver.BackColor = Color.Transparent;
+        }
+
+        private void toolReadWithPDF_MouseEnter(object sender, EventArgs e)
+        {
+            if (this.BackColor == Color.Black)
+                toolReadWithPDF.BackColor = Color.DimGray;
+            else
+                toolReadWithPDF.BackColor = Color.AliceBlue;
+        }
+
+        private void toolReadWithPDF_MouseLeave(object sender, EventArgs e)
+        {
+            if (this.BackColor == Color.DimGray)
+                toolReadWithPDF.BackColor = Color.Black;
+            else
+                toolReadWithPDF.BackColor = Color.Transparent;
+        }
+
+        private void toolReadWithNotepad_MouseEnter(object sender, EventArgs e)
+        {
+            if (this.BackColor == Color.Black)
+                toolReadWithNotepad.BackColor = Color.DimGray;
+            else
+                toolReadWithNotepad.BackColor = Color.AliceBlue;
+        }
+
+        private void toolReadWithNotepad_MouseLeave(object sender, EventArgs e)
+        {
+            if (this.BackColor == Color.DimGray)
+                toolReadWithNotepad.BackColor = Color.Black;
+            else
+                toolReadWithNotepad.BackColor = Color.Transparent;
+        }
+
+        private void toolProperties_MouseEnter(object sender, EventArgs e)
+        {
+            if (this.BackColor == Color.Black)
+                toolProperties.BackColor = Color.DimGray;
+            else
+                toolProperties.BackColor = Color.AliceBlue;
+        }
+
+        private void toolProperties_MouseLeave(object sender, EventArgs e)
+        {
+            if (this.BackColor == Color.DimGray)
+                toolProperties.BackColor = Color.Black;
+            else
+                toolProperties.BackColor = Color.Transparent;
+        }
+
+        private void toolDelete_MouseEnter(object sender, EventArgs e)
+        {
+            if (this.BackColor == Color.Black)
+                toolDelete.BackColor = Color.DimGray;
+            else
+                toolDelete.BackColor = Color.AliceBlue;
+        }
+
+        private void toolDelete_MouseLeave(object sender, EventArgs e)
+        {
+            if (this.BackColor == Color.DimGray)
+                toolDelete.BackColor = Color.Black;
+            else
+                toolDelete.BackColor = Color.Transparent;
         }
     }
 }

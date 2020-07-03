@@ -186,6 +186,8 @@
             this.helpProvider1.SetShowHelp(this.btnDeleteNote, ((bool)(resources.GetObject("btnDeleteNote.ShowHelp"))));
             this.btnDeleteNote.UseVisualStyleBackColor = true;
             this.btnDeleteNote.Click += new System.EventHandler(this.btnDeleteNote_Click);
+            this.btnDeleteNote.MouseEnter += new System.EventHandler(this.btnDeleteNote_MouseEnter);
+            this.btnDeleteNote.MouseLeave += new System.EventHandler(this.btnDeleteNote_MouseLeave);
             // 
             // rtbNote
             // 
@@ -202,7 +204,7 @@
             // 
             // cbbWidth
             // 
-            this.cbbWidth.BackColor = System.Drawing.SystemColors.Window;
+            this.cbbWidth.BackColor = System.Drawing.Color.AliceBlue;
             resources.ApplyResources(this.cbbWidth, "cbbWidth");
             this.cbbWidth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbWidth.FormattingEnabled = true;
@@ -217,18 +219,24 @@
             // 
             // btnColorPen
             // 
+            this.btnColorPen.BackColor = System.Drawing.Color.AliceBlue;
             resources.ApplyResources(this.btnColorPen, "btnColorPen");
             this.btnColorPen.Name = "btnColorPen";
-            this.btnColorPen.UseVisualStyleBackColor = true;
+            this.btnColorPen.UseVisualStyleBackColor = false;
             this.btnColorPen.Click += new System.EventHandler(this.btnColorPen_Click);
+            this.btnColorPen.MouseEnter += new System.EventHandler(this.btnColorPen_MouseEnter);
+            this.btnColorPen.MouseLeave += new System.EventHandler(this.btnColorPen_MouseLeave);
             // 
             // btnDeleteDrawNote
             // 
+            this.btnDeleteDrawNote.BackColor = System.Drawing.Color.AliceBlue;
             resources.ApplyResources(this.btnDeleteDrawNote, "btnDeleteDrawNote");
             this.btnDeleteDrawNote.Name = "btnDeleteDrawNote";
             this.helpProvider1.SetShowHelp(this.btnDeleteDrawNote, ((bool)(resources.GetObject("btnDeleteDrawNote.ShowHelp"))));
-            this.btnDeleteDrawNote.UseVisualStyleBackColor = true;
+            this.btnDeleteDrawNote.UseVisualStyleBackColor = false;
             this.btnDeleteDrawNote.Click += new System.EventHandler(this.btnDeleteDrawNote_Click);
+            this.btnDeleteDrawNote.MouseEnter += new System.EventHandler(this.btnDeleteDrawNote_MouseEnter);
+            this.btnDeleteDrawNote.MouseLeave += new System.EventHandler(this.btnDeleteDrawNote_MouseLeave);
             // 
             // ptbNote
             // 
@@ -250,23 +258,27 @@
             // 
             // btnNew
             // 
-            this.btnNew.BackColor = System.Drawing.SystemColors.Control;
+            this.btnNew.BackColor = System.Drawing.Color.AliceBlue;
             resources.ApplyResources(this.btnNew, "btnNew");
             this.btnNew.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnNew.Name = "btnNew";
             this.helpProvider1.SetShowHelp(this.btnNew, ((bool)(resources.GetObject("btnNew.ShowHelp"))));
             this.btnNew.UseVisualStyleBackColor = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            this.btnNew.MouseEnter += new System.EventHandler(this.btnNew_MouseEnter);
+            this.btnNew.MouseLeave += new System.EventHandler(this.btnNew_MouseLeave);
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSave.BackColor = System.Drawing.Color.AliceBlue;
             resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnSave.Name = "btnSave";
             this.helpProvider1.SetShowHelp(this.btnSave, ((bool)(resources.GetObject("btnSave.ShowHelp"))));
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
+            this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
             // 
             // frmRead
             // 
