@@ -73,6 +73,9 @@ namespace FileManager.Views
             this.addReadIndex = new System.Windows.Forms.ToolStripMenuItem();
             this.exitApplication = new System.Windows.Forms.ToolStripMenuItem();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.modeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lightMode = new System.Windows.Forms.ToolStripMenuItem();
+            this.darkMode = new System.Windows.Forms.ToolStripMenuItem();
             this.usrViewThumb = new FileManager.Views.usrViewThumb();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -431,7 +434,7 @@ namespace FileManager.Views
             this.tabDataGV.Location = new System.Drawing.Point(4, 22);
             this.tabDataGV.Margin = new System.Windows.Forms.Padding(2);
             this.tabDataGV.Name = "tabDataGV";
-            this.tabDataGV.Size = new System.Drawing.Size(1092, 639);
+            this.tabDataGV.Size = new System.Drawing.Size(1092, 638);
             this.tabDataGV.TabIndex = 1;
             this.tabDataGV.Text = "Dạng danh sách";
             this.tabDataGV.UseVisualStyleBackColor = true;
@@ -457,7 +460,7 @@ namespace FileManager.Views
             this.dataFileM.ReadOnly = true;
             this.dataFileM.RowHeadersWidth = 51;
             this.dataFileM.RowTemplate.Height = 24;
-            this.dataFileM.Size = new System.Drawing.Size(1092, 639);
+            this.dataFileM.Size = new System.Drawing.Size(1092, 638);
             this.dataFileM.TabIndex = 1;
             this.dataFileM.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFileM_CellContentClick);
             this.dataFileM.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataFileM_RowEnter);
@@ -529,7 +532,8 @@ namespace FileManager.Views
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileMenuItem});
+            this.fileMenuItem,
+            this.modeMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -582,6 +586,29 @@ namespace FileManager.Views
             this.exitApplication.Size = new System.Drawing.Size(227, 22);
             this.exitApplication.Text = "Đóng Ứng Dụng";
             this.exitApplication.Click += new System.EventHandler(this.exitApplication_Click);
+            // 
+            // modeMenuItem
+            // 
+            this.modeMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lightMode,
+            this.darkMode});
+            this.modeMenuItem.Name = "modeMenuItem";
+            this.modeMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.modeMenuItem.Text = "&Chế độ";
+            // 
+            // lightMode
+            // 
+            this.lightMode.Name = "lightMode";
+            this.lightMode.Size = new System.Drawing.Size(180, 22);
+            this.lightMode.Text = "Sáng";
+            this.lightMode.Click += new System.EventHandler(this.lightMode_Click);
+            // 
+            // darkMode
+            // 
+            this.darkMode.Name = "darkMode";
+            this.darkMode.Size = new System.Drawing.Size(180, 22);
+            this.darkMode.Text = "Tối";
+            this.darkMode.Click += new System.EventHandler(this.darkMode_Click);
             // 
             // usrViewThumb
             // 
@@ -687,5 +714,8 @@ namespace FileManager.Views
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.Label lbShowDanhMuc;
         private System.Windows.Forms.ToolStripMenuItem exitApplication;
+        private System.Windows.Forms.ToolStripMenuItem modeMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lightMode;
+        private System.Windows.Forms.ToolStripMenuItem darkMode;
     }
 }

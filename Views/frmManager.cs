@@ -21,6 +21,7 @@ namespace FileManager.Views
         BindingSource source = new BindingSource();
         Graphics G = null;
         private DateTime dtLast = DateTime.MinValue;
+        public bool darkmode = false; // ban đầu mặc định là chế độ sáng
         //Ẩn button close
         protected override CreateParams CreateParams
         {
@@ -193,7 +194,7 @@ namespace FileManager.Views
         // File Menu Item: Thêm file
         private void addFile_Click(object sender, EventArgs e)
         {
-            frmAddFile frmAdd = new frmAddFile(ref fileM);
+            frmAddFile frmAdd = new frmAddFile(ref fileM, darkmode);
             frmAdd.ShowDialog();
             if (frmAdd.save == true)
             {
@@ -448,5 +449,18 @@ namespace FileManager.Views
             btnReadFile.BackColor = Color.Gainsboro;
         }
         #endregion
+
+        // Chọn chế độ tối
+        private void darkMode_Click(object sender, EventArgs e)
+        {
+            darkmode = true;
+            // Viết code chỉnh tối ở đây
+        }
+
+        private void lightMode_Click(object sender, EventArgs e)
+        {
+            darkmode = false;
+            // Viết code chỉnh sáng
+        }
     }
 }

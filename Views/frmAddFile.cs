@@ -30,7 +30,7 @@ namespace FileManager.Views
         public bool save = false;
         private bool error = false;
 
-        public frmAddFile(ref List<FileM> listfilems)
+        public frmAddFile(ref List<FileM> listfilems, bool darkmode)
         {
             InitializeComponent();
             this.listFileM = listfilems;
@@ -44,6 +44,15 @@ namespace FileManager.Views
             foreach (var c in lctg)
             {
                 this.cbCategory.Items.Add(c.sCategoryName);
+            }
+            // Xử lý chế độ sáng tối ở đây
+            if(darkmode == true)
+            {
+                darkMode();
+            }
+            else
+            {
+                lightMode();
             }
         }
 
@@ -64,6 +73,16 @@ namespace FileManager.Views
             pathOriginalIMG = "..//..//Pictures//OriginalIMG.jpg";
             this.picUpload.Image = new Bitmap(pathOriginalIMG);
             clickPicUpload = false;      
+        }
+
+        private void darkMode()
+        {
+            // Viết đổi màu tối ở đây
+        }
+
+        private void lightMode()
+        {
+            // Viết đổi màu sáng ở đây
         }
 
         // Lưu file
