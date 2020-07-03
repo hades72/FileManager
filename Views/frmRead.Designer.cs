@@ -203,6 +203,7 @@
             // cbbWidth
             // 
             this.cbbWidth.BackColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.cbbWidth, "cbbWidth");
             this.cbbWidth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbWidth.FormattingEnabled = true;
             this.cbbWidth.Items.AddRange(new object[] {
@@ -211,7 +212,6 @@
             resources.GetString("cbbWidth.Items2"),
             resources.GetString("cbbWidth.Items3"),
             resources.GetString("cbbWidth.Items4")});
-            resources.ApplyResources(this.cbbWidth, "cbbWidth");
             this.cbbWidth.Name = "cbbWidth";
             this.cbbWidth.SelectedIndexChanged += new System.EventHandler(this.cbbWidth_SelectedIndexChanged);
             // 
@@ -273,9 +273,9 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmRead";
             this.helpProvider1.SetShowHelp(this, ((bool)(resources.GetObject("$this.ShowHelp"))));
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRead_FormClosing);
             this.Load += new System.EventHandler(this.frmRead_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

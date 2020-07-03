@@ -17,16 +17,22 @@ namespace FileManager.Views
     {
         BindingSource source = new BindingSource();
         private bool error = false;
+        public bool exit = false;
 
         public frmAddCategory(ref List<Category> categories)
         {
             InitializeComponent();
             this.cCategoryCode.DataPropertyName = nameof(Category.iCategoryCode);
             this.cCategoryName.DataPropertyName = nameof(Category.sCategoryName);
-            
             source.DataSource = CategoryController.getListCategory();
             dataCategory.AutoGenerateColumns = false;
             dataCategory.DataSource = source;
+        }
+
+        private void frmAddCategory_Load(object sender, EventArgs e)
+        {
+            this.helpProvider1.SetShowHelp(this.txtCategoryName, true);
+            this.helpProvider1.SetHelpString(this.txtCategoryName, "Nhap ten the loai ban muon");
         }
 
         // Cập nhật lại dataCategory
@@ -42,13 +48,12 @@ namespace FileManager.Views
             checkError();
             if(error == false)
             {
-                Category ctg = new Category();
-                ctg.iCategoryCode = CategoryController.getCategoryCodeFromDB();
-                ctg.sCategoryName = this.txtCategoryName.Text.Trim();
-                CategoryController.addCategory(ctg);
-                loadDataCategory();
-                MessageBox.Show("Thêm thể loại thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtCategoryName.Text = null;
+                Category ctg = new Category(); // Khởi tạo object ctg của lớp Category
+                ctg.iCategoryCode = CategoryController.getCategoryCodeFromDB(); // Sinh mã số thể loại tự động
+                ctg.sCategoryName = this.txtCategoryName.Text.Trim(); // Gán tên thể loại do người dùng nhập
+                CategoryController.addCategory(ctg); // Xử lý yêu cầu thêm thể loại truyền xuống database
+                loadDataCategory(); // Load lại form để hiển thị lên data grid view
+                txtCategoryName.Text = null; // Gán ô điền tên thể loại thành null như ban đầu
             }
             error = false;
         }
@@ -85,28 +90,28 @@ namespace FileManager.Views
                 if (MessageBox.Show("Bạn chắc chắn xóa mục này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Category ctg = CategoryController.getCategory(int.Parse(this.dataCategory.Rows[e.RowIndex].Cells[0].Value.ToString()));
-                    List<FileM> lF = new List<FileM>();
-                    lF = FileController.getListFile();
-                    foreach(var f in lF)
-                    {
-                        string[] a = f.sCategory.Split(',');
-                        if (a is null)
-                        {
+                    //List<FileM> lF = new List<FileM>();
+                    //lF = FileController.getListFile();
+                    //foreach(var f in lF)
+                    //{
+                    //    string[] a = f.sCategory.Split(',');
+                    //    if (a is null)
+                    //    {
 
-                        }
-                        else
-                        {
-                            foreach (var obj in a)
-                            {
-                                if (obj.Trim() == ctg.sCategoryName)
-                                {
-                                    FileController.deleteFile(f);
-                                }
-                            }
-                        }
-                    }
+                    //    }
+                    //    else
+                    //    {
+                    //        foreach (var obj in a)
+                    //        {
+                    //            if (obj.Trim() == ctg.sCategoryName)
+                    //            {
+                    //                FileController.deleteFile(f);
+                    //            }
+                    //        }
+                    //    }
+                    //}
                     CategoryController.deleteCategory(ctg);
-                    MessageBox.Show("Xóa thành công !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 loadDataCategory();
             }
@@ -132,10 +137,16 @@ namespace FileManager.Views
                     ctg.iCategoryCode = c.iCategoryCode;
                     ctg.sCategoryName = this.dataCategory.CurrentRow.Cells[e.ColumnIndex].Value.ToString().Trim();
                     CategoryController.updateCategory(ctg);
-                    MessageBox.Show("Sửa thể thành công !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Sửa thể loại thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
             }
         }
+
+        private void frmAddCategory_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            exit = true;
+        }
+        
     }
 }

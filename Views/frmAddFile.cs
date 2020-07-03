@@ -49,6 +49,18 @@ namespace FileManager.Views
 
         private void frmAddFile_Load(object sender, EventArgs e)
         {
+            this.helpProvider1.SetShowHelp(this.txtFileCode, true);
+            this.helpProvider1.SetHelpString(this.txtFileCode, "Ma so file sinh tu dong");
+            this.helpProvider1.SetShowHelp(this.txtTitle, true);
+            this.helpProvider1.SetHelpString(this.txtTitle, "Ten file se tu dong hien thi khi ban tai len file hoac ban co the nhap ten moi");
+            this.helpProvider1.SetShowHelp(this.cbCategory, true);
+            this.helpProvider1.SetHelpString(this.cbCategory, "Chon cac the loai cua file");
+            this.helpProvider1.SetShowHelp(this.txtCurrentCategory, true);
+            this.helpProvider1.SetHelpString(this.txtCurrentCategory, "Noi hien thi cac the loai ban da chon");
+            this.helpProvider1.SetShowHelp(this.txtLinkFolder, true);
+            this.helpProvider1.SetHelpString(this.txtLinkFolder, "Hien thi duong dan file ban da tai len (ban co the luu duong dan o noi khac)");
+            this.helpProvider1.SetShowHelp(this.picUpload, true);
+            this.helpProvider1.SetHelpString(this.picUpload, "Anh bia cua file ban tai len");
             pathOriginalIMG = "..//..//Pictures//OriginalIMG.jpg";
             this.picUpload.Image = new Bitmap(pathOriginalIMG);
             clickPicUpload = false;      
@@ -60,25 +72,24 @@ namespace FileManager.Views
             checkError();
             if (error == false)
             {
-                FileM file = new FileM();
-                file.iFileCode = FileController.getFileCodeFromDB();
-                file.sTitle = this.txtTitle.Text.Trim();
-                file.sCategory = category;
-                file.dtDateUpdate = DateTime.Now.Date;
-                file.iRead = 0; // chưa đọc
-                file.dtRecentlyRead = null; // chưa đọc
-                if (clickPicUpload == true)
+                FileM file = new FileM(); // Khởi tạo object file của lớp FileM
+                file.iFileCode = FileController.getFileCodeFromDB(); // Sinh mã số file tự động
+                file.sTitle = this.txtTitle.Text.Trim(); // Gán tên file do người dùng tải lên có sẵn hoặc đổi tên khác
+                file.sCategory = category; // Gán các thể loại mà người dùng đã chọn
+                file.dtDateUpdate = DateTime.Now.Date; // Thời gian người dùng thêm file vào
+                file.iRead = 0; // Gán số trang mà người dùng đã đọc (hiện tại mới thêm vào thì là 0)
+                file.dtRecentlyRead = null; // Gán thời gian đọc file gần nhất (hiện tại mới thêm vào nên là null)
+                if (clickPicUpload == true) // Nếu người dùng có tải bìa file
                 {
-                    file.sLinkPic = openIMG.FileName;  // gán vào linkPic trong list FileM
+                    file.sLinkPic = openIMG.FileName;  // Gán đường dẫn của ảnh bìa 
                 }
                 else
                 {
-                    file.sLinkPic = pathOriginalIMG;
+                    file.sLinkPic = pathOriginalIMG; // Nếu người dùng không tải bìa thì sử dụng bìa mặc định
                 }
-                // Lưu link file
-                file.sLinkFile = openFile.FileName; // gán vào linkFile trong list FileM
+                file.sLinkFile = openFile.FileName; // Gán đường dẫn file 
                 save = true;
-                if (FileController.addFile(file) == false) // thêm file vào csdl
+                if (FileController.addFile(file) == false) // Xử lý yêu cầu thêm file truyền xuống database (true là thành công, false là thất bại)
                 {
                     error = true;
                     save = false;
@@ -97,11 +108,11 @@ namespace FileManager.Views
             }
             else if (error == false && save == true)
             {
-                MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (txtTitle != null || txtCurrentCategory != null || txtLinkFolder != null)
             {
-                if (MessageBox.Show("Bạn có chắc chắn đóng không?", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.No)
+                if (MessageBox.Show("Bạn có chắc chắn đóng không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                     e.Cancel = true;
             }
         }
@@ -168,8 +179,15 @@ namespace FileManager.Views
             this.openIMG.Multiselect = false;
             if (this.openIMG.ShowDialog() == DialogResult.OK)
             {
-                this.picUpload.Image = new Bitmap(openIMG.FileName);
-                this.clickPicUpload = true;
+                if(Path.GetExtension(openIMG.FileName) == ".jpeg" || Path.GetExtension(openIMG.FileName) == ".jpg" || Path.GetExtension(openIMG.FileName) == ".png" || Path.GetExtension(openIMG.FileName) == ".bmp" || Path.GetExtension(openIMG.FileName) == ".gif")
+                {
+                    this.picUpload.Image = new Bitmap(openIMG.FileName);
+                    this.clickPicUpload = true;
+                }
+                else
+                {
+                    MessageBox.Show("Sai định dạng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

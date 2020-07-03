@@ -233,7 +233,6 @@ namespace FileManager.Views
             this.BackColor = Color.AliceBlue;
         }
 
-
         private void picFile_MouseLeave(object sender, EventArgs e)
         {
             this.BackColor = Color.White;
@@ -332,6 +331,14 @@ namespace FileManager.Views
             {
                 FileM file = FileController.getFileM(int.Parse(this.FileCode));
                 FileController.deleteFile(file);
+                try // nếu đã tồn tại hình vẽ thì xóa (nghĩa là hình vẽ đã được lưu)
+                {
+                    File.Delete(String.Format("{0}.jpg", int.Parse(this.FileCode)));
+                }
+                catch
+                {
+                    // không có hình vẽ thì thôi
+                }
                 MessageBox.Show("Nhấn Ctrl+R để làm mới chương trình!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }  
         }

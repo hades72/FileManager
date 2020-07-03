@@ -37,6 +37,7 @@
             this.btnAddCategory = new System.Windows.Forms.Button();
             this.lblCategory = new System.Windows.Forms.Label();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataCategory)).BeginInit();
             this.SuspendLayout();
@@ -50,9 +51,9 @@
             this.panel1.Controls.Add(this.txtCategoryName);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(564, 276);
+            this.panel1.Size = new System.Drawing.Size(423, 224);
             this.panel1.TabIndex = 0;
             // 
             // dataCategory
@@ -66,12 +67,12 @@
             this.cCategoryCode,
             this.cCategoryName,
             this.cDeleteCategory});
-            this.dataCategory.Location = new System.Drawing.Point(19, 89);
-            this.dataCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataCategory.Location = new System.Drawing.Point(14, 72);
+            this.dataCategory.Margin = new System.Windows.Forms.Padding(2);
             this.dataCategory.Name = "dataCategory";
             this.dataCategory.RowHeadersWidth = 51;
             this.dataCategory.RowTemplate.Height = 24;
-            this.dataCategory.Size = new System.Drawing.Size(521, 161);
+            this.dataCategory.Size = new System.Drawing.Size(391, 131);
             this.dataCategory.TabIndex = 3;
             this.dataCategory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataCategory_CellContentClick);
             this.dataCategory.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataCategory_CellEndEdit);
@@ -100,10 +101,10 @@
             // 
             // btnAddCategory
             // 
-            this.btnAddCategory.Location = new System.Drawing.Point(447, 27);
-            this.btnAddCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddCategory.Location = new System.Drawing.Point(335, 22);
+            this.btnAddCategory.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.Size = new System.Drawing.Size(93, 31);
+            this.btnAddCategory.Size = new System.Drawing.Size(70, 25);
             this.btnAddCategory.TabIndex = 2;
             this.btnAddCategory.Text = "Thêm";
             this.btnAddCategory.UseVisualStyleBackColor = true;
@@ -112,34 +113,38 @@
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
-            this.lblCategory.Location = new System.Drawing.Point(31, 34);
+            this.lblCategory.Location = new System.Drawing.Point(23, 28);
+            this.lblCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(59, 17);
+            this.lblCategory.Size = new System.Drawing.Size(45, 13);
             this.lblCategory.TabIndex = 1;
             this.lblCategory.Text = "Thể loại";
             // 
             // txtCategoryName
             // 
-            this.txtCategoryName.Location = new System.Drawing.Point(105, 31);
-            this.txtCategoryName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCategoryName.Location = new System.Drawing.Point(79, 25);
+            this.txtCategoryName.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategoryName.Name = "txtCategoryName";
-            this.txtCategoryName.Size = new System.Drawing.Size(320, 22);
+            this.txtCategoryName.Size = new System.Drawing.Size(241, 20);
             this.txtCategoryName.TabIndex = 0;
             // 
             // frmAddCategory
             // 
             this.AcceptButton = this.btnAddCategory;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 276);
+            this.ClientSize = new System.Drawing.Size(423, 224);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAddCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmAddCategory";
+            this.Text = "Thêm Thể loại";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAddCategory_FormClosing);
+            this.Load += new System.EventHandler(this.frmAddCategory_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataCategory)).EndInit();
@@ -157,5 +162,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cCategoryCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn cCategoryName;
         private System.Windows.Forms.DataGridViewButtonColumn cDeleteCategory;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

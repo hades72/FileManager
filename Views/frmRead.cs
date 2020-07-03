@@ -53,9 +53,9 @@ namespace FileManager.Views
         private void frmRead_Load(object sender, EventArgs e)
         {
             this.helpProvider1.SetShowHelp(this.rtbNote, true);
-            this.helpProvider1.SetHelpString(this.rtbNote, "Nhap noi dung ban can ghi chu!");
+            this.helpProvider1.SetHelpString(this.rtbNote, "Nhap noi dung ban can ghi chu");
             this.helpProvider1.SetShowHelp(this.ptbNote, true);
-            this.helpProvider1.SetHelpString(this.ptbNote, "Ve ghi chu vao day!");
+            this.helpProvider1.SetHelpString(this.ptbNote, "Ve ghi chu vao day");
             if (Path.GetExtension(linkFile) == ".pdf")
             {
                 using (PdfReader reader = new PdfReader(linkFile))

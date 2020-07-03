@@ -15,6 +15,5 @@ namespace FileManager.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)] // Tắt tự động nhận dạng
         public int iCategoryCode { get; set; }
         public string sCategoryName { get; set; }
-
     }
 }

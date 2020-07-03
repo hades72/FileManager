@@ -20,8 +20,17 @@ namespace FileManager.Views
         List<Category> categories;
         BindingSource source = new BindingSource();
         Graphics G = null;
-
         private DateTime dtLast = DateTime.MinValue;
+        //Ẩn button close
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams param = base.CreateParams;
+                param.ClassStyle = param.ClassStyle | 0x200;
+                return param;
+            }
+        }
 
         public frmManager(ref List<FileM> fileM, List<Category> categories)
         {
@@ -34,31 +43,14 @@ namespace FileManager.Views
             this.cRecentlyRead.DataPropertyName = nameof(FileM.dtRecentlyRead);
             this.cReadIndex.DataPropertyName = nameof(FileM.sFilePreview);
             dataFileM.AutoGenerateColumns = false;
-            this.UpdateCategory();
         }
 
-        //Ẩn button close
-        protected override CreateParams CreateParams
-        {
+      
 
-            get
-            {
-
-                CreateParams param = base.CreateParams;
-
-                param.ClassStyle = param.ClassStyle | 0x200;
-
-                return param;
-
-            }
-
-        }
-
-        private void frmViewThumb_Load(object sender, EventArgs e)
+        private void frmManager_Load(object sender, EventArgs e)
         {
             this.helpProvider1.SetShowHelp(this.txtSearch, true);
-            this.helpProvider1.SetHelpString(this.txtSearch, "Nhap ma so hoac ten file ban muon tim");
-
+            this.helpProvider1.SetHelpString(this.txtSearch, "Nhap ten file ban muon tim");
             if (tabView.SelectedTab == tabDataGV)
             {
                 btnReadFile.Visible = true;
@@ -67,22 +59,19 @@ namespace FileManager.Views
             {
                 btnReadFile.Visible = false;
             }
-
             if (this.dataFileM.RowCount <= 0)
             {
                 btnReadFile.Enabled = false;
             }
-
             if (FileController.getListFile().Count <= 1)
             {
-                addReadIndex.Enabled = false; // nếu không có file hoặc có 1 file thì ẩn
+                addReadIndex.Enabled = false; // Nếu không có file hoặc có 1 file thì ẩn thêm thứ tự đọc
             }
             loadData();
-
             this.lbShowDanhMuc.Text = "TẤT CẢ";
         }
 
-        // Cập nhật thể loại
+        // Cập nhật thể loại ở Danh mục
         public void UpdateCategory()
         {
             List<Category> lctg = new List<Category>();
@@ -99,8 +88,7 @@ namespace FileManager.Views
                 this.cbCategory.Items.Clear();
                 foreach (var i in lctg)
                 {
-
-                    this.cbCategory.Items.Add(i.sCategoryName);
+                    this.cbCategory.Items.Add(i.sCategoryName.ToUpper());
                 }
             }
         }
@@ -118,14 +106,14 @@ namespace FileManager.Views
             {
                 addReadIndex.Enabled = true;
             }
-            // kiểm tra LastRead 
+            // Kiểm tra LastRead 
             dtLast = DateTime.MinValue;
             for (int i = 0; i < FileController.getListFile().Count; i++)
             {
                 FileM file = FileController.getFileM(int.Parse(this.dataFileM.Rows[i].Cells[0].Value.ToString()));
                 try
                 {
-                    if (DateTime.Compare(file.dtRecentlyRead.Value, dtLast) > 0) // gần nhất
+                    if (DateTime.Compare(file.dtRecentlyRead.Value, dtLast) > 0) // Gần nhất
                     {
                         dtLast = file.dtRecentlyRead.Value;
                         lbFileCode.Text = file.iFileCode.ToString();
@@ -138,7 +126,7 @@ namespace FileManager.Views
             }
             if (lbFileCode.Text != "")
             {
-                lastRead(lbFileCode.Text.ToString().Trim()); // khởi tạo nếu có file đọc gần nhất
+                lastRead(lbFileCode.Text.ToString().Trim()); // Khởi tạo nếu có file đọc gần nhất
             }
             else
             {
@@ -154,9 +142,8 @@ namespace FileManager.Views
         {
             if (flpnlThumb.Controls.Count > 0)
             {
-                flpnlThumb.Controls.Clear();
+                flpnlThumb.Controls.Clear(); // Xóa các control trên flowlayoutpanel để không bị hiện lặp lại
             }
-
             for (int i = 0; i < dataFileM.RowCount; i++)
             {
                 usrViewThumb listView1 = new usrViewThumb();
@@ -167,13 +154,21 @@ namespace FileManager.Views
                 listView1.RecentlyRead = file.dtRecentlyRead.ToString();
                 listView1.Note = file.sNote;
                 listView1.LinkFile = file.sLinkFile;
-                using (FileStream stream = new FileStream(String.Format(file.sLinkPic), FileMode.Open, FileAccess.Read))
+                try
                 {
-                    listView1.PictureFile.Image = Image.FromStream(stream);
+                    using (FileStream stream = new FileStream(String.Format(file.sLinkPic), FileMode.Open, FileAccess.Read))
+                    {
+                        listView1.PictureFile.Image = Image.FromStream(stream);
+                    }
+                }
+                catch
+                {
+                    // Trường hợp đường dẫn hình ảnh không còn tồn tại
+                    listView1.PictureFile.Image = Image.FromFile("..//..//Pictures//ErrorIMG.jpeg");
                 }
                 G = Graphics.FromImage(listView1.PictureFile.Image);
                 flpnlThumb.Controls.Add(listView1);
-                //Mới thêm vào thì hiện icon New
+                //Mới thêm vào + chưa đọc thì hiện icon New
                 if (file.dtDateUpdate.ToString("dd/MM/yyyy") == DateTime.Now.ToString("dd/MM/yyyy") && file.iRead == 0)
                 {
                     listView1.PictureNewIcon.Visible = true;
@@ -211,12 +206,16 @@ namespace FileManager.Views
         {
             frmAddCategory catg = new frmAddCategory(ref categories);
             catg.ShowDialog();
+            if(catg.exit == true)
+            {
+                loadData();
+            }
         }
 
         // File Menu Item: Thêm thứ tự đọc file
         private void addReadIndex_Click(object sender, EventArgs e)
         {
-            frmReadIndex ri = new frmReadIndex(ref fileM);
+            frmAddReadIndex ri = new frmAddReadIndex(ref fileM);
             ri.ShowDialog();
             if (ri.save == true)
             {
@@ -263,7 +262,7 @@ namespace FileManager.Views
             }
         }
 
-        // Đọc file gần nhất bằng btn
+        // Đọc file gần nhất bằng Button
         private void btnReadLastFile_Click(object sender, EventArgs e)
         {
             if (lbFileCode.Text != "")
@@ -278,7 +277,6 @@ namespace FileManager.Views
                     loadData();
                 }
             }
-
         }
 
         // Tìm kiếm file
@@ -362,6 +360,7 @@ namespace FileManager.Views
         {
             loadData();
             this.lbShowDanhMuc.Text = "TẤT CẢ";
+            this.cbCategory.Text = "THỂ LOẠI";
         }
 
         // Hiển thị lịch sử thêm file
@@ -371,6 +370,7 @@ namespace FileManager.Views
             dataFileM.DataSource = source;
             showThumb();
             this.lbShowDanhMuc.Text = "FILE THÊM GẦN ĐÂY ";
+            this.cbCategory.Text = "THỂ LOẠI";
         }
 
         // Hiển thị lịch sử đọc
@@ -389,8 +389,10 @@ namespace FileManager.Views
             dataFileM.DataSource = lFileRead;
             showThumb();
             this.lbShowDanhMuc.Text = "LỊCH SỬ ĐỌC";
+            this.cbCategory.Text = "THỂ LOẠI";
         }
 
+        // Hiển thị theo thể loại được chọn
         private void cbCategory_SelectedValueChanged(object sender, EventArgs e)
         {
             List<FileM> lF = new List<FileM>();
@@ -414,15 +416,18 @@ namespace FileManager.Views
                     }
                 }
             }
+            lbShowDanhMuc.Text = cbCategory.Text; 
             dataFileM.DataSource = lFileCategory;
             showThumb();
         }
 
+        // Thoát ứng dụng
         private void exitApplication_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        #region MouseEnter_MouseLeave
         private void btnSearch_MouseEnter(object sender, EventArgs e)
         {
             btnSearch.BackColor = Color.SkyBlue;
@@ -442,5 +447,6 @@ namespace FileManager.Views
         {
             btnReadFile.BackColor = Color.Gainsboro;
         }
+        #endregion
     }
 }

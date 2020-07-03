@@ -52,8 +52,7 @@ namespace FileManager.Views
         // Nhấn vào mũi tên đường dẫn hiện thư mục chứa đường dẫn file
         private void picLinkFile_Click(object sender, EventArgs e)
         {
-            string target = Path.GetDirectoryName(linkFile); // Lấy đường dẫn thư mục chứa file đ
-
+            string target = Path.GetDirectoryName(linkFile); // Lấy đường dẫn thư mục chứa file đó
             if (Directory.Exists(target))
             {
                 ProcessStartInfo startInfo = new ProcessStartInfo
@@ -61,7 +60,6 @@ namespace FileManager.Views
                     Arguments = target,
                     FileName = "explorer.exe"
                 };
-
                 Process.Start(startInfo);
             }
             else

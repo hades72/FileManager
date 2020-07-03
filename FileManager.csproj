@@ -100,11 +100,11 @@
     <Compile Include="Views\frmRead.Designer.cs">
       <DependentUpon>frmRead.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\frmReadIndex.cs">
+    <Compile Include="Views\frmAddReadIndex.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\frmReadIndex.Designer.cs">
-      <DependentUpon>frmReadIndex.cs</DependentUpon>
+    <Compile Include="Views\frmAddReadIndex.Designer.cs">
+      <DependentUpon>frmAddReadIndex.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\frmAddFile.cs">
       <SubType>Form</SubType>
@@ -163,8 +163,8 @@
     <EmbeddedResource Include="Views\frmRead.vi-VN.resx">
       <DependentUpon>frmRead.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\frmReadIndex.resx">
-      <DependentUpon>frmReadIndex.cs</DependentUpon>
+    <EmbeddedResource Include="Views\frmAddReadIndex.resx">
+      <DependentUpon>frmAddReadIndex.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\frmManager.resx">
       <DependentUpon>frmManager.cs</DependentUpon>
@@ -203,9 +203,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\depositphotos_190959552-stock-illustration-set-of-read-more-colorful.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Pictures\new-icon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\long-banner-png-2.png" />

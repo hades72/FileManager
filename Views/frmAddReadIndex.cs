@@ -13,12 +13,12 @@ using System.Windows.Forms;
 
 namespace FileManager.Views
 {
-    public partial class frmReadIndex : Form
+    public partial class frmAddReadIndex : Form
     {
         public bool save = false;
         List<int> selected = new List<int>();
 
-        public frmReadIndex(ref List<FileM> fileMs)
+        public frmAddReadIndex(ref List<FileM> fileMs)
         {
             InitializeComponent();
             List<FileM> lF = new List<FileM>();
@@ -28,6 +28,16 @@ namespace FileManager.Views
                 this.cbCurrentFile.Items.Add(f.sTitle);
             }
             this.cbReadPreview.Enabled = false;
+        }
+
+        private void frmAddReadIndex_Load(object sender, EventArgs e)
+        {
+            this.helpProvider1.SetShowHelp(this.cbCurrentFile, true);
+            this.helpProvider1.SetHelpString(this.cbCurrentFile, "Chon file ban muon thiet lap thu tu doc file");
+            this.helpProvider1.SetShowHelp(this.cbReadPreview, true);
+            this.helpProvider1.SetHelpString(this.cbReadPreview, "Chon file can doc truoc cho file hien tai");
+            this.helpProvider1.SetShowHelp(this.rtbShowFileReadPreview, true);
+            this.helpProvider1.SetHelpString(this.rtbShowFileReadPreview, "Noi hien thi file can doc truoc cho file hien tai");
         }
 
         private void cbCurrentFile_SelectedIndexChanged(object sender, EventArgs e)
@@ -78,7 +88,7 @@ namespace FileManager.Views
             {
                 return;
             }
-            if (rtbShowFileReadPreview.Text.Length <= 0)
+            if (rtbShowFileReadPreview.Text.Length <= 0) 
             {
                 this.rtbShowFileReadPreview.Text = this.cbReadPreview.SelectedItem.ToString();
             }
@@ -114,22 +124,23 @@ namespace FileManager.Views
             lF = FileController.getListFile();
             foreach (var f in lF)
             {
-                if (f.sTitle == this.cbCurrentFile.SelectedItem.ToString())
+                if (f.sTitle == this.cbCurrentFile.SelectedItem.ToString()) // Nếu tên file trong danh sách file bằng với file hiện tại người dùng chọn
                 {
-                    FileM file = new FileM();
-                    file.iFileCode = f.iFileCode;
-                    file.iRead = f.iRead;
+                    FileM file = new FileM(); // Khởi tạo object file của lớp FileM và gán các giá trị của file hiện tại người dùng chọn vào object file
+                    file.iFileCode = f.iFileCode; 
+                    file.iRead = f.iRead; 
                     file.sCategory = f.sCategory;
-                    file.sFilePreview = this.rtbShowFileReadPreview.Text;
+                    file.sFilePreview = this.rtbShowFileReadPreview.Text; // Gán file cần đọc trước do người dùng chọn vào sFilePreview
                     file.sLinkFile = f.sLinkFile;
                     file.sLinkPic = f.sLinkPic;
                     file.sTitle = f.sTitle;
                     file.sNote = f.sNote;
                     file.dtDateUpdate = f.dtDateUpdate;
                     file.dtRecentlyRead = f.dtRecentlyRead;
-                    FileController.updateFile(file);
-                    MessageBox.Show("Lưu thành công!");
-                    this.cbCurrentFile.Text = "";
+                    FileController.updateFile(file); // Xử lý yêu cầu cập nhật lại file trong database
+                    MessageBox.Show("Lưu thành công!"); // Thông báo cho người dùng.
+                    // Gán về giá trị ban đầu là ""
+                    this.cbCurrentFile.Text = ""; 
                     this.rtbShowFileReadPreview.Text = "";
                 }
             }
@@ -145,5 +156,7 @@ namespace FileManager.Views
         {
             this.rtbShowFileReadPreview.Text = "";
         }
+
+        
     }
 }

@@ -126,7 +126,7 @@
     <value>0, 0</value>
   </data>
   <data name="splitContainer1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="splitContainer2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -134,12 +134,12 @@
   <data name="splitContainer2.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="splitContainer2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
   <data name="splitContainer2.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
+  <metadata name="helpProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="rtbRead.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -147,17 +147,14 @@
     <value>0, 0</value>
   </data>
   <data name="rtbRead.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
-  <metadata name="helpProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="rtbRead.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="rtbRead.Size" type="System.Drawing.Size, System.Drawing">
-    <value>749, 975</value>
+    <value>606, 696</value>
   </data>
   <data name="rtbRead.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -177,6 +174,9 @@
   <data name="&gt;&gt;rtbRead.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="helpProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="splitContainer2.Panel1.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -368,16 +368,13 @@
     <value />
   </data>
   <data name="ptbBackPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>519, 7</value>
-  </data>
-  <data name="ptbBackPage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>207, 7</value>
   </data>
   <data name="ptbBackPage.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="ptbBackPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 43</value>
+    <value>40, 35</value>
   </data>
   <data name="ptbBackPage.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -609,16 +606,13 @@
     <value />
   </data>
   <data name="ptbNextPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>689, 7</value>
-  </data>
-  <data name="ptbNextPage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>335, 7</value>
   </data>
   <data name="ptbNextPage.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="ptbNextPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 43</value>
+    <value>42, 35</value>
   </data>
   <data name="ptbNextPage.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -642,16 +636,13 @@
     <value>True</value>
   </metadata>
   <data name="txtCurrentPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>580, 18</value>
-  </data>
-  <data name="txtCurrentPage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>253, 16</value>
   </data>
   <data name="txtCurrentPage.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="txtCurrentPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 22</value>
+    <value>76, 20</value>
   </data>
   <data name="txtCurrentPage.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -690,13 +681,10 @@
     <value>True</value>
   </data>
   <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>749, 1055</value>
+    <value>606, 749</value>
   </data>
   <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
-    <value>975</value>
-  </data>
-  <data name="splitContainer2.SplitterWidth" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>696</value>
   </data>
   <data name="splitContainer2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -734,9 +722,6 @@
   <data name="splitContainer3.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="splitContainer3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
   <data name="splitContainer3.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
   </data>
@@ -746,26 +731,23 @@
   <data name="splitContainer4.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="splitContainer4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
   <data name="splitContainer4.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
+  </data>
+  <data name="btnDeleteNote.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
   </data>
   <data name="btnDeleteNote.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="btnDeleteNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 298</value>
-  </data>
-  <data name="btnDeleteNote.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>0, 245</value>
   </data>
   <data name="btnDeleteNote.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="btnDeleteNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 28</value>
+    <value>119, 23</value>
   </data>
   <data name="btnDeleteNote.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -789,16 +771,13 @@
     <value>Right</value>
   </data>
   <data name="rtbNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 0</value>
-  </data>
-  <data name="rtbNote.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>119, 0</value>
   </data>
   <data name="rtbNote.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="rtbNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>855, 460</value>
+    <value>642, 268</value>
   </data>
   <data name="rtbNote.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -825,16 +804,13 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold, Italic</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 9</value>
-  </data>
-  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>13, 9</value>
   </data>
   <data name="label1.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 20</value>
+    <value>59, 16</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -869,6 +845,9 @@
   <data name="&gt;&gt;splitContainer4.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="cbbWidth.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
   <data name="cbbWidth.Items" xml:space="preserve">
     <value>2</value>
   </data>
@@ -885,13 +864,10 @@
     <value>4</value>
   </data>
   <data name="cbbWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 263</value>
-  </data>
-  <data name="cbbWidth.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>0, 357</value>
   </data>
   <data name="cbbWidth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 24</value>
+    <value>119, 21</value>
   </data>
   <data name="cbbWidth.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -908,14 +884,14 @@
   <data name="&gt;&gt;cbbWidth.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btnColorPen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 297</value>
+  <data name="btnColorPen.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
   </data>
-  <data name="btnColorPen.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+  <data name="btnColorPen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 378</value>
   </data>
   <data name="btnColorPen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 28</value>
+    <value>119, 23</value>
   </data>
   <data name="btnColorPen.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -935,20 +911,20 @@
   <data name="&gt;&gt;btnColorPen.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btnDeleteDrawNote.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
   <data name="btnDeleteDrawNote.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="btnDeleteDrawNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 332</value>
-  </data>
-  <data name="btnDeleteDrawNote.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>0, 401</value>
   </data>
   <data name="btnDeleteDrawNote.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="btnDeleteDrawNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 28</value>
+    <value>119, 23</value>
   </data>
   <data name="btnDeleteDrawNote.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -972,16 +948,13 @@
     <value>Right</value>
   </data>
   <data name="ptbNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 0</value>
-  </data>
-  <data name="ptbNote.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+    <value>119, 0</value>
   </data>
   <data name="ptbNote.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="ptbNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>856, 508</value>
+    <value>642, 424</value>
   </data>
   <data name="ptbNote.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1005,16 +978,13 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold, Italic</value>
   </data>
   <data name="lb2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 14</value>
-  </data>
-  <data name="lb2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
+    <value>8, 10</value>
   </data>
   <data name="lb2.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lb2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 20</value>
+    <value>80, 16</value>
   </data>
   <data name="lb2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1053,13 +1023,10 @@
     <value>True</value>
   </data>
   <data name="splitContainer4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>991, 973</value>
+    <value>761, 696</value>
   </data>
   <data name="splitContainer4.SplitterDistance" type="System.Int32, mscorlib">
-    <value>460</value>
-  </data>
-  <data name="splitContainer4.SplitterWidth" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>268</value>
   </data>
   <data name="splitContainer4.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1098,16 +1065,16 @@
     <value>Arial, 10.8pt, style=Bold</value>
   </data>
   <data name="btnNew.Location" type="System.Drawing.Point, System.Drawing">
-    <value>471, 0</value>
+    <value>371, 0</value>
   </data>
   <data name="btnNew.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="btnNew.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="btnNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 77</value>
+    <value>192, 49</value>
   </data>
   <data name="btnNew.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1134,16 +1101,16 @@
     <value>Arial, 10.8pt, style=Bold</value>
   </data>
   <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>727, 0</value>
+    <value>563, 0</value>
   </data>
   <data name="btnSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="btnSave.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 77</value>
+    <value>198, 49</value>
   </data>
   <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1182,13 +1149,10 @@
     <value>True</value>
   </data>
   <data name="splitContainer3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>991, 1055</value>
+    <value>761, 749</value>
   </data>
   <data name="splitContainer3.SplitterDistance" type="System.Int32, mscorlib">
-    <value>973</value>
-  </data>
-  <data name="splitContainer3.SplitterWidth" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>696</value>
   </data>
   <data name="splitContainer3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1224,10 +1188,13 @@
     <value>True</value>
   </data>
   <data name="splitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1744, 1055</value>
+    <value>1370, 749</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>749</value>
+    <value>606</value>
+  </data>
+  <data name="splitContainer1.SplitterWidth" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="splitContainer1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1254,10 +1221,10 @@
     <value>81</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1744, 1055</value>
+    <value>1370, 749</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1355,13 +1322,10 @@
 </value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 2, 3, 2</value>
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Reader River</value>
   </data>
   <data name="&gt;&gt;helpProvider1.Name" xml:space="preserve">
     <value>helpProvider1</value>
