@@ -447,7 +447,7 @@ namespace FileManager.Views
         {
             if (darkmode == true)
             {
-                btnSearch.BackColor = Color.Black;
+                btnSearch.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 btnSearch.BackColor = Color.AliceBlue;
@@ -467,7 +467,7 @@ namespace FileManager.Views
         {
             if (darkmode == true)
             {
-                btnReadFile.BackColor = Color.Black;
+                btnReadFile.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 btnReadFile.BackColor = Color.AliceBlue;
@@ -478,69 +478,79 @@ namespace FileManager.Views
         private void darkMode_Click(object sender, EventArgs e)
         {
             darkmode = true;
-
+            // splitcontainer
+            splitContainer1.BackColor = ColorTranslator.FromHtml("#696969");
+            splitContainer2.BackColor = ColorTranslator.FromHtml("#696969");
+            splitContainer3.BackColor = ColorTranslator.FromHtml("#696969");
+            
             //panel last read
             pnlLastRead.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             label2.ForeColor = Color.White;
-            btnReadLastFile.BackColor = Color.Black;
+            btnReadLastFile.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             btnReadLastFile.ForeColor = Color.White;
             lbTitle.ForeColor = Color.White;
 
             //panel danh mục
-            splitContainer3.Panel2.BackColor = Color.Black;
+            splitContainer3.Panel2.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             label3.ForeColor = Color.White;
-            btnAllFile.BackColor = Color.Black;
+            btnAllFile.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             btnAllFile.ForeColor = Color.White;
-            btnRecentlyAdd.BackColor = Color.Black;
+            btnRecentlyAdd.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             btnRecentlyAdd.ForeColor = Color.White;
-            btnRecentlyRead.BackColor = Color.Black;
+            btnRecentlyRead.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             btnRecentlyRead.ForeColor = Color.White;
-            cbCategory.BackColor = Color.Black;
+            cbCategory.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             cbCategory.ForeColor = Color.White;
 
             //panel tìm kiếm
-            splitContainer2.Panel1.BackColor = Color.Black;
-            txtSearch.BackColor = Color.Black;
+            splitContainer2.Panel1.BackColor = ColorTranslator.FromHtml("#1C1C1C");
+            txtSearch.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             txtSearch.ForeColor = Color.White;
-            btnSearch.BackColor = Color.Black;
+            btnSearch.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             btnSearch.ForeColor = Color.White;
             btnSearch.FlatAppearance.BorderColor = Color.White;
-            btnReadFile.BackColor = Color.Black;
+            btnReadFile.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             btnReadFile.ForeColor = Color.White;
 
             //flowlayoutpanel
-            flpnlThumb.BackColor = Color.Black;
+            flpnlThumb.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             showThumb();
 
             //data grid view
-            dataFileM.BackgroundColor = Color.Black;
-            dataFileM.DefaultCellStyle.BackColor = Color.Black;
+            dataFileM.BackgroundColor = ColorTranslator.FromHtml("#1C1C1C");
+            dataFileM.DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             dataFileM.DefaultCellStyle.ForeColor = Color.White;
 
             //menu strip
-            addCategory.BackColor = Color.Black;
+            menuStrip1.BackColor = ColorTranslator.FromHtml("#696969");
+            menuStrip1.ForeColor = Color.White;
+            addCategory.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             addCategory.ForeColor = Color.White;
-            addFile.BackColor = Color.Black;
+            addFile.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             addFile.ForeColor = Color.White;
-            addReadIndex.BackColor = Color.Black;
+            addReadIndex.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             addReadIndex.ForeColor = Color.White;
-            exitApplication.BackColor = Color.Black;
+            exitApplication.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             exitApplication.ForeColor = Color.White;
-            darkMode.BackColor = Color.Black;
+            darkMode.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             darkMode.ForeColor = Color.White;
-            lightMode.BackColor = Color.Black;
+            lightMode.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             lightMode.ForeColor = Color.White;
 
             // contextmenu
-            ctmenuRefresh.BackColor = Color.Black;
+            ctmenuRefresh.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             ctmenuRefresh.ForeColor = Color.White;
-            toolStripRefresh.BackColor = Color.Black;
+            toolStripRefresh.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             toolStripRefresh.ForeColor = Color.White;
         }
 
         private void lightMode_Click(object sender, EventArgs e)
         {
             darkmode = false;
+            //split container
+            splitContainer1.BackColor = Color.AliceBlue;
+            splitContainer2.BackColor = Color.AliceBlue;
+            splitContainer3.BackColor = Color.AliceBlue;
 
             //panel last read
             pnlLastRead.BackColor = Color.AliceBlue;
@@ -581,6 +591,8 @@ namespace FileManager.Views
             dataFileM.DefaultCellStyle.ForeColor = Color.Black;
 
             //menu strip
+            menuStrip1.BackColor = DefaultBackColor;
+            menuStrip1.ForeColor = Color.Black;
             addCategory.BackColor = Color.White;
             addCategory.ForeColor = Color.Black;
             addFile.BackColor = Color.White;
@@ -615,7 +627,7 @@ namespace FileManager.Views
         {
             if (darkmode == true)
             {
-                btnReadLastFile.BackColor = Color.Black;
+                btnReadLastFile.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 btnReadLastFile.BackColor = Color.AliceBlue;
@@ -635,7 +647,7 @@ namespace FileManager.Views
         {
             if (darkmode == true)
             {
-                btnAllFile.BackColor = Color.Black;
+                btnAllFile.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 btnAllFile.BackColor = Color.AliceBlue;
@@ -655,7 +667,7 @@ namespace FileManager.Views
         {
             if (darkmode == true)
             {
-                btnRecentlyRead.BackColor = Color.Black;
+                btnRecentlyRead.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 btnRecentlyRead.BackColor = Color.AliceBlue;
@@ -675,7 +687,7 @@ namespace FileManager.Views
         {
             if (darkmode == true)
             {
-                cbCategory.BackColor = Color.Black;
+                cbCategory.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 cbCategory.BackColor = Color.AliceBlue;
@@ -696,7 +708,7 @@ namespace FileManager.Views
 
             if (darkmode == true)
             {
-                btnRecentlyAdd.BackColor = Color.Black;
+                btnRecentlyAdd.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 btnRecentlyAdd.BackColor = Color.AliceBlue;
@@ -716,7 +728,7 @@ namespace FileManager.Views
         {
             if (darkmode == true)
             {
-                addFile.BackColor = Color.Black;
+                addFile.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 addFile.BackColor = Color.White;
@@ -736,7 +748,7 @@ namespace FileManager.Views
         {
             if (darkmode == true)
             {
-                addCategory.BackColor = Color.Black;
+                addCategory.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 addCategory.BackColor = Color.White;
@@ -756,7 +768,7 @@ namespace FileManager.Views
         {
             if (darkmode == true)
             {
-                addReadIndex.BackColor = Color.Black;
+                addReadIndex.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 addReadIndex.BackColor = Color.White;
@@ -776,7 +788,7 @@ namespace FileManager.Views
         {
             if (darkmode == true)
             {
-                exitApplication.BackColor = Color.Black;
+                exitApplication.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 exitApplication.BackColor = Color.White;
@@ -796,7 +808,7 @@ namespace FileManager.Views
         {
             if (darkmode == true)
             {
-                lightMode.BackColor = Color.Black;
+                lightMode.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 lightMode.BackColor = Color.White;
@@ -816,7 +828,7 @@ namespace FileManager.Views
         {
             if (darkmode == true)
             {
-                darkMode.BackColor = Color.Black;
+                darkMode.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 darkMode.BackColor = Color.White;
@@ -833,7 +845,7 @@ namespace FileManager.Views
         private void toolStripRefresh_MouseLeave(object sender, EventArgs e)
         {
             if (darkmode == true)
-                toolStripRefresh.BackColor = Color.Black;
+                toolStripRefresh.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 toolStripRefresh.BackColor = Color.Transparent;
         }

@@ -47,14 +47,13 @@ namespace FileManager.Views
                 this.cbCategory.Items.Add(c.sCategoryName);
             }
             // Xử lý chế độ sáng tối
-            if(darkmode == true)
+            DarkMode = darkmode;
+            if (darkmode == true)
             {
-                DarkMode = darkmode;
                 darkMode();
             }
             else
             {
-                DarkMode = darkmode;
                 lightMode();
             }
         }
@@ -80,64 +79,64 @@ namespace FileManager.Views
 
         private void darkMode()
         {
-            this.BackColor = Color.Black;
+            this.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             this.ForeColor = Color.White;
-            txtFileCode.BackColor = Color.Black;
+            txtFileCode.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             txtFileCode.ForeColor = Color.White;
-            txtTitle.BackColor = Color.Black;
+            txtTitle.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             txtTitle.ForeColor = Color.White;
-            rtbPreview.BackColor = Color.Black;
+            rtbPreview.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             rtbPreview.ForeColor = Color.White;
-            txtLinkFolder.BackColor = Color.Black;
+            txtLinkFolder.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             txtLinkFolder.ForeColor = Color.White;
-            btnUpateLink.BackColor = Color.Black;
+            btnUpateLink.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             btnUpateLink.ForeColor = Color.White;
-            btnUploadFile.BackColor = Color.Black;
+            btnUploadFile.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             btnUploadFile.ForeColor = Color.White;
-            cbCategory.BackColor = Color.Black;
+            cbCategory.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             cbCategory.ForeColor = Color.White;
-            btnAddCategory.BackColor = Color.Black;
+            btnAddCategory.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             btnAddCategory.ForeColor = Color.White;
-            txtCurrentCategory.BackColor = Color.Black;
+            txtCurrentCategory.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             txtCurrentCategory.ForeColor = Color.White;
-            btnRemoveCategory.BackColor = Color.Black;
+            btnRemoveCategory.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             btnRemoveCategory.ForeColor = Color.White;
-            picUpload.BackColor = Color.Black;
-            btnPicUpload.BackColor = Color.Black;
+            picUpload.BackColor = ColorTranslator.FromHtml("#1C1C1C");
+            btnPicUpload.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             btnPicUpload.ForeColor = Color.White;
-            btnSave.BackColor = Color.Black;
+            btnSave.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             btnSave.ForeColor = Color.White;
         }
 
         private void lightMode()
         {
-            this.BackColor = Color.AliceBlue;
-            this.ForeColor = Color.Black;
-            txtFileCode.BackColor = Color.White;
-            txtFileCode.ForeColor = Color.Black;
-            txtTitle.BackColor = Color.White;
-            txtTitle.ForeColor = Color.Black;
-            rtbPreview.BackColor = Color.White;
-            rtbPreview.ForeColor = Color.Black;
-            txtLinkFolder.BackColor = Color.White;
-            txtLinkFolder.ForeColor = Color.Black;
-            btnUpateLink.BackColor = Color.AliceBlue;
-            btnUpateLink.ForeColor = Color.Black;
-            btnUploadFile.BackColor = Color.AliceBlue;
-            btnUploadFile.ForeColor = Color.Black;
-            cbCategory.BackColor = Color.White;
-            cbCategory.ForeColor = Color.Black;
-            btnAddCategory.BackColor = Color.AliceBlue;
-            btnAddCategory.ForeColor = Color.Black;
-            txtCurrentCategory.BackColor = Color.White;
-            txtCurrentCategory.ForeColor = Color.Black;
-            btnRemoveCategory.BackColor = Color.AliceBlue;
-            btnRemoveCategory.ForeColor = Color.Black;
-            picUpload.BackColor = Color.AliceBlue;
-            btnPicUpload.BackColor = Color.AliceBlue;
-            btnPicUpload.ForeColor = Color.Black;
-            btnSave.BackColor = Color.AliceBlue;
-            btnSave.ForeColor = Color.Black;
+            this.BackColor = DefaultBackColor;
+            this.ForeColor = DefaultForeColor;
+            //txtFileCode.BackColor = Color.White;
+            //txtFileCode.ForeColor = Color.Black;
+            //txtTitle.BackColor = Color.White;
+            //txtTitle.ForeColor = Color.Black;
+            //rtbPreview.BackColor = Color.White;
+            //rtbPreview.ForeColor = Color.Black;
+            //txtLinkFolder.BackColor = Color.White;
+            //txtLinkFolder.ForeColor = Color.Black;
+            //btnUpateLink.BackColor = Color.AliceBlue;
+            //btnUpateLink.ForeColor = Color.Black;
+            //btnUploadFile.BackColor = Color.AliceBlue;
+            //btnUploadFile.ForeColor = Color.Black;
+            //cbCategory.BackColor = Color.White;
+            //cbCategory.ForeColor = Color.Black;
+            //btnAddCategory.BackColor = Color.AliceBlue;
+            //btnAddCategory.ForeColor = Color.Black;
+            //txtCurrentCategory.BackColor = Color.White;
+            //txtCurrentCategory.ForeColor = Color.Black;
+            //btnRemoveCategory.BackColor = Color.AliceBlue;
+            //btnRemoveCategory.ForeColor = Color.Black;
+            //picUpload.BackColor = Color.AliceBlue;
+            //btnPicUpload.BackColor = Color.AliceBlue;
+            //btnPicUpload.ForeColor = Color.Black;
+            //btnSave.BackColor = Color.AliceBlue;
+            //btnSave.ForeColor = Color.Black;
         }
 
         // Lưu file
@@ -382,7 +381,7 @@ namespace FileManager.Views
         {
             if (DarkMode == true)
             {
-                btnUploadFile.BackColor = Color.Black;
+                btnUploadFile.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 btnUploadFile.BackColor = Color.AliceBlue;
@@ -402,7 +401,7 @@ namespace FileManager.Views
         {
             if (DarkMode == true)
             {
-                btnAddCategory.BackColor = Color.Black;
+                btnAddCategory.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 btnAddCategory.BackColor = Color.AliceBlue;
@@ -422,7 +421,7 @@ namespace FileManager.Views
         {
             if (DarkMode == true)
             {
-                btnRemoveCategory.BackColor = Color.Black;
+                btnRemoveCategory.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 btnRemoveCategory.BackColor = Color.AliceBlue;
@@ -442,7 +441,7 @@ namespace FileManager.Views
         {
             if (DarkMode == true)
             {
-                btnPicUpload.BackColor = Color.Black;
+                btnPicUpload.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 btnPicUpload.BackColor = Color.AliceBlue;
@@ -462,7 +461,7 @@ namespace FileManager.Views
         {
             if (DarkMode == true)
             {
-                btnSave.BackColor = Color.Black;
+                btnSave.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 btnSave.BackColor = Color.AliceBlue;
@@ -482,7 +481,7 @@ namespace FileManager.Views
         {
             if (DarkMode == true)
             {
-                btnUpateLink.BackColor = Color.Black;
+                btnUpateLink.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 btnUpateLink.BackColor = Color.AliceBlue;

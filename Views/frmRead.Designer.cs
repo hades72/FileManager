@@ -49,6 +49,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.btnFont = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -73,6 +75,7 @@
             // splitContainer1
             // 
             resources.ApplyResources(this.splitContainer1, "splitContainer1");
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -89,6 +92,7 @@
             // splitContainer2
             // 
             resources.ApplyResources(this.splitContainer2, "splitContainer2");
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -99,6 +103,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.BackColor = System.Drawing.Color.AliceBlue;
+            this.splitContainer2.Panel2.Controls.Add(this.btnFont);
             this.splitContainer2.Panel2.Controls.Add(this.ptbBackPage);
             this.splitContainer2.Panel2.Controls.Add(this.ptbNextPage);
             this.splitContainer2.Panel2.Controls.Add(this.txtCurrentPage);
@@ -115,6 +120,7 @@
             // 
             // ptbBackPage
             // 
+            this.ptbBackPage.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.ptbBackPage, "ptbBackPage");
             this.ptbBackPage.Name = "ptbBackPage";
             this.helpProvider1.SetShowHelp(this.ptbBackPage, ((bool)(resources.GetObject("ptbBackPage.ShowHelp"))));
@@ -123,6 +129,7 @@
             // 
             // ptbNextPage
             // 
+            this.ptbNextPage.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.ptbNextPage, "ptbNextPage");
             this.ptbNextPage.Name = "ptbNextPage";
             this.helpProvider1.SetShowHelp(this.ptbNextPage, ((bool)(resources.GetObject("ptbNextPage.ShowHelp"))));
@@ -140,6 +147,7 @@
             // splitContainer3
             // 
             resources.ApplyResources(this.splitContainer3, "splitContainer3");
+            this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
             this.splitContainer3.Name = "splitContainer3";
             // 
             // splitContainer3.Panel1
@@ -191,6 +199,7 @@
             // 
             // rtbNote
             // 
+            this.rtbNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.rtbNote, "rtbNote");
             this.rtbNote.Name = "rtbNote";
             this.helpProvider1.SetShowHelp(this.rtbNote, ((bool)(resources.GetObject("rtbNote.ShowHelp"))));
@@ -280,12 +289,18 @@
             this.btnSave.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
             this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
             // 
+            // btnFont
+            // 
+            resources.ApplyResources(this.btnFont, "btnFont");
+            this.btnFont.Name = "btnFont";
+            this.btnFont.UseVisualStyleBackColor = true;
+            this.btnFont.Click += new System.EventHandler(this.btnFont_Click);
+            // 
             // frmRead
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.splitContainer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmRead";
             this.helpProvider1.SetShowHelp(this, ((bool)(resources.GetObject("$this.ShowHelp"))));
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -339,5 +354,7 @@
         private System.Windows.Forms.Button btnColorPen;
         private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.ComboBox cbbWidth;
+        private System.Windows.Forms.Button btnFont;
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }

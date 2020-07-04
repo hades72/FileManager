@@ -52,15 +52,15 @@ namespace FileManager.Views
 
         private void darkMode()
         {
-            this.BackColor = Color.Black;
+            this.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             label5.ForeColor = Color.White;
             lbLinkFile.ForeColor = Color.White;
         }
 
         private void lightMode()
         {
-            this.BackColor = Color.AliceBlue;
-            this.ForeColor = Color.Black;
+            this.BackColor = DefaultBackColor;
+            this.ForeColor = DefaultForeColor;
 
         }
 
@@ -74,7 +74,7 @@ namespace FileManager.Views
         private void picLinkFile_MouseLeave(object sender, EventArgs e)
         {
             if (DarkMode == true)
-                picLinkFile.BackColor = Color.Black;
+                picLinkFile.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 picLinkFile.BackColor = Color.AliceBlue;
         }

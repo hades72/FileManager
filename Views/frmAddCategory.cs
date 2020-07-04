@@ -50,26 +50,20 @@ namespace FileManager.Views
 
         private void darkMode()
         {
-            panel1.BackColor = Color.Black;
+            panel1.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             panel1.ForeColor = Color.White;
-            btnAddCategory.BackColor = Color.Black;
-            txtCategoryName.BackColor = Color.Black;
+            btnAddCategory.BackColor = ColorTranslator.FromHtml("#1C1C1C");
+            txtCategoryName.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             txtCategoryName.ForeColor = Color.White;
-            dataCategory.BackgroundColor = Color.Black;
-            dataCategory.DefaultCellStyle.BackColor = Color.Black;
+            dataCategory.BackgroundColor = ColorTranslator.FromHtml("#1C1C1C");
+            dataCategory.DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             dataCategory.DefaultCellStyle.ForeColor = Color.White;
         }
 
         private void lightMode()
         {
-            panel1.BackColor = Color.AliceBlue;
-            panel1.ForeColor = Color.Black;
-            btnAddCategory.BackColor = Color.AliceBlue;
-            txtCategoryName.BackColor = Color.White;
-            txtCategoryName.ForeColor = Color.Black;
-            dataCategory.BackgroundColor = Color.White;
-            dataCategory.DefaultCellStyle.BackColor = Color.White;
-            dataCategory.DefaultCellStyle.ForeColor = Color.Black;
+            this.BackColor = DefaultBackColor;
+            this.ForeColor = DefaultForeColor;
         }
 
         // Cập nhật lại dataCategory
@@ -196,7 +190,7 @@ namespace FileManager.Views
         private void btnAddCategory_MouseLeave(object sender, EventArgs e)
         {
             if (DarkMode == true)
-                btnAddCategory.BackColor = Color.Black;
+                btnAddCategory.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 btnAddCategory.BackColor = Color.AliceBlue;
         }

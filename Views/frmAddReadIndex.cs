@@ -55,38 +55,40 @@ namespace FileManager.Views
 
         private void darkMode()
         {
-            panel1.BackColor = Color.Black;
+            panel1.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             panel1.ForeColor = Color.White;
-            cbCurrentFile.BackColor = Color.Black;
+            cbCurrentFile.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             cbCurrentFile.ForeColor = Color.White;
-            cbReadPreview.BackColor = Color.Black;
+            cbReadPreview.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             cbReadPreview.ForeColor = Color.White;
-            rtbShowFileReadPreview.BackColor = Color.Black;
+            rtbShowFileReadPreview.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             rtbShowFileReadPreview.ForeColor = Color.White;
-            btnAddReadPreview.BackColor = Color.Black;
+            btnAddReadPreview.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             btnAddReadPreview.ForeColor = Color.White;
-            btnDeleteReadIndex.BackColor = Color.Black;
+            btnDeleteReadIndex.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             btnDeleteReadIndex.ForeColor = Color.White;
-            btnSaveReadIndex.BackColor = Color.Black;
+            btnSaveReadIndex.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             btnSaveReadIndex.ForeColor = Color.White;
         }
 
         private void lightMode()
         {
-            panel1.BackColor = Color.AliceBlue;
-            panel1.ForeColor = Color.Black;
-            cbCurrentFile.BackColor = Color.White;
-            cbCurrentFile.ForeColor = Color.Black;
-            cbReadPreview.BackColor = Color.White;
-            cbReadPreview.ForeColor = Color.Black;
-            rtbShowFileReadPreview.BackColor = Color.White;
-            rtbShowFileReadPreview.ForeColor = Color.Black;
-            btnAddReadPreview.BackColor = Color.AliceBlue;
-            btnAddReadPreview.ForeColor = Color.Black;
-            btnDeleteReadIndex.BackColor = Color.AliceBlue;
-            btnDeleteReadIndex.ForeColor = Color.Black;
-            btnSaveReadIndex.BackColor = Color.AliceBlue;
-            btnSaveReadIndex.ForeColor = Color.Black;
+            this.BackColor = DefaultBackColor;
+            this.ForeColor = DefaultForeColor;
+            //panel1.BackColor = Color.AliceBlue;
+            //panel1.ForeColor = Color.Black;
+            //cbCurrentFile.BackColor = Color.White;
+            //cbCurrentFile.ForeColor = Color.Black;
+            //cbReadPreview.BackColor = Color.White;
+            //cbReadPreview.ForeColor = Color.Black;
+            //rtbShowFileReadPreview.BackColor = Color.White;
+            //rtbShowFileReadPreview.ForeColor = Color.Black;
+            //btnAddReadPreview.BackColor = Color.AliceBlue;
+            //btnAddReadPreview.ForeColor = Color.Black;
+            //btnDeleteReadIndex.BackColor = Color.AliceBlue;
+            //btnDeleteReadIndex.ForeColor = Color.Black;
+            //btnSaveReadIndex.BackColor = Color.AliceBlue;
+            //btnSaveReadIndex.ForeColor = Color.Black;
         }
 
         private void cbCurrentFile_SelectedIndexChanged(object sender, EventArgs e)
@@ -105,7 +107,6 @@ namespace FileManager.Views
             }
             foreach (var f in lF)
             {
-                
                 if (currentFile == f.sTitle)
                 {
                     this.cbReadPreview.Items.Remove(f.sTitle);
@@ -122,10 +123,6 @@ namespace FileManager.Views
                         }
                         this.rtbShowFileReadPreview.Text = f.sFilePreview;
                     }
-                }
-                else
-                {
-
                 }
             }
         }
@@ -191,6 +188,7 @@ namespace FileManager.Views
                     // Gán về giá trị ban đầu là ""
                     this.cbCurrentFile.Text = ""; 
                     this.rtbShowFileReadPreview.Text = "";
+                    this.cbReadPreview.Enabled = false;
                 }
             }
         }
@@ -201,8 +199,14 @@ namespace FileManager.Views
             this.save = true;
         }
 
+        // Xóa thứ tự đọc file đã chọn
         private void btnDeleteReadIndex_Click(object sender, EventArgs e)
         {
+            string[] b = rtbShowFileReadPreview.Text.Split(',');
+            foreach(var obj in b)
+            {
+                this.cbReadPreview.Items.Add(obj.Trim());
+            }
             this.rtbShowFileReadPreview.Text = "";
         }
 
@@ -217,7 +221,7 @@ namespace FileManager.Views
         private void btnAddReadPreview_MouseLeave(object sender, EventArgs e)
         {
             if (DarkMode == true)
-                btnAddReadPreview.BackColor = Color.Black;
+                btnAddReadPreview.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 btnAddReadPreview.BackColor = Color.AliceBlue;
         }
@@ -233,7 +237,7 @@ namespace FileManager.Views
         private void btnDeleteReadIndex_MouseLeave(object sender, EventArgs e)
         {
             if (DarkMode == true)
-                btnDeleteReadIndex.BackColor = Color.Black;
+                btnDeleteReadIndex.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 btnDeleteReadIndex.BackColor = Color.AliceBlue;
         }
@@ -249,7 +253,7 @@ namespace FileManager.Views
         private void btnSaveReadIndex_MouseLeave(object sender, EventArgs e)
         {
             if (DarkMode == true)
-                btnSaveReadIndex.BackColor = Color.Black;
+                btnSaveReadIndex.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 btnSaveReadIndex.BackColor = Color.AliceBlue;
         }

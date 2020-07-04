@@ -132,6 +132,7 @@ namespace FileManager.Views
             // 
             this.splitContainer3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer3.IsSplitterFixed = true;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
             this.splitContainer3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -209,7 +210,7 @@ namespace FileManager.Views
             // 
             // lbTitle
             // 
-            this.lbTitle.Location = new System.Drawing.Point(14, 165);
+            this.lbTitle.Location = new System.Drawing.Point(21, 165);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(174, 26);

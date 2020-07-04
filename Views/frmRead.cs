@@ -108,57 +108,60 @@ namespace FileManager.Views
 
         private void darkMode()
         {
-            rtbRead.BackColor = Color.Black;
+            rtbRead.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             rtbRead.ForeColor = Color.White;
             label1.ForeColor = Color.White;
             lb2.ForeColor = Color.White;
-            btnDeleteNote.BackColor = Color.Black;
+            btnDeleteNote.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             btnDeleteNote.ForeColor = Color.White;
-            rtbNote.BackColor = Color.Black;
+            rtbNote.BackColor = ColorTranslator.FromHtml("#363636");
             rtbNote.ForeColor = Color.White;
-            splitContainer4.Panel1.BackColor = Color.Black;
-            splitContainer4.Panel2.BackColor = Color.Black;
+            splitContainer4.Panel1.BackColor = ColorTranslator.FromHtml("#1C1C1C");
+            splitContainer4.Panel2.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             splitContainer4.Panel2.ForeColor = Color.White;
-            btnColorPen.BackColor = Color.Black;
-            btnDeleteDrawNote.BackColor = Color.Black;
-            btnNew.BackColor = Color.Black;
+            btnColorPen.BackColor = ColorTranslator.FromHtml("#1C1C1C");
+            btnDeleteDrawNote.BackColor = ColorTranslator.FromHtml("#1C1C1C");
+            btnNew.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             btnNew.ForeColor = Color.White;
-            btnSave.BackColor = Color.Black;
+            btnSave.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             btnSave.ForeColor = Color.White;
-            splitContainer3.Panel2.BackColor = Color.Black;
+            splitContainer3.Panel2.BackColor = ColorTranslator.FromHtml("#4F4F4F");
             splitContainer3.Panel2.ForeColor = Color.White;
-            splitContainer2.Panel2.BackColor = Color.Black;
-            ptbBackPage.BackColor = Color.White;
-            ptbNextPage.BackColor = Color.White;
+            splitContainer2.Panel2.BackColor = ColorTranslator.FromHtml("#4F4F4F");
+            ptbBackPage.BackColor = ColorTranslator.FromHtml("#4F4F4F");
+            ptbNextPage.BackColor = ColorTranslator.FromHtml("#4F4F4F");
             cbbWidth.BackColor = Color.LightGray;
-
+            txtCurrentPage.BackColor = ColorTranslator.FromHtml("#4F4F4F");
+            txtCurrentPage.ForeColor = Color.White;
         }
 
         private void lightMode()
         {
-            rtbRead.BackColor = Color.AliceBlue;
-            rtbRead.ForeColor = Color.Black;
-            label1.ForeColor = Color.Black;
-            lb2.ForeColor = Color.Black;
-            btnDeleteNote.BackColor = Color.AliceBlue;
-            btnDeleteNote.ForeColor = Color.Black;
-            rtbNote.BackColor = Color.White;
-            rtbNote.ForeColor = Color.Black;
-            splitContainer4.Panel1.BackColor = Color.AliceBlue;
-            splitContainer4.Panel2.BackColor = Color.AliceBlue;
-            splitContainer4.Panel2.ForeColor = Color.Black;
-            btnColorPen.BackColor = Color.AliceBlue;
-            btnDeleteDrawNote.BackColor = Color.AliceBlue;
-            btnNew.BackColor = Color.AliceBlue;
-            btnNew.ForeColor = Color.Black;
-            btnSave.BackColor = Color.AliceBlue;
-            btnSave.ForeColor = Color.Black;
-            splitContainer3.Panel2.BackColor = Color.AliceBlue;
-            splitContainer3.Panel2.ForeColor = Color.Black;
-            splitContainer2.Panel2.BackColor = Color.AliceBlue;
-            ptbBackPage.BackColor = Color.AliceBlue;
-            ptbNextPage.BackColor = Color.AliceBlue;
-            cbbWidth.BackColor = Color.LightGray;
+            this.BackColor = DefaultBackColor;
+            this.ForeColor = DefaultForeColor;
+            //rtbRead.BackColor = Color.AliceBlue;
+            //rtbRead.ForeColor = Color.Black;
+            //label1.ForeColor = Color.Black;
+            //lb2.ForeColor = Color.Black;
+            //btnDeleteNote.BackColor = Color.AliceBlue;
+            //btnDeleteNote.ForeColor = Color.Black;
+            //rtbNote.BackColor = Color.White;
+            //rtbNote.ForeColor = Color.Black;
+            //splitContainer4.Panel1.BackColor = Color.AliceBlue;
+            //splitContainer4.Panel2.BackColor = Color.AliceBlue;
+            //splitContainer4.Panel2.ForeColor = Color.Black;
+            //btnColorPen.BackColor = Color.AliceBlue;
+            //btnDeleteDrawNote.BackColor = Color.AliceBlue;
+            //btnNew.BackColor = Color.AliceBlue;
+            //btnNew.ForeColor = Color.Black;
+            //btnSave.BackColor = Color.AliceBlue;
+            //btnSave.ForeColor = Color.Black;
+            //splitContainer3.Panel2.BackColor = Color.AliceBlue;
+            //splitContainer3.Panel2.ForeColor = Color.Black;
+            //splitContainer2.Panel2.BackColor = Color.AliceBlue;
+            //ptbBackPage.BackColor = Color.AliceBlue;
+            //ptbNextPage.BackColor = Color.AliceBlue;
+            //cbbWidth.BackColor = Color.LightGray;
         }
 
         // Nhấn xem trang tiếp theo
@@ -378,6 +381,17 @@ namespace FileManager.Views
         {
             drawNote.pen = new Pen(drawNote.color, float.Parse(cbbWidth.SelectedItem.ToString()));
         }
+
+        // Chỉnh phông chữ ở rtbRead
+        private void btnFont_Click(object sender, EventArgs e)
+        {
+            DialogResult dlgresult = fontDialog1.ShowDialog();
+            if(dlgresult == DialogResult.OK)
+            {
+                rtbRead.Font = fontDialog1.Font;
+            }
+        }
+
         // Lớp Vẽ ghi chú
         public class DrawNote
         {
@@ -412,7 +426,7 @@ namespace FileManager.Views
         {
             if (DarkMode == true)
             {
-                btnDeleteNote.BackColor = Color.Black;
+                btnDeleteNote.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 btnDeleteNote.BackColor = Color.AliceBlue;
@@ -432,7 +446,7 @@ namespace FileManager.Views
         {
             if (DarkMode == true)
             {
-                btnColorPen.BackColor = Color.Black;
+                btnColorPen.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 btnColorPen.BackColor = Color.AliceBlue;
@@ -452,7 +466,7 @@ namespace FileManager.Views
         {
             if (DarkMode == true)
             {
-                btnDeleteDrawNote.BackColor = Color.Black;
+                btnDeleteDrawNote.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 btnDeleteDrawNote.BackColor = Color.AliceBlue;
@@ -472,7 +486,7 @@ namespace FileManager.Views
         {
             if (DarkMode == true)
             {
-                btnNew.BackColor = Color.Black;
+                btnNew.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 btnNew.BackColor = Color.AliceBlue;
@@ -492,10 +506,11 @@ namespace FileManager.Views
         {
             if (DarkMode == true)
             {
-                btnSave.BackColor = Color.Black;
+                btnSave.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             }
             else
                 btnSave.BackColor = Color.AliceBlue;
         }
+
     }
 }

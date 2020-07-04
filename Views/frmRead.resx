@@ -154,7 +154,7 @@
     <value>True</value>
   </data>
   <data name="rtbRead.Size" type="System.Drawing.Size, System.Drawing">
-    <value>605, 687</value>
+    <value>699, 700</value>
   </data>
   <data name="rtbRead.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -189,9 +189,39 @@
   <data name="&gt;&gt;splitContainer2.Panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="ptbBackPage.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="btnFont.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="btnFont.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnFont.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11pt</value>
+  </data>
+  <data name="btnFont.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnFont.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 45</value>
+  </data>
+  <data name="btnFont.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnFont.Text" xml:space="preserve">
+    <value>Phông chữ</value>
+  </data>
+  <data name="&gt;&gt;btnFont.Name" xml:space="preserve">
+    <value>btnFont</value>
+  </data>
+  <data name="&gt;&gt;btnFont.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFont.Parent" xml:space="preserve">
+    <value>splitContainer2.Panel2</value>
+  </data>
+  <data name="&gt;&gt;btnFont.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="ptbBackPage.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
@@ -365,7 +395,7 @@
     <value />
   </data>
   <data name="ptbBackPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 7</value>
+    <value>399, 4</value>
   </data>
   <data name="ptbBackPage.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -389,11 +419,8 @@
     <value>splitContainer2.Panel2</value>
   </data>
   <data name="&gt;&gt;ptbBackPage.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
-  <metadata name="ptbNextPage.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="ptbNextPage.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
   </data>
@@ -599,11 +626,14 @@
         pONrFvpIe44AAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="ptbNextPage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="ptbNextPage.InitialImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
   <data name="ptbNextPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 7</value>
+    <value>527, 4</value>
   </data>
   <data name="ptbNextPage.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -627,13 +657,10 @@
     <value>splitContainer2.Panel2</value>
   </data>
   <data name="&gt;&gt;ptbNextPage.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
-  <metadata name="txtCurrentPage.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="txtCurrentPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>253, 16</value>
+    <value>445, 13</value>
   </data>
   <data name="txtCurrentPage.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -657,7 +684,7 @@
     <value>splitContainer2.Panel2</value>
   </data>
   <data name="&gt;&gt;txtCurrentPage.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="splitContainer2.Panel2.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -678,10 +705,10 @@
     <value>True</value>
   </data>
   <data name="splitContainer2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>605, 749</value>
+    <value>699, 749</value>
   </data>
   <data name="splitContainer2.SplitterDistance" type="System.Int32, mscorlib">
-    <value>687</value>
+    <value>700</value>
   </data>
   <data name="splitContainer2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -744,13 +771,13 @@
     <value>Microsoft Sans Serif, 11pt</value>
   </data>
   <data name="btnDeleteNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 226</value>
+    <value>0, 279</value>
   </data>
   <data name="btnDeleteNote.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="btnDeleteNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 38</value>
+    <value>109, 32</value>
   </data>
   <data name="btnDeleteNote.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -774,13 +801,13 @@
     <value>Right</value>
   </data>
   <data name="rtbNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 0</value>
+    <value>109, 0</value>
   </data>
   <data name="rtbNote.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="rtbNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>642, 264</value>
+    <value>559, 311</value>
   </data>
   <data name="rtbNote.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -807,7 +834,7 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold, Italic</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 9</value>
+    <value>20, 9</value>
   </data>
   <data name="label1.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -854,6 +881,9 @@
   <data name="cbbWidth.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <data name="cbbWidth.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11pt</value>
+  </data>
   <data name="cbbWidth.Items" xml:space="preserve">
     <value>2</value>
   </data>
@@ -870,10 +900,10 @@
     <value>4</value>
   </data>
   <data name="cbbWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 310</value>
+    <value>0, 288</value>
   </data>
   <data name="cbbWidth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 21</value>
+    <value>109, 26</value>
   </data>
   <data name="cbbWidth.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -900,10 +930,10 @@
     <value>Microsoft Sans Serif, 11pt</value>
   </data>
   <data name="btnColorPen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 331</value>
+    <value>0, 314</value>
   </data>
   <data name="btnColorPen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 42</value>
+    <value>109, 36</value>
   </data>
   <data name="btnColorPen.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -936,13 +966,13 @@
     <value>Microsoft Sans Serif, 11pt</value>
   </data>
   <data name="btnDeleteDrawNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 373</value>
+    <value>0, 350</value>
   </data>
   <data name="btnDeleteDrawNote.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="btnDeleteDrawNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 46</value>
+    <value>109, 35</value>
   </data>
   <data name="btnDeleteDrawNote.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -966,13 +996,13 @@
     <value>Right</value>
   </data>
   <data name="ptbNote.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 0</value>
+    <value>109, 0</value>
   </data>
   <data name="ptbNote.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="ptbNote.Size" type="System.Drawing.Size, System.Drawing">
-    <value>642, 419</value>
+    <value>559, 385</value>
   </data>
   <data name="ptbNote.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -996,7 +1026,7 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold, Italic</value>
   </data>
   <data name="lb2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 9</value>
+    <value>10, 9</value>
   </data>
   <data name="lb2.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1041,10 +1071,10 @@
     <value>True</value>
   </data>
   <data name="splitContainer4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>762, 687</value>
+    <value>668, 700</value>
   </data>
   <data name="splitContainer4.SplitterDistance" type="System.Int32, mscorlib">
-    <value>264</value>
+    <value>311</value>
   </data>
   <data name="splitContainer4.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1086,7 +1116,7 @@
     <value>Arial, 10.8pt, style=Bold</value>
   </data>
   <data name="btnNew.Location" type="System.Drawing.Point, System.Drawing">
-    <value>372, 0</value>
+    <value>278, 0</value>
   </data>
   <data name="btnNew.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -1095,7 +1125,7 @@
     <value>True</value>
   </data>
   <data name="btnNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 58</value>
+    <value>192, 45</value>
   </data>
   <data name="btnNew.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1125,7 +1155,7 @@
     <value>Arial, 10.8pt, style=Bold</value>
   </data>
   <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>564, 0</value>
+    <value>470, 0</value>
   </data>
   <data name="btnSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
@@ -1134,7 +1164,7 @@
     <value>True</value>
   </data>
   <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 58</value>
+    <value>198, 45</value>
   </data>
   <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1173,10 +1203,10 @@
     <value>True</value>
   </data>
   <data name="splitContainer3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>762, 749</value>
+    <value>668, 749</value>
   </data>
   <data name="splitContainer3.SplitterDistance" type="System.Int32, mscorlib">
-    <value>687</value>
+    <value>700</value>
   </data>
   <data name="splitContainer3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1215,7 +1245,7 @@
     <value>1370, 749</value>
   </data>
   <data name="splitContainer1.SplitterDistance" type="System.Int32, mscorlib">
-    <value>605</value>
+    <value>699</value>
   </data>
   <data name="splitContainer1.SplitterWidth" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1237,6 +1267,9 @@
   </data>
   <metadata name="colorDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>144, 17</value>
+  </metadata>
+  <metadata name="fontDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>258, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -1362,6 +1395,12 @@
   </data>
   <data name="&gt;&gt;colorDialog.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColorDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fontDialog1.Name" xml:space="preserve">
+    <value>fontDialog1</value>
+  </data>
+  <data name="&gt;&gt;fontDialog1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FontDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmRead</value>
