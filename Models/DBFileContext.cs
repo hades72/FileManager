@@ -14,6 +14,6 @@ namespace FileManager.Models
 
         }
         public DbSet<FileM> tbFileMs { get; set; } // Tạo bảng danh sách các file
-        public DbSet<Category> tbCategory { get; set; } // Tạo bảng danh sách các thể loại
+        public DbSet<Category> tbCategories { get; set; } // Tạo bảng danh sách các thể loại
     }
 }

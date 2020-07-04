@@ -695,7 +695,6 @@ namespace FileManager.Views
         private System.Windows.Forms.TabPage tabDataGV;
         private System.Windows.Forms.DataGridView dataFileM;
         private System.Windows.Forms.Panel pnlDanhMuc;
-        private usrViewThumb usrViewThumb;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileMenuItem;

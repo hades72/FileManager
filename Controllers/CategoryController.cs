@@ -15,7 +15,7 @@ namespace FileManager.Controllers
         {
             using (var _context = new DBFileContext())
             {
-                var categorycode = (from f in _context.tbCategory
+                var categorycode = (from f in _context.tbCategories
                                 select f.iCategoryCode).ToList();
 
                 if (categorycode.Count <= 0)
@@ -39,7 +39,7 @@ namespace FileManager.Controllers
         {
             using (var _context = new DBFileContext())
             {
-                var catg = (from f in _context.tbCategory
+                var catg = (from f in _context.tbCategories
                             where f.iCategoryCode == categorycode
                             select f).ToList();
                 if (catg.Count == 1)
@@ -58,7 +58,7 @@ namespace FileManager.Controllers
         {
             using (var _context = new DBFileContext())
             {
-                var catg = (from f in _context.tbCategory.AsEnumerable()
+                var catg = (from f in _context.tbCategories.AsEnumerable()
                             select f)
                             .Select(x => new Category
                             {
@@ -77,7 +77,7 @@ namespace FileManager.Controllers
             {
                 using (var _context = new DBFileContext())
                 {
-                    _context.tbCategory.Add(category);
+                    _context.tbCategories.Add(category);
                     _context.SaveChanges();
                     return true;
                 }
@@ -95,7 +95,7 @@ namespace FileManager.Controllers
             {
                 using (var _context = new DBFileContext())
                 {
-                    _context.tbCategory.AddOrUpdate(catg);
+                    _context.tbCategories.AddOrUpdate(catg);
                     _context.SaveChanges();
                     return true;
                 }
@@ -111,10 +111,10 @@ namespace FileManager.Controllers
         {
             using (var _context = new DBFileContext())
             {
-                var dbcatg = (from f in _context.tbCategory
+                var dbcatg = (from f in _context.tbCategories
                               where f.iCategoryCode == catg.iCategoryCode
                               select f).SingleOrDefault();
-                _context.tbCategory.Remove(dbcatg);
+                _context.tbCategories.Remove(dbcatg);
                 _context.SaveChanges();
                 return true;
             }
