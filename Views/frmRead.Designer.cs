@@ -288,6 +288,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmRead";
             this.helpProvider1.SetShowHelp(this, ((bool)(resources.GetObject("$this.ShowHelp"))));
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRead_FormClosing);
             this.Load += new System.EventHandler(this.frmRead_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

@@ -87,7 +87,7 @@ namespace FileManager.Views
             {
                 Category ctg = new Category(); // Khởi tạo object ctg của lớp Category
                 ctg.iCategoryCode = CategoryController.getCategoryCodeFromDB(); // Sinh mã số thể loại tự động
-                ctg.sCategoryName = this.txtCategoryName.Text.Trim(); // Gán tên thể loại do người dùng nhập
+                ctg.sCategoryName = this.txtCategoryName.Text.Trim().ToUpper(); // Gán tên thể loại do người dùng nhập
                 CategoryController.addCategory(ctg); // Xử lý yêu cầu thêm thể loại truyền xuống database
                 loadDataCategory(); // Load lại form để hiển thị lên data grid view
                 txtCategoryName.Text = null; // Gán ô điền tên thể loại thành null như ban đầu

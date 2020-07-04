@@ -31,23 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainGUI));
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.tabMain = new System.Windows.Forms.TabControl();
             this.mFuntion = new System.Windows.Forms.MenuStrip();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.SuspendLayout();
             // 
-            // tabMain
-            // 
-            this.tabMain.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabMain.Location = new System.Drawing.Point(0, 24);
-            this.tabMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabMain.Name = "tabMain";
-            this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(815, 27);
-            this.tabMain.TabIndex = 2;
-            // 
             // mFuntion
             // 
+            this.mFuntion.BackColor = System.Drawing.SystemColors.MenuBar;
             this.mFuntion.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mFuntion.Location = new System.Drawing.Point(0, 0);
             this.mFuntion.Name = "mFuntion";
@@ -58,10 +48,10 @@
             // 
             // splitter1
             // 
-            this.splitter1.Location = new System.Drawing.Point(0, 51);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitter1.Location = new System.Drawing.Point(0, 24);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(2);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(2, 409);
+            this.splitter1.Size = new System.Drawing.Size(2, 436);
             this.splitter1.TabIndex = 4;
             this.splitter1.TabStop = false;
             // 
@@ -74,13 +64,11 @@
             this.BackgroundImage = global::FileManager.Properties.Resources.nền_trắng_500x500;
             this.ClientSize = new System.Drawing.Size(815, 460);
             this.Controls.Add(this.splitter1);
-            this.Controls.Add(this.tabMain);
             this.Controls.Add(this.mFuntion);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.mFuntion;
-            this.MaximizeBox = false;
             this.Name = "frmMainGUI";
             this.Text = "READER RIVER";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -92,7 +80,6 @@
         }
         #endregion
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.TabControl tabMain;
         private System.Windows.Forms.MenuStrip mFuntion;
         private System.Windows.Forms.Splitter splitter1;
     }

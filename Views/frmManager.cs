@@ -90,7 +90,7 @@ namespace FileManager.Views
                 this.cbCategory.Items.Clear();
                 foreach (var i in lctg)
                 {
-                    this.cbCategory.Items.Add(i.sCategoryName.ToUpper());
+                    this.cbCategory.Items.Add(i.sCategoryName);
                 }
             }
         }
@@ -134,6 +134,7 @@ namespace FileManager.Views
             {
                 picLastFile.Dispose();
                 lbTitle.Text = "";
+                lbFileCode.Text = "";
             }
             showThumb();
             this.UpdateCategory();
@@ -479,7 +480,7 @@ namespace FileManager.Views
             darkmode = true;
 
             //panel last read
-            pnlLastRead.BackColor = Color.Black;
+            pnlLastRead.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             label2.ForeColor = Color.White;
             btnReadLastFile.BackColor = Color.Black;
             btnReadLastFile.ForeColor = Color.White;
