@@ -72,24 +72,11 @@ namespace FileManager.Views
             btnSaveReadIndex.ForeColor = Color.White;
         }
 
+        // Chế độ sáng
         private void lightMode()
         {
             this.BackColor = DefaultBackColor;
             this.ForeColor = DefaultForeColor;
-            //panel1.BackColor = Color.AliceBlue;
-            //panel1.ForeColor = Color.Black;
-            //cbCurrentFile.BackColor = Color.White;
-            //cbCurrentFile.ForeColor = Color.Black;
-            //cbReadPreview.BackColor = Color.White;
-            //cbReadPreview.ForeColor = Color.Black;
-            //rtbShowFileReadPreview.BackColor = Color.White;
-            //rtbShowFileReadPreview.ForeColor = Color.Black;
-            //btnAddReadPreview.BackColor = Color.AliceBlue;
-            //btnAddReadPreview.ForeColor = Color.Black;
-            //btnDeleteReadIndex.BackColor = Color.AliceBlue;
-            //btnDeleteReadIndex.ForeColor = Color.Black;
-            //btnSaveReadIndex.BackColor = Color.AliceBlue;
-            //btnSaveReadIndex.ForeColor = Color.Black;
         }
 
         // Xử lý khi chọn file hiện tại thì hiển thị danh sách các file còn lại bên cb file cần đọc trước cho người dùng chọn

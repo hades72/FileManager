@@ -114,31 +114,6 @@ namespace FileManager.Views
         {
             this.BackColor = DefaultBackColor;
             this.ForeColor = DefaultForeColor;
-            //txtFileCode.BackColor = Color.White;
-            //txtFileCode.ForeColor = Color.Black;
-            //txtTitle.BackColor = Color.White;
-            //txtTitle.ForeColor = Color.Black;
-            //rtbPreview.BackColor = Color.White;
-            //rtbPreview.ForeColor = Color.Black;
-            //txtLinkFolder.BackColor = Color.White;
-            //txtLinkFolder.ForeColor = Color.Black;
-            //btnUpateLink.BackColor = Color.AliceBlue;
-            //btnUpateLink.ForeColor = Color.Black;
-            //btnUploadFile.BackColor = Color.AliceBlue;
-            //btnUploadFile.ForeColor = Color.Black;
-            //cbCategory.BackColor = Color.White;
-            //cbCategory.ForeColor = Color.Black;
-            //btnAddCategory.BackColor = Color.AliceBlue;
-            //btnAddCategory.ForeColor = Color.Black;
-            //txtCurrentCategory.BackColor = Color.White;
-            //txtCurrentCategory.ForeColor = Color.Black;
-            //btnRemoveCategory.BackColor = Color.AliceBlue;
-            //btnRemoveCategory.ForeColor = Color.Black;
-            //picUpload.BackColor = Color.AliceBlue;
-            //btnPicUpload.BackColor = Color.AliceBlue;
-            //btnPicUpload.ForeColor = Color.Black;
-            //btnSave.BackColor = Color.AliceBlue;
-            //btnSave.ForeColor = Color.Black;
         }
 
         // Lưu file
@@ -151,7 +126,7 @@ namespace FileManager.Views
                 file.iFileCode = FileController.getFileCodeFromDB(); // Sinh mã số file tự động
                 file.sTitle = this.txtTitle.Text.Trim(); // Gán tên file do người dùng tải lên có sẵn hoặc đổi tên khác
                 file.sCategory = category; // Gán các thể loại mà người dùng đã chọn
-                file.dtDateUpdate = DateTime.Now.Date; // Thời gian người dùng thêm file vào
+                file.dtDateUpdate = DateTime.Now; // Thời gian người dùng thêm file vào
                 file.iRead = 0; // Gán số trang mà người dùng đã đọc (hiện tại mới thêm vào thì là 0)
                 file.dtRecentlyRead = null; // Gán thời gian đọc file gần nhất (hiện tại mới thêm vào nên là null)
                 if (clickPicUpload == true) // Nếu người dùng có tải bìa file

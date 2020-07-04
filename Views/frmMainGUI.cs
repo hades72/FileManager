@@ -27,7 +27,7 @@ namespace FileManager.Views
 
         private void frmMainGUI_Load(object sender, EventArgs e)
         {
-            mFuntion.BackColor = ColorTranslator.FromHtml("#9C9C9C");
+            mFuntion.BackColor = ColorTranslator.FromHtml("#C0C0C0");
             this.fView = new frmManager(ref listFileM,listCategory);
             this.fView.MdiParent = this;
             this.fView.Show();

@@ -32,11 +32,16 @@ namespace FileManager.Views
             this.lbDateAdd.Text = file.dtDateUpdate.ToString();
             this.lbRecentlyRead.Text = file.dtRecentlyRead.ToString();
             this.lbLinkFile.Text = file.sLinkFile;
+            if(file.sFilePreview == null)
+            {
+                this.lbReadPreview.Text = "";
+            }
+            else
+                this.lbReadPreview.Text = file.sFilePreview.ToString();
             using (FileStream stream = new FileStream(String.Format(file.sLinkPic), FileMode.Open, FileAccess.Read))
             {
                 picFile.Image = Image.FromStream(stream);
             }
-
             // Xử lý chế độ sáng tối
             if (darkmode == true)
             {
@@ -63,7 +68,6 @@ namespace FileManager.Views
         {
             this.BackColor = DefaultBackColor;
             this.ForeColor = DefaultForeColor;
-
         }
 
         // Nhấn chuột vào mũi tên đường dẫn đổi màu

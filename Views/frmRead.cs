@@ -134,6 +134,8 @@ namespace FileManager.Views
             cbbWidth.BackColor = Color.LightGray;
             txtCurrentPage.BackColor = ColorTranslator.FromHtml("#4F4F4F");
             txtCurrentPage.ForeColor = Color.White;
+            btnFont.BackColor = ColorTranslator.FromHtml("#1C1C1C");
+            btnFont.ForeColor = Color.White;
         }
 
         // Chê độ sáng
@@ -371,26 +373,6 @@ namespace FileManager.Views
             }
         }
 
-        // Lớp Vẽ ghi chú
-        public class DrawNote
-        {
-            public int X { set; get; }
-            public int Y { set; get; }
-            public Color color { set; get; } // màu
-            public Pen pen { set; get; } // bút vẽ
-            public bool isDraw { set; get; }
-            public float width { get; set; } // chiều rộng của nét bút
-
-            public DrawNote()
-            {
-                isDraw = false;
-                // màu sắc và chiều rộng của nét bút
-                color = Color.Black;
-                width = 2;
-                pen = new Pen(color, width);
-            }
-        }
-
         // Chỉnh màu nền khi chuột nhấn và rời đi
         #region Mode-MouseEnter&Leave
         private void btnDeleteNote_MouseEnter(object sender, EventArgs e)
@@ -493,5 +475,24 @@ namespace FileManager.Views
                 btnSave.BackColor = Color.AliceBlue;
         }
         #endregion
+    }
+    // Lớp Vẽ ghi chú
+    public class DrawNote
+    {
+        public int X { set; get; }
+        public int Y { set; get; }
+        public Color color { set; get; } // màu
+        public Pen pen { set; get; } // bút vẽ
+        public bool isDraw { set; get; }
+        public float width { get; set; } // chiều rộng của nét bút
+
+        public DrawNote()
+        {
+            isDraw = false;
+            // màu sắc và chiều rộng của nét bút
+            color = Color.Black;
+            width = 2;
+            pen = new Pen(color, width);
+        }
     }
 }

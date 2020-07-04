@@ -27,7 +27,7 @@ namespace FileManager.Views
             if (darkmode == true)
                 darkMode();
             else
-                brightMode();
+                lightMode();
         }
 
         // Chế độ tối
@@ -38,7 +38,7 @@ namespace FileManager.Views
         }
 
         // Chế độ sáng
-        private void brightMode()
+        private void lightMode()
         {
             this.BackColor = Color.White;
             this.ForeColor = Color.Black;

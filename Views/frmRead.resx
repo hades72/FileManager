@@ -140,6 +140,9 @@
   <data name="rtbRead.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <data name="rtbRead.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 10pt</value>
+  </data>
   <data name="rtbRead.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -801,7 +804,7 @@
     <value>Right</value>
   </data>
   <data name="rtbNote.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Times New Roman, 12pt</value>
   </data>
   <data name="rtbNote.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 0</value>

@@ -93,7 +93,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(107, 110);
+            this.label4.Location = new System.Drawing.Point(107, 121);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 13);
@@ -117,11 +117,10 @@
             // 
             // lbTitle
             // 
-            this.lbTitle.AutoSize = true;
             this.lbTitle.Location = new System.Drawing.Point(133, 36);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(0, 13);
+            this.lbTitle.Size = new System.Drawing.Size(149, 42);
             this.lbTitle.TabIndex = 6;
             this.lbTitle.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbTitle_MouseDoubleClick);
             this.lbTitle.MouseEnter += new System.EventHandler(this.lbTenFile_MouseEnter);
@@ -129,11 +128,10 @@
             // 
             // lbCategory
             // 
-            this.lbCategory.AutoSize = true;
             this.lbCategory.Location = new System.Drawing.Point(152, 78);
             this.lbCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCategory.Name = "lbCategory";
-            this.lbCategory.Size = new System.Drawing.Size(0, 13);
+            this.lbCategory.Size = new System.Drawing.Size(130, 43);
             this.lbCategory.TabIndex = 7;
             this.lbCategory.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbCategory_MouseDoubleClick);
             this.lbCategory.MouseEnter += new System.EventHandler(this.lbTheLoai_MouseEnter);
@@ -141,11 +139,10 @@
             // 
             // lbRecentlyRead
             // 
-            this.lbRecentlyRead.AutoSize = true;
-            this.lbRecentlyRead.Location = new System.Drawing.Point(107, 132);
+            this.lbRecentlyRead.Location = new System.Drawing.Point(107, 136);
             this.lbRecentlyRead.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbRecentlyRead.Name = "lbRecentlyRead";
-            this.lbRecentlyRead.Size = new System.Drawing.Size(0, 13);
+            this.lbRecentlyRead.Size = new System.Drawing.Size(161, 18);
             this.lbRecentlyRead.TabIndex = 8;
             this.lbRecentlyRead.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lbRecentlyRead_MouseDoubleClick);
             this.lbRecentlyRead.MouseEnter += new System.EventHandler(this.lbNgayDocGanNhat_MouseEnter);
@@ -173,7 +170,7 @@
             this.toolProperties,
             this.toolDelete});
             this.ctmenuProperties.Name = "ctmenuProperties";
-            this.ctmenuProperties.Size = new System.Drawing.Size(181, 92);
+            this.ctmenuProperties.Size = new System.Drawing.Size(136, 70);
             this.ctmenuProperties.Opening += new System.ComponentModel.CancelEventHandler(this.ctmenuProperties_Opening);
             // 
             // toolRead
