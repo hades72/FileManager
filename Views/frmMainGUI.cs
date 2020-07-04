@@ -25,29 +25,6 @@ namespace FileManager.Views
             WindowState = FormWindowState.Maximized;
         }
 
-        private void frmMainGUI_MdiChildActivate(object sender, EventArgs e)
-        {
-            //if (this.ActiveMdiChild == null)
-            //{
-            //    return;
-            //}
-            //this.ActiveMdiChild.WindowState = FormWindowState.Maximized;
-            //if (this.ActiveMdiChild.Tag == null)
-            //{
-            //    TabPage tp = new TabPage(this.ActiveMdiChild.Text);
-            //    tp.Tag = this.ActiveMdiChild;
-            //    tp.Parent = this.tabMain;
-            //    this.tabMain.SelectedTab = tp;
-            //    this.ActiveMdiChild.Tag = tp;
-            //    this.ActiveMdiChild.FormClosed += ActiveMdiChild_FormClosed;
-            //}
-        }
-
-        private void ActiveMdiChild_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            //((sender as Form).Tag as TabPage).Dispose();
-        }
-
         private void frmMainGUI_Load(object sender, EventArgs e)
         {
             mFuntion.BackColor = ColorTranslator.FromHtml("#9C9C9C");

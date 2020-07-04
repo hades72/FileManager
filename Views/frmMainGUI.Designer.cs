@@ -28,23 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainGUI));
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.mFuntion = new System.Windows.Forms.MenuStrip();
             this.splitter1 = new System.Windows.Forms.Splitter();
+            this.mFuntion = new System.Windows.Forms.MenuStrip();
             this.SuspendLayout();
-            // 
-            // mFuntion
-            // 
-            this.mFuntion.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.mFuntion.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.mFuntion.Location = new System.Drawing.Point(0, 0);
-            this.mFuntion.Name = "mFuntion";
-            this.mFuntion.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.mFuntion.Size = new System.Drawing.Size(815, 24);
-            this.mFuntion.TabIndex = 1;
-            this.mFuntion.Text = "menuStrip1";
             // 
             // splitter1
             // 
@@ -54,6 +41,18 @@
             this.splitter1.Size = new System.Drawing.Size(2, 436);
             this.splitter1.TabIndex = 4;
             this.splitter1.TabStop = false;
+            // 
+            // mFuntion
+            // 
+            this.mFuntion.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.mFuntion.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.mFuntion.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.mFuntion.Location = new System.Drawing.Point(0, 0);
+            this.mFuntion.Name = "mFuntion";
+            this.mFuntion.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.mFuntion.Size = new System.Drawing.Size(815, 24);
+            this.mFuntion.TabIndex = 1;
+            this.mFuntion.Text = "menuStrip1";
             // 
             // frmMainGUI
             // 
@@ -73,15 +72,13 @@
             this.Text = "READER RIVER";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMainGUI_Load);
-            this.MdiChildActivate += new System.EventHandler(this.frmMainGUI_MdiChildActivate);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
         #endregion
-        private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.MenuStrip mFuntion;
         private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.MenuStrip mFuntion;
     }
 }
 

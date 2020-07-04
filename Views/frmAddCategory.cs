@@ -48,6 +48,7 @@ namespace FileManager.Views
             this.helpProvider1.SetHelpString(this.txtCategoryName, "Nhap ten the loai ban muon");
         }
 
+        // Chế độ tối
         private void darkMode()
         {
             panel1.BackColor = ColorTranslator.FromHtml("#1C1C1C");
@@ -60,6 +61,7 @@ namespace FileManager.Views
             dataCategory.DefaultCellStyle.ForeColor = Color.White;
         }
 
+        // Chế độ sáng
         private void lightMode()
         {
             this.BackColor = DefaultBackColor;
@@ -121,26 +123,6 @@ namespace FileManager.Views
                 if (MessageBox.Show("Bạn chắc chắn xóa mục này?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Category ctg = CategoryController.getCategory(int.Parse(this.dataCategory.Rows[e.RowIndex].Cells[0].Value.ToString()));
-                    //List<FileM> lF = new List<FileM>();
-                    //lF = FileController.getListFile();
-                    //foreach(var f in lF)
-                    //{
-                    //    string[] a = f.sCategory.Split(',');
-                    //    if (a is null)
-                    //    {
-
-                    //    }
-                    //    else
-                    //    {
-                    //        foreach (var obj in a)
-                    //        {
-                    //            if (obj.Trim() == ctg.sCategoryName)
-                    //            {
-                    //                FileController.deleteFile(f);
-                    //            }
-                    //        }
-                    //    }
-                    //}
                     CategoryController.deleteCategory(ctg);
                     MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -169,11 +151,12 @@ namespace FileManager.Views
                     ctg.sCategoryName = this.dataCategory.CurrentRow.Cells[e.ColumnIndex].Value.ToString().Trim();
                     CategoryController.updateCategory(ctg);
                     MessageBox.Show("Sửa thể loại thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
             }
         }
 
+        // Chỉnh màu nền khi chuột nhấn và rời đi
+        #region Mode-MouseEnter&Leave
         private void frmAddCategory_FormClosing(object sender, FormClosingEventArgs e)
         {
             exit = true;
@@ -194,5 +177,6 @@ namespace FileManager.Views
             else
                 btnAddCategory.BackColor = Color.AliceBlue;
         }
+        #endregion
     }
 }

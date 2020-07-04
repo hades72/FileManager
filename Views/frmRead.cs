@@ -106,6 +106,7 @@ namespace FileManager.Views
             }
         }
 
+        // Chế độ tối
         private void darkMode()
         {
             rtbRead.BackColor = ColorTranslator.FromHtml("#1C1C1C");
@@ -135,33 +136,11 @@ namespace FileManager.Views
             txtCurrentPage.ForeColor = Color.White;
         }
 
+        // Chê độ sáng
         private void lightMode()
         {
             this.BackColor = DefaultBackColor;
             this.ForeColor = DefaultForeColor;
-            //rtbRead.BackColor = Color.AliceBlue;
-            //rtbRead.ForeColor = Color.Black;
-            //label1.ForeColor = Color.Black;
-            //lb2.ForeColor = Color.Black;
-            //btnDeleteNote.BackColor = Color.AliceBlue;
-            //btnDeleteNote.ForeColor = Color.Black;
-            //rtbNote.BackColor = Color.White;
-            //rtbNote.ForeColor = Color.Black;
-            //splitContainer4.Panel1.BackColor = Color.AliceBlue;
-            //splitContainer4.Panel2.BackColor = Color.AliceBlue;
-            //splitContainer4.Panel2.ForeColor = Color.Black;
-            //btnColorPen.BackColor = Color.AliceBlue;
-            //btnDeleteDrawNote.BackColor = Color.AliceBlue;
-            //btnNew.BackColor = Color.AliceBlue;
-            //btnNew.ForeColor = Color.Black;
-            //btnSave.BackColor = Color.AliceBlue;
-            //btnSave.ForeColor = Color.Black;
-            //splitContainer3.Panel2.BackColor = Color.AliceBlue;
-            //splitContainer3.Panel2.ForeColor = Color.Black;
-            //splitContainer2.Panel2.BackColor = Color.AliceBlue;
-            //ptbBackPage.BackColor = Color.AliceBlue;
-            //ptbNextPage.BackColor = Color.AliceBlue;
-            //cbbWidth.BackColor = Color.LightGray;
         }
 
         // Nhấn xem trang tiếp theo
@@ -412,6 +391,8 @@ namespace FileManager.Views
             }
         }
 
+        // Chỉnh màu nền khi chuột nhấn và rời đi
+        #region Mode-MouseEnter&Leave
         private void btnDeleteNote_MouseEnter(object sender, EventArgs e)
         {
             if (DarkMode == true)
@@ -511,6 +492,6 @@ namespace FileManager.Views
             else
                 btnSave.BackColor = Color.AliceBlue;
         }
-
+        #endregion
     }
 }

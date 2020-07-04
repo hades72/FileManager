@@ -14,25 +14,25 @@ namespace FileManager.Models
     {
         [Key] // FileCode là key
         [DatabaseGenerated(DatabaseGeneratedOption.None)] // Tắt tự động nhận dạng
-        public int iFileCode { get; set; } // Mã số tài liệu
+        public int iFileCode { get; set; } // Mã số file
 
-        public string sTitle { get; set; }
+        public string sTitle { get; set; } // Tên file
 
-        public string sCategory { get; set; }
+        public string sCategory { get; set; } // Tên thể loại
 
-        public DateTime dtDateUpdate { get; set; } 
+        public DateTime dtDateUpdate { get; set; } // Thời gian thêm vào
 
-        public string sNote { get; set; }
+        public string sNote { get; set; } // Ghi chú bằng chữ
 
-        public string sLinkPic { get; set; }
+        public string sLinkPic { get; set; } // Đường dẫn bìa file
         
-        public string sLinkFile { get; set; }
+        public string sLinkFile { get; set; } // Đường dẫn file
 
         public int iRead { get; set; } // Kiểm tra đã đọc trang nào trong tài liệu chưa
 
         public DateTime? dtRecentlyRead { get; set; } // Lịch sử mở đọc gần đây
 
-        public string sFilePreview { get; set; }
+        public string sFilePreview { get; set; } // Các file cần đọc trước
 
         //public override string ToString()
         //{

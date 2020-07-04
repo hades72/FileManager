@@ -199,7 +199,7 @@
             // 
             // rtbNote
             // 
-            this.rtbNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbNote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.rtbNote, "rtbNote");
             this.rtbNote.Name = "rtbNote";
             this.helpProvider1.SetShowHelp(this.rtbNote, ((bool)(resources.GetObject("rtbNote.ShowHelp"))));
@@ -250,6 +250,7 @@
             // ptbNote
             // 
             this.ptbNote.BackgroundImage = global::FileManager.Properties.Resources.nền_trắng_500x500;
+            this.ptbNote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.ptbNote, "ptbNote");
             this.ptbNote.Name = "ptbNote";
             this.helpProvider1.SetShowHelp(this.ptbNote, ((bool)(resources.GetObject("ptbNote.ShowHelp"))));

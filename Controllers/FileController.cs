@@ -164,7 +164,7 @@ namespace FileManager.Controllers
             using (var _context = new DBFileContext())
             {
                 var file = (from f in _context.tbFileMs.AsEnumerable()
-                            orderby f.dtDateUpdate descending
+                            orderby f.dtDateUpdate.ToString("MM/dd/yyyy HH:mm:ss") descending
                             select f).Select(x => new FileM
                             {
                                 iFileCode = x.iFileCode,

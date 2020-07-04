@@ -53,6 +53,7 @@ namespace FileManager.Views
             this.helpProvider1.SetHelpString(this.rtbShowFileReadPreview, "Noi hien thi file can doc truoc cho file hien tai");
         }
 
+        // Chế độ tối
         private void darkMode()
         {
             panel1.BackColor = ColorTranslator.FromHtml("#1C1C1C");
@@ -91,14 +92,13 @@ namespace FileManager.Views
             //btnSaveReadIndex.ForeColor = Color.Black;
         }
 
+        // Xử lý khi chọn file hiện tại thì hiển thị danh sách các file còn lại bên cb file cần đọc trước cho người dùng chọn
         private void cbCurrentFile_SelectedIndexChanged(object sender, EventArgs e)
         {
             string currentFile = this.cbCurrentFile.SelectedItem.ToString();
             this.cbReadPreview.SelectedIndex = -1;
             this.cbReadPreview.Items.Clear();
             this.cbReadPreview.Enabled = true;
-
-
             List<FileM> lF = new List<FileM>();
             lF = FileController.getListFile();
             foreach (var c in lF)
@@ -210,6 +210,8 @@ namespace FileManager.Views
             this.rtbShowFileReadPreview.Text = "";
         }
 
+        // Chỉnh màu nền khi chuột nhấn và rời đi
+        #region Mode-MouseEnter&Leave
         private void btnAddReadPreview_MouseEnter(object sender, EventArgs e)
         {
             if (DarkMode == true)
@@ -257,5 +259,6 @@ namespace FileManager.Views
             else
                 btnSaveReadIndex.BackColor = Color.AliceBlue;
         }
+        #endregion
     }
 }

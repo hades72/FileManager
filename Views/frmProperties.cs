@@ -50,6 +50,7 @@ namespace FileManager.Views
             }
         }
 
+        // Chế độ tối
         private void darkMode()
         {
             this.BackColor = ColorTranslator.FromHtml("#1C1C1C");
@@ -57,6 +58,7 @@ namespace FileManager.Views
             lbLinkFile.ForeColor = Color.White;
         }
 
+        // Chế độ sáng
         private void lightMode()
         {
             this.BackColor = DefaultBackColor;

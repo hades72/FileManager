@@ -30,12 +30,14 @@ namespace FileManager.Views
                 brightMode();
         }
 
+        // Chế độ tối
         private void darkMode()
         {
             this.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             this.ForeColor = Color.White;
         }
 
+        // Chế độ sáng
         private void brightMode()
         {
             this.BackColor = Color.White;
@@ -116,7 +118,7 @@ namespace FileManager.Views
 
         #endregion
 
-        // Đọc file bằng đúp chuột
+        // Đọc file bằng đúp chuột và chỉnh màu nền khi chuột nhấn và rời đi
         #region DoubleClick_MouseEnter_MouseLeave    
         private void usrViewThumb_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -241,7 +243,7 @@ namespace FileManager.Views
 
         private void picNewIcon_MouseEnter(object sender, EventArgs e)
         {
-            if (this.BackColor == ColorTranslator.FromHtml("#1C1C1C"))
+            if (DarkMode == true)
                 this.BackColor = Color.DimGray;
             else
                 this.BackColor = Color.AliceBlue;
@@ -249,7 +251,7 @@ namespace FileManager.Views
 
         private void picNewIcon_MouseLeave(object sender, EventArgs e)
         {
-            if (this.BackColor == Color.DimGray)
+            if (DarkMode == true)
                 this.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 this.BackColor = Color.White;
@@ -257,7 +259,7 @@ namespace FileManager.Views
 
         private void listViewThumb_MouseLeave(object sender, EventArgs e)
         {
-            if (this.BackColor == Color.DimGray)
+            if (DarkMode == true)
                 this.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 this.BackColor = Color.White;
@@ -265,7 +267,7 @@ namespace FileManager.Views
 
         private void listViewThumb_MouseEnter(object sender, EventArgs e)
         {
-            if (this.BackColor == ColorTranslator.FromHtml("#1C1C1C"))
+            if (DarkMode == true)
                 this.BackColor = Color.DimGray;
             else
                 this.BackColor = Color.AliceBlue;
@@ -273,7 +275,7 @@ namespace FileManager.Views
 
         private void picFile_MouseLeave(object sender, EventArgs e)
         {
-            if (this.BackColor == Color.DimGray)
+            if (DarkMode == true)
                 this.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 this.BackColor = Color.White;
@@ -281,7 +283,7 @@ namespace FileManager.Views
 
         private void picFile_MouseEnter(object sender, EventArgs e)
         {
-            if (this.BackColor == ColorTranslator.FromHtml("#1C1C1C"))
+            if (DarkMode == true)
                 this.BackColor = Color.DimGray;
             else
                 this.BackColor = Color.AliceBlue;
@@ -289,7 +291,7 @@ namespace FileManager.Views
 
         private void label1_MouseEnter(object sender, EventArgs e)
         {
-            if (this.BackColor == ColorTranslator.FromHtml("#1C1C1C"))
+            if (DarkMode == true)
                 this.BackColor = Color.DimGray;
             else
                 this.BackColor = Color.AliceBlue;
@@ -297,7 +299,7 @@ namespace FileManager.Views
 
         private void label1_MouseLeave(object sender, EventArgs e)
         {
-            if (this.BackColor == Color.DimGray)
+            if (DarkMode == true)
                 this.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 this.BackColor = Color.White;
@@ -305,7 +307,7 @@ namespace FileManager.Views
 
         private void label2_MouseLeave(object sender, EventArgs e)
         {
-            if (this.BackColor == Color.DimGray)
+            if (DarkMode == true)
                 this.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 this.BackColor = Color.White;
@@ -313,7 +315,7 @@ namespace FileManager.Views
 
         private void label2_MouseEnter(object sender, EventArgs e)
         {
-            if (this.BackColor == ColorTranslator.FromHtml("#1C1C1C"))
+            if (DarkMode == true)
                 this.BackColor = Color.DimGray;
             else
                 this.BackColor = Color.AliceBlue;
@@ -321,7 +323,7 @@ namespace FileManager.Views
 
         private void label3_MouseEnter(object sender, EventArgs e)
         {
-            if (this.BackColor == ColorTranslator.FromHtml("#1C1C1C"))
+            if (DarkMode == true)
                 this.BackColor = Color.DimGray;
             else
                 this.BackColor = Color.AliceBlue;
@@ -329,7 +331,7 @@ namespace FileManager.Views
 
         private void label3_MouseLeave(object sender, EventArgs e)
         {
-            if (this.BackColor == Color.DimGray)
+            if (DarkMode == true)
                 this.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 this.BackColor = Color.White;
@@ -337,7 +339,7 @@ namespace FileManager.Views
 
         private void label4_MouseEnter(object sender, EventArgs e)
         {
-            if (this.BackColor == ColorTranslator.FromHtml("#1C1C1C"))
+            if (DarkMode == true)
                 this.BackColor = Color.DimGray;
             else
                 this.BackColor = Color.AliceBlue;
@@ -345,7 +347,7 @@ namespace FileManager.Views
 
         private void label4_MouseLeave(object sender, EventArgs e)
         {
-            if (this.BackColor == Color.DimGray)
+            if (DarkMode == true)
                 this.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 this.BackColor = Color.White;
@@ -353,7 +355,7 @@ namespace FileManager.Views
 
         private void lbNgayDocGanNhat_MouseEnter(object sender, EventArgs e)
         {
-            if (this.BackColor == ColorTranslator.FromHtml("#1C1C1C"))
+            if (DarkMode == true)
                 this.BackColor = Color.DimGray;
             else
                 this.BackColor = Color.AliceBlue;
@@ -361,7 +363,7 @@ namespace FileManager.Views
 
         private void lbNgayDocGanNhat_MouseLeave(object sender, EventArgs e)
         {
-            if (this.BackColor == Color.DimGray)
+            if (DarkMode == true)
                 this.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 this.BackColor = Color.White;
@@ -369,7 +371,7 @@ namespace FileManager.Views
 
         private void lbID_MouseEnter(object sender, EventArgs e)
         {
-            if (this.BackColor == ColorTranslator.FromHtml("#1C1C1C"))
+            if (DarkMode == true)
                 this.BackColor = Color.DimGray;
             else
                 this.BackColor = Color.AliceBlue;
@@ -377,7 +379,7 @@ namespace FileManager.Views
 
         private void lbID_MouseLeave(object sender, EventArgs e)
         {
-            if (this.BackColor == Color.DimGray)
+            if (DarkMode == true)
                 this.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 this.BackColor = Color.White; ;
@@ -385,7 +387,7 @@ namespace FileManager.Views
 
         private void lbTenFile_MouseLeave(object sender, EventArgs e)
         {
-            if (this.BackColor == Color.DimGray)
+            if (DarkMode == true)
                 this.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 this.BackColor = Color.White;
@@ -393,7 +395,7 @@ namespace FileManager.Views
 
         private void lbTenFile_MouseEnter(object sender, EventArgs e)
         {
-            if (this.BackColor == ColorTranslator.FromHtml("#1C1C1C"))
+            if (DarkMode == true)
                 this.BackColor = Color.DimGray;
             else
                 this.BackColor = Color.AliceBlue;
@@ -401,7 +403,7 @@ namespace FileManager.Views
 
         private void lbTheLoai_MouseEnter(object sender, EventArgs e)
         {
-            if (this.BackColor == ColorTranslator.FromHtml("#1C1C1C"))
+            if (DarkMode == true)
                 this.BackColor = Color.DimGray;
             else
                 this.BackColor = Color.AliceBlue;
@@ -409,7 +411,7 @@ namespace FileManager.Views
 
         private void lbTheLoai_MouseLeave(object sender, EventArgs e)
         {
-            if (this.BackColor == Color.DimGray)
+            if (DarkMode == true)
                 this.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 this.BackColor = Color.White;
@@ -493,9 +495,28 @@ namespace FileManager.Views
             }
         }
 
-        // File pdf thì hiện đọc với pdf, txt thì hiện đọc với notepad
+        // Chỉnh màu nền khi chuột nhấn và rời đi cho ctmenu
+        #region Mode
         private void toolRead_MouseHover(object sender, EventArgs e)
         {
+            if(DarkMode == true)
+            {
+                toolReadWithNotepad.BackColor = ColorTranslator.FromHtml("#1C1C1C");
+                toolReadWithNotepad.ForeColor = Color.White;
+                toolReadWithPDF.BackColor = ColorTranslator.FromHtml("#1C1C1C");
+                toolReadWithPDF.ForeColor = Color.White;
+                toolReadWithReaderriver.BackColor = ColorTranslator.FromHtml("#1C1C1C");
+                toolReadWithReaderriver.ForeColor = Color.White;
+            }
+            else
+            {
+                toolReadWithNotepad.BackColor = DefaultBackColor;
+                toolReadWithNotepad.ForeColor = DefaultForeColor;
+                toolReadWithPDF.BackColor = DefaultBackColor;
+                toolReadWithPDF.ForeColor = DefaultForeColor;
+                toolReadWithReaderriver.BackColor = DefaultBackColor;
+                toolReadWithReaderriver.ForeColor = DefaultForeColor;
+            }
             if (Path.GetExtension(LinkFile) == ".pdf")
             {
                 toolReadWithPDF.Visible = true;
@@ -510,7 +531,7 @@ namespace FileManager.Views
 
         private void toolRead_MouseEnter(object sender, EventArgs e)
         {
-            if (this.BackColor == ColorTranslator.FromHtml("#1C1C1C"))
+            if (DarkMode == true)
                 toolRead.BackColor = Color.DimGray;
             else
                 toolRead.BackColor = Color.AliceBlue;
@@ -518,7 +539,7 @@ namespace FileManager.Views
 
         private void toolRead_MouseLeave(object sender, EventArgs e)
         {
-            if (this.BackColor == Color.DimGray)
+            if (DarkMode == true)
                 toolRead.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 toolRead.BackColor = Color.Transparent;
@@ -526,7 +547,7 @@ namespace FileManager.Views
 
         private void toolReadWithReaderriver_MouseEnter(object sender, EventArgs e)
         {
-            if (this.BackColor == ColorTranslator.FromHtml("#1C1C1C"))
+            if (DarkMode == true)
                 toolReadWithReaderriver.BackColor = Color.DimGray;
             else
                 toolReadWithReaderriver.BackColor = Color.AliceBlue;
@@ -534,7 +555,7 @@ namespace FileManager.Views
 
         private void toolReadWithReaderriver_MouseLeave(object sender, EventArgs e)
         {
-            if (this.BackColor == Color.DimGray)
+            if (DarkMode == true)
                 toolReadWithReaderriver.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 toolReadWithReaderriver.BackColor = Color.Transparent;
@@ -542,7 +563,7 @@ namespace FileManager.Views
 
         private void toolReadWithPDF_MouseEnter(object sender, EventArgs e)
         {
-            if (this.BackColor == ColorTranslator.FromHtml("#1C1C1C"))
+            if (DarkMode == true)
                 toolReadWithPDF.BackColor = Color.DimGray;
             else
                 toolReadWithPDF.BackColor = Color.AliceBlue;
@@ -550,7 +571,7 @@ namespace FileManager.Views
 
         private void toolReadWithPDF_MouseLeave(object sender, EventArgs e)
         {
-            if (this.BackColor == Color.DimGray)
+            if (DarkMode == true)
                 toolReadWithPDF.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 toolReadWithPDF.BackColor = Color.Transparent;
@@ -558,7 +579,7 @@ namespace FileManager.Views
 
         private void toolReadWithNotepad_MouseEnter(object sender, EventArgs e)
         {
-            if (this.BackColor == ColorTranslator.FromHtml("#1C1C1C"))
+            if (DarkMode == true)
                 toolReadWithNotepad.BackColor = Color.DimGray;
             else
                 toolReadWithNotepad.BackColor = Color.AliceBlue;
@@ -566,7 +587,7 @@ namespace FileManager.Views
 
         private void toolReadWithNotepad_MouseLeave(object sender, EventArgs e)
         {
-            if (this.BackColor == Color.DimGray)
+            if (DarkMode == true)
                 toolReadWithNotepad.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 toolReadWithNotepad.BackColor = Color.Transparent;
@@ -574,7 +595,7 @@ namespace FileManager.Views
 
         private void toolProperties_MouseEnter(object sender, EventArgs e)
         {
-            if (this.BackColor == ColorTranslator.FromHtml("#1C1C1C"))
+            if (DarkMode == true)
                 toolProperties.BackColor = Color.DimGray;
             else
                 toolProperties.BackColor = Color.AliceBlue;
@@ -582,7 +603,7 @@ namespace FileManager.Views
 
         private void toolProperties_MouseLeave(object sender, EventArgs e)
         {
-            if (this.BackColor == Color.DimGray)
+            if (DarkMode == true)
                 toolProperties.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 toolProperties.BackColor = Color.Transparent;
@@ -590,7 +611,7 @@ namespace FileManager.Views
 
         private void toolDelete_MouseEnter(object sender, EventArgs e)
         {
-            if (this.BackColor == ColorTranslator.FromHtml("#1C1C1C"))
+            if (DarkMode == true)
                 toolDelete.BackColor = Color.DimGray;
             else
                 toolDelete.BackColor = Color.AliceBlue;
@@ -598,10 +619,27 @@ namespace FileManager.Views
 
         private void toolDelete_MouseLeave(object sender, EventArgs e)
         {
-            if (this.BackColor == Color.DimGray)
+            if (DarkMode == true)
                 toolDelete.BackColor = ColorTranslator.FromHtml("#1C1C1C");
             else
                 toolDelete.BackColor = Color.Transparent;
         }
+
+        private void ctmenuProperties_Opening(object sender, CancelEventArgs e)
+        {
+            if (DarkMode == true)
+            {
+                toolDelete.BackColor = ColorTranslator.FromHtml("#1C1C1C");
+                toolProperties.BackColor = ColorTranslator.FromHtml("#1C1C1C");
+                toolRead.BackColor = ColorTranslator.FromHtml("#1C1C1C");
+                ctmenuProperties.ForeColor = Color.White;
+            }
+            else
+            {
+                ctmenuProperties.BackColor = DefaultBackColor;
+                ctmenuProperties.ForeColor = DefaultForeColor;
+            }
+        }
+        #endregion
     }
 }

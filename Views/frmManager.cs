@@ -47,8 +47,6 @@ namespace FileManager.Views
             dataFileM.AutoGenerateColumns = false;
         }
 
-      
-
         private void frmManager_Load(object sender, EventArgs e)
         {
             this.helpProvider1.SetShowHelp(this.txtSearch, true);
@@ -432,53 +430,11 @@ namespace FileManager.Views
             Application.Exit();
         }
 
-        #region MouseEnter_MouseLeave
-        private void btnSearch_MouseEnter(object sender, EventArgs e)
-        {
-            if (darkmode == true)
-            {
-                btnSearch.BackColor = Color.DimGray;
-            }
-            else
-                btnSearch.BackColor = Color.Transparent ;
-        }
-
-        private void btnSearch_MouseLeave(object sender, EventArgs e)
-        {
-            if (darkmode == true)
-            {
-                btnSearch.BackColor = ColorTranslator.FromHtml("#1C1C1C");
-            }
-            else
-                btnSearch.BackColor = Color.AliceBlue;
-        }
-
-        private void btnReadFile_MouseEnter(object sender, EventArgs e)
-        {
-            if (darkmode == true)
-            {
-                btnReadFile.BackColor = Color.DimGray;
-            }
-            else
-                btnReadFile.BackColor = Color.Transparent;
-        }
-
-        private void btnReadFile_MouseLeave(object sender, EventArgs e)
-        {
-            if (darkmode == true)
-            {
-                btnReadFile.BackColor = ColorTranslator.FromHtml("#1C1C1C");
-            }
-            else
-                btnReadFile.BackColor = Color.AliceBlue;
-        }
-        #endregion
-
         // Chọn chế độ tối
         private void darkMode_Click(object sender, EventArgs e)
         {
             darkmode = true;
-            // splitcontainer
+            //splitcontainer
             splitContainer1.BackColor = ColorTranslator.FromHtml("#696969");
             splitContainer2.BackColor = ColorTranslator.FromHtml("#696969");
             splitContainer3.BackColor = ColorTranslator.FromHtml("#696969");
@@ -544,6 +500,7 @@ namespace FileManager.Views
             toolStripRefresh.ForeColor = Color.White;
         }
 
+        // Chọn chế độ sáng
         private void lightMode_Click(object sender, EventArgs e)
         {
             darkmode = false;
@@ -613,6 +570,62 @@ namespace FileManager.Views
             toolStripRefresh.ForeColor = Color.Black;
         }
 
+        // Chỉnh màu nền ctmenu theo chế độ
+        private void ctmenuRefresh_Opening(object sender, CancelEventArgs e)
+        {
+            if (darkmode == true)
+            {
+                toolStripRefresh.BackColor = ColorTranslator.FromHtml("#1C1C1C");
+                toolStripRefresh.ForeColor = Color.White;
+            }
+            else
+            {
+                toolStripRefresh.BackColor = DefaultBackColor;
+                toolStripRefresh.ForeColor = DefaultForeColor;
+            }
+        }
+
+        // Chỉnh màu nền khi chuột nhấn vào hoặc rời đi
+        #region Mode-MouseEnter&Leave
+        private void btnSearch_MouseEnter(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                btnSearch.BackColor = Color.DimGray;
+            }
+            else
+                btnSearch.BackColor = Color.Transparent;
+        }
+
+        private void btnSearch_MouseLeave(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                btnSearch.BackColor = ColorTranslator.FromHtml("#1C1C1C");
+            }
+            else
+                btnSearch.BackColor = Color.AliceBlue;
+        }
+
+        private void btnReadFile_MouseEnter(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                btnReadFile.BackColor = Color.DimGray;
+            }
+            else
+                btnReadFile.BackColor = Color.Transparent;
+        }
+
+        private void btnReadFile_MouseLeave(object sender, EventArgs e)
+        {
+            if (darkmode == true)
+            {
+                btnReadFile.BackColor = ColorTranslator.FromHtml("#1C1C1C");
+            }
+            else
+                btnReadFile.BackColor = Color.AliceBlue;
+        }
         private void btnReadLastFile_MouseEnter(object sender, EventArgs e)
         {
             if (darkmode == true)
@@ -849,5 +862,8 @@ namespace FileManager.Views
             else
                 toolStripRefresh.BackColor = Color.Transparent;
         }
+        #endregion
+
+        
     }
 }

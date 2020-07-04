@@ -13,7 +13,7 @@ namespace FileManager.Models
     {
         [Key] // FileCode là key
         [DatabaseGenerated(DatabaseGeneratedOption.None)] // Tắt tự động nhận dạng
-        public int iCategoryCode { get; set; }
-        public string sCategoryName { get; set; }
+        public int iCategoryCode { get; set; } // Mã thể loại
+        public string sCategoryName { get; set; } // Tên thể loại
     }
 }

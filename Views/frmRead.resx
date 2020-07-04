@@ -800,6 +800,9 @@
   <data name="rtbNote.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Right</value>
   </data>
+  <data name="rtbNote.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
   <data name="rtbNote.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 0</value>
   </data>
